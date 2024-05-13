@@ -1,5 +1,73 @@
-.label.header-label {
+.label.small-title {
     -fx-font-weight: bold;
-    -fx-font-size: 16px;
-    -fx-text-fill: #333333;
+    -fx-font-size: 13px;
+    -fx-text-fill: #FFFFFF;
+}
+.label.text {
+    -fx-font-weight: normal;
+    -fx-font-size: 11px;
+    -fx-text-fill: #FFFFFF;
+}
+.label.small-text {
+    -fx-font-weight: 300;
+    -fx-font-size: 10px;
+    -fx-text-fill: #FFFFFF;
+}
+.label.green-title {
+    -fx-font-weight: 900;
+    -fx-font-size: 16;
+    -fx-text-fill: #22DD85;
+}
+.attraction-card {
+    -fx-background-color: #083740;
+    -fx-background-radius: 16px;
+    -fx-border-radius: 16px;
+}
+#mainGrid {
+    -fx-background-color: #070606;
+    -fx-padding: 15 20 15 20;
+}
+.line-container{
+    -fx-padding: 0 3 0 20;
+}
+.line{
+    -fx-stroke-dash-array: 5 5;
+    -fx-stroke-width: 1.5;
+    -fx-stroke: #5e7d83
+}
+
+.header-label{
+    -fx-font-weight: 900;
+    -fx-font-size: 14px;
+    -fx-text-fill: #5e7d83;
+}
+
+.header-label-day{
+    -fx-font-weight: 400;
+    -fx-font-size: 14px;
+    -fx-text-fill: #5e7d83;
+}
+
+.padded-card{
+    -fx-padding: 5 10 5 10;
+}
+
+.purple-padded-card{
+    -fx-background-color: #BCA5ED;
+        -fx-background-radius: 12px;
+        -fx-border-radius: 12px;
+    -fx-padding: 5;
+    -fx-font-weight: bold;
+        -fx-font-size: 14px;
+        -fx-text-fill: #070606;
+}
+
+.gray-padded-card{
+    -fx-background-color: #081e23;
+        -fx-background-radius: 12px;
+        -fx-border-radius: 12px;
+    -fx-padding: 5;
+    -fx-font-weight: bold;
+        -fx-font-size: 14px;
+        -fx-text-fill: #5e7d83;
 }

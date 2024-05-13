@@ -16,13 +16,13 @@ public class DaysHeaderController {
 
     @FXML
     private void nextWeek() {
-        startDate = startDate.plusDays(5); // Advance the week by one week
+        startDate = startDate.plusDays(3); // Advance the week by one week
         updateLabels();
     }
 
     public void updateLabels() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE");
-        for (int columnIndex = 0; columnIndex < 5; columnIndex++) {
+        for (int columnIndex = 0; columnIndex < 3; columnIndex++) {
             iterations++;
             // Lookup each label by its ID
             Label labelDate = (Label) grid.lookup("#dayLabel" + (columnIndex + 1));

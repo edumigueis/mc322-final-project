@@ -3,10 +3,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
+<?import javafx.scene.shape.Line?>
 <HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" spacing="10" prefWidth="400"
-      fx:controller="ui.controllers.DisplacementCardComponentController">
-    <VBox spacing="5" prefWidth="60">
-        <Label fx:id="durationLabel" style="-fx-font-weight: bold; -fx-font-size: 18px;"/>
-        <Label fx:id="typeLabel"/>
+      fx:controller="ui.controllers.DisplacementCardComponentController" stylesheets="/styling/styles.css">
+    <StackPane styleClass="line-container">
+        <Line endY="40.0" stroke="white" styleClass="line"/>
+    </StackPane>
+    <VBox spacing="1">
+        <Label fx:id="durationLabel" styleClass="small-title"/>
+        <Label fx:id="typeLabel" styleClass="text"/>
     </VBox>
 </HBox>

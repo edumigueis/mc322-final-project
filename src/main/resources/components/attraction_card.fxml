@@ -2,16 +2,22 @@
 
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-
-<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" spacing="10" prefWidth="400"
-      fx:controller="ui.controllers.AttractionCardComponentController">
-    <!-- Left Panel with Solid Color -->
-    <Region fx:id="colorRegion" prefWidth="40"/>
-
-    <!-- Right Panel with Title, Business Time, and Description -->
-    <VBox spacing="5" prefWidth="60">
-        <Label fx:id="titleLabel" style="-fx-font-weight: bold; -fx-font-size: 18px;"/>
-        <Label fx:id="businessTimeLabel"/>
-        <Label fx:id="descriptionLabel" wrapText="true"/>
-    </VBox>
-</HBox>
+<GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="ui.controllers.AttractionCardComponentController" prefHeight="130" hgap="10"
+          stylesheets="/styling/styles.css" styleClass="attraction-card" minHeight="130">
+    <children>
+        <Region fx:id="colorRegion" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label fx:id="titleLabel" styleClass="green-title"/>
+            <Label fx:id="businessTimeLabel" styleClass="small-title"/>
+            <Label fx:id="descriptionLabel" wrapText="true" styleClass="small-text"/>
+        </VBox>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" prefWidth="130.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="60.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+</GridPane>
