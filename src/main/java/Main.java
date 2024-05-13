@@ -21,7 +21,7 @@ public class Main extends Application {
         stage.show();
 
         // Initial update of labels
-        controller.updateLabels();
+        controller.start();
     }
 
     public static void main(String[] args) {

@@ -13,4 +13,28 @@ public class Transportation {
         this.estimatedDuration = estimatedDuration;
         this.start = start;
     }
+
+    public TransportationType getType() {
+        return type;
+    }
+
+    public void setType(TransportationType type) {
+        this.type = type;
+    }
+
+    public Duration getEstimatedDuration() {
+        return estimatedDuration;
+    }
+
+    public void setEstimatedDuration(Duration estimatedDuration) {
+        this.estimatedDuration = estimatedDuration;
+    }
+
+    public LocalTime getStart() {
+        return start;
+    }
+
+    public void setStart(LocalTime start) {
+        this.start = start;
+    }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" spacing="10" prefWidth="400"
+      fx:controller="ui.controllers.DisplacementCardComponentController">
+    <VBox spacing="5" prefWidth="60">
+        <Label fx:id="durationLabel" style="-fx-font-weight: bold; -fx-font-size: 18px;"/>
+        <Label fx:id="typeLabel"/>
+    </VBox>
+</HBox>

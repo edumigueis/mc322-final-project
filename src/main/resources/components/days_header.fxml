@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<GridPane fx:id="grid" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.DaysHeaderController">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20"/> <!-- 1/7 of 100% -->
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="20"/>
+    </columnConstraints>
+    <Button text="Next Week" GridPane.columnSpan="7" GridPane.rowIndex="1" onAction="#nextWeek"/>
+
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="2" fx:id="dayLabel1" styleClass="header-label"/>
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="dayLabel2" styleClass="header-label"/>
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="dayLabel3" styleClass="header-label"/>
+    <Label GridPane.columnIndex="3" GridPane.rowIndex="2" fx:id="dayLabel4" styleClass="header-label"/>
+    <Label GridPane.columnIndex="4" GridPane.rowIndex="2" fx:id="dayLabel5" styleClass="header-label"/>
+
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="3" fx:id="indexLabel1" styleClass="header-label"/>
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="indexLabel2" styleClass="header-label"/>
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="indexLabel3" styleClass="header-label"/>
+    <Label GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="indexLabel4" styleClass="header-label"/>
+    <Label GridPane.columnIndex="4" GridPane.rowIndex="3" fx:id="indexLabel5" styleClass="header-label"/>
+</GridPane>

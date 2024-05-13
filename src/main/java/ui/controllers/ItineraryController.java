@@ -1,55 +1,24 @@
 package ui.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+import java.io.IOException;
 
 
 public class ItineraryController {
-
     @FXML
-    private Label dayLabel1;
+    private GridPane grid;
 
-    @FXML
-    private Label dayLabel2;
-
-    @FXML
-    private Label dayLabel3;
-
-    @FXML
-    private Label dayLabel4;
-
-    @FXML
-    private Label dayLabel5;
-
-    @FXML
-    private Label dayLabel6;
-
-    @FXML
-    private Label dayLabel7;
-
-    private LocalDate startDate = LocalDate.of(1999, 6, 2); // Start date: June 2, 1999
-
-    @FXML
-    private void nextWeek() {
-        startDate = startDate.plusWeeks(1); // Advance the week by one week
-        updateLabels();
-    }
-
-    public void updateLabels() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE");
-
-        // Update labels with dates for each day of the week
-        dayLabel1.setText(formatter.format(startDate));
-        dayLabel2.setText(formatter.format(startDate.plusDays(1)));
-        dayLabel3.setText(formatter.format(startDate.plusDays(2)));
-        dayLabel4.setText(formatter.format(startDate.plusDays(3)));
-        dayLabel5.setText(formatter.format(startDate.plusDays(4)));
-        dayLabel6.setText(formatter.format(startDate.plusDays(5)));
-        dayLabel7.setText(formatter.format(startDate.plusDays(6)));
+    public void start() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/attraction_card.fxml"));
+        HBox card = loader.load();
+        AttractionCardComponentController controller = loader.getController();
+        controller.setData("Title 1", "9:00 AM - 5:00 PM", "Lorem ipsum dolor sit amet", "#FF5722");
+        grid.add(card, 0, 3); // Add card to grid
+        grid.add(new Button(), 0, 3);
     }
 }

@@ -4,20 +4,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.GridPane?>
 
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10"
-          fx:controller="ui.controllers.ItineraryController">
-    <!-- Events -->
-    <!-- Each column represents a day of the week -->
-    <!-- Rows are for events -->
-
-    <!-- Labels for the days of the week -->
-    <Label GridPane.columnIndex="0" GridPane.rowIndex="2" fx:id="dayLabel1"/>
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="dayLabel2"/>
-    <Label GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="dayLabel3"/>
-    <Label GridPane.columnIndex="3" GridPane.rowIndex="2" fx:id="dayLabel4"/>
-    <Label GridPane.columnIndex="4" GridPane.rowIndex="2" fx:id="dayLabel5"/>
-    <Label GridPane.columnIndex="5" GridPane.rowIndex="2" fx:id="dayLabel6"/>
-    <Label GridPane.columnIndex="6" GridPane.rowIndex="2" fx:id="dayLabel7"/>
-
-    <Button text="Next Week" GridPane.columnSpan="7" GridPane.rowIndex="1" onAction="#nextWeek"/>
+          fx:controller="ui.controllers.ItineraryController" fx:id="grid">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20"/> <!-- 1/5 of 100% -->
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="20"/>
+    </columnConstraints>
+    <fx:include source="/components/days_header.fxml" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="7"/>
 </GridPane>
