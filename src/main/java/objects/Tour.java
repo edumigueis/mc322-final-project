@@ -1,6 +1,6 @@
-package src.objects;
+package objects;
 
-import src.helpers.Location;
+import helpers.Location;
 
 import java.util.List;
 

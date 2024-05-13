@@ -1,4 +1,4 @@
-package src.core.itinerary;
+package core.itinerary;
 
 import java.util.LinkedList;
 

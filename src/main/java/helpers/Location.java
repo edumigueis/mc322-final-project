@@ -1,4 +1,4 @@
-package src.helpers;
+package helpers;
 
 public class Location {
     private final double latitude;

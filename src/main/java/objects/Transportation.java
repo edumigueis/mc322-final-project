@@ -1,4 +1,4 @@
-package src.objects;
+package objects;
 
 import java.time.Duration;
 import java.time.LocalTime;

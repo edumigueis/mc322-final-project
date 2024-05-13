@@ -1,4 +1,4 @@
-package src.objects;
+package objects;
 
 import java.util.HashMap;
 import java.util.Map;
