@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="ui.controllers.AttractionCardComponentController" prefHeight="200"
+          stylesheets="/styling/styles.css" styleClass="tour-card" minHeight="150">
+        <Region fx:id="colorRegion" minHeight="20"/>
+        <VBox>
+            <Label fx:id="titleLabel" styleClass="green-title"/>
+            <Label fx:id="businessTimeLabel" styleClass="small-title"/>
+            <Label fx:id="descriptionLabel" wrapText="true" styleClass="small-text"/>
+        </VBox>
+</VBox>

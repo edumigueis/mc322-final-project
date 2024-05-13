@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -15,14 +12,17 @@
     </columnConstraints>
     <HBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="0">
         <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
-        <Label text="Adicionar atração" styleClass="purple-padded-card"/>
+        <Label text="Adicionar atração" userData="2" onMouseClicked="#handleLabelClick"
+               styleClass="purple-padded-card"/>
     </HBox>
-    <HBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+    <HBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="1">
         <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
-        <Label text="Adicionar atração" styleClass="purple-padded-card"/>
+        <Label text="Adicionar atração" userData="1" onMouseClicked="#handleLabelClick"
+               styleClass="purple-padded-card"/>
     </HBox>
-    <HBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="2" >
+    <HBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="2">
         <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
-        <Label text="Adicionar atração" styleClass="purple-padded-card"/>
+        <Label text="Adicionar atração" userData="0" onMouseClicked="#handleLabelClick"
+               styleClass="purple-padded-card"/>
     </HBox>
 </GridPane>
