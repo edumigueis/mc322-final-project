@@ -5,30 +5,29 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import ui.controllers.ItineraryController;
+import ui.controllers.StartScreenController;
 
 import java.io.IOException;
 
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("screens/itinerary.fxml"));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("screens/start.fxml"));
         Parent root = loader.load();
-        ItineraryController controller = loader.getController();
+        StartScreenController controller = loader.getController();
         Scene scene = new Scene(root, 800, 600);
-        stage.setTitle("Week Calendar");
+        stage.setTitle("Itinerary Maker");
         stage.setScene(scene);
         stage.show();
-
-        // Initial update of labels
-        controller.start();
     }
 
     public static void main(String[] args) {
         System.out.println("Application started.");
         Operator.start();
-        launch();
+        launch(args);
         System.out.println("Application finished.");
     }
 }

@@ -1,10 +1,13 @@
 package ui.controllers;
 
+import core.itinerary.Itinerary;
+import core.itinerary.ItineraryDay;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import objects.City;
 import objects.Transportation;
 import objects.TransportationType;
 
@@ -12,11 +15,19 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 
 
 public class ItineraryController {
     @FXML
     private GridPane mainGrid;
+    private Itinerary itinerary;
+
+    public void initData(City city, Date start, Date end) throws IOException {
+        this.itinerary = new Itinerary(city, start, end, new ArrayList<ItineraryDay>());
+        this.start();
+    }
 
     public void start() throws IOException {
         FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/components/attraction_card.fxml"));
