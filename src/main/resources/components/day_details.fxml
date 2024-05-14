@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane fx:id="grid" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="ui.controllers.DaysHeaderController" hgap="15" stylesheets="/styling/styles.css">
+          fx:controller="ui.controllers.DaysHeaderController" styleClass="header-spacer" hgap="15" stylesheets="/styling/styles.css">
     <columnConstraints>
         <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
         <ColumnConstraints percentWidth="33.33333"/>

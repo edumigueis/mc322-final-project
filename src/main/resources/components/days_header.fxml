@@ -10,9 +10,9 @@
         <ColumnConstraints percentWidth="33.33333"/>
         <ColumnConstraints percentWidth="33.33333"/>
     </columnConstraints>
-    <VBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="0">
-        <Label text="Paris" styleClass="small-title"/>
-        <Label text="Add days" styleClass="text"/>
+    <VBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="header-spacer">
+        <Label text="Paris" styleClass="big-title"/>
+        <Label text="Add days" styleClass="sub-title"/>
     </VBox>
     <HBox spacing="5" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="padded-card">
         <Label fx:id="indexLabel1" styleClass="header-label"/>

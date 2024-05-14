@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controllers.StartScreenController"
+            styleClass="edge-to-edge">
+    <VBox>
+        <VBox styleClass="yellow-main-header">
+            <Label text="Let's plan your next trip!"/>
+            <fx:include source="/components/date_selector.fxml"/>
+        </VBox>
+        <VBox styleClass="main-container">
+            <Label text="Select a city"/>
+            <GridPane hgap="20">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
+                    <ColumnConstraints percentWidth="33.33333"/>
+                    <ColumnConstraints percentWidth="33.33333"/>
+                </columnConstraints>
+                <VBox GridPane.columnIndex="0">
+                    <ImageView fitWidth="200" fitHeight="200">
+                        <Image url="https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg"/>
+                    </ImageView>
+                    <Label text="Paris"/>
+                </VBox>
+                <VBox GridPane.columnIndex="1">
+                    <ImageView fitWidth="200" fitHeight="200">
+                        <Image url="https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg"/>
+                    </ImageView>
+                    <Label text="Paris"/>
+                </VBox>
+                <VBox GridPane.columnIndex="2">
+                    <ImageView fitWidth="200" fitHeight="200">
+                        <Image url="https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg"/>
+                    </ImageView>
+                    <Label text="Paris"/>
+                </VBox>
+            </GridPane>
+            <Label text="Create Itinerary" alignment="center" styleClass="purple-padded-card"/>
+        </VBox>
+    </VBox>
+</ScrollPane>

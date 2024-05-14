@@ -14,7 +14,7 @@
     -fx-text-fill: #FFFFFF;
 }
 .label.green-title {
-    -fx-font-weight: 900;
+    -fx-font-weight: bold;
     -fx-font-size: 16;
     -fx-text-fill: #22DD85;
 }
@@ -27,6 +27,15 @@
     -fx-background-color: #070606;
     -fx-padding: 15 20 15 20;
 }
+.main-container{
+    -fx-background-color: #070606;
+    -fx-padding: 15 20 15 20;
+}
+.yellow-main-header{
+    -fx-background-color: #F7FF88;
+    -fx-padding: 15 20 15 20;
+}
+
 .line-container{
     -fx-padding: 0 3 0 20;
 }
@@ -70,4 +79,19 @@
     -fx-font-weight: bold;
         -fx-font-size: 14px;
         -fx-text-fill: #5e7d83;
+}
+
+.header-spacer{
+    -fx-padding: 0 0 10 0;
+}
+
+.label.label.big-title{
+    -fx-font-weight: bold;
+    -fx-font-size: 50px;
+    -fx-text-fill: #FFFFFF;
+}
+.label.sub-title{
+    -fx-font-weight: normal;
+    -fx-font-size: 17px;
+    -fx-text-fill: #5e7d83;
 }
