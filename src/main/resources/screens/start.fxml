@@ -27,25 +27,12 @@
             </VBox>
             <VBox prefHeight="${hroot.height * 0.65}">
                 <Label text="Select a city"/>
-                <GridPane hgap="20">
+                <GridPane hgap="20" fx:id="cityGrid">
                     <columnConstraints>
                         <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
                         <ColumnConstraints percentWidth="33.33333"/>
                         <ColumnConstraints percentWidth="33.33333"/>
                     </columnConstraints>
-                    <VBox GridPane.columnIndex="0">
-                        <ImageView fitWidth="200" fitHeight="200">
-                            <Image url="https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg"/>
-                        </ImageView>
-                        <Label text="Paris"/>
-                    </VBox>
-
-                    <VBox GridPane.columnIndex="2">
-                        <ImageView fitWidth="200" fitHeight="200">
-                            <Image url="https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg"/>
-                        </ImageView>
-                        <Label text="Paris"/>
-                    </VBox>
                 </GridPane>
                 <Label text="Create" onMouseClicked="#createItinerary" alignment="center"
                        styleClass="purple-padded-card"/>

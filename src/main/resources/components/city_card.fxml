@@ -8,8 +8,6 @@
 <VBox GridPane.columnIndex="1" xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="ui.controllers.CityCardController">
-        <ImageView fitWidth="220" fitHeight="220">
-            <Image url="https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg"/>
-        </ImageView>
-        <Label text="Paris"/>
-    </VBox>
+    <ImageView fx:id="cityImage" fitWidth="220" fitHeight="220" pickOnBounds="true"/>
+    <Label text="Paris" fx:id="cityName"/>
+</VBox>
