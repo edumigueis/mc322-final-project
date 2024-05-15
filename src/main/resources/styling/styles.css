@@ -1,161 +1,101 @@
-/*Poppins font*/
-@font-face {
-    font-family: 'Poppins Black';
-    src: url('/assets/fonts/Poppins/Poppins-Black.ttf');
-}
-
-@font-face {
-    font-family: 'Poppins Bold';
-    src: url('/assets/fonts/Poppins/Poppins-Bold.ttf');
-}
-
-@font-face {
-    font-family: 'Poppins Extra';
-    src: url('/assets/fonts/Poppins/Poppins-ExtraBold.ttf');
-}
-
-@font-face {
-    font-family: 'Poppins Medium';
-    src: url('/assets/fonts/Poppins/Poppins-Medium.ttf');
-}
-
-@font-face {
-    font-family: 'Poppins Regular';
-    src: url('/assets/fonts/Poppins/Poppins-Regular.ttf');
-}
-/* Overpass font */
-@font-face {
-    font-family: 'Overpass Black';
-    src: url('/assets/fonts/Overpass/Overpass-Black.ttf');
-}
-
-@font-face {
-    font-family: 'Overpass Bold';
-    src: url('/assets/fonts/Overpass/Overpass-Bold.ttf');
-}
-
-@font-face {
-    font-family: 'Overpass Extra';
-    src: url('/assets/fonts/Overpass/Overpass-ExtraBold.ttf');
-}
-
-@font-face {
-    font-family: 'Overpass Medium';
-    src: url('/assets/fonts/Overpass/Overpass-Medium.ttf');
-}
-
-@font-face {
-    font-family: 'Overpass Regular';
-    src: url('/assets/fonts/Overpass/Overpass-Regular.ttf');
-}
-
 .label.small-title {
-    -fx-font-weight: bold;
-    -fx-font-size: 13px;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-family: "Poppins Bold";
+     -fx-font-weight: bold;
+     -fx-font-size: 13px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Poppins Bold";
 }
-.label.text {
-    -fx-font-size: 11px;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-family: "Overpass Regular";
+ .label.text {
+     -fx-font-size: 11px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Overpass Regular";
 }
-.label.small-text {
-    -fx-font-size: 10px;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-family: "Overpass Regular";
+ .label.small-text {
+     -fx-font-size: 10px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Overpass Regular";
 }
-.label.green-title {
-    -fx-font-weight: bold;
-    -fx-font-size: 16;
-    -fx-text-fill: #22DD85;
-    -fx-font-family: "Poppins Bold";
+ .label.green-title {
+     -fx-font-weight: bold;
+     -fx-font-size: 16;
+     -fx-text-fill: #22DD85;
+     -fx-font-family: "Poppins Bold";
 }
-.attraction-card {
-    -fx-background-color: #083740;
-    -fx-background-radius: 16px;
-    -fx-border-radius: 16px;
+ .attraction-card {
+     -fx-background-color: #083740;
+     -fx-background-radius: 16px;
+     -fx-border-radius: 16px;
 }
-#mainGrid {
-    -fx-background-color: #070606;
-    -fx-padding: 15 20 15 20;
+ #mainGrid {
+     -fx-background-color: #070606;
+     -fx-padding: 15 20 15 20;
 }
-.main-container{
-    -fx-background-color: #070606;
-    -fx-padding: 15 20 15 20;
+ .main-container{
+     -fx-background-color: #070606;
+     -fx-padding: 15 20 15 20;
 }
-.yellow-main-header{
-    -fx-background-color: #F7FF88;
-    -fx-padding: 15 20 15 20;
+ .yellow-main-header{
+     -fx-background-color: #F7FF88;
+     -fx-padding: 15 20 15 20;
 }
-
-.line-container{
-    -fx-padding: 0 3 0 20;
+ .line-container{
+     -fx-padding: 0 3 0 20;
 }
-.line{
-    -fx-stroke-dash-array: 5 5;
-    -fx-stroke-width: 1.5;
-    -fx-stroke: #5e7d83
+ .line{
+     -fx-stroke-dash-array: 5 5;
+     -fx-stroke-width: 1.5;
+     -fx-stroke: #5e7d83
 }
-
-.header-label{
-    -fx-font-size: 14px;
-    -fx-text-fill: #5e7d83;
-    -fx-font-family: "Overpass Black";
+ .header-label{
+     -fx-font-size: 14px;
+     -fx-text-fill: #5e7d83;
+     -fx-font-family: "Overpass Black";
 }
-
-.header-label-day{
-    -fx-font-size: 14px;
-    -fx-text-fill: #5e7d83;
-    -fx-font-family: "Overpass Regular";
+ .header-label-day{
+     -fx-font-size: 14px;
+     -fx-text-fill: #5e7d83;
+     -fx-font-family: "Overpass Regular";
 }
-
-.padded-card{
-    -fx-padding: 5 10 5 10;
+ .padded-card{
+     -fx-padding: 5 10 5 10;
 }
-
-.purple-padded-card{
-    -fx-background-color: #BCA5ED;
-        -fx-background-radius: 12px;
-        -fx-border-radius: 12px;
-    -fx-padding: 5;
-        -fx-font-size: 12px;
-        -fx-text-fill: #070606;
-        -fx-font-family: "Overpass Bold";
+ .purple-padded-card{
+     -fx-background-color: #BCA5ED;
+     -fx-background-radius: 12px;
+     -fx-border-radius: 12px;
+     -fx-padding: 5;
+     -fx-font-size: 12px;
+     -fx-text-fill: #070606;
+     -fx-font-family: "Overpass Bold";
 }
-
-.gray-padded-card{
-    -fx-background-color: #081e23;
-        -fx-background-radius: 12px;
-        -fx-border-radius: 12px;
-    -fx-padding: 5;
-        -fx-font-size: 14px;
-        -fx-text-fill: #5e7d83;
-        -fx-font-family: "Overpass Bold";
+ .gray-padded-card{
+     -fx-background-color: #081e23;
+     -fx-background-radius: 12px;
+     -fx-border-radius: 12px;
+     -fx-padding: 5;
+     -fx-font-size: 14px;
+     -fx-text-fill: #5e7d83;
+     -fx-font-family: "Overpass Bold";
 }
-
-.header-spacer{
-    -fx-padding: 0 0 10 0;
+ .header-spacer{
+     -fx-padding: 0 0 10 0;
 }
-
-.label.label.big-title{
-    -fx-font-size: 50px;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-family: "Poppins Bold";
+ .label.label.big-title{
+     -fx-font-size: 50px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Poppins Bold";
 }
-.label.sub-title{
-    -fx-font-family: "Poppins Medium";
-    -fx-font-size: 17px;
-    -fx-text-fill: #5e7d83;
+ .label.sub-title{
+     -fx-font-family: "Poppins Medium";
+     -fx-font-size: 17px;
+     -fx-text-fill: #5e7d83;
 }
-.image-container {
-    -fx-background-radius: 10px; /* Adjust the radius as needed */
-    -fx-border-radius: 10px; /* Apply border radius */
-    -fx-background-color: transparent; /* Ensure the background is transparent */
+ .image-container {
+     -fx-background-radius: 10px;
+     -fx-border-radius: 10px;
+     -fx-background-color: transparent;
 }
-
-.start-title{
-        -fx-font-size: 50px;
-        -fx-text-fill: #FFFFFF; /* yellow text */
-        -fx-font-family: "Poppins Bold";
+ .start-title{
+     -fx-font-size: 50px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Poppins Bold";
 }
