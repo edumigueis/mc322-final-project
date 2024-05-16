@@ -1,10 +1,8 @@
 package ui.components;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import ui.controllers.AttractionCardController;
-import ui.controllers.TimeSlotCardController;
 
 import java.io.IOException;
 

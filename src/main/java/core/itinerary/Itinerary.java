@@ -2,7 +2,6 @@ package core.itinerary;
 
 import objects.City;
 
-import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.List;
 

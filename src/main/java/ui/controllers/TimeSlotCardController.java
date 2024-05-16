@@ -1,11 +1,8 @@
 package ui.controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
-
-import java.io.IOException;
 
 public class TimeSlotCardController {
     @FXML
