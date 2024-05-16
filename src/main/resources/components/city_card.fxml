@@ -2,12 +2,14 @@
 
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.Label?>
 <VBox GridPane.columnIndex="1" xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="ui.controllers.CityCardController">
-    <ImageView fx:id="cityImage" fitWidth="220" fitHeight="220" pickOnBounds="true"/>
+      fx:controller="ui.controllers.CityCardController" onMouseClicked="#selectSelf" fx:id="card">
+
+    <StackPane fx:id="imageContainer" prefWidth="200" prefHeight="200">
+        <ImageView fx:id="cityImage" fitWidth="200" fitHeight="200" pickOnBounds="true"/>
+    </StackPane>
     <Label text="Paris" fx:id="cityName"/>
 </VBox>

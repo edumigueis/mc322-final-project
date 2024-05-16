@@ -49,7 +49,7 @@ public class DaysHeaderController implements AttractionModalController.Callback 
     }
 
     @FXML
-    private void handleLabelClick(javafx.scene.input.MouseEvent event) {
+    private void handleLabelClick(MouseEvent event) {
         // You can access the label or its properties if needed
         Label label = (Label) event.getSource();
 

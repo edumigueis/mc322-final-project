@@ -15,21 +15,21 @@ import objects.Activity;
 import objects.City;
 import objects.Transportation;
 import objects.TransportationType;
+import ui.helpers.CardParent;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
-public class StartScreenController implements Initializable {
+public class StartScreenController implements Initializable, CardParent {
     private List<City> cities;
     private Date startDate;
     private Date endDate;
     private int pickedCity;
+
+    private final Map<Node, CityCardController> controllersMap = new HashMap<>();
 
     @FXML
     private GridPane cityGrid;
@@ -69,12 +69,31 @@ public class StartScreenController implements Initializable {
     }
 
     private void loadCities() throws IOException {
-        for(int i = 0; i < this.cities.size(); i++){
+        for (int i = 0; i < this.cities.size(); i++) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/city_card.fxml"));
             VBox card3 = loader.load();
             CityCardController controller = loader.getController();
-            controller.setData(cities.get(i));
+            controller.setData(cities.get(i), i);
+            controller.setParentController(this);
             cityGrid.add(card3, i % 3, i / 3);
+            controllersMap.put(card3, controller);
+        }
+    }
+
+    @Override
+    public void itemSelected(int selectedIndex) {
+        this.pickedCity = selectedIndex;
+        List<Node> children = cityGrid.getChildren();
+        for (Node child : children) {
+            if (child instanceof VBox) {
+                CityCardController controller = controllersMap.get(child);
+                if (controller != null) {
+                    int index = GridPane.getColumnIndex(child) + GridPane.getRowIndex(child) * cityGrid.getRowCount();
+                    if (index != selectedIndex) {
+                        controller.unselect();
+                    }
+                }
+            }
         }
     }
 }
