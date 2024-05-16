@@ -15,8 +15,6 @@
             <ColumnConstraints percentWidth="33.33333"/>
             <ColumnConstraints percentWidth="33.33333"/>
         </columnConstraints>
-        <fx:include source="/components/days_header.fxml" GridPane.columnIndex="0" GridPane.rowIndex="0"
-                    GridPane.columnSpan="3"/>
         <fx:include source="/components/day_details.fxml" GridPane.columnIndex="0" GridPane.rowIndex="1"
                     GridPane.columnSpan="3"/>
     </GridPane>

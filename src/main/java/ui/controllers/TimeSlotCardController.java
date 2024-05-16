@@ -1,10 +1,13 @@
 package ui.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 
-public class AttractionCardComponentController {
+import java.io.IOException;
+
+public class TimeSlotCardController {
     @FXML
     private Region colorRegion;
     @FXML
@@ -14,12 +17,12 @@ public class AttractionCardComponentController {
     @FXML
     private Label descriptionLabel;
 
-    //TO DO: AQUI TEREMOS UM OBJETO DO TIPO TIMESLOT
     public void setData(String title, String businessTime, String description, String color) {
         titleLabel.setText(title);
         businessTimeLabel.setText("Business Time: " + businessTime);
         descriptionLabel.setText("Description: " + description);
         colorRegion.setStyle("-fx-background-color: " + color + ";");
     }
+    //TO DO: AQUI TEREMOS INTERAÇÕES USER-UI
 }
 

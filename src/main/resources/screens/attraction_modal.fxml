@@ -10,6 +10,9 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="ui.controllers.AttractionModalController"
             prefHeight="400.0" prefWidth="600.0">
+    <ListView fx:id="cardsContainer">
+
+    </ListView>
     <Button xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:id="closeButton" text="Close" onAction="#handleReturnValue"/>
 </AnchorPane>
