@@ -10,6 +10,14 @@ public class Attraction implements Activity {
     private String description;
     private String imageThumbURL;
 
+    public Attraction(Location location, String name, BusinessHours openTime, String description, String imageThumbURL) {
+        this.location = location;
+        this.name = name;
+        this.openTime = openTime;
+        this.description = description;
+        this.imageThumbURL = imageThumbURL;
+    }
+
     @Override
     public Location getLocation() {
         return location;

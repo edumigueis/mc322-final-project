@@ -2,6 +2,10 @@ package ui.controllers;
 
 import core.itinerary.Itinerary;
 import core.itinerary.ItineraryDay;
+import entities.activities.Activity;
+import entities.activities.CulturalEvent;
+import entities.activities.Museum;
+import entities.activities.Sight;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -17,6 +21,7 @@ import java.time.LocalTime;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ItineraryController {
@@ -29,13 +34,14 @@ public class ItineraryController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/days_header.fxml"));
         GridPane header = loader.load();
         DaysHeaderController controller = loader.getController();
-        controller.setData(this.itinerary.getCity().getThingsToDo());
+        controller.initData(this.itinerary.getCity(), this.itinerary.getStartDate());
         mainGrid.add(header, 0, 0, 3, 1); // Add first card to grid
         this.start();
     }
 
+    //TO DO - REMOVE THIS
     public void start() throws IOException {
-        TimeSlotCard card1 = new TimeSlotCard();
+        /*TimeSlotCard card1 = new TimeSlotCard();
         card1.getController().setData("Title 1", "9:00 AM - 5:00 PM", "Lorem ipsum dolor sit amet", "#FF5722");
         TimeSlotCard card2 = new TimeSlotCard();
         card2.getController().setData("Title 1", "9:00 AM - 5:00 PM", "Lorem ipsum dolor sit amet", "#FF5722");
@@ -47,6 +53,6 @@ public class ItineraryController {
         HBox card3 = loader3.load();
         DisplacementCardController controller3 = loader3.getController();
         controller3.setData(new Transportation(TransportationType.BUS, Duration.ofMinutes(2), LocalTime.of(10, 0, 0)));
-        mainGrid.add(card3, 0, 4);
+        mainGrid.add(card3, 0, 4);*/
     }
 }

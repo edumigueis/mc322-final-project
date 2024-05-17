@@ -1,5 +1,8 @@
 package ui.controllers;
 
+import entities.activities.Museum;
+import helpers.BusinessHours;
+import helpers.Location;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import entities.activities.Activity;
 import entities.City;
@@ -21,23 +25,24 @@ import java.util.*;
 
 public class StartScreenController implements Initializable, CardParent {
     private List<City> cities;
-    private LocalDate startDate;
-    private LocalDate endDate;
     private int pickedCity;
 
     private final Map<Node, CityCardController> controllersMap = new HashMap<>();
+    private DateSelectorController dateController;
 
     @FXML
     private GridPane cityGrid;
+    @FXML
+    private Pane dateContainer;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.cities = new ArrayList<City>();
-        this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<Activity>()));
+        // TO DO LOAD CITY FILE
+        this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<Activity>() {{
+            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
+        }}));
         this.cities.add(new City("Shanghai", "The city of light", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", new ArrayList<Activity>()));
-        this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
-        this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
-        this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
         this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
 
         // TO DO: aqui faremos leitura de arquivos
@@ -46,6 +51,13 @@ public class StartScreenController implements Initializable, CardParent {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        try{
+            loadDatePicker();
+        }
+        catch (IOException e){
+            System.out.println("Modal not available. Check path.");
+        }
+
     }
 
     @FXML
@@ -56,10 +68,11 @@ public class StartScreenController implements Initializable, CardParent {
 
             ItineraryController secondScreenController = loader.getController();
 
-            secondScreenController.initData(cities.get(pickedCity), startDate, endDate);
+            secondScreenController.initData(cities.get(pickedCity), dateController.getStartDate(), dateController.getEndDate());
 
+            Scene scene = new Scene(root, 900, 600);
             Stage stage = new Stage();
-            stage.setScene(new Scene(root));
+            stage.setScene(scene);
             stage.show();
 
             ((Node) event.getSource()).getScene().getWindow().hide();
@@ -86,14 +99,19 @@ public class StartScreenController implements Initializable, CardParent {
         for (Node child : children) {
             CityCardController controller = controllersMap.get(child);
             if (controller != null) {
-                int col = GridPane.getColumnIndex(child);
-                int row = GridPane.getRowIndex(child);
-                int count = cityGrid.getColumnCount();
-                int index = (row * count) + col;
+                int index = (GridPane.getRowIndex(child) * cityGrid.getColumnCount())
+                        + GridPane.getColumnIndex(child);
                 if (index != selectedIndex) {
                     controller.unselect();
                 }
             }
         }
+    }
+
+    private void loadDatePicker() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/date_selector.fxml"));
+        Parent datePickerRoot = loader.load();
+        this.dateController = loader.getController();
+        dateContainer.getChildren().add(datePickerRoot);
     }
 }

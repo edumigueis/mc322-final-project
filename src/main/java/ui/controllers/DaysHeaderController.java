@@ -1,8 +1,8 @@
 package ui.controllers;
 
+import entities.City;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,7 +11,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import entities.activities.Activity;
 import entities.activities.Attraction;
 
 import java.io.IOException;
@@ -21,12 +20,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class DaysHeaderController implements AttractionModalController.Callback, Initializable {
+public class DaysHeaderController implements AttractionModalController.Callback {
     private int iterations = 0;
-    private LocalDate startDate = LocalDate.of(1999, 6, 2); // Start date: June 2, 1999
+    private LocalDate startDate;
+    private City cityData;
 
     @FXML
     private GridPane grid;
+    @FXML
+    private Label cityName;
 
     @FXML
     private void nextWeek() {
@@ -52,28 +54,20 @@ public class DaysHeaderController implements AttractionModalController.Callback,
 
     @FXML
     private void handleLabelClick(MouseEvent event) {
-        Label label = (Label) event.getSource();
-
-        // Retrieve the day information from the label's userData property
-        int day = this.iterations - Integer.parseInt((String) label.getUserData());
-        clickShow(event, day);
-    }
-
-    private void clickShow(MouseEvent event, int day) {
         try {
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/attraction_modal.fxml"));
             Parent root = loader.load();
             AttractionModalController modalController = loader.getController();
             modalController.setCallback(this);
-            //modalController.setData(this.parent);
+            modalController.setData(this.cityData.getThingsToDo());
             stage.setScene(new Scene(root));
-            stage.setTitle("My modal window");
+            stage.setTitle("Things to do in " + this.cityData.getName());
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(((Node) event.getSource()).getScene().getWindow());
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Modal not available. Check path.");
         }
     }
 
@@ -82,12 +76,11 @@ public class DaysHeaderController implements AttractionModalController.Callback,
         // Handle the returned result
         // Aqui será retornada a atração nova
     }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    public void initData(City city, LocalDate startDate){
+        this.cityData = city;
+        this.cityName.setText(city.getName());
+        this.startDate = startDate;
         this.updateLabels();
-    }
-
-    public void setData(List<Activity> attractions){
-
     }
 }

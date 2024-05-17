@@ -11,9 +11,10 @@
         <ColumnConstraints percentWidth="33.33333"/>
     </columnConstraints>
     <VBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="header-spacer">
-        <Label text="Paris" styleClass="big-title"/>
+        <Label fx:id="cityName" styleClass="big-title"/>
         <Label text="Add days" styleClass="sub-title"/>
     </VBox>
+    <Button text="Next Week" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#nextWeek"/>
     <HBox spacing="5" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="padded-card">
         <Label fx:id="indexLabel1" styleClass="header-label"/>
         <Region HBox.hgrow="ALWAYS"/>
@@ -29,5 +30,19 @@
         <Region HBox.hgrow="ALWAYS"/>
         <Label fx:id="dayLabel3" styleClass="header-label-day"/>
     </HBox>
-    <Button text="Next Week" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#nextWeek"/>
+    <HBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="0">
+        <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
+        <Label text="Adicionar atração" userData="2" onMouseClicked="#handleLabelClick"
+               styleClass="purple-padded-card"/>
+    </HBox>
+    <HBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="1">
+        <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
+        <Label text="Adicionar atração" userData="1" onMouseClicked="#handleLabelClick"
+               styleClass="purple-padded-card"/>
+    </HBox>
+    <HBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="2">
+        <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
+        <Label text="Adicionar atração" userData="0" onMouseClicked="#handleLabelClick"
+               styleClass="purple-padded-card"/>
+    </HBox>
 </GridPane>

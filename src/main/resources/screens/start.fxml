@@ -21,7 +21,7 @@
 
                 </HBox>
                 <Region VBox.vgrow="ALWAYS"/>
-                <fx:include source="/components/date_selector.fxml"/>
+                <Pane fx:id="dateContainer" />
             </VBox>
             <VBox spacing="15">
                 <Label text="Select a city" styleClass="small-title"/>

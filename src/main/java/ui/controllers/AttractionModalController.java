@@ -1,5 +1,7 @@
 package ui.controllers;
 
+import helpers.BusinessHours;
+import helpers.Location;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -34,7 +36,7 @@ public class AttractionModalController {
 
     @FXML
     private void handleReturnValue() {
-        Attraction value = new Attraction();
+        Attraction value = new Attraction(new Location(1,2), "a", new BusinessHours(), "a", "");
 
         // Call the callback method with the return value
         if (callback != null)

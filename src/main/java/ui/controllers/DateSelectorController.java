@@ -3,13 +3,16 @@ package ui.controllers;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.util.Callback;
 
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class DateSelectorController {
+public class DateSelectorController implements Initializable {
     @FXML
     private DatePicker datePickerStart;
 
@@ -24,8 +27,8 @@ public class DateSelectorController {
         return datePickerEnd.getValue();
     }
 
-    @FXML
-    private void initialize() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         datePickerStart.setValue(LocalDate.now()); // Set today's date as default
         datePickerEnd.setValue(LocalDate.now().plusDays(1)); // Set tomorrow's date as default
 

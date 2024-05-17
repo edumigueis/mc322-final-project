@@ -10,6 +10,13 @@ public class Restaurant implements Activity {
     private BusinessHours openTime;
     private PriceRange priceRange;
 
+    public Restaurant(Location location, String name, BusinessHours openTime, PriceRange priceRange) {
+        this.location = location;
+        this.name = name;
+        this.openTime = openTime;
+        this.priceRange = priceRange;
+    }
+
     @Override
     public Location getLocation() {
         return location;
