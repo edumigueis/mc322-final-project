@@ -6,17 +6,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import objects.City;
-import objects.Transportation;
-import objects.TransportationType;
+import entities.City;
+import entities.Transportation;
+import entities.TransportationType;
 import ui.components.TimeSlotCard;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class ItineraryController {
@@ -24,7 +24,7 @@ public class ItineraryController {
     private GridPane mainGrid;
     private Itinerary itinerary;
 
-    public void initData(City city, Date start, Date end) throws IOException {
+    public void initData(City city, LocalDate start, LocalDate end) throws IOException {
         this.itinerary = new Itinerary(city, start, end, new ArrayList<ItineraryDay>());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/days_header.fxml"));
         GridPane header = loader.load();

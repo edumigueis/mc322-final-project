@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import objects.City;
+import entities.City;
 import ui.helpers.CardParent;
 
 public class CityCardController {

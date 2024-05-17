@@ -9,19 +9,20 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import objects.Activity;
-import objects.City;
+import entities.activities.Activity;
+import entities.City;
 import ui.components.CityCard;
 import ui.helpers.CardParent;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.*;
 
 public class StartScreenController implements Initializable, CardParent {
     private List<City> cities;
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private int pickedCity;
 
     private final Map<Node, CityCardController> controllersMap = new HashMap<>();

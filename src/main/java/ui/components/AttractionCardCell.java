@@ -1,7 +1,7 @@
 package ui.components;
 
 import javafx.scene.control.ListCell;
-import objects.Activity;
+import entities.activities.Activity;
 
 public class AttractionCardCell extends ListCell<Activity> {
         @Override

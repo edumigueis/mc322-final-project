@@ -6,8 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import objects.Activity;
-import objects.Attraction;
+import entities.activities.Activity;
+import entities.activities.Attraction;
 import ui.components.AttractionCardCell;
 
 import java.io.IOException;

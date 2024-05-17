@@ -11,8 +11,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import objects.Activity;
-import objects.Attraction;
+import entities.activities.Activity;
+import entities.activities.Attraction;
 
 import java.io.IOException;
 import java.net.URL;

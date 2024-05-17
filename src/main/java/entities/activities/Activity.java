@@ -1,4 +1,4 @@
-package objects;
+package entities.activities;
 
 import helpers.Location;
 

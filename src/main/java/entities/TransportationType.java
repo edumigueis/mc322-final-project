@@ -1,4 +1,4 @@
-package objects;
+package entities;
 
 public enum TransportationType {
     BUS,

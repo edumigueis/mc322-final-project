@@ -45,12 +45,9 @@ public class DateSelectorController {
             }
         });
 
-        datePickerStart.valueProperty().addListener(new ChangeListener<LocalDate>() {
-            @Override
-            public void changed(ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue) {
-                if (datePickerEnd.getValue() != null && newValue != null && datePickerEnd.getValue().isBefore(newValue))
-                    datePickerEnd.setValue(newValue.plusDays(1));
-            }
+        datePickerStart.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (datePickerEnd.getValue() != null && newValue != null && datePickerEnd.getValue().isBefore(newValue))
+                datePickerEnd.setValue(newValue.plusDays(1));
         });
     }
 }

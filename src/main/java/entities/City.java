@@ -1,4 +1,6 @@
-package objects;
+package entities;
+
+import entities.activities.Activity;
 
 import java.util.List;
 
@@ -7,6 +9,7 @@ public class City {
     private String description;
     private String thumbImageUrl;
     private List<Activity> thingsToDo;
+    private List<Hotel> hotels;
 
     public City(String name, String description, String thumbImageUrl, List<Activity> thingsToDo) {
         this.name = name;
@@ -45,5 +48,24 @@ public class City {
 
     public void setThingsToDo(List<Activity> thingsToDo) {
         this.thingsToDo = thingsToDo;
+    }
+
+    public List<Hotel> getHotels() {
+        return hotels;
+    }
+
+    public void setHotels(List<Hotel> hotels) {
+        this.hotels = hotels;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", thumbImageUrl='" + thumbImageUrl + '\'' +
+                ", thingsToDo=" + thingsToDo +
+                ", hotels=" + hotels +
+                '}';
     }
 }

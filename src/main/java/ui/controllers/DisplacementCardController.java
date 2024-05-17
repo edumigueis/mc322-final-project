@@ -2,7 +2,7 @@ package ui.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import objects.Transportation;
+import entities.Transportation;
 
 public class DisplacementCardController {
     @FXML
