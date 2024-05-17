@@ -7,14 +7,13 @@
 <?import javafx.geometry.Insets?>
 <VBox GridPane.columnIndex="1" xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="ui.controllers.CityCardController" onMouseClicked="#selectSelf" fx:id="card">
-
-    <StackPane fx:id="imageContainer" prefWidth="200" prefHeight="200">
-        <ResponsiveImage fx:id="cityImage" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      fx:controller="ui.controllers.CityCardController" onMouseClicked="#selectSelf" fx:id="card" spacing="4">
+    <StackPane fx:id="imageContainer" style="-fx-border-radius: 12px">
+    <ResponsiveImage prefWidth="200" prefHeight="200" fx:id="cityImage" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <clipCornerRadii>
                 <Insets top="12" right="12" bottom="12" left="12"/>
             </clipCornerRadii>
         </ResponsiveImage>
     </StackPane>
-    <Label text="Paris" fx:id="cityName"/>
+    <Label fx:id="cityName"/>
 </VBox>

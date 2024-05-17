@@ -36,6 +36,9 @@ public class StartScreenController implements Initializable, CardParent {
         this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<Activity>()));
         this.cities.add(new City("Shanghai", "The city of light", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", new ArrayList<Activity>()));
         this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
+        this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
+        this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
+        this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
 
         // TO DO: aqui faremos leitura de arquivos
         try {
@@ -69,7 +72,9 @@ public class StartScreenController implements Initializable, CardParent {
         for (int i = 0; i < this.cities.size(); i++) {
             CityCard card = new CityCard(this);
             card.getController().setData(cities.get(i), i);
-            cityGrid.add(card, i % 3, i / 3);
+            int col = i % 3;
+            int row = i / 3;
+            cityGrid.add(card, col, row);
             controllersMap.put(card, card.getController());
         }
     }
@@ -81,7 +86,10 @@ public class StartScreenController implements Initializable, CardParent {
         for (Node child : children) {
             CityCardController controller = controllersMap.get(child);
             if (controller != null) {
-                int index = GridPane.getColumnIndex(child) + GridPane.getRowIndex(child) * cityGrid.getRowCount();
+                int col = GridPane.getColumnIndex(child);
+                int row = GridPane.getRowIndex(child);
+                int count = cityGrid.getColumnCount();
+                int index = (row * count) + col;
                 if (index != selectedIndex) {
                     controller.unselect();
                 }

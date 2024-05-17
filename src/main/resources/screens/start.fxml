@@ -8,11 +8,11 @@
             fx:controller="ui.controllers.StartScreenController"
             styleClass="edge-to-edge"
             stylesheets="/styling/styles.css"
+            fitToWidth="true"
             fx:id="hroot">
-    <StackPane>
-        <VBox styleClass="main-container" alignment="center" prefHeight="${hroot.height}" prefWidth="${hroot.width}"
+        <VBox styleClass="main-container" alignment="center"
               spacing="15">
-            <VBox prefHeight="${hroot.height * 0.35}" prefWidth="${hroot.width}">
+            <VBox prefHeight="${hroot.height * 0.35}">
                 <HBox>
                     <VBox spacing="-10">
                         <Label text="Hey!" styleClass="start-title"/>
@@ -23,9 +23,9 @@
                 <Region VBox.vgrow="ALWAYS"/>
                 <fx:include source="/components/date_selector.fxml"/>
             </VBox>
-            <VBox prefHeight="${hroot.height * 0.65}" spacing="15">
+            <VBox spacing="15">
                 <Label text="Select a city" styleClass="small-title"/>
-                <GridPane hgap="20" fx:id="cityGrid">
+                <GridPane hgap="20" vgap="20" fx:id="cityGrid" minWidth="700" alignment="center">
                     <columnConstraints>
                         <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
                         <ColumnConstraints percentWidth="33.33333"/>
@@ -36,5 +36,4 @@
             <Label text="Create" onMouseClicked="#createItinerary"
                    styleClass="purple-padded-card" alignment="center"/>
         </VBox>
-    </StackPane>
 </ScrollPane>

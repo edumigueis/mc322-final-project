@@ -17,7 +17,7 @@
     <ResponsiveImage GridPane.columnIndex="0" GridPane.rowIndex="0">
         <imageUrl>
             https://francabrasil.com.br/wp-content/uploads/sites/11/2015/02/paris-1024x682.jpg</imageUrl>
-        <clipCornerRadii><Insets top="18" left="18"/></clipCornerRadii>
+        <clipCornerRadii><Insets left="18" bottom="18"/></clipCornerRadii>
     </ResponsiveImage>
     <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
         <Label fx:id="titleLabel" styleClass="green-title"/>

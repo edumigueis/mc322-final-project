@@ -21,25 +21,20 @@ public class ResponsiveImage extends StackPane {
     }
 
     private void initClip() {
-        Rectangle clip = new Rectangle();
-        clip.setArcWidth(0);
-        clip.setArcHeight(0);
-        setClip(clip);
+        CustomRectangle c = new CustomRectangle(getWidth(),
+                getHeight(), 0, 0, 0, 0);
+        setClip(c);
         // Initial clip update
         updateClip();
     }
 
     private void updateClip() {
-        Rectangle clip = (Rectangle) getClip();
+        CustomRectangle clip = (CustomRectangle) getClip();
         clip.setWidth(getWidth());
         clip.setHeight(getHeight());
 
         Insets cornerRadii = clipCornerRadii.get();
-        double arcWidth = cornerRadii.getLeft();
-        double arcHeight = cornerRadii.getTop();
-
-        clip.setArcWidth(arcWidth);
-        clip.setArcHeight(arcHeight);
+        clip.setClipRadii(cornerRadii.getLeft(), cornerRadii.getTop(), cornerRadii.getRight(), cornerRadii.getBottom());
     }
 
     public final String getImageUrl() {
