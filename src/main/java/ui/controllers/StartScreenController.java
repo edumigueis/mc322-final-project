@@ -41,6 +41,8 @@ public class StartScreenController implements Initializable, CardParent {
         // TO DO LOAD CITY FILE
         this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<Activity>() {{
             add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
+            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
+            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
         }}));
         this.cities.add(new City("Shanghai", "The city of light", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", new ArrayList<Activity>()));
         this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));

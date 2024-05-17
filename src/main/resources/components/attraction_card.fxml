@@ -21,7 +21,7 @@
             <Label fx:id="businessTimeLabel" styleClass="small-title"/>
         </VBox>
         <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
-            <Label fx:id="descriptionLabel" wrapText="true" styleClass="small-text"/>
+            <Label fx:id="descriptionLabel" wrapText="true" styleClass="text"/>
             <Label fx:id="priceLabel" styleClass="small-title"/>
         </VBox>
     </HBox>

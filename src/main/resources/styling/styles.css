@@ -1,26 +1,7 @@
-.label.small-title {
-     -fx-font-weight: bold;
-     -fx-font-size: 13px;
-     -fx-text-fill: #FFFFFF;
-     -fx-font-family: "Poppins Bold";
-}
- .label.text {
-     -fx-font-size: 11px;
-     -fx-text-fill: #FFFFFF;
-     -fx-font-family: "Overpass Regular";
-}
- .label.small-text {
-     -fx-font-size: 10px;
-     -fx-text-fill: #FFFFFF;
-     -fx-font-family: "Overpass Regular";
-}
- .label.green-title {
-     -fx-font-weight: bold;
-     -fx-font-size: 16;
-     -fx-text-fill: #22DD85;
-     -fx-font-family: "Poppins Bold";
-}
- .attraction-card {
+@import url("/styling/fonts.css");
+@import url("/styling/text.css");
+
+.attraction-card {
      -fx-background-color: #083740;
      -fx-background-radius: 18px;
      -fx-border-radius: 18px;
@@ -69,35 +50,13 @@
 }
  .gray-padded-card{
      -fx-background-color: #081e23;
-     -fx-background-radius: 12px;
-     -fx-border-radius: 12px;
-     -fx-padding: 5;
-     -fx-font-size: 14px;
+          -fx-background-radius: 12px;
+          -fx-border-radius: 12px;
+          -fx-padding: 5;
+          -fx-font-size: 12px;
      -fx-text-fill: #5e7d83;
      -fx-font-family: "Overpass Bold";
 }
  .header-spacer{
      -fx-padding: 0 0 10 0;
 }
- .label.label.big-title{
-     -fx-font-size: 50px;
-     -fx-text-fill: #FFFFFF;
-     -fx-font-family: "Poppins Bold";
-}
- .label.sub-title{
-     -fx-font-family: "Poppins Medium";
-     -fx-font-size: 17px;
-     -fx-text-fill: #5e7d83;
-}
- .start-title{
-     -fx-font-size: 50px;
-     -fx-text-fill: #FFFFFF;
-     -fx-font-family: "Poppins Bold";
-}
-
-#cityName{
-    -fx-font-size: 11px;
-         -fx-text-fill: #CDCDCD;
-         -fx-font-family: "Overpass Bold";
-}
-

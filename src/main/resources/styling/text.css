@@ -1,0 +1,43 @@
+.label.small-title {
+     -fx-font-weight: bold;
+     -fx-font-size: 13px;
+     -fx-text-fill: #CDCDCD;
+     -fx-font-family: "Overpass Extra";
+}
+ .label.text {
+     -fx-font-size: 11px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Overpass Regular";
+}
+ .label.text-dark {
+     -fx-font-size: 11px;
+     -fx-text-fill: #070606;
+     -fx-font-family: "Overpass Regular";
+}
+ .label.green-title {
+     -fx-font-weight: bold;
+     -fx-font-size: 16;
+     -fx-text-fill: #22DD85;
+     -fx-font-family: "Poppins Bold";
+}
+ .label.big-title{
+     -fx-font-size: 50px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Poppins Bold";
+}
+.label.sub-title{
+     -fx-font-family: "Poppins Medium";
+     -fx-font-size: 17px;
+     -fx-text-fill: #5e7d83;
+}
+ .start-title{
+     -fx-font-size: 50px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Poppins Bold";
+}
+
+#cityName{
+    -fx-font-size: 11px;
+         -fx-text-fill: #CDCDCD;
+         -fx-font-family: "Overpass Bold";
+}

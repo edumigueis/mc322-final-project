@@ -10,30 +10,29 @@
             stylesheets="/styling/styles.css"
             fitToWidth="true"
             fx:id="hroot">
-        <VBox styleClass="main-container" alignment="center"
-              spacing="15">
-            <VBox prefHeight="${hroot.height * 0.35}">
-                <HBox>
-                    <VBox spacing="-10">
-                        <Label text="Hey!" styleClass="start-title"/>
-                        <Label text="Where to?" styleClass="start-title"/>
-                    </VBox>
-
-                </HBox>
-                <Region VBox.vgrow="ALWAYS"/>
-                <Pane fx:id="dateContainer" />
-            </VBox>
-            <VBox spacing="15">
-                <Label text="Select a city" styleClass="small-title"/>
-                <GridPane hgap="20" vgap="20" fx:id="cityGrid" minWidth="700" alignment="center">
-                    <columnConstraints>
-                        <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
-                        <ColumnConstraints percentWidth="33.33333"/>
-                        <ColumnConstraints percentWidth="33.33333"/>
-                    </columnConstraints>
-                </GridPane>
-            </VBox>
-            <Label text="Create" onMouseClicked="#createItinerary"
-                   styleClass="purple-padded-card" alignment="center"/>
+    <VBox styleClass="main-container" alignment="center"
+          spacing="15">
+        <VBox prefHeight="${hroot.height * 0.35}">
+            <HBox>
+                <VBox spacing="-10">
+                    <Label text="Hey!" styleClass="start-title"/>
+                    <Label text="Where to?" styleClass="start-title"/>
+                </VBox>
+            </HBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Pane fx:id="dateContainer"/>
         </VBox>
+        <VBox spacing="15">
+            <Label text="Select a city" styleClass="small-title"/>
+            <GridPane hgap="20" vgap="20" fx:id="cityGrid" minWidth="700" alignment="center">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
+                    <ColumnConstraints percentWidth="33.33333"/>
+                    <ColumnConstraints percentWidth="33.33333"/>
+                </columnConstraints>
+            </GridPane>
+        </VBox>
+        <Label text="Create" onMouseClicked="#createItinerary"
+               styleClass="purple-padded-card" alignment="center"/>
+    </VBox>
 </ScrollPane>
