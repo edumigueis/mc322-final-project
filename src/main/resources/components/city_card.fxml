@@ -2,14 +2,19 @@
 
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.Label?>
+<?import ui.components.ResponsiveImage?>
+<?import javafx.geometry.Insets?>
 <VBox GridPane.columnIndex="1" xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="ui.controllers.CityCardController" onMouseClicked="#selectSelf" fx:id="card">
 
     <StackPane fx:id="imageContainer" prefWidth="200" prefHeight="200">
-        <ImageView fx:id="cityImage" fitWidth="200" fitHeight="200" pickOnBounds="true"/>
+        <ResponsiveImage fx:id="cityImage" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <clipCornerRadii>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </clipCornerRadii>
+        </ResponsiveImage>
     </StackPane>
     <Label text="Paris" fx:id="cityName"/>
 </VBox>

@@ -14,10 +14,15 @@
     <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES"/>
     </rowConstraints>
-    <Region fx:id="colorRegion" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
-        <Label fx:id="titleLabel" styleClass="green-title"/>
-        <Label fx:id="businessTimeLabel" styleClass="small-title"/>
-        <Label fx:id="descriptionLabel" wrapText="true" styleClass="small-text"/>
-    </VBox>
+    <Region GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="image"/>
+    <HBox>
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label fx:id="titleLabel" styleClass="green-title"/>
+            <Label fx:id="businessTimeLabel" styleClass="small-title"/>
+        </VBox>
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label fx:id="descriptionLabel" wrapText="true" styleClass="small-text"/>
+            <Label fx:id="priceLabel" styleClass="small-title"/>
+        </VBox>
+    </HBox>
 </GridPane>

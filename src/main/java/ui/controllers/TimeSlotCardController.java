@@ -2,11 +2,12 @@ package ui.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Region;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 public class TimeSlotCardController {
     @FXML
-    private Region colorRegion;
+    private Region imageContainer;
     @FXML
     private Label titleLabel;
     @FXML
@@ -18,7 +19,6 @@ public class TimeSlotCardController {
         titleLabel.setText(title);
         businessTimeLabel.setText("Business Time: " + businessTime);
         descriptionLabel.setText("Description: " + description);
-        colorRegion.setStyle("-fx-background-color: " + color + ";");
     }
     //TO DO: AQUI TEREMOS INTERAÇÕES USER-UI
 }

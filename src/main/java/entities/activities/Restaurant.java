@@ -2,13 +2,13 @@ package entities.activities;
 
 import helpers.BusinessHours;
 import helpers.Location;
+import helpers.PriceRange;
 
-public class Attraction implements Activity {
+public class Restaurant implements Activity {
     private Location location;
     private String name;
     private BusinessHours openTime;
-    private String description;
-    private String imageThumbURL;
+    private PriceRange priceRange;
 
     @Override
     public Location getLocation() {
@@ -38,19 +38,11 @@ public class Attraction implements Activity {
         this.openTime = openTime;
     }
 
-    public String getDescription() {
-        return description;
+    public PriceRange getPriceRange() {
+        return priceRange;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getImageThumbURL() {
-        return imageThumbURL;
-    }
-
-    public void setImageThumbURL(String imageThumbURL) {
-        this.imageThumbURL = imageThumbURL;
+    public void setPriceRange(PriceRange priceRange) {
+        this.priceRange = priceRange;
     }
 }

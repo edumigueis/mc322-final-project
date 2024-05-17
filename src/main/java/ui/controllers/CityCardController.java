@@ -8,13 +8,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import entities.City;
+import ui.components.ResponsiveImage;
 import ui.helpers.CardParent;
 
 public class CityCardController {
     @FXML
     private Label cityName;
     @FXML
-    private ImageView cityImage;
+    private ResponsiveImage cityImage;
     @FXML
     private StackPane imageContainer;
     @FXML
@@ -28,7 +29,7 @@ public class CityCardController {
 
     public void setData(City city, int index) {
         this.cityName.setText(city.getName());
-        this.cityImage.setImage(new Image(city.getThumbImageUrl()));
+        this.cityImage.setImageUrl(city.getThumbImageUrl());
         this.card.setUserData(index);
     }
     @FXML
