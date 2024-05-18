@@ -48,3 +48,8 @@
     font-family: 'Overpass Regular';
     src: url('/assets/fonts/Overpass/Overpass-Regular.ttf');
 }
+
+@font-face {
+    font-family: 'Overpass Light';
+    src: url('/assets/fonts/Overpass/Overpass-Light.ttf');
+}

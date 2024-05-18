@@ -4,20 +4,26 @@
      -fx-text-fill: #CDCDCD;
      -fx-font-family: "Overpass Extra";
 }
+.label.extra-small-title {
+     -fx-font-weight: bold;
+     -fx-font-size: 11px;
+     -fx-text-fill: #CDCDCD;
+     -fx-font-family: "Overpass Extra";
+}
  .label.text {
      -fx-font-size: 11px;
      -fx-text-fill: #FFFFFF;
-     -fx-font-family: "Overpass Regular";
+     -fx-font-family: "Overpass Light";
 }
  .label.text-dark {
      -fx-font-size: 11px;
      -fx-text-fill: #070606;
-     -fx-font-family: "Overpass Regular";
+     -fx-font-family: "Overpass Light";
 }
  .label.green-title {
-     -fx-font-weight: bold;
-     -fx-font-size: 16;
+     -fx-font-size: 22;
      -fx-text-fill: #22DD85;
+     -fx-line-spacing: -12px;
      -fx-font-family: "Poppins Bold";
 }
  .label.big-title{
@@ -35,9 +41,22 @@
      -fx-text-fill: #FFFFFF;
      -fx-font-family: "Poppins Bold";
 }
-
 #cityName{
     -fx-font-size: 11px;
          -fx-text-fill: #CDCDCD;
+         -fx-font-family: "Overpass Bold";
+}
+
+.expandable-text .main-text {
+    -fx-font-size: 11px;
+         -fx-text-fill: #FFFFFF;
+         -fx-font-family: "Overpass Light";
+}
+
+/* Style for the "Read more" label inside ExpandableText */
+.expandable-text .read-more {
+    -fx-cursor: hand;
+    -fx-font-size: 11px;
+         -fx-text-fill: #FFFFFF;
          -fx-font-family: "Overpass Bold";
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controllers.FilterBarController">
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <!-- Category Filter Buttons -->
+        <VBox>
+            <Label text="Category:" />
+            <HBox spacing="10">
+                <ToggleButton fx:id="allToggleButton" text="All" />
+                <ToggleButton fx:id="museumsToggleButton" text="Museums" />
+                <ToggleButton fx:id="parksToggleButton" text="Parks" />
+                <ToggleButton fx:id="galleriesToggleButton" text="Galleries" />
+            </HBox>
+        </VBox>
+        <!-- Price Range Slider -->
+        <VBox>
+            <Label text="Price Range:" />
+            <Slider fx:id="priceRangeSlider" min="0" max="100" value="50" showTickLabels="true" showTickMarks="true" />
+        </VBox>
+    </HBox>
+</AnchorPane>
+
+

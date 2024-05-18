@@ -40,7 +40,7 @@ public class StartScreenController implements Initializable, CardParent {
         this.cities = new ArrayList<City>();
         // TO DO LOAD CITY FILE
         this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<Activity>() {{
-            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
+            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
             add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
             add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
         }}));
