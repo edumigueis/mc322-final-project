@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import entities.activities.Activity;
 import entities.activities.Attraction;
 import ui.components.AttractionCardCell;
+import ui.components.CustomAlert;
 
 import java.io.IOException;
 import java.util.List;
@@ -73,8 +74,9 @@ public class AttractionModalController implements FilterBarController.FilterChan
         Activity value = cardsContainer.getSelectionModel().getSelectedItem();
 
         // Call the callback method with the return value
-        if (callback != null)
-            callback.returnResult(value);
+        if(value != null)
+            if (callback != null)
+                callback.returnResult(value);
 
         // Close the modal window
         Stage stage = (Stage) closeButton.getScene().getWindow();

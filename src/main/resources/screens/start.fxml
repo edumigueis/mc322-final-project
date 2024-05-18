@@ -3,36 +3,52 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import ui.components.ResponsiveImage?>
+<?import javafx.geometry.Insets?>
 <ScrollPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="ui.controllers.StartScreenController"
             styleClass="edge-to-edge"
             stylesheets="/styling/styles.css"
             fitToWidth="true"
+            fitToHeight="true"
             fx:id="hroot">
-    <VBox styleClass="main-container" alignment="center"
-          spacing="15">
-        <VBox prefHeight="${hroot.height * 0.35}">
-            <HBox>
-                <VBox spacing="-10">
-                    <Label text="Hey!" styleClass="start-title"/>
-                    <Label text="Where to?" styleClass="start-title"/>
-                </VBox>
-            </HBox>
-            <Region VBox.vgrow="ALWAYS"/>
-            <Pane fx:id="dateContainer"/>
+    <StackPane>
+        <VBox styleClass="main-container" alignment="center"
+              spacing="15" VBox.vgrow="ALWAYS">
+            <VBox prefHeight="${hroot.height * 0.35}" VBox.vgrow="ALWAYS">
+                <HBox>
+                    <VBox spacing="-10">
+                        <Label text="Hey!" styleClass="start-title"/>
+                        <Label text="Where to?" styleClass="start-title"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <Region VBox.vgrow="ALWAYS"/>
+                <HBox alignment="CENTER">
+                    <Pane fx:id="dateContainer"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="15" VBox.vgrow="ALWAYS">
+                <Label text="Select a city" styleClass="small-title"/>
+                <GridPane hgap="20" vgap="20" fx:id="cityGrid" minWidth="700" alignment="center">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
+                        <ColumnConstraints percentWidth="33.33333"/>
+                        <ColumnConstraints percentWidth="33.33333"/>
+                    </columnConstraints>
+                </GridPane>
+            </VBox>
+            <Label text="Create" onMouseClicked="#createItinerary"
+                   styleClass="purple-padded-card" alignment="center"/>
         </VBox>
-        <VBox spacing="15">
-            <Label text="Select a city" styleClass="small-title"/>
-            <GridPane hgap="20" vgap="20" fx:id="cityGrid" minWidth="700" alignment="center">
-                <columnConstraints>
-                    <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
-                    <ColumnConstraints percentWidth="33.33333"/>
-                    <ColumnConstraints percentWidth="33.33333"/>
-                </columnConstraints>
-            </GridPane>
-        </VBox>
-        <Label text="Create" onMouseClicked="#createItinerary"
-               styleClass="purple-padded-card" alignment="center"/>
-    </VBox>
+        <AnchorPane mouseTransparent="true">
+            <ResponsiveImage AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefWidth="200" prefHeight="150"
+                             imageUrl="https://img.freepik.com/free-photo/3d-render-suitcase-with-traveler-accessories-purple-background-travel-concept-illustration-design_460848-11449.jpg">
+                <clipCornerRadii>
+                    <Insets bottom="30"/>
+                </clipCornerRadii>
+            </ResponsiveImage>
+        </AnchorPane>
+    </StackPane>
 </ScrollPane>

@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 import entities.activities.Activity;
 import entities.City;
 import ui.components.CityCard;
+import ui.components.CustomAlert;
 import ui.helpers.CardParent;
 
 import java.io.IOException;
@@ -25,7 +27,7 @@ import java.util.*;
 
 public class StartScreenController implements Initializable, CardParent {
     private List<City> cities;
-    private int pickedCity;
+    private int pickedCity = -1;
 
     private final Map<Node, CityCardController> controllersMap = new HashMap<>();
     private DateSelectorController dateController;
@@ -50,14 +52,9 @@ public class StartScreenController implements Initializable, CardParent {
         // TO DO: aqui faremos leitura de arquivos
         try {
             loadCities();
+            loadDatePicker();
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
-        try{
-            loadDatePicker();
-        }
-        catch (IOException e){
-            System.out.println("Modal not available. Check path.");
         }
 
     }
@@ -65,11 +62,17 @@ public class StartScreenController implements Initializable, CardParent {
     @FXML
     private void createItinerary(MouseEvent event) {
         try {
+            if (pickedCity == -1) {
+                CustomAlert alert = CustomAlert.createErrorAlert("Please select a city");
+                alert.setTitle("Error");
+                alert.setHeaderText(null); // Remove header text
+                alert.showAndWait();
+                return;
+            }
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/itinerary.fxml"));
             Parent root = loader.load();
 
             ItineraryController secondScreenController = loader.getController();
-
             secondScreenController.initData(cities.get(pickedCity), dateController.getStartDate(), dateController.getEndDate());
 
             Scene scene = new Scene(root, 900, 600);
