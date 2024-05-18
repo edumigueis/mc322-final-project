@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controllers.ItineraryDayViewController"
+          stylesheets="/styling/styles.css"
+            prefHeight="400.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+    <HBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="padded-card">
+        <Label text="AAAA" fx:id="indexLabel" styleClass="header-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="Aaaaaa" fx:id="dayLabel" styleClass="header-label-day"/>
+    </HBox>
+    <HBox spacing="5" GridPane.rowIndex="1" GridPane.columnIndex="0">
+        <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
+        <Label text="Adicionar atração" onMouseClicked="#handleLabelClick"
+               styleClass="purple-padded-card"/>
+    </HBox>
+</VBox>

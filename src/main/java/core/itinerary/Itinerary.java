@@ -29,7 +29,7 @@ public class Itinerary {
         this.endDate = endDate;
         this.updateDuration();
         this.itineraryDayList = new ArrayList<ItineraryDay>();
-        IntStream.range(0, duration).forEach(i -> itineraryDayList.add(new ItineraryDay()));
+        IntStream.range(0, duration).forEach(i -> itineraryDayList.add(new ItineraryDay(startDate.plusDays(i))));
     }
 
     private void updateDuration(){
@@ -69,5 +69,9 @@ public class Itinerary {
 
     public void setItineraryDayList(List<ItineraryDay> itineraryDayList) {
         this.itineraryDayList = itineraryDayList;
+    }
+
+    public int getDuration(){
+        return this.duration;
     }
 }

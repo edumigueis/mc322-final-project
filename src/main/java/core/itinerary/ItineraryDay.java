@@ -3,25 +3,27 @@ package core.itinerary;
 import entities.Hotel;
 import entities.activities.Activity;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.LinkedList;
 
 public class ItineraryDay {
     TimeSlot root;
-    LocalTime startOfDay;
-    LocalTime endOfDay;
+    LocalDateTime startOfDay;
+    LocalDateTime endOfDay;
     Hotel hotel;
 
-    public ItineraryDay(TimeSlot root, LocalTime startOfDay, LocalTime endOfDay, Hotel hotel) {
+    public ItineraryDay(TimeSlot root, LocalDateTime startOfDay, LocalDateTime endOfDay, Hotel hotel) {
         this.root = root;
         this.startOfDay = startOfDay;
         this.endOfDay = endOfDay;
         this.hotel = hotel;
     }
 
-    public ItineraryDay() {
-        this.startOfDay = LocalTime.of(0, 0);
-        this.endOfDay = LocalTime.of(23, 59);
+    public ItineraryDay(LocalDate date) {
+        this.startOfDay = LocalDateTime.of(date, LocalTime.of(0, 0));
+        this.endOfDay = LocalDateTime.of(date, LocalTime.of(23, 59));
     }
 
     public TimeSlot getRoot() {
@@ -32,19 +34,19 @@ public class ItineraryDay {
         this.root = root;
     }
 
-    public LocalTime getStartOfDay() {
+    public LocalDateTime getStartOfDay() {
         return startOfDay;
     }
 
-    public void setStartOfDay(LocalTime startOfDay) {
+    public void setStartOfDay(LocalDateTime startOfDay) {
         this.startOfDay = startOfDay;
     }
 
-    public LocalTime getEndOfDay() {
+    public LocalDateTime getEndOfDay() {
         return endOfDay;
     }
 
-    public void setEndOfDay(LocalTime endOfDay) {
+    public void setEndOfDay(LocalDateTime endOfDay) {
         this.endOfDay = endOfDay;
     }
 

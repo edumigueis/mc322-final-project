@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.GridPane?>
-
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.control.ScrollPane?>
+<?import ui.components.ItineraryDayCarousel?>
+<?import javafx.scene.layout.VBox?>
 
 <ScrollPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fitToWidth="true" fitToHeight="true"
             fx:controller="ui.controllers.ItineraryController" stylesheets="/styling/styles.css"
             styleClass="edge-to-edge">
-    <GridPane hgap="15"
-              fx:id="mainGrid">
-        <columnConstraints>
-            <ColumnConstraints percentWidth="33.33333"/> <!-- 1/3 of 100% -->
-            <ColumnConstraints percentWidth="33.33333"/>
-            <ColumnConstraints percentWidth="33.33333"/>
-        </columnConstraints>
-    </GridPane>
+    <VBox spacing="15"
+          fx:id="mainBox">
+        <ItineraryDayCarousel fx:id="carousel"/>
+    </VBox>
 </ScrollPane>

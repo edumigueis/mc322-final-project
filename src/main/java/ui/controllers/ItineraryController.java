@@ -1,21 +1,19 @@
 package ui.controllers;
 
 import core.itinerary.Itinerary;
-import core.itinerary.ItineraryDay;
 import core.itinerary.TimeSlot;
 import entities.activities.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import entities.City;
-import entities.Transportation;
-import entities.TransportationType;
+import javafx.scene.layout.VBox;
+import ui.components.ItineraryDayCarousel;
+import ui.components.ItineraryDayView;
 import ui.components.TimeSlotCard;
 
-import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +22,9 @@ import java.util.List;
 
 public class ItineraryController {
     @FXML
-    private GridPane mainGrid;
+    private VBox mainBox;
+    @FXML
+    private ItineraryDayCarousel carousel;
 
     private Itinerary itinerary;
     private LocalDate currentStartDate;
@@ -48,13 +48,21 @@ public class ItineraryController {
         GridPane header = loader.load();
         DaysHeaderController controller = loader.getController();
         controller.setItineraryController(this);
-        controller.updateLabels();
-        mainGrid.add(header, 0, 0, 3, 1); // Add first card to grid
+        mainBox.getChildren().add(header); // Add first card to grid
         this.start();
     }
 
     //TO DO - REMOVE THIS
     public void start() throws IOException {
+        List<ItineraryDayView> views = new ArrayList<ItineraryDayView>();
+        LocalDate startUp =this.itinerary.getStartDate();
+        for(int i = 0; i < this.itinerary.getDuration(); i++){
+            ItineraryDayView view = new ItineraryDayView();
+            ItineraryDayViewController controller = view.getController();
+            controller.initialize(startUp.plusDays(i));
+            views.add(view);
+        }
+        carousel.setChildren(views);
         /*TimeSlotCard card1 = new TimeSlotCard();
         card1.getController().setData("Title 1", "9:00 AM - 5:00 PM", "Lorem ipsum dolor sit amet");
         TimeSlotCard card2 = new TimeSlotCard();
@@ -70,12 +78,16 @@ public class ItineraryController {
         mainGrid.add(card3, 0, 4);*/
     }
 
-    public void addActivity(Activity result, int day) {
+    /*public void addActivity(Activity result, int day) {
         // TO DO: Adicionar horário padrão - depois de todos, mil vezes mais fácil
         this.itinerary.getItineraryDayList().get(day).addActivity(new TimeSlot());
         TimeSlotCard card1 = new TimeSlotCard();
         card1.getController().setData(result.getName(), "9:00 AM - 5:00 PM", "Lorem ipsum dolor sit amet");
 
         mainGrid.add(card1, 0, 3);
+    }*/
+
+    public void advanceWeek(){
+        this.carousel.getController().updateDays();
     }
 }
