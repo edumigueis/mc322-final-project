@@ -8,7 +8,7 @@
             fx:controller="ui.controllers.AttractionModalController"
             stylesheets="/styling/listview.css"
             prefHeight="600.0" prefWidth="450.0">
-    <Pane fx:id="filterBarContainer"></Pane>
+    <Pane fx:id="filterBarContainer"/>
     <ListView fx:id="cardsContainer"  prefHeight="500" prefWidth="450" AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
     <Button xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:id="closeButton" text="Close" onAction="#handleReturnValue" AnchorPane.topAnchor="10" AnchorPane.rightAnchor="25" alignment="CENTER"/>

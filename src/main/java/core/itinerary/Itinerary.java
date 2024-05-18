@@ -4,7 +4,9 @@ import entities.City;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Itinerary {
     City city;
@@ -19,6 +21,15 @@ public class Itinerary {
         this.endDate = endDate;
         this.itineraryDayList = itineraryDayList;
         this.updateDuration();
+    }
+
+    public Itinerary(City city, LocalDate startDate, LocalDate endDate) {
+        this.city = city;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.updateDuration();
+        this.itineraryDayList = new ArrayList<ItineraryDay>();
+        IntStream.range(0, duration).forEach(i -> itineraryDayList.add(new ItineraryDay()));
     }
 
     private void updateDuration(){

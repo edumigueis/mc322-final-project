@@ -32,17 +32,17 @@
     </HBox>
     <HBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="0">
         <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
-        <Label text="Adicionar atração" userData="2" onMouseClicked="#handleLabelClick"
+        <Label fx:id="slotDay1" text="Adicionar atração" onMouseClicked="#handleLabelClick"
                styleClass="purple-padded-card"/>
     </HBox>
     <HBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="1">
         <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
-        <Label text="Adicionar atração" userData="1" onMouseClicked="#handleLabelClick"
+        <Label fx:id="slotDay2" text="Adicionar atração" onMouseClicked="#handleLabelClick"
                styleClass="purple-padded-card"/>
     </HBox>
     <HBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="2">
         <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
-        <Label text="Adicionar atração" userData="0" onMouseClicked="#handleLabelClick"
+        <Label fx:id="slotDay3" text="Adicionar atração" onMouseClicked="#handleLabelClick"
                styleClass="purple-padded-card"/>
     </HBox>
 </GridPane>

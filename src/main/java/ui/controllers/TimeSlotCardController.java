@@ -15,7 +15,7 @@ public class TimeSlotCardController {
     @FXML
     private Label descriptionLabel;
 
-    public void setData(String title, String businessTime, String description, String color) {
+    public void setData(String title, String businessTime, String description) {
         titleLabel.setText(title);
         businessTimeLabel.setText("Business Time: " + businessTime);
         descriptionLabel.setText("Description: " + description);

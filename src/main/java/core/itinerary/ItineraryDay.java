@@ -1,23 +1,27 @@
 package core.itinerary;
 
 import entities.Hotel;
+import entities.activities.Activity;
 
 import java.time.LocalTime;
 import java.util.LinkedList;
 
 public class ItineraryDay {
-    LinkedList<TimeSlot> itinerary;
     TimeSlot root;
     LocalTime startOfDay;
     LocalTime endOfDay;
     Hotel hotel;
 
-    public LinkedList<TimeSlot> getItinerary() {
-        return itinerary;
+    public ItineraryDay(TimeSlot root, LocalTime startOfDay, LocalTime endOfDay, Hotel hotel) {
+        this.root = root;
+        this.startOfDay = startOfDay;
+        this.endOfDay = endOfDay;
+        this.hotel = hotel;
     }
 
-    public void setItinerary(LinkedList<TimeSlot> itinerary) {
-        this.itinerary = itinerary;
+    public ItineraryDay() {
+        this.startOfDay = LocalTime.of(0, 0);
+        this.endOfDay = LocalTime.of(23, 59);
     }
 
     public TimeSlot getRoot() {
@@ -50,5 +54,8 @@ public class ItineraryDay {
 
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
+    }
+
+    public void addActivity(TimeSlot slot) {
     }
 }

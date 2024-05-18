@@ -70,7 +70,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
 
     @FXML
     private void handleReturnValue() {
-        Attraction value = new Attraction(new Location(1,2), "a", new BusinessHours(), "a", "");
+        Activity value = cardsContainer.getSelectionModel().getSelectedItem();
 
         // Call the callback method with the return value
         if (callback != null)
@@ -82,7 +82,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
     }
 
     public interface Callback {
-        void returnResult(Attraction result);
+        void returnResult(Activity result);
     }
 
     public static class Filter {
