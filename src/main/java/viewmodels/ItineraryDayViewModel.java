@@ -55,13 +55,13 @@ public class ItineraryDayViewModel {
         itineraryDay.setHotel(hotelProperty.get());
         // Assuming TimeSlot has a method to set all activities
         itineraryDay.getRoot().setActivities(activities);
-    }
+    }*/
 
     public void addActivity(Activity activity) {
         // Assuming TimeSlot has a method to add an activity
-        itineraryDay.getRoot().addActivity(activity);
+        //itineraryDay.getRoot().addActivity(activity);
         activities.add(activity);
-    }
+    }/*
 
     // Additional methods to manipulate activities
     public void removeActivity(Activity activity) {

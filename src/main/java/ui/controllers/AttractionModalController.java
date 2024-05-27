@@ -15,13 +15,18 @@ import entities.activities.Activity;
 import entities.activities.Attraction;
 import ui.components.AttractionCardCell;
 import ui.components.CustomAlert;
+import viewmodels.ItineraryDayViewModel;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class AttractionModalController implements FilterBarController.FilterChangeListener{
-    private Callback callback;
+    public void setViewModel(ItineraryDayViewModel viewModel) {
+        this.viewModel = viewModel;
+    }
+
+    private ItineraryDayViewModel viewModel;
 
     @FXML
     private Button closeButton;
@@ -42,10 +47,6 @@ public class AttractionModalController implements FilterBarController.FilterChan
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void setCallback(Callback callback) {
-        this.callback = callback;
     }
 
     public void setData(List<Activity> activities) throws IOException {
@@ -75,16 +76,11 @@ public class AttractionModalController implements FilterBarController.FilterChan
 
         // Call the callback method with the return value
         if(value != null)
-            if (callback != null)
-                callback.returnResult(value);
+            viewModel.addActivity(value);
 
         // Close the modal window
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
-    }
-
-    public interface Callback {
-        void returnResult(Activity result);
     }
 
     public static class Filter {

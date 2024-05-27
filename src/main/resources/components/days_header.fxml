@@ -14,5 +14,8 @@
         <Label fx:id="cityName" styleClass="big-title"/>
         <Label text="Add days" styleClass="sub-title"/>
     </VBox>
-    <Button text="Next Week" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#nextWeek"/>
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="0">
+        <Button text="Previous" onAction="#prevWeek"/>
+        <Button text="Next" onAction="#nextWeek"/>
+    </HBox>
 </GridPane>

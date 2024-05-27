@@ -23,27 +23,20 @@ public class ItineraryDayCarouselController {
     private void updateVisibleChildren() {
         visibleBox.getChildren().clear();
         int endIndex = Math.min(currentIndex + VISIBLE_COUNT, allChildren.size());
-        visibleBox.getChildren().addAll(allChildren.subList(currentIndex, 1));
+        visibleBox.getChildren().addAll(allChildren.subList(currentIndex, endIndex));
     }
 
-    private void next() {
+    public void next() {
         if (currentIndex + VISIBLE_COUNT < allChildren.size()) {
             currentIndex += VISIBLE_COUNT;
             updateVisibleChildren();
         }
     }
 
-    private void previous() {
+    public void previous() {
         if (currentIndex - VISIBLE_COUNT >= 0) {
             currentIndex -= VISIBLE_COUNT;
             updateVisibleChildren();
         }
     }
-
-    public void updateDays() {
-        for (ItineraryDayView view : this.allChildren) {
-            view.getController().updateDay(VISIBLE_COUNT);
-        }
-    }
-
 }

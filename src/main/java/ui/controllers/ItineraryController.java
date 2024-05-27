@@ -88,6 +88,10 @@ public class ItineraryController {
     }*/
 
     public void advanceWeek(){
-        this.carousel.getController().updateDays();
+        this.carousel.getController().next();
+    }
+
+    public void prevWeek(){
+        this.carousel.getController().previous();
     }
 }

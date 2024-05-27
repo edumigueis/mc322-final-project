@@ -29,4 +29,9 @@ public class DaysHeaderController {
     private void nextWeek(){
         this.itineraryController.advanceWeek();
     }
+
+    @FXML
+    private void prevWeek(){
+        this.itineraryController.prevWeek();
+    }
 }
