@@ -9,7 +9,7 @@ import java.io.IOException;
 
 // TO DO: way to refactor
 public class ItineraryDayView extends GridPane {
-    private ItineraryDayViewController controller;
+    private final ItineraryDayViewController controller;
 
     public ItineraryDayView() {
         super();

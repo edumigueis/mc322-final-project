@@ -2,6 +2,8 @@ package ui.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import ui.components.ItineraryDayView;
 
 import java.util.ArrayList;

@@ -2,14 +2,10 @@
 
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Region?>
-<?import ui.components.ResponsiveImage?>
 
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<VBox xmlns="http://javafx.com/javafx"
+<AnchorPane xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       stylesheets="/styling/styles.css"
       fx:controller="ui.controllers.ItineraryDayCarouselController">
-    <HBox fx:id="visibleBox"/>
-</VBox>
+    <HBox fx:id="visibleBox" spacing="20" alignment="CENTER" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20"/>
+</AnchorPane>

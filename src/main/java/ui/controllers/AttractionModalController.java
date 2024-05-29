@@ -15,6 +15,7 @@ import entities.activities.Activity;
 import entities.activities.Attraction;
 import ui.components.AttractionCardCell;
 import ui.components.CustomAlert;
+import viewmodels.CityViewModel;
 import viewmodels.ItineraryDayViewModel;
 
 import java.io.IOException;
@@ -22,11 +23,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class AttractionModalController implements FilterBarController.FilterChangeListener{
-    public void setViewModel(ItineraryDayViewModel viewModel) {
-        this.viewModel = viewModel;
-    }
-
     private ItineraryDayViewModel viewModel;
+    private CityViewModel cityViewModel;
 
     @FXML
     private Button closeButton;
@@ -34,7 +32,6 @@ public class AttractionModalController implements FilterBarController.FilterChan
     private ListView<Activity> cardsContainer;
     @FXML
     private Pane filterBarContainer;
-    private List<Activity> activityList;
 
     @FXML
     public void initialize() {
@@ -49,14 +46,12 @@ public class AttractionModalController implements FilterBarController.FilterChan
         }
     }
 
-    public void setData(List<Activity> activities) throws IOException {
-        this.activityList = activities;
-        updateListView(activities);
+    public void setViewModel(ItineraryDayViewModel viewModel) {
+        this.viewModel = viewModel;
     }
-
-    private void updateListView(List<Activity> activities) {
-        ObservableList<Activity> list = FXCollections.observableArrayList(activities);
-        cardsContainer.setItems(list);
+    public void loadCity(CityViewModel viewModel) {
+        this.cityViewModel = viewModel;
+        cardsContainer.setItems(cityViewModel.getThingsToDo());
         cardsContainer.setCellFactory(param -> new AttractionCardCell());
     }
 

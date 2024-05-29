@@ -12,17 +12,27 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import viewmodels.CityViewModel;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class DaysHeaderController {
+public class DaysHeaderController{
     private ItineraryController itineraryController;
+    private CityViewModel cityViewModel;
+
+    @FXML
+    private Label cityName;
 
     public void setItineraryController(ItineraryController intineraryController) {
         this.itineraryController = intineraryController;
+    }
+
+    public void setCityViewModel(CityViewModel cityViewModel) {
+        this.cityViewModel = cityViewModel;
+        cityName.textProperty().bindBidirectional(cityViewModel.nameProperty());
     }
 
     @FXML

@@ -46,16 +46,6 @@ public class ItineraryDayViewModel {
     public ObservableList<Activity> getActivities() {
         return activities;
     }
-    /*
-    TO DO
-    // Methods to update the model from the ViewModel
-    public void updateItineraryDay() {
-        itineraryDay.setStartOfDay(startOfDayProperty.get());
-        itineraryDay.setEndOfDay(endOfDayProperty.get());
-        itineraryDay.setHotel(hotelProperty.get());
-        // Assuming TimeSlot has a method to set all activities
-        itineraryDay.getRoot().setActivities(activities);
-    }*/
 
     public void addActivity(Activity activity) {
         // Assuming TimeSlot has a method to add an activity
