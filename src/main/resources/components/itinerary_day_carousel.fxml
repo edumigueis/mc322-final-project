@@ -7,5 +7,5 @@
       xmlns:fx="http://javafx.com/fxml"
       stylesheets="/styling/styles.css"
       fx:controller="ui.controllers.ItineraryDayCarouselController">
-    <HBox fx:id="visibleBox" spacing="20" alignment="CENTER" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20"/>
+    <HBox fx:id="visibleBox" spacing="20" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0"/>
 </AnchorPane>

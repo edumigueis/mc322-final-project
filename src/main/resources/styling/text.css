@@ -41,7 +41,7 @@
      -fx-text-fill: #FFFFFF;
      -fx-font-family: "Poppins Bold";
 }
-#cityName{
+.city-name{
     -fx-font-size: 11px;
          -fx-text-fill: #CDCDCD;
          -fx-font-family: "Overpass Bold";

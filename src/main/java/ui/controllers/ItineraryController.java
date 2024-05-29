@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import entities.City;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import ui.components.ItineraryDayCarousel;
 import ui.components.ItineraryDayView;
@@ -35,7 +36,7 @@ public class ItineraryController {
 
     private void loadHeader() throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/days_header.fxml"));
-        GridPane header = loader.load();
+        HBox header = loader.load();
         DaysHeaderController controller = loader.getController();
         controller.setItineraryController(this);
         controller.setCityViewModel(new CityViewModel(this.itinerary.getCity()));

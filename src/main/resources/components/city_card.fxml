@@ -16,5 +16,5 @@
             </clipCornerRadii>
         </ResponsiveImage>
     </StackPane>
-    <Label fx:id="cityName"/>
+    <Label fx:id="cityName" styleClass="city-name"/>
 </VBox>

@@ -7,6 +7,6 @@
             fx:controller="ui.controllers.ItineraryController" stylesheets="/styling/styles.css"
             styleClass="edge-to-edge">
     <VBox spacing="15"
-          fx:id="mainBox">
+          fx:id="mainBox" styleClass="main-container">
     </VBox>
 </ScrollPane>
