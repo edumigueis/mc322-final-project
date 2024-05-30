@@ -1,9 +1,12 @@
 package core.itinerary;
 
 import entities.Hotel;
+import entities.Transportation;
+import entities.TransportationType;
 import entities.activities.Activity;
 
 import java.sql.Time;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -57,7 +60,23 @@ public class ItineraryDay {
     }
 
     public void addActivity(Activity activity) {
-        TimeSlot ts = new TimeSlot(activity);
+        TimeSlot last;
+        LocalTime startTrns;
+        LocalTime acStart;
+        Transportation transportation;
+
+        if (!this.activities.isEmpty()) {
+            last = this.activities.getLast();
+            startTrns = last.getEnd();
+            transportation = Transportation.betweenPlaces(startTrns, last.getData().getLocation(), activity.getLocation());
+            last.setWayToNext(transportation);
+            acStart = startTrns.plus(transportation.getEstimatedDuration());
+        } else{
+            acStart = LocalTime.of(8,0);
+            transportation = null;
+        }
+
+        TimeSlot ts = new TimeSlot(activity, transportation, acStart, acStart.plus(Duration.ofHours(1)));
         this.activities.add(ts);
     }
 }

@@ -17,10 +17,6 @@ public class TimeSlot {
         this.start = start;
         this.end = end;
     }
-    //TO DO: REMOVE CONSTRUCTOR
-    public TimeSlot(Activity data){
-        this.data = data;
-    }
 
     public Activity getData() {
         return data;

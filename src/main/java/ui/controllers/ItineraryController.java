@@ -32,6 +32,12 @@ public class ItineraryController {
         this.itinerary = new Itinerary(city, start, end);
         this.loadHeader();
         this.startCards();
+        mainBox.sceneProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Once the scene is available, bind the maxHeight of the VBox to the height of the scene
+                mainBox.maxHeightProperty().bind(newValue.heightProperty());
+            }
+        });
     }
 
     private void loadHeader() throws IOException{

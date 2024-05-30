@@ -3,10 +3,10 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fitToWidth="true" fitToHeight="true"
-            fx:controller="ui.controllers.ItineraryController" stylesheets="/styling/styles.css"
-            styleClass="edge-to-edge">
-    <VBox spacing="15"
-          fx:id="mainBox" styleClass="main-container">
-    </VBox>
-</ScrollPane>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.controllers.ItineraryController" stylesheets="/styling/styles.css">
+    <center>
+        <VBox spacing="15" fx:id="mainBox" styleClass="main-container" />
+    </center>
+</BorderPane>
