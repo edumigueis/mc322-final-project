@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -22,7 +21,6 @@ import ui.helpers.CardParent;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.*;
 
 public class StartScreenController implements Initializable, CardParent {
@@ -114,7 +112,7 @@ public class StartScreenController implements Initializable, CardParent {
     }
 
     private void loadDatePicker() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/date_selector.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/date_selector.fxml"));
         Parent datePickerRoot = loader.load();
         this.dateController = loader.getController();
         dateContainer.getChildren().add(datePickerRoot);

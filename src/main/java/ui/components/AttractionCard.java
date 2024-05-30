@@ -9,7 +9,7 @@ import java.io.IOException;
 public class AttractionCard extends Pane {
     private AttractionCardController controller;
     public AttractionCard() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/attraction_card.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/cards/attraction_card.fxml"));
         try {
             fxmlLoader.load();
             this.controller = fxmlLoader.getController();

@@ -11,7 +11,7 @@ public class CityCard extends Pane {
     private CityCardController controller;
 
     public CityCard(CardParent parent) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/city_card.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/cards/city_card.fxml"));
         try {
             fxmlLoader.load();
             this.controller = fxmlLoader.getController();

@@ -6,11 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ui.helpers.DurationFormatConverter;
+import viewmodels.ItineraryDayViewModel;
 import viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
@@ -27,7 +27,10 @@ public class TimeSlotCardController {
     @FXML
     private MenuButton optionsMenu;
 
-    public void initData(TimeSlotViewModel viewModel) {
+    private ItineraryDayViewModel itineraryViewModel;
+
+    public void initData(TimeSlotViewModel viewModel, ItineraryDayViewModel itineraryViewModel) {
+        this.itineraryViewModel = itineraryViewModel;
         titleLabel.textProperty().bind(viewModel.nameBinding());
         viewModel.durationProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
@@ -39,13 +42,16 @@ public class TimeSlotCardController {
         //TO DO: REMOVE COMMENT AND FIX LAYOUT (EXPANDABLETEXT)
         //descriptionLabel.textProperty().bind(viewModel.descriptionBinding());
     }
+
     @FXML
-    private void removeSelf(){}
+    private void removeSelf() {
+    }
+
     @FXML
-    private void alterDuration(){
+    private void alterDuration() {
         try {
             // Load the FXML for the modal
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/duration_selector.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/duration_selector.fxml"));
             Parent root = loader.load();
             DurationSelectorController controller = loader.getController();
 
@@ -70,7 +76,34 @@ public class TimeSlotCardController {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
-    private void alterOrder(){}
+    private void alterOrder() {
+        try {
+            // Load the FXML for the modal
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/reorder_selector.fxml"));
+            Parent root = loader.load();
+            DraggableListController controller = loader.getController();
+            controller.setListViewModel(itineraryViewModel);
+            controller.initData();
+
+            // Create a new stage for the modal
+            Stage modalStage = new Stage();
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.setTitle("Reorder");
+            modalStage.setScene(new Scene(root));
+
+            // Show the modal
+            modalStage.showAndWait();
+
+            /*String selectedDuration = controller.getList();
+            if (selectedDuration != null) {
+                System.out.println("Selected duration: " + selectedDuration);
+                // Pass the selected duration to further processing if needed
+            }*/
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 

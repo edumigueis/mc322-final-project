@@ -59,7 +59,7 @@ public class ItineraryDayViewController {
         for (TimeSlot ts : viewModel.getActivities()) {
             TimeSlotCard timeSlotCard = new TimeSlotCard();
             TimeSlotCardController controller = timeSlotCard.getController();
-            controller.initData(new TimeSlotViewModel(ts));
+            controller.initData(new TimeSlotViewModel(ts), this.viewModel);
             cardsContainer.getChildren().add(timeSlotCard);
         }
 
@@ -70,7 +70,7 @@ public class ItineraryDayViewController {
                     for (TimeSlot ts : c.getAddedSubList()) {
                         TimeSlotCard timeSlotCard = new TimeSlotCard();
                         TimeSlotCardController controller = timeSlotCard.getController();
-                        controller.initData(new TimeSlotViewModel(ts));
+                        controller.initData(new TimeSlotViewModel(ts), this.viewModel);
                         cardsContainer.getChildren().add(timeSlotCard);
                     }
                 }

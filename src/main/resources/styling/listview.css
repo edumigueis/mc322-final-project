@@ -1,3 +1,5 @@
+@import url("/styling/fonts.css");
+
 .list-view {
 -fx-background-color:#070606;
 }
@@ -10,12 +12,15 @@
 }
 
 .list-cell {
-    -fx-padding: 5px 0 5px 0;
+    -fx-padding: 6px 0 6px 0;
     -fx-background-color: #070606;
+    -fx-text-fill: #5E7D83;
+    -fx-font-family: "Overpass Regular";
 }
 .list-cell:filled:selected:focused,
 .list-cell:filled:selected{
 -fx-background-color: #F7FF88;
+-fx-text-fill: #070606;
 }
 
 .list-cell:empty {
