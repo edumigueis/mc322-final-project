@@ -57,3 +57,11 @@
      -fx-text-fill: #5e7d83;
      -fx-font-family: "Overpass Bold";
 }
+
+.no-pane{
+    -fx-background-color: transparent;
+}
+.no-pane .viewport {
+    -fx-background: transparent;
+    -fx-effect: null;
+}
