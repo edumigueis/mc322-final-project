@@ -8,9 +8,19 @@ import java.time.LocalTime;
 public class TimeSlot {
     Activity data;
     Transportation wayToNext;
-    TimeSlot next;
     LocalTime start;
     LocalTime end;
+
+    public TimeSlot(Activity data, Transportation wayToNext, LocalTime start, LocalTime end) {
+        this.data = data;
+        this.wayToNext = wayToNext;
+        this.start = start;
+        this.end = end;
+    }
+    //TO DO: REMOVE CONSTRUCTOR
+    public TimeSlot(Activity data){
+        this.data = data;
+    }
 
     public Activity getData() {
         return data;
@@ -26,14 +36,6 @@ public class TimeSlot {
 
     public void setWayToNext(Transportation wayToNext) {
         this.wayToNext = wayToNext;
-    }
-
-    public TimeSlot getNext() {
-        return next;
-    }
-
-    public void setNext(TimeSlot next) {
-        this.next = next;
     }
 
     public LocalTime getStart() {
@@ -57,7 +59,6 @@ public class TimeSlot {
         return "TimeSlot{" +
                 "data=" + data +
                 ", wayToNext=" + wayToNext +
-                ", next=" + next +
                 ", start=" + start +
                 ", end=" + end +
                 '}';

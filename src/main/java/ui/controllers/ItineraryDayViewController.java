@@ -1,5 +1,6 @@
 package ui.controllers;
 
+import core.itinerary.TimeSlot;
 import entities.activities.Activity;
 import javafx.beans.property.*;
 import javafx.collections.ListChangeListener;
@@ -18,8 +19,10 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
+import java.sql.Time;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -53,21 +56,21 @@ public class ItineraryDayViewController {
 
     private void bindCards(){
         // Add TimeSlotCard for each activity
-        for (Activity activity : viewModel.getActivities()) {
+        for (TimeSlot ts : viewModel.getActivities()) {
             TimeSlotCard timeSlotCard = new TimeSlotCard();
             TimeSlotCardController controller = timeSlotCard.getController();
-            //controller.setActivity(activity); // Assuming TimeSlotCardController has a method to set the activity
+            controller.initData(new TimeSlotViewModel(ts));
             cardsContainer.getChildren().add(timeSlotCard);
         }
 
         // Bind activity list to UI
-        viewModel.getActivities().addListener((ListChangeListener<Activity>) c -> {
+        viewModel.getActivities().addListener((ListChangeListener<TimeSlot>) c -> {
             while (c.next()) {
                 if (c.wasAdded()) {
-                    for (Activity activity : c.getAddedSubList()) {
+                    for (TimeSlot ts : c.getAddedSubList()) {
                         TimeSlotCard timeSlotCard = new TimeSlotCard();
                         TimeSlotCardController controller = timeSlotCard.getController();
-                        //controller.setActivity(activity);
+                        controller.initData(new TimeSlotViewModel(ts));
                         cardsContainer.getChildren().add(timeSlotCard);
                     }
                 }

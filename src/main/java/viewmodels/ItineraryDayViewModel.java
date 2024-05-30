@@ -1,6 +1,7 @@
 package viewmodels;
 
 import core.itinerary.ItineraryDay;
+import core.itinerary.TimeSlot;
 import entities.Hotel;
 import entities.activities.Activity;
 import javafx.beans.property.*;
@@ -17,7 +18,7 @@ public class ItineraryDayViewModel {
     private final ObjectProperty<LocalDateTime> startOfDayProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<LocalDateTime> endOfDayProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Hotel> hotelProperty = new SimpleObjectProperty<>();
-    private final ObservableList<Activity> activities = FXCollections.observableArrayList();
+    private final ObservableList<TimeSlot> activities = FXCollections.observableArrayList();
 
     public ItineraryDayViewModel(LocalDate date) {
         this(new ItineraryDay(date));
@@ -43,14 +44,14 @@ public class ItineraryDayViewModel {
         return hotelProperty;
     }
 
-    public ObservableList<Activity> getActivities() {
+    public ObservableList<TimeSlot> getActivities() {
         return activities;
     }
 
     public void addActivity(Activity activity) {
         // Assuming TimeSlot has a method to add an activity
-        //itineraryDay.getRoot().addActivity(activity);
-        activities.add(activity);
+        itineraryDay.addActivity(activity);
+        refreshActivities();
     }/*
 
     // Additional methods to manipulate activities
@@ -59,4 +60,9 @@ public class ItineraryDayViewModel {
         itineraryDay.getRoot().removeActivity(activity);
         activities.remove(activity);
     }*/
+
+    private void refreshActivities() {
+        if(itineraryDay.getActivities() != null)
+            activities.setAll(itineraryDay.getActivities());
+    }
 }
