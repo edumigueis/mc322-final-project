@@ -62,7 +62,7 @@ public class ItineraryDayViewModel {
     }*/
 
     private void refreshActivities() {
-        if(itineraryDay.getActivities() != null)
+        if (itineraryDay.getActivities() != null)
             activities.setAll(itineraryDay.getActivities());
     }
 }

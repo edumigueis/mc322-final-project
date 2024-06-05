@@ -65,3 +65,31 @@
     -fx-background: transparent;
     -fx-effect: null;
 }
+ .yellow-bullet{
+    -fx-background-color: #F7FF88;
+    -fx-border-width: 12px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: -1px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Semi";
+}
+
+.context-menu {
+     -fx-background-radius: 12px;
+        -fx-border-radius: 12px;
+        -fx-background-color: #070606;
+        -fx-text-fill: #5e7d83;
+}
+.yellow-bullet-item {
+    -fx-background-color: transparent;
+    -fx-font-family: "Overpass Semi";
+    -fx-text-fill: #5e7d83;
+}
+
+.yellow-bullet-item:hover .label {
+    -fx-text-fill: #F7FF88;
+}
+.yellow-bullet-item:focused .label {
+    -fx-text-fill: #F7FF88;
+}

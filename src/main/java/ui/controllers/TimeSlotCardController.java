@@ -1,5 +1,7 @@
 package ui.controllers;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.StringBinding;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +16,9 @@ import viewmodels.ItineraryDayViewModel;
 import viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class TimeSlotCardController {
     @FXML
@@ -32,13 +37,8 @@ public class TimeSlotCardController {
     public void initData(TimeSlotViewModel viewModel, ItineraryDayViewModel itineraryViewModel) {
         this.itineraryViewModel = itineraryViewModel;
         titleLabel.textProperty().bind(viewModel.nameBinding());
-        viewModel.durationProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal != null) {
-                durationLabel.setText(DurationFormatConverter.durationToString(newVal));
-            } else {
-                durationLabel.setText("");
-            }
-        });
+        optionsMenu.textProperty().bind(viewModel.startTimeBinding());
+        durationLabel.textProperty().bind(viewModel.durationBinding());
         //TO DO: REMOVE COMMENT AND FIX LAYOUT (EXPANDABLETEXT)
         //descriptionLabel.textProperty().bind(viewModel.descriptionBinding());
     }

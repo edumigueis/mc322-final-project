@@ -9,16 +9,17 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleObjectProperty;
+import ui.helpers.DurationFormatConverter;
 
 import java.time.Duration;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class TimeSlotViewModel {
     private final ObjectProperty<Activity> dataProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Transportation> wayToNextProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<LocalTime> startProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<LocalTime> endProperty = new SimpleObjectProperty<>();
-
     private final ReadOnlyObjectWrapper<Duration> durationProperty = new ReadOnlyObjectWrapper<>();
 
     public TimeSlotViewModel(TimeSlot timeSlot) {
@@ -64,5 +65,20 @@ public class TimeSlotViewModel {
             Activity activity = dataProperty.get();
             return activity != null ? activity.getDescription() : "";
         }, dataProperty);
+    }
+
+    public StringBinding startTimeBinding() {
+        return Bindings.createStringBinding(() -> {
+            LocalTime time = startProperty().get();
+            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+            return time != null ? time.format(timeFormatter) : "Error";
+        }, startProperty);
+    }
+
+    public StringBinding durationBinding() {
+        return Bindings.createStringBinding(() -> {
+            Duration dur = durationProperty().get();
+            return dur != null ? DurationFormatConverter.durationToString(dur) : "Error";
+        }, durationProperty);
     }
 }

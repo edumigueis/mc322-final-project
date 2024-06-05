@@ -4,10 +4,22 @@ import java.time.Duration;
 
 public class DurationFormatConverter {
     public static String durationToString(Duration duration) {
-        long hours = duration.toHours();
-        long minutes = duration.minusHours(hours).toMinutes();
-        long seconds = duration.minusHours(hours).minusMinutes(minutes).getSeconds();
+        long totalHours = duration.toHours();
+        long days = totalHours / 24;
+        long hours = totalHours % 24;
+        long minutes = duration.toMinutes() % 60;
+        long seconds = duration.getSeconds() % 60;
 
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+        if (days > 0) {
+            return String.format("%dh", totalHours);
+        } else if (hours > 0 && minutes > 0) {
+            return String.format("%dh%02dmin", hours, minutes);
+        } else if (hours > 0) {
+            return String.format("%dh", hours);
+        } else if (minutes > 0) {
+            return String.format("%dmin", minutes);
+        } else {
+            return String.format("%ds", seconds);
+        }
     }
 }

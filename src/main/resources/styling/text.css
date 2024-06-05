@@ -26,6 +26,12 @@
      -fx-line-spacing: -12px;
      -fx-font-family: "Poppins Bold";
 }
+ .label.card-title-white {
+     -fx-font-size: 20;
+     -fx-text-fill: #FFFFFF;
+     -fx-line-spacing: -12px;
+     -fx-font-family: "Poppins Bold";
+}
  .label.big-title{
      -fx-font-size: 50px;
      -fx-text-fill: #FFFFFF;

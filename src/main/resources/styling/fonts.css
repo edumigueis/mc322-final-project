@@ -53,3 +53,8 @@
     font-family: 'Overpass Light';
     src: url('/assets/fonts/Overpass/Overpass-Light.ttf');
 }
+
+@font-face {
+    font-family: 'Overpass Semi';
+    src: url('/assets/fonts/Overpass/Overpass-SemiBold.ttf');
+}

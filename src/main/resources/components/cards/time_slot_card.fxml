@@ -4,8 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import ui.components.ResponsiveImage?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
+
 <GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="ui.controllers.TimeSlotCardController" prefHeight="130" hgap="10"
           stylesheets="/styling/styles.css" styleClass="attraction-card" minHeight="130">
@@ -16,31 +15,33 @@
     <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES"/>
     </rowConstraints>
-    <ResponsiveImage GridPane.columnIndex="0" GridPane.rowIndex="0">
-        <imageUrl>
-            https://francabrasil.com.br/wp-content/uploads/sites/11/2015/02/paris-1024x682.jpg
-        </imageUrl>
-        <clipCornerRadii>
-            <Insets left="18" bottom="18"/>
-        </clipCornerRadii>
-    </ResponsiveImage>
+    <StackPane>
+        <ResponsiveImage GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <imageUrl>
+                https://francabrasil.com.br/wp-content/uploads/sites/11/2015/02/paris-1024x682.jpg
+            </imageUrl>
+            <clipCornerRadii>
+                <Insets left="18" bottom="18"/>
+            </clipCornerRadii>
+        </ResponsiveImage>
+        <AnchorPane>
+            <MenuButton fx:id="optionsMenu" text="9:00" styleClass="yellow-bullet" AnchorPane.topAnchor="5"
+                        AnchorPane.leftAnchor="5">
+                <items>
+                    <MenuItem styleClass="yellow-bullet-item" onAction="#removeSelf" text="Remove"/>
+                    <MenuItem styleClass="yellow-bullet-item" onAction="#alterDuration" text="Alter Duration"/>
+                    <MenuItem styleClass="yellow-bullet-item" onAction="#alterOrder" text="Alter Start"/>
+                </items>
+            </MenuButton>
+        </AnchorPane>
+    </StackPane>
     <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
-        <HBox>
-            <Label fx:id="titleLabel" styleClass="green-title"/>
-            <Label fx:id="durationLabel" styleClass="small-title"/>
-        </HBox>
+        <padding>
+            <Insets top="10" bottom="10"/>
+        </padding>
+        <Label fx:id="titleLabel" styleClass="card-title-white"/>
         <Label fx:id="descriptionLabel" wrapText="true" styleClass="text"/>
-        <VBox>
-            <HBox spacing="5">
-                <MenuButton fx:id="optionsMenu" text="9:00">
-                    <items>
-                        <MenuItem onAction="#removeSelf" text="Remove"/>
-                        <MenuItem onAction="#alterDuration" text="Alter Duration"/>
-                        <MenuItem onAction="#alterOrder" text="Alter Start"/>
-                    </items>
-                </MenuButton>
-            </HBox>
-        </VBox>
-
+        <Region VBox.vgrow="ALWAYS"/>
+        <Label fx:id="durationLabel" styleClass="small-title"/>
     </VBox>
 </GridPane>
