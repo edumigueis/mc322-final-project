@@ -11,16 +11,17 @@
         hbarPolicy="NEVER"
         fitToHeight="true"
         fitToWidth="true"
+        fx:id="mainScrollPane"
         styleClass="no-pane">
     <VBox VBox.vgrow="ALWAYS">
         <HBox spacing="5" styleClass="padded-card">
-            <Label text="AAAA" fx:id="indexLabel" styleClass="header-label"/>
+            <Label fx:id="indexLabel" styleClass="header-label"/>
             <Region HBox.hgrow="ALWAYS"/>
-            <Label text="Aaaaaa" fx:id="dayLabel" styleClass="header-label-day"/>
+            <Label fx:id="dayLabel" styleClass="header-label-day"/>
         </HBox>
         <HBox spacing="5" style="-fx-padding: 0 0 10 0;">
-            <Label text="Hotel: Copacabana Palace" styleClass="gray-padded-card"/>
-            <Label text="Adicionar atração" onMouseClicked="#handleLabelClick"
+            <Label text="Hotel: Copacabana Palace" onMouseClicked="#pickHotel" styleClass="gray-padded-card"/>
+            <Label text="Adicionar atração" onMouseClicked="#addAttractionModal"
                    styleClass="purple-padded-card"/>
         </HBox>
         <VBox VBox.vgrow="ALWAYS" fx:id="cardsContainer"/>

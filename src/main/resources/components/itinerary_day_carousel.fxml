@@ -4,8 +4,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      stylesheets="/styling/styles.css"
-      fx:controller="ui.controllers.ItineraryDayCarouselController">
-    <HBox fx:id="visibleBox" spacing="20" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0"/>
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="/styling/styles.css"
+            fx:controller="ui.controllers.ItineraryDayCarouselController">
+    <HBox fx:id="visibleBox"
+          spacing="20" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+          AnchorPane.bottomAnchor="0"/>
 </AnchorPane>

@@ -29,26 +29,24 @@ public class ItineraryController {
         this.startCards();
         mainBox.sceneProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                // Once the scene is available, bind the maxHeight of the VBox to the height of the scene
                 mainBox.maxHeightProperty().bind(newValue.heightProperty());
             }
         });
     }
 
-    private void loadHeader() throws IOException{
+    private void loadHeader() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/days_header.fxml"));
         HBox header = loader.load();
         DaysHeaderController controller = loader.getController();
         controller.setItineraryController(this);
-        controller.setCityViewModel(new CityViewModel(this.itinerary.getCity()));
+        controller.setData(this.itinerary.getCity().getName(), this.itinerary.getDuration());
         mainBox.getChildren().add(header); // Add first card to grid
     }
 
-    //TO DO - REMOVE THIS
-    private void startCards() throws IOException {
+    private void startCards() {
         List<ItineraryDayView> views = new ArrayList<ItineraryDayView>();
-        LocalDate startUp =this.itinerary.getStartDate();
-        for(int i = 0; i < this.itinerary.getDuration() + 1; i++){
+        LocalDate startUp = this.itinerary.getStartDate();
+        for (int i = 0; i < this.itinerary.getDuration(); i++) {
             ItineraryDayView view = new ItineraryDayView();
             ItineraryDayViewController controller = view.getController();
             controller.initialize(startUp.plusDays(i));
@@ -58,19 +56,13 @@ public class ItineraryController {
         carousel.setChildren(views);
 
         mainBox.getChildren().add(carousel);
-        /*
-        FXMLLoader loader3 = new FXMLLoader(getClass().getResource("/components/displacement_card.fxml"));
-        HBox card3 = loader3.load();
-        DisplacementCardController controller3 = loader3.getController();
-        controller3.setData(new Transportation(TransportationType.BUS, Duration.ofMinutes(2), LocalTime.of(10, 0, 0)));
-        mainGrid.add(card3, 0, 4);*/
     }
 
-    public void advanceWeek(){
+    public void advanceWeek() {
         this.carousel.getController().next();
     }
 
-    public void prevWeek(){
+    public void prevWeek() {
         this.carousel.getController().previous();
     }
 }

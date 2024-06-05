@@ -4,29 +4,32 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import viewmodels.CityViewModel;
 
-public class DaysHeaderController{
+import java.time.Duration;
+
+public class DaysHeaderController {
     private ItineraryController itineraryController;
-    private CityViewModel cityViewModel;
 
     @FXML
-    private Label cityName;
+    private Label cityNameLabel;
+    @FXML
+    private Label numberOfDaysLabel;
 
     public void setItineraryController(ItineraryController intineraryController) {
         this.itineraryController = intineraryController;
     }
 
-    public void setCityViewModel(CityViewModel cityViewModel) {
-        this.cityViewModel = cityViewModel;
-        cityName.textProperty().bindBidirectional(cityViewModel.nameProperty());
+    public void setData(String cityName, int numberOfDays) {
+        cityNameLabel.setText(cityName);
+        numberOfDaysLabel.setText(numberOfDays + " days");
     }
 
     @FXML
-    private void nextWeek(){
+    private void nextWeek() {
         this.itineraryController.advanceWeek();
     }
 
     @FXML
-    private void prevWeek(){
+    private void prevWeek() {
         this.itineraryController.prevWeek();
     }
 }

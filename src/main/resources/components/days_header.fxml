@@ -7,10 +7,10 @@
       fx:controller="ui.controllers.DaysHeaderController"
       stylesheets="/styling/styles.css">
     <VBox spacing="-5">
-        <Label fx:id="cityName" styleClass="big-title"/>
-        <Label text="Add days" styleClass="sub-title"/>
+        <Label fx:id="cityNameLabel" styleClass="big-title"/>
+        <Label fx:id="numberOfDaysLabel" styleClass="sub-title"/>
     </VBox>
-    <Region HBox.hgrow="ALWAYS" />
+    <Region HBox.hgrow="ALWAYS"/>
     <HBox alignment="CENTER">
         <Button text="Previous" onAction="#prevWeek"/>
         <Button text="Next" onAction="#nextWeek"/>

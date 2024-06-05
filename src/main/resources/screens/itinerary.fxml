@@ -7,6 +7,6 @@
 <BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="ui.controllers.ItineraryController" stylesheets="/styling/styles.css">
     <center>
-        <VBox spacing="15" fx:id="mainBox" styleClass="main-container" />
+        <VBox spacing="15" fx:id="mainBox" styleClass="main-container"/>
     </center>
 </BorderPane>

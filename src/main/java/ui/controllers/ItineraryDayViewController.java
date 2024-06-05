@@ -4,7 +4,9 @@ import core.itinerary.TimeSlot;
 import entities.Transportation;
 import javafx.collections.ListChangeListener;
 import javafx.scene.Node;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import ui.components.DisplacementCard;
 import ui.components.TimeSlotCard;
 import viewmodels.CityViewModel;
@@ -30,6 +32,8 @@ public class ItineraryDayViewController {
     private Label dayLabel;
     @FXML
     private VBox cardsContainer;
+    @FXML
+    private ScrollPane mainScrollPane;
 
     private ItineraryDayViewModel viewModel;
     private CityViewModel cityViewModel;
@@ -42,8 +46,13 @@ public class ItineraryDayViewController {
         DateTimeFormatter formatterDate = DateTimeFormatter.ofPattern("dd/MM");
         indexLabel.setText(formatterDate.format(this.viewModel.startOfDayProperty().get().toLocalDate()));
         dayLabel.setText(formatterWeekday.format(this.viewModel.startOfDayProperty().get().toLocalDate()));
-        // Additional initialization if needed
+
         bindCards();
+        // TO DO: CORRECT
+        mainScrollPane.sceneProperty().addListener(((observable, oldValue, newValue) -> {
+            if(newValue != null)
+                mainScrollPane.setMaxHeight(Screen.getPrimary().getBounds().getHeight() - 290);
+        }));
     }
 
     public void setCityViewModel(CityViewModel viewModel) {
@@ -81,7 +90,7 @@ public class ItineraryDayViewController {
     }
 
     @FXML
-    private void handleLabelClick(MouseEvent event) {
+    private void addAttractionModal(MouseEvent event) {
         try {
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/attraction_modal.fxml"));
@@ -97,5 +106,10 @@ public class ItineraryDayViewController {
         } catch (IOException e) {
             System.out.println("Modal not available. Check path.");
         }
+    }
+
+    @FXML
+    private void pickHotel(MouseEvent event){
+        //TO DO
     }
 }

@@ -1,13 +1,16 @@
 package ui.components;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import ui.controllers.ItineraryDayViewController;
 
 import java.io.IOException;
 
 // TO DO: way to refactor
-public class ItineraryDayView extends GridPane {
+public class ItineraryDayView extends Pane {
     private final ItineraryDayViewController controller;
 
     public ItineraryDayView() {

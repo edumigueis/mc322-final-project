@@ -34,7 +34,7 @@ public class Itinerary {
 
     private void updateDuration(){
         if(startDate != null && endDate != null)
-            this.duration = (int)ChronoUnit.DAYS.between(startDate, endDate);
+            this.duration = (int)ChronoUnit.DAYS.between(startDate, endDate) + 1;
     }
 
     public City getCity() {
