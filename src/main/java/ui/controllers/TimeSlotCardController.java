@@ -1,7 +1,5 @@
 package ui.controllers;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.binding.StringBinding;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,14 +9,10 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import ui.helpers.DurationFormatConverter;
 import viewmodels.ItineraryDayViewModel;
 import viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
-import java.time.Duration;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 public class TimeSlotCardController {
     @FXML

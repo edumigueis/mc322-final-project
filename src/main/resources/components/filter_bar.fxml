@@ -23,7 +23,7 @@
         <!-- Price Range Slider -->
         <VBox>
             <Label text="Price Range:" />
-            <Slider fx:id="priceRangeSlider" min="0" max="100" value="50" showTickLabels="true" showTickMarks="true" />
+            <Slider fx:id="priceRangeSlider" value="50" showTickLabels="true" showTickMarks="true" />
         </VBox>
     </HBox>
 </AnchorPane>

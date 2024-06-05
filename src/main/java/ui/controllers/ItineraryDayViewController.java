@@ -1,16 +1,14 @@
 package ui.controllers;
 
 import core.itinerary.TimeSlot;
-import entities.activities.Activity;
-import javafx.beans.property.*;
+import entities.Transportation;
 import javafx.collections.ListChangeListener;
 import javafx.scene.Node;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import ui.components.DisplacementCard;
 import ui.components.TimeSlotCard;
 import viewmodels.CityViewModel;
 import viewmodels.ItineraryDayViewModel;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,8 +20,6 @@ import javafx.stage.Stage;
 import viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
-import java.sql.Time;
-import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -54,32 +50,36 @@ public class ItineraryDayViewController {
         this.cityViewModel = viewModel;
     }
 
-    private void bindCards(){
-        // Add TimeSlotCard for each activity
-        for (TimeSlot ts : viewModel.getActivities()) {
-            TimeSlotCard timeSlotCard = new TimeSlotCard();
-            TimeSlotCardController controller = timeSlotCard.getController();
-            controller.initData(new TimeSlotViewModel(ts), this.viewModel);
-            cardsContainer.getChildren().add(timeSlotCard);
-        }
-
+    private void bindCards() {
+        populate();
         // Bind activity list to UI
         viewModel.getActivities().addListener((ListChangeListener<TimeSlot>) c -> {
             while (c.next()) {
                 if (c.wasAdded()) {
-                    for (TimeSlot ts : c.getAddedSubList()) {
-                        TimeSlotCard timeSlotCard = new TimeSlotCard();
-                        TimeSlotCardController controller = timeSlotCard.getController();
-                        controller.initData(new TimeSlotViewModel(ts), this.viewModel);
-                        cardsContainer.getChildren().add(timeSlotCard);
-                    }
+                    cardsContainer.getChildren().clear();
+                    populate();
                 }
-                if (c.wasRemoved()) {
+                if (c.wasRemoved())
                     cardsContainer.getChildren().removeAll(c.getRemoved());
-                }
             }
         });
     }
+
+    private void populate() {
+        for (TimeSlot ts : viewModel.getActivities()) {
+            TimeSlotCard timeSlotCard = new TimeSlotCard();
+            TimeSlotCardController controller = timeSlotCard.getController();
+            DisplacementCard displacementCard;
+            Transportation transportation = ts.getWayToNext();
+            controller.initData(new TimeSlotViewModel(ts), this.viewModel);
+            cardsContainer.getChildren().add(timeSlotCard);
+            if (transportation != null) {
+                displacementCard = new DisplacementCard(transportation);
+                cardsContainer.getChildren().add(displacementCard);
+            }
+        }
+    }
+
     @FXML
     private void handleLabelClick(MouseEvent event) {
         try {

@@ -3,12 +3,9 @@ package ui.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 

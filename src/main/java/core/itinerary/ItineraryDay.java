@@ -2,16 +2,13 @@ package core.itinerary;
 
 import entities.Hotel;
 import entities.Transportation;
-import entities.TransportationType;
 import entities.activities.Activity;
 
-import java.sql.Time;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class ItineraryDay {

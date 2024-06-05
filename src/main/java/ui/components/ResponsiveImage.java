@@ -4,7 +4,6 @@ import javafx.beans.property.*;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Rectangle;
 
 public class ResponsiveImage extends StackPane {
     private StringProperty imageUrl = new SimpleStringProperty();

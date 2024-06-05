@@ -2,7 +2,6 @@ package ui.components;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import ui.controllers.ItineraryDayViewController;
 
 import java.io.IOException;

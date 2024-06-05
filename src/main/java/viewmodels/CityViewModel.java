@@ -8,8 +8,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.List;
-
 public class CityViewModel {
     private final ObjectProperty<String> nameProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<String> descriptionProperty = new SimpleObjectProperty<>();

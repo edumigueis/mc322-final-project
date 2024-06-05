@@ -1,18 +1,13 @@
 package ui.controllers;
 
 import core.itinerary.Itinerary;
-import core.itinerary.TimeSlot;
-import entities.activities.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.layout.GridPane;
 import entities.City;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import ui.components.ItineraryDayCarousel;
 import ui.components.ItineraryDayView;
-import ui.components.TimeSlotCard;
 import viewmodels.CityViewModel;
 
 import java.time.LocalDate;

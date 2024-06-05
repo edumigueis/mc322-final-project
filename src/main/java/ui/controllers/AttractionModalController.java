@@ -1,9 +1,5 @@
 package ui.controllers;
 
-import helpers.BusinessHours;
-import helpers.Location;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -12,15 +8,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import entities.activities.Activity;
-import entities.activities.Attraction;
 import ui.components.AttractionCardCell;
-import ui.components.CustomAlert;
 import viewmodels.CityViewModel;
 import viewmodels.ItineraryDayViewModel;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class AttractionModalController implements FilterBarController.FilterChangeListener{
     private ItineraryDayViewModel viewModel;

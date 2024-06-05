@@ -1,8 +1,6 @@
 package ui.controllers;
 
 import core.itinerary.TimeSlot;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -11,8 +9,6 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import viewmodels.ItineraryDayViewModel;
-
-import java.sql.Time;
 
 public class DraggableListController {
 
