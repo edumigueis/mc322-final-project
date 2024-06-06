@@ -2,6 +2,7 @@
 
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="ui.controllers.DaysHeaderController"
@@ -13,6 +14,10 @@
     <Region HBox.hgrow="ALWAYS"/>
     <HBox alignment="CENTER">
         <Button text="Previous" onAction="#prevWeek"/>
-        <Button text="Next" onAction="#nextWeek"/>
+        <Button text="Next" onAction="#nextWeek">
+            <graphic>
+                <FontIcon iconLiteral="fas-smile" iconSize="12"/>
+            </graphic>
+        </Button>
     </HBox>
 </HBox>
