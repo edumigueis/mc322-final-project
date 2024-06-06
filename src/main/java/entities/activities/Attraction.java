@@ -17,6 +17,10 @@ public class Attraction implements Activity {
         this.description = description;
         this.imageThumbURL = imageThumbURL;
     }
+    // TO DO: REMOVE
+    public Attraction(String name){
+        this.name = name;
+    }
 
     @Override
     public Location getLocation() {

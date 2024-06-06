@@ -78,8 +78,7 @@ public class TimeSlotCardController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/reorder_selector.fxml"));
             Parent root = loader.load();
             DraggableListController controller = loader.getController();
-            controller.setListViewModel(itineraryViewModel);
-            controller.initData();
+            controller.setTimeSlots(itineraryViewModel.getActivities());
 
             // Create a new stage for the modal
             Stage modalStage = new Stage();
