@@ -4,6 +4,8 @@ import core.itinerary.ItineraryDay;
 import core.itinerary.TimeSlot;
 import entities.Hotel;
 import entities.activities.Activity;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.StringBinding;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -63,5 +65,12 @@ public class ItineraryDayViewModel {
     private void refreshActivities() {
         if (itineraryDay.getActivities() != null)
             activities.setAll(itineraryDay.getActivities());
+    }
+
+    public StringBinding hotelNameBinding() {
+        return Bindings.createStringBinding(() -> {
+            Hotel hotel = hotelProperty.get();
+            return hotel != null ? hotel.getName() : "";
+        }, hotelProperty);
     }
 }

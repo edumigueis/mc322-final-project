@@ -16,6 +16,9 @@
     <StackPane>
         <VBox styleClass="main-container" alignment="center"
               spacing="15" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets left="20" right="20" top="15" bottom="15"/>
+            </padding>
             <VBox prefHeight="${hroot.height * 0.35}" VBox.vgrow="ALWAYS">
                 <HBox>
                     <VBox spacing="-10">

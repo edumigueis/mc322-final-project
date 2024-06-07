@@ -1,7 +1,12 @@
 package ui.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.layout.HBox;
+import javafx.geometry.Bounds;
+import javafx.scene.Node;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.input.ScrollEvent;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
 import ui.components.ItineraryDayView;
 
 import java.util.ArrayList;
@@ -12,7 +17,9 @@ public class ItineraryDayCarouselController {
     private List<ItineraryDayView> allChildren = new ArrayList<>();
     private static final int VISIBLE_COUNT = 3;
     @FXML
-    private HBox visibleBox;
+    private GridPane visibleBox;
+    @FXML
+    private ScrollPane noScroll;
 
     public void start(List<ItineraryDayView> children) {
         this.allChildren = children;
@@ -23,7 +30,12 @@ public class ItineraryDayCarouselController {
     private void updateVisibleChildren() {
         visibleBox.getChildren().clear();
         int endIndex = Math.min(currentIndex + VISIBLE_COUNT, allChildren.size());
-        visibleBox.getChildren().addAll(allChildren.subList(currentIndex, endIndex));
+        for (int i = 0; i < endIndex - currentIndex; i++) {
+            ItineraryDayView child = allChildren.get(currentIndex + i);
+            GridPane.setColumnIndex(child, i);
+            GridPane.setRowIndex(child, 0);
+            visibleBox.getChildren().add(child);
+        }
     }
 
     public void next() {

@@ -4,6 +4,7 @@ import core.itinerary.TimeSlot;
 import entities.Transportation;
 import javafx.collections.ListChangeListener;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
@@ -31,9 +32,9 @@ public class ItineraryDayViewController {
     @FXML
     private Label dayLabel;
     @FXML
-    private VBox cardsContainer;
+    private Button hotelText;
     @FXML
-    private ScrollPane mainScrollPane;
+    private VBox cardsContainer;
 
     private ItineraryDayViewModel viewModel;
     private CityViewModel cityViewModel;
@@ -46,13 +47,9 @@ public class ItineraryDayViewController {
         DateTimeFormatter formatterDate = DateTimeFormatter.ofPattern("dd/MM");
         indexLabel.setText(formatterDate.format(this.viewModel.startOfDayProperty().get().toLocalDate()));
         dayLabel.setText(formatterWeekday.format(this.viewModel.startOfDayProperty().get().toLocalDate()));
+        hotelText.textProperty().bind(this.viewModel.hotelNameBinding());
 
         bindCards();
-        // TO DO: CORRECT
-        mainScrollPane.sceneProperty().addListener(((observable, oldValue, newValue) -> {
-            if(newValue != null)
-                mainScrollPane.setMaxHeight(Screen.getPrimary().getBounds().getHeight() - 290);
-        }));
     }
 
     public void setCityViewModel(CityViewModel viewModel) {

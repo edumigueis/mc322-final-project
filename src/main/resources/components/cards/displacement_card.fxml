@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 
 <?import javafx.scene.shape.Line?>
-<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" spacing="10" prefWidth="400"
+<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" spacing="10" prefWidth="325"
       fx:controller="ui.controllers.DisplacementCardController" stylesheets="/styling/styles.css">
     <StackPane styleClass="line-container">
         <Line endY="40.0" stroke="white" styleClass="line"/>

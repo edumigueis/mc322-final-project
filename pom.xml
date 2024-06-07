@@ -37,8 +37,8 @@
         </dependency>
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
-            <artifactId>ikonli-fontawesome5-pack</artifactId>
-            <version>12.2.0</version>
+            <artifactId>ikonli-jamicons-pack</artifactId>
+            <version>12.3.1</version>
         </dependency>
     </dependencies>
 </project>

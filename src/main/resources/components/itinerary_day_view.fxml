@@ -2,29 +2,29 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<ScrollPane
-        xmlns="http://javafx.com/javafx"
-        xmlns:fx="http://javafx.com/fxml"
-        fx:controller="ui.controllers.ItineraryDayViewController"
-        stylesheets="/styling/styles.css"
-        maxHeight="450"
-        hbarPolicy="NEVER"
-        fitToHeight="true"
-        fitToWidth="true"
-        fx:id="mainScrollPane"
-        styleClass="no-pane">
-    <VBox VBox.vgrow="ALWAYS">
-        <HBox spacing="5" styleClass="padded-card">
-            <Label fx:id="indexLabel" styleClass="header-label"/>
-            <Region HBox.hgrow="ALWAYS"/>
-            <Label fx:id="dayLabel" styleClass="header-label-day"/>
-        </HBox>
-        <HBox spacing="5" style="-fx-padding: 0 0 10 0;">
-            <Label text="Hotel: Copacabana Palace" onMouseClicked="#pickHotel" styleClass="gray-padded-card"/>
-            <Label text="Adicionar atração" onMouseClicked="#addAttractionModal"
-                   styleClass="purple-padded-card"/>
-        </HBox>
-        <VBox VBox.vgrow="ALWAYS" fx:id="cardsContainer"/>
-    </VBox>
-</ScrollPane>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ui.controllers.ItineraryDayViewController"
+      stylesheets="/styling/styles.css"
+      VBox.vgrow="ALWAYS">
+    <HBox spacing="5" styleClass="padded-card">
+        <Label fx:id="indexLabel" styleClass="header-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="dayLabel" styleClass="header-label-day"/>
+    </HBox>
+    <HBox spacing="5" style="-fx-padding: 0 0 10 0;">
+        <Button fx:id="hotelText" text="Copacabana Palace" onMouseClicked="#pickHotel" styleClass="gray-padded-card">
+            <graphic>
+                <FontIcon fill="#5e7d83" iconLiteral="jam-building" iconSize="20" styleClass="icon"/>
+            </graphic>
+        </Button>
+        <Button text="Attraction" onMouseClicked="#addAttractionModal" styleClass="purple-padded-card">
+            <graphic>
+                <FontIcon fill="#070606" iconLiteral="jam-plus" iconSize="20" styleClass="icon"/>
+            </graphic>
+        </Button>
+    </HBox>
+    <VBox VBox.vgrow="ALWAYS" fx:id="cardsContainer"/>
+</VBox>
 

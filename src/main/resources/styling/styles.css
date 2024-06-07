@@ -6,13 +6,8 @@
      -fx-background-radius: 18px;
      -fx-border-radius: 18px;
 }
- #mainGrid {
-     -fx-background-color: #070606;
-     -fx-padding: 15 20 15 20;
-}
 .main-container{
      -fx-background-color: #070606;
-     -fx-padding: 15 20 15 20;
 }
  .yellow-main-header{
      -fx-background-color: #F7FF88;
@@ -48,6 +43,7 @@
      -fx-text-fill: #070606;
      -fx-font-family: "Overpass Bold";
 }
+
  .gray-padded-card{
      -fx-background-color: #081e23;
      -fx-background-radius: 12px;
@@ -102,4 +98,21 @@
          -fx-font-size: 12px;
          -fx-text-fill: #070606;
          -fx-font-family: "Overpass Bold";
+}
+
+.icon-button {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-cursor: hand;
+}
+
+.icon-button .icon {
+    -fx-fill: #FFFFFF;
+}
+
+.icon-button:hover .icon {
+    -fx-fill: BCA5ED;
 }
