@@ -16,7 +16,6 @@
             fitToHeight="true"
             fitToWidth="true"
             styleClass="no-pane"
-            fx:id="noScroll"
             fx:controller="ui.controllers.ItineraryDayCarouselController" vbarPolicy="NEVER">
     <padding>
         <Insets left="20" right="20"/>

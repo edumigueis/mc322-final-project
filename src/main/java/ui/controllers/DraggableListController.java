@@ -19,6 +19,7 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 
 import java.time.LocalTime;
+import java.util.List;
 
 public class DraggableListController {
 
@@ -115,5 +116,9 @@ public class DraggableListController {
             }
         }
         return -1; // Should not happen if names are unique
+    }
+
+    public List<TimeSlot> getCurrentTimeSlotsOrder() {
+        return listView.getItems();
     }
 }

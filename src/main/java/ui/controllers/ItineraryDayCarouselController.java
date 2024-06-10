@@ -18,8 +18,6 @@ public class ItineraryDayCarouselController {
     private static final int VISIBLE_COUNT = 3;
     @FXML
     private GridPane visibleBox;
-    @FXML
-    private ScrollPane noScroll;
 
     public void start(List<ItineraryDayView> children) {
         this.allChildren = children;
