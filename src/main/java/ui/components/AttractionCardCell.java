@@ -14,6 +14,7 @@ public class AttractionCardCell extends ListCell<Activity> {
                 AttractionCard card = new AttractionCard();
                 card.getController().setData(activity);
                 setGraphic(card);
+                setStyle("-fx-alignment: center;");
             }
         }
 }

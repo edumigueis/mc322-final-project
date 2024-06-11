@@ -1,12 +1,13 @@
 package ui.components;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import ui.controllers.AttractionCardController;
 
 import java.io.IOException;
 
-public class AttractionCard extends Pane {
+public class AttractionCard extends HBox {
     private AttractionCardController controller;
     public AttractionCard() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/cards/attraction_card.fxml"));
