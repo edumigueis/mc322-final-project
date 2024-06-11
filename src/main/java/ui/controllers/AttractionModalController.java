@@ -1,5 +1,9 @@
 package ui.controllers;
 
+import java.io.IOException;
+
+import entities.activities.I_Activity;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -7,12 +11,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import entities.activities.Activity;
 import ui.components.AttractionCardCell;
 import viewmodels.CityViewModel;
 import viewmodels.ItineraryDayViewModel;
-
-import java.io.IOException;
 
 public class AttractionModalController implements FilterBarController.FilterChangeListener{
     private ItineraryDayViewModel viewModel;
@@ -21,9 +22,11 @@ public class AttractionModalController implements FilterBarController.FilterChan
     @FXML
     private Button closeButton;
     @FXML
-    private ListView<Activity> cardsContainer;
+    private ListView<I_Activity> cardsContainer;
     @FXML
     private Pane filterBarContainer;
+
+
 
     @FXML
     public void initialize() {
@@ -49,17 +52,21 @@ public class AttractionModalController implements FilterBarController.FilterChan
 
     @Override
     public void onFilterChange(Filter filter) {
-        /* NEEDS WORK TO DO
-        List<Activity> filteredAttractions = activityList.stream()
-                .filter(attraction -> filter.getCategory().equals("All") || attraction.getCategory().equals(filter.getCategory()))
-                .filter(attraction -> attraction.getPrice() <= filter.getPriceRange())
-                .collect(Collectors.toList());
-        updateListView(filteredAttractions);*/
+        cardsContainer.setItems(cityViewModel.getThingsToDo());
+        FilteredList<I_Activity> filteredActivities;
+
+        if(filter.getCategory().equals("All")){
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getPrice()<=filter.getPriceRange()));
+
+        } else{
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.getCategory()))&&(i.getPrice()<=filter.getPriceRange()));
+        }
+        cardsContainer.setItems(filteredActivities);
     }
 
     @FXML
     private void handleReturnValue() {
-        Activity value = cardsContainer.getSelectionModel().getSelectedItem();
+        I_Activity value = cardsContainer.getSelectionModel().getSelectedItem();
 
         // Call the callback method with the return value
         if(value != null)

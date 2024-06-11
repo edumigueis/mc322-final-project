@@ -1,6 +1,18 @@
 package ui.controllers;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.ResourceBundle;
+
+import entities.City;
+import entities.activities.I_Activity;
 import entities.activities.Museum;
+import entities.activities.Restaurant;
+import entities.activities.Restaurant.Avaliacao;
 import helpers.BusinessHours;
 import helpers.Location;
 import javafx.fxml.FXML;
@@ -13,15 +25,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import entities.activities.Activity;
-import entities.City;
 import ui.components.CityCard;
 import ui.components.CustomAlert;
 import ui.helpers.CardParent;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.*;
 
 public class StartScreenController implements Initializable, CardParent {
     private List<City> cities;
@@ -39,13 +45,12 @@ public class StartScreenController implements Initializable, CardParent {
     public void initialize(URL location, ResourceBundle resources) {
         this.cities = new ArrayList<>();
         // TO DO LOAD CITY FILE
-        this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<Activity>() {{
-            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
-            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
-            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "hey", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg", "aaa", "aaaa", "aaaa"));
+        this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<I_Activity>() {{
+            add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "Um dos mais famosos museus do mundo, onde da para tirar foto de tiozao segurando a ponta da piramide", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg","current expo", "Monalisa","website", 10));
+            add(new Restaurant(new Location(1, 2), "Plénitude - Cheval Blanc Paris", new BusinessHours(),"three michelin star restaurant", "https://www.theworlds50best.com/discovery/filestore/jpg/plenitude%20(3).jpg",80, Avaliacao.CINCO_ESTRELAS));
         }}));
-        this.cities.add(new City("Shanghai", "The city of light", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", new ArrayList<Activity>()));
-        this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<Activity>()));
+        this.cities.add(new City("Shanghai", "The city of light", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", new ArrayList<I_Activity>()));
+        this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<I_Activity>()));
 
         // TO DO: aqui faremos leitura de arquivos
         try {

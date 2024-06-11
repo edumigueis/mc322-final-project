@@ -3,20 +3,21 @@ package entities.activities;
 import helpers.BusinessHours;
 import helpers.Location;
 
-public class Museum extends Attraction {
+public class Museum extends Places {
     private String currentExpoName;
     private String mostFamousWorks;
     private String website;
 
-    public Museum(Location location, String name, BusinessHours openTime, String description, String imageThumbURL, String currentExpoName, String mostFamousWorks, String website) {
-        super(location, name, openTime, description, imageThumbURL);
+    public Museum(Location location, String name, BusinessHours openTime, String description, String imageThumbURL, String currentExpoName, String mostFamousWorks, String website, double price) {
+        super(location, name, openTime, description, imageThumbURL, Categories.MUSEUMS, price);
         this.currentExpoName = currentExpoName;
         this.mostFamousWorks = mostFamousWorks;
         this.website = website;
     }
 
+
     public String getCurrentExpoName() {
-        return currentExpoName;
+        return this.currentExpoName;
     }
 
     public void setCurrentExpoName(String currentExpoName) {
@@ -24,7 +25,7 @@ public class Museum extends Attraction {
     }
 
     public String getMostFamousWorks() {
-        return mostFamousWorks;
+        return this.mostFamousWorks;
     }
 
     public void setMostFamousWorks(String mostFamousWorks) {
@@ -32,7 +33,7 @@ public class Museum extends Attraction {
     }
 
     public String getWebsite() {
-        return website;
+        return this.website;
     }
 
     public void setWebsite(String website) {

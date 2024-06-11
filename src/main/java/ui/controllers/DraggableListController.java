@@ -1,9 +1,9 @@
 package ui.controllers;
 
 import core.itinerary.TimeSlot;
-import entities.activities.Activity;
+import entities.activities.I_Activity;
 import entities.Transportation;
-import entities.activities.Attraction;
+import entities.activities.Places;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;

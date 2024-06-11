@@ -1,7 +1,7 @@
 package viewmodels;
 
 import entities.City;
-import entities.activities.Activity;
+import entities.activities.I_Activity;
 import entities.Hotel;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -12,7 +12,7 @@ public class CityViewModel {
     private final ObjectProperty<String> nameProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<String> descriptionProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<String> thumbImageUrlProperty = new SimpleObjectProperty<>();
-    private final ObservableList<Activity> thingsToDo = FXCollections.observableArrayList();
+    private final ObservableList<I_Activity> thingsToDo = FXCollections.observableArrayList();
     private final ObservableList<Hotel> hotels = FXCollections.observableArrayList();
 
     public CityViewModel(City city) {
@@ -36,7 +36,7 @@ public class CityViewModel {
         return thumbImageUrlProperty;
     }
 
-    public ObservableList<Activity> getThingsToDo() {
+    public ObservableList<I_Activity> getThingsToDo() {
         return thingsToDo;
     }
 

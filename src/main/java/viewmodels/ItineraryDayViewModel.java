@@ -3,7 +3,7 @@ package viewmodels;
 import core.itinerary.ItineraryDay;
 import core.itinerary.TimeSlot;
 import entities.Hotel;
-import entities.activities.Activity;
+import entities.activities.I_Activity;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.beans.property.*;
@@ -49,7 +49,7 @@ public class ItineraryDayViewModel {
         return activities;
     }
 
-    public void addActivity(Activity activity) {
+    public void addActivity(I_Activity activity) {
         // Assuming TimeSlot has a method to add an activity
         itineraryDay.addActivity(activity);
         refreshActivities();

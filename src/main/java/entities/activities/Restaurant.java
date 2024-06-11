@@ -2,67 +2,30 @@ package entities.activities;
 
 import helpers.BusinessHours;
 import helpers.Location;
-import helpers.PriceRange;
 
-public class Restaurant implements Activity {
-    private Location location;
-    private String name;
-    private String description;
-    private BusinessHours openTime;
-    private PriceRange priceRange;
+public class Restaurant extends Places{
+    private Avaliacao estrelas;
+    
 
-    public Restaurant(Location location, String name, BusinessHours openTime, PriceRange priceRange, String description) {
-        this.location = location;
-        this.name = name;
-        this.description = description;
-        this.openTime = openTime;
-        this.priceRange = priceRange;
+    public Restaurant(Location location, String name, BusinessHours openTime, String description, String image, double price, Avaliacao estrelas) {
+        super(location, name, openTime, description, image, Categories.RESTAURANTS, price);
+        this.estrelas = estrelas;
     }
 
-    @Override
-    public Location getLocation() {
-        return location;
+    public Avaliacao getEstrelas() {
+        return this.estrelas;
     }
 
-    @Override
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setEstrelas(Avaliacao estrelas) {
+        this.estrelas = estrelas;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public enum Avaliacao{
+        UMA_ESTRELA,
+        DUAS_ESTRELAS,
+        TRES_ESTRELAS,
+        QUATRO_ESTRELAS,
+        CINCO_ESTRELAS
     }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    @Override
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-    public BusinessHours getOpenTime() {
-        return openTime;
-    }
-
-    public void setOpenTime(BusinessHours openTime) {
-        this.openTime = openTime;
-    }
-
-    public PriceRange getPriceRange() {
-        return priceRange;
-    }
-
-    public void setPriceRange(PriceRange priceRange) {
-        this.priceRange = priceRange;
-    }
 }

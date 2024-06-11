@@ -2,7 +2,7 @@ package core.itinerary;
 
 import entities.Hotel;
 import entities.Transportation;
-import entities.activities.Activity;
+import entities.activities.I_Activity;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -56,7 +56,7 @@ public class ItineraryDay {
         this.hotel = hotel;
     }
 
-    public void addActivity(Activity activity) {
+    public void addActivity(I_Activity activity) {
         TimeSlot last;
         LocalTime startTrns;
         LocalTime acStart;

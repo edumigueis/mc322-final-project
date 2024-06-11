@@ -1,17 +1,17 @@
 package entities;
 
-import entities.activities.Activity;
-
 import java.util.List;
+
+import entities.activities.I_Activity;
 
 public class City {
     private String name;
     private String description;
     private String thumbImageUrl;
-    private List<Activity> thingsToDo;
+    private List<I_Activity> thingsToDo;
     private List<Hotel> hotels;
 
-    public City(String name, String description, String thumbImageUrl, List<Activity> thingsToDo) {
+    public City(String name, String description, String thumbImageUrl, List<I_Activity> thingsToDo) {
         this.name = name;
         this.description = description;
         this.thumbImageUrl = thumbImageUrl;
@@ -42,11 +42,11 @@ public class City {
         this.thumbImageUrl = thumbImageUrl;
     }
 
-    public List<Activity> getThingsToDo() {
+    public List<I_Activity> getThingsToDo() {
         return thingsToDo;
     }
 
-    public void setThingsToDo(List<Activity> thingsToDo) {
+    public void setThingsToDo(List<I_Activity> thingsToDo) {
         this.thingsToDo = thingsToDo;
     }
 

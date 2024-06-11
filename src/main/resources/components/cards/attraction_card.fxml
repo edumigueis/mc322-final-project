@@ -15,7 +15,8 @@
     </rowConstraints>
     <ResponsiveImage GridPane.columnIndex="0" GridPane.rowIndex="0"
                      prefWidth="400"
-                     imageUrl="https://images.france.fr/zeaejvyq9bhj/22UaUAPjNqmsCaKMw4U4Ai/abaa86f8cc96ab0ac855844a0b07305e/louvre1.jpg">
+                     imageUrl="https://images.france.fr/zeaejvyq9bhj/22UaUAPjNqmsCaKMw4U4Ai/abaa86f8cc96ab0ac855844a0b07305e/louvre1.jpg"
+                     fx:id="AttactionCardImage">
         <clipCornerRadii>
             <Insets top="18" left="18"/>
         </clipCornerRadii>
@@ -25,9 +26,9 @@
             <Insets top="10" bottom="15" left="15" right="15" />
         </padding>
         <VBox>
-            <Label text="LOUVRE MUSEUM" maxWidth="150" wrapText="true" fx:id="titleLabel" styleClass="green-title"/>
+            <Label text="Name of Place" maxWidth="150" wrapText="true" fx:id="titleLabel" styleClass="green-title"/>
             <Region VBox.vgrow="ALWAYS"/>
-            <Label text="Open: 00:00-23:00" fx:id="businessTimeLabel" styleClass="extra-small-title"/>
+            <Label text="Time" fx:id="businessTimeLabel" styleClass="extra-small-title"/>
         </VBox>
         <Region HBox.hgrow="ALWAYS"/>
         <VBox alignment="CENTER_RIGHT">

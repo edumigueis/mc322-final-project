@@ -1,11 +1,11 @@
 package ui.components;
 
 import javafx.scene.control.ListCell;
-import entities.activities.Activity;
+import entities.activities.I_Activity;
 
-public class AttractionCardCell extends ListCell<Activity> {
+public class AttractionCardCell extends ListCell<I_Activity> {
         @Override
-        protected void updateItem(Activity activity, boolean empty) {
+        protected void updateItem(I_Activity activity, boolean empty) {
             super.updateItem(activity, empty);
 
             if (empty || activity == null) {
