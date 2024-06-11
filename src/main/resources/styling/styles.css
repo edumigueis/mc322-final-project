@@ -1,5 +1,6 @@
 @import url("/styling/fonts.css");
 @import url("/styling/text.css");
+@import url("/styling/scrollbar.css");
 
 .attraction-card {
      -fx-background-color: #083740;
@@ -18,7 +19,7 @@
 }
  .line{
      -fx-stroke-dash-array: 5 5;
-     -fx-stroke-width: 1.5;
+     -fx-stroke-width: 2;
      -fx-stroke: #5e7d83
 }
  .header-label{
@@ -116,3 +117,8 @@
 .icon-button:hover .icon {
     -fx-fill: BCA5ED;
 }
+
+.filter-bar{
+    -fx-background-color: #070606;
+}
+

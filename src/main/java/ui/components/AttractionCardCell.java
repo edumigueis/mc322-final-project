@@ -1,5 +1,6 @@
 package ui.components;
 
+import entities.activities.Attraction;
 import javafx.scene.control.ListCell;
 import entities.activities.Activity;
 
@@ -12,7 +13,7 @@ public class AttractionCardCell extends ListCell<Activity> {
                 setGraphic(null);
             } else {
                 AttractionCard card = new AttractionCard();
-                card.getController().setData(activity);
+                card.getController().setData((Attraction) activity);
                 setGraphic(card);
                 setStyle("-fx-alignment: center;");
             }
