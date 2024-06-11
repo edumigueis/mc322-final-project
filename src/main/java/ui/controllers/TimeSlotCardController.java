@@ -10,6 +10,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ui.components.ExpandableText;
 import viewmodels.ItineraryDayViewModel;
 import viewmodels.TimeSlotViewModel;
 
@@ -25,7 +26,7 @@ public class TimeSlotCardController {
     @FXML
     private Label durationLabel;
     @FXML
-    private Label descriptionLabel;
+    private ExpandableText descriptionLabel;
     @FXML
     private MenuButton optionsMenu;
 
@@ -38,8 +39,7 @@ public class TimeSlotCardController {
         titleLabel.textProperty().bind(timeSlotViewModel.nameBinding());
         optionsMenu.textProperty().bind(timeSlotViewModel.startTimeBinding());
         durationLabel.textProperty().bind(timeSlotViewModel.durationBinding());
-        //TO DO: REMOVE COMMENT AND FIX LAYOUT (EXPANDABLETEXT)
-        //descriptionLabel.textProperty().bind(viewModel.descriptionBinding());
+        descriptionLabel.fullTextProperty().bind(timeSlotViewModel.descriptionBinding());
     }
 
     @FXML

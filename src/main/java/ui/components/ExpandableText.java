@@ -1,9 +1,6 @@
 package ui.components;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -14,6 +11,7 @@ public class ExpandableText extends VBox {
     private final StringProperty fullText = new SimpleStringProperty();
     private final IntegerProperty maxLength = new SimpleIntegerProperty(100); // Default max length
     private final IntegerProperty maximumWidth = new SimpleIntegerProperty(); // Width property
+    private final BooleanProperty readMore = new SimpleBooleanProperty(); // Read more property
 
     public ExpandableText() {
         super();
@@ -69,9 +67,22 @@ public class ExpandableText extends VBox {
         return maximumWidth;
     }
 
+    public boolean isReadMore() {
+        return readMore.get();
+    }
+
+    public BooleanProperty readMoreProperty() {
+        return readMore;
+    }
+
+    public void setReadMore(boolean readMore) {
+        this.readMore.set(readMore);
+    }
+
     private void updateText() {
         String text = fullText.get();
-        if(text != null)
+
+        if (text != null)
             if (text.length() > maxLength.get()) {
                 textLabel.setText(text.substring(0, maxLength.get()) + "...");
                 readMoreLabel.setVisible(true);
@@ -79,6 +90,9 @@ public class ExpandableText extends VBox {
                 textLabel.setText(text);
                 readMoreLabel.setVisible(false);
             }
+
+        if (!readMore.get())
+            readMoreLabel.setVisible(false);
     }
 
     private void showFullText() {
