@@ -1,6 +1,7 @@
 package ui.controllers;
 
 import core.itinerary.TimeSlot;
+import entities.Hotel;
 import entities.Transportation;
 import javafx.collections.ListChangeListener;
 import javafx.scene.Node;
@@ -8,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
+import ui.components.CustomAlert;
 import ui.components.DisplacementCard;
 import ui.components.TimeSlotCard;
 import viewmodels.CityViewModel;
@@ -23,6 +25,7 @@ import javafx.stage.Stage;
 import viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -107,6 +110,34 @@ public class ItineraryDayViewController {
 
     @FXML
     private void pickHotel(MouseEvent event){
-        //TO DO
+        try {
+            // Load the FXML for the modal
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/hotel_selector.fxml"));
+            Parent root = loader.load();
+            HotelSelectorController controller = loader.getController();
+            controller.start(this.cityViewModel.getHotels());
+
+            // Create a new stage for the modal
+            Stage modalStage = new Stage();
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.setTitle("Select Hotel");
+            modalStage.setScene(new Scene(root));
+
+            // Pass the stage reference to the modal controller
+            controller.setStage(modalStage);
+
+            // Show the modal
+            modalStage.showAndWait();
+
+            Hotel selectedHotel = controller.getSelectedHotel();
+            if (selectedHotel != null) {
+                // TO DO: adicionar hotel.
+            }
+        } catch (NullPointerException | IOException e) {
+            CustomAlert alert = CustomAlert.createErrorAlert("There are no registered hotels in this city.");
+            alert.setTitle("Error");
+            alert.setHeaderText(null); // Remove header text
+            alert.showAndWait();
+        }
     }
 }

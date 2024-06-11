@@ -11,11 +11,12 @@ public class City {
     private List<Activity> thingsToDo;
     private List<Hotel> hotels;
 
-    public City(String name, String description, String thumbImageUrl, List<Activity> thingsToDo) {
+    public City(String name, String description, String thumbImageUrl, List<Activity> thingsToDo, List<Hotel> hotels) {
         this.name = name;
         this.description = description;
         this.thumbImageUrl = thumbImageUrl;
         this.thingsToDo = thingsToDo;
+        this.hotels = hotels;
     }
 
     public String getName() {
