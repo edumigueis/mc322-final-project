@@ -17,7 +17,9 @@
                 <ToggleButton fx:id="allToggleButton" text="All" />
                 <ToggleButton fx:id="museumsToggleButton" text="Museums" />
                 <ToggleButton fx:id="parksToggleButton" text="Parks" />
-                <ToggleButton fx:id="galleriesToggleButton" text="Galleries" />
+                <ToggleButton fx:id="restaurantsToggleButton" text="Restaurants" />
+                <ToggleButton fx:id="theatersToggleButton" text="Theater" />
+                <ToggleButton fx:id="touristicToggleButton" text="Touristic" />
             </HBox>
         </VBox>
         <!-- Price Range Slider -->

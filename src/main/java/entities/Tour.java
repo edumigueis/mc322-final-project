@@ -1,14 +1,15 @@
 package entities;
 
-import entities.activities.Attraction;
 import java.time.LocalTime;
 import java.util.List;
+
+import entities.activities.Places;
 
 public class Tour {
     private String name;
     private String description;
     private String language;
-    private List<Attraction> attractionList;
+    private List<Places> attractionList;
     private LocalTime start;
     private LocalTime end;
     private TourType type;
@@ -37,11 +38,11 @@ public class Tour {
         this.language = language;
     }
 
-    public List<Attraction> getAttractionList() {
+    public List<Places> getAttractionList() {
         return attractionList;
     }
 
-    public void setAttractionList(List<Attraction> attractionList) {
+    public void setAttractionList(List<Places> attractionList) {
         this.attractionList = attractionList;
     }
 

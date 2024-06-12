@@ -18,7 +18,11 @@ public class FilterBarController {
     private ToggleButton parksToggleButton;
 
     @FXML
-    private ToggleButton galleriesToggleButton;
+    private ToggleButton restaurantsToggleButton;
+    @FXML
+    private ToggleButton theatersToggleButton;
+    @FXML
+    private ToggleButton touristicToggleButton;
 
     @FXML
     private Slider priceRangeSlider;
@@ -33,7 +37,9 @@ public class FilterBarController {
         allToggleButton.setToggleGroup(categoryToggleGroup);
         museumsToggleButton.setToggleGroup(categoryToggleGroup);
         parksToggleButton.setToggleGroup(categoryToggleGroup);
-        galleriesToggleButton.setToggleGroup(categoryToggleGroup);
+        restaurantsToggleButton.setToggleGroup(categoryToggleGroup);
+        theatersToggleButton.setToggleGroup(categoryToggleGroup);
+        touristicToggleButton.setToggleGroup(categoryToggleGroup);
 
         // Select "All" by default
         categoryToggleGroup.selectToggle(allToggleButton);

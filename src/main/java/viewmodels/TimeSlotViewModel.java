@@ -2,7 +2,7 @@ package viewmodels;
 
 import core.itinerary.TimeSlot;
 import entities.Transportation;
-import entities.activities.Activity;
+import entities.activities.I_Activity;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.beans.property.ObjectProperty;
@@ -16,7 +16,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class TimeSlotViewModel {
-    private final ObjectProperty<Activity> dataProperty = new SimpleObjectProperty<>();
+    private final ObjectProperty<I_Activity> dataProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Transportation> wayToNextProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<LocalTime> startProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<LocalTime> endProperty = new SimpleObjectProperty<>();
@@ -33,7 +33,7 @@ public class TimeSlotViewModel {
 
     }
 
-    public ObjectProperty<Activity> dataProperty() {
+    public ObjectProperty<I_Activity> dataProperty() {
         return dataProperty;
     }
 
@@ -55,14 +55,14 @@ public class TimeSlotViewModel {
 
     public StringBinding nameBinding() {
         return Bindings.createStringBinding(() -> {
-            Activity activity = dataProperty.get();
+            I_Activity activity = dataProperty.get();
             return activity != null ? activity.getName() : "";
         }, dataProperty);
     }
 
     public StringBinding descriptionBinding() {
         return Bindings.createStringBinding(() -> {
-            Activity activity = dataProperty.get();
+            I_Activity activity = dataProperty.get();
             return activity != null ? activity.getDescription() : "";
         }, dataProperty);
     }

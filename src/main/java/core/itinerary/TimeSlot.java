@@ -1,28 +1,28 @@
 package core.itinerary;
 
-import entities.activities.Activity;
-import entities.Transportation;
-
 import java.time.LocalTime;
 
+import entities.Transportation;
+import entities.activities.I_Activity;
+
 public class TimeSlot {
-    Activity data;
+    I_Activity data;
     Transportation wayToNext;
     LocalTime start;
     LocalTime end;
 
-    public TimeSlot(Activity data, Transportation wayToNext, LocalTime start, LocalTime end) {
+    public TimeSlot(I_Activity data, Transportation wayToNext, LocalTime start, LocalTime end) {
         this.data = data;
         this.wayToNext = wayToNext;
         this.start = start;
         this.end = end;
     }
 
-    public Activity getData() {
+    public I_Activity getData() {
         return data;
     }
 
-    public void setData(Activity data) {
+    public void setData(I_Activity data) {
         this.data = data;
     }
 

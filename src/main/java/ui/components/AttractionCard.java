@@ -1,14 +1,22 @@
 package ui.components;
 
+import java.io.IOException;
+
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import ui.controllers.AttractionCardController;
 
-import java.io.IOException;
-
-public class AttractionCard extends HBox {
+public class AttractionCard extends Pane {
     private AttractionCardController controller;
+
+    @FXML
+    private Label priceLabel;
+
+    
+
+
     public AttractionCard() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/cards/attraction_card.fxml"));
         try {
@@ -18,6 +26,10 @@ public class AttractionCard extends HBox {
             throw new RuntimeException(exception);
         }
         getChildren().add(fxmlLoader.getRoot());
+    }
+
+    public String getPriceLabel(){
+        return priceLabel.getText();
     }
 
     public void setController(AttractionCardController controller) {
