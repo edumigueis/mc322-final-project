@@ -1,5 +1,7 @@
 package helpers;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,13 +11,13 @@ public class BusinessHours {
     public BusinessHours() {
         hoursMap = new HashMap<>();
         // Initialize with default closed hours for each day
-        hoursMap.put("Monday", "Closed");
-        hoursMap.put("Tuesday", "Closed");
-        hoursMap.put("Wednesday", "Closed");
-        hoursMap.put("Thursday", "Closed");
-        hoursMap.put("Friday", "Closed");
-        hoursMap.put("Saturday", "Closed");
-        hoursMap.put("Sunday", "Closed");
+        hoursMap.put("MONDAY", "Closed");
+        hoursMap.put("TUESDAY", "Closed");
+        hoursMap.put("WEDNESDAY", "Closed");
+        hoursMap.put("THURSDAY", "Closed");
+        hoursMap.put("FRIDAY", "Closed");
+        hoursMap.put("SATURDAY", "Closed");
+        hoursMap.put("SUNDAY", "Closed");
     }
 
     public void setHours(String dayOfWeek, String hours) throws Exception {
@@ -59,5 +61,12 @@ public class BusinessHours {
                     || (givenHour == closingHour
                     && givenMinute <= closingMinute);
         return false;
+    }
+
+    public String getCurrentOpenHours(){
+        LocalDate currentDate = LocalDate.now();
+        // Get the current day of the week
+        DayOfWeek dayOfWeek = currentDate.getDayOfWeek();
+        return hoursMap.get(dayOfWeek.name());
     }
 }

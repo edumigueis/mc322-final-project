@@ -66,3 +66,9 @@
          -fx-text-fill: #FFFFFF;
          -fx-font-family: "Overpass Bold";
 }
+
+#descriptionLabel{
+    -fx-font-size: 11px;
+    -fx-text-fill: #CDCDCD !important;
+    -fx-font-family: "Overpass Light";
+}

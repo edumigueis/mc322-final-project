@@ -15,7 +15,6 @@ import ui.components.ResponsiveImage;
 public class AttractionCardController {
     @FXML
     private ExpandableText descriptionLabel;
-
     @FXML
     private Label priceLabel;
     @FXML
@@ -23,14 +22,11 @@ public class AttractionCardController {
     @FXML
     private Label businessTimeLabel;
     @FXML
-    private ResponsiveImage AttractionCardImage;
-
-
+    private ResponsiveImage attractionCardImage;
 
     public void setData(I_Activity activity) {
         if (activity instanceof Tour) {
             Tour tour = (Tour) activity;
-
         } else {
             if (activity instanceof Museum) {
                 Museum museum = (Museum) activity;
@@ -40,10 +36,11 @@ public class AttractionCardController {
         if(activity instanceof Restaurant){
             Restaurant restaurant = (Restaurant) activity;
         }
+        assert activity instanceof Places;
         descriptionLabel.setFullText(((Places)activity).getDescription());
         titleLabel.setText(activity.getName().toUpperCase());
-        //businessTimeLabel.setText("Open hours: " + ((Places)activity).getOpenTime());
-        priceLabel.setText("$" + activity.getPrice());
-        //AttractionCardImage.setImageUrl(((Places)activity).getImageThumbURL());
+                businessTimeLabel.setText("Open hours: " + ((Places) activity).getOpenTime().getCurrentOpenHours());
+                priceLabel.setText("$" + activity.getPrice());
+        //attractionCardImage.setImageUrl(((Places)activity).getImageThumbURL());
     }
 }

@@ -9,7 +9,6 @@ import javafx.scene.layout.Pane;
 import ui.controllers.AttractionCardController;
 
 public class AttractionCard extends Pane {
-    
     private AttractionCardController controller;
 
     @FXML

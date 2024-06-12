@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.AnchorPane?>
-
-<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.control.ScrollPane?>
@@ -16,12 +12,11 @@
             fitToHeight="true"
             fitToWidth="true"
             styleClass="no-pane"
-            fx:id="noScroll"
             fx:controller="ui.controllers.ItineraryDayCarouselController" vbarPolicy="NEVER">
     <padding>
         <Insets left="20" right="20"/>
     </padding>
-    <GridPane hgap="20" fx:id="visibleBox">
+    <GridPane hgap="35" fx:id="visibleBox">
         <columnConstraints>
             <ColumnConstraints percentWidth="33" minWidth="325"/>
             <ColumnConstraints percentWidth="33" minWidth="325"/>

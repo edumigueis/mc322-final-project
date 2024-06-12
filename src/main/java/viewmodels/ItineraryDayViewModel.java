@@ -10,8 +10,11 @@ import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.List;
 
 public class ItineraryDayViewModel {
 
@@ -53,14 +56,23 @@ public class ItineraryDayViewModel {
         // Assuming TimeSlot has a method to add an activity
         itineraryDay.addActivity(activity);
         refreshActivities();
-    }/*
+    }
+
+    public void alterStart(I_Activity activity, LocalTime newStart) {
+        // TO DO: implement
+        System.out.println(newStart.toString());
+    }
 
     // Additional methods to manipulate activities
-    public void removeActivity(Activity activity) {
-        // Assuming TimeSlot has a method to remove an activity
-        itineraryDay.getRoot().removeActivity(activity);
-        activities.remove(activity);
-    }*/
+    public void removeActivity(I_Activity activity) {
+        itineraryDay.removeActivity(activity);
+        refreshActivities();
+    }
+
+    public void setAllActivities(List<TimeSlot> slots) {
+        itineraryDay.setAll(slots);
+        refreshActivities();
+    }
 
     private void refreshActivities() {
         if (itineraryDay.getActivities() != null)

@@ -6,9 +6,11 @@
 <?import javafx.geometry.Insets?>
 <?import ui.components.ResponsiveImage?>
 <?import ui.components.ExpandableText?>
+
 <GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="ui.controllers.AttractionCardController" hgap="10"
-          stylesheets="/styling/styles.css" styleClass="attraction-card" prefHeight="200.0" prefWidth="400">
+          stylesheets="/styling/styles.css" styleClass="attraction-card" prefHeight="200.0" prefWidth="420.0"
+          minWidth="420.0">
     <rowConstraints>
         <RowConstraints vgrow="SOMETIMES" percentHeight="40.0"/>
         <RowConstraints vgrow="SOMETIMES" percentHeight="60.0"/>
@@ -16,14 +18,14 @@
     <ResponsiveImage GridPane.columnIndex="0" GridPane.rowIndex="0"
                      prefWidth="400"
                      imageUrl="https://images.france.fr/zeaejvyq9bhj/22UaUAPjNqmsCaKMw4U4Ai/abaa86f8cc96ab0ac855844a0b07305e/louvre1.jpg"
-                     fx:id="AttactionCardImage">
+                     fx:id="attactionCardImage">
         <clipCornerRadii>
             <Insets top="18" left="18"/>
         </clipCornerRadii>
     </ResponsiveImage>
-    <HBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="420">
         <padding>
-            <Insets top="10" bottom="15" left="15" right="15" />
+            <Insets top="10" bottom="15" left="15" right="15"/>
         </padding>
         <VBox>
             <Label text="Name of Place" maxWidth="150" wrapText="true" fx:id="titleLabel" styleClass="green-title"/>
@@ -31,10 +33,11 @@
             <Label text="Time" fx:id="businessTimeLabel" styleClass="extra-small-title"/>
         </VBox>
         <Region HBox.hgrow="ALWAYS"/>
-        <VBox alignment="CENTER_RIGHT">
+        <VBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
             <ExpandableText fx:id="descriptionLabel"
-                   maxWidth="200"
-                   styleClass="expandable-text"/>
+                            maximumWidth="260"
+                            maxLength="100"
+                            styleClass="expandable-text"/>
             <Region VBox.vgrow="ALWAYS"/>
             <Label alignment="CENTER_RIGHT" text="\$10" fx:id="priceLabel" styleClass="small-title"/>
         </VBox>

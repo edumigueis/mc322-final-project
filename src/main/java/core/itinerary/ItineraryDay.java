@@ -4,6 +4,7 @@ import entities.Hotel;
 import entities.Transportation;
 import entities.activities.I_Activity;
 
+import java.sql.Time;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -68,12 +69,20 @@ public class ItineraryDay {
             transportation = Transportation.betweenPlaces(startTrns, last.getData().getLocation(), activity.getLocation());
             last.setWayToNext(transportation);
             acStart = startTrns.plus(transportation.getEstimatedDuration());
-        } else{
-            acStart = LocalTime.of(8,0);
+        } else {
+            acStart = LocalTime.of(8, 0);
             transportation = null;
         }
 
         TimeSlot ts = new TimeSlot(activity, transportation, acStart, acStart.plus(Duration.ofHours(1)));
         this.activities.add(ts);
+    }
+
+    public void removeActivity(I_Activity activity) {
+        // TO DO: implement
+    }
+
+    public void setAll(List<TimeSlot> slots) {
+        // TO DO: implementar - lembre-se de recalcular todos os transportes porque a idea é setar apenas uma lista de atividades
     }
 }

@@ -1,5 +1,6 @@
 package ui.controllers;
 
+import core.itinerary.TimeSlot;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,10 +10,13 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ui.components.ExpandableText;
 import viewmodels.ItineraryDayViewModel;
 import viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
 
 public class TimeSlotCardController {
     @FXML
@@ -22,23 +26,25 @@ public class TimeSlotCardController {
     @FXML
     private Label durationLabel;
     @FXML
-    private Label descriptionLabel;
+    private ExpandableText descriptionLabel;
     @FXML
     private MenuButton optionsMenu;
 
     private ItineraryDayViewModel itineraryViewModel;
+    private TimeSlotViewModel timeSlotViewModel;
 
     public void initData(TimeSlotViewModel viewModel, ItineraryDayViewModel itineraryViewModel) {
         this.itineraryViewModel = itineraryViewModel;
-        titleLabel.textProperty().bind(viewModel.nameBinding());
-        optionsMenu.textProperty().bind(viewModel.startTimeBinding());
-        durationLabel.textProperty().bind(viewModel.durationBinding());
-        //TO DO: REMOVE COMMENT AND FIX LAYOUT (EXPANDABLETEXT)
-        //descriptionLabel.textProperty().bind(viewModel.descriptionBinding());
+        this.timeSlotViewModel = viewModel;
+        titleLabel.textProperty().bind(timeSlotViewModel.nameBinding());
+        optionsMenu.textProperty().bind(timeSlotViewModel.startTimeBinding());
+        durationLabel.textProperty().bind(timeSlotViewModel.durationBinding());
+        descriptionLabel.fullTextProperty().bind(timeSlotViewModel.descriptionBinding());
     }
 
     @FXML
     private void removeSelf() {
+        this.itineraryViewModel.removeActivity(this.timeSlotViewModel.dataProperty().get());
     }
 
     @FXML
@@ -61,10 +67,9 @@ public class TimeSlotCardController {
             // Show the modal
             modalStage.showAndWait();
 
-            String selectedDuration = controller.getSelectedDuration();
+            Duration selectedDuration = controller.getSelectedDuration();
             if (selectedDuration != null) {
-                System.out.println("Selected duration: " + selectedDuration);
-                // Pass the selected duration to further processing if needed
+                this.itineraryViewModel.alterStart(timeSlotViewModel.dataProperty().get(), timeSlotViewModel.startProperty().get().plus(selectedDuration));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -89,11 +94,8 @@ public class TimeSlotCardController {
             // Show the modal
             modalStage.showAndWait();
 
-            /*String selectedDuration = controller.getList();
-            if (selectedDuration != null) {
-                System.out.println("Selected duration: " + selectedDuration);
-                // Pass the selected duration to further processing if needed
-            }*/
+            List<TimeSlot> newOrder = controller.getCurrentTimeSlotsOrder();
+            this.itineraryViewModel.setAllActivities(newOrder);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

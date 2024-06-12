@@ -68,21 +68,19 @@ public class Places implements I_Activity {
         this.imageThumbURL = imageThumbURL;
     }
 
-    public Categories getCategory(){
+    public Categories getCategory() {
         return this.category;
     }
 
-    public void setCategory(Categories category){
+    public void setCategory(Categories category) {
         this.category = category;
     }
 
-    public double getPrice(){
+    public double getPrice() {
         return this.price;
     }
 
-    public void setPrice(double price){
+    public void setPrice(double price) {
         this.price = price;
     }
-
-
 }

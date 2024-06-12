@@ -5,6 +5,7 @@
 <?import ui.components.ResponsiveImage?>
 <?import javafx.geometry.Insets?>
 
+<?import ui.components.ExpandableText?>
 <GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="ui.controllers.TimeSlotCardController" prefHeight="130" hgap="10"
           stylesheets="/styling/styles.css" styleClass="attraction-card" minHeight="130">
@@ -40,7 +41,11 @@
             <Insets top="10" bottom="10"/>
         </padding>
         <Label fx:id="titleLabel" styleClass="card-title-white"/>
-        <Label fx:id="descriptionLabel" wrapText="true" styleClass="text"/>
+        <ExpandableText readMore="false" maximumWidth="170" maxLength="60" fx:id="descriptionLabel">
+            <padding>
+                <Insets top="5" bottom="5"/>
+            </padding>
+        </ExpandableText>
         <Region VBox.vgrow="ALWAYS"/>
         <Label fx:id="durationLabel" styleClass="small-title"/>
     </VBox>

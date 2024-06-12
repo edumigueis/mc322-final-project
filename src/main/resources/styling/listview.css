@@ -14,6 +14,7 @@
 .list-cell {
     -fx-padding: 6px 0 6px 0;
     -fx-background-color: #070606;
+    -fx-alignment: center;
 }
 .list-cell .label{
     -fx-text-fill: #5E7D83;
@@ -22,7 +23,7 @@
 
 .list-cell:filled .text-label{
     -fx-text-fill: #5E7D83;
-        -fx-font-family: "Overpass Medium";
+    -fx-font-family: "Overpass Medium";
 }
 
 .list-cell:filled:selected:focused,
