@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="ui.controllers.FilterBarController">
-    <HBox spacing="10" alignment="CENTER_LEFT">
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="filter-bar">
         <!-- Category Filter Buttons -->
-        <VBox>
-            <Label text="Category:" />
-            <HBox spacing="10">
-                <ToggleButton fx:id="allToggleButton" text="All" />
-                <ToggleButton fx:id="museumsToggleButton" text="Museums" />
-                <ToggleButton fx:id="parksToggleButton" text="Parks" />
-                <ToggleButton fx:id="restaurantsToggleButton" text="Restaurants" />
-                <ToggleButton fx:id="theatersToggleButton" text="Theater" />
-                <ToggleButton fx:id="touristicToggleButton" text="Touristic" />
-            </HBox>
-        </VBox>
+            <ScrollPane styleClass="no-pane">
+                <HBox spacing="9">
+                    <ToggleButton styleClass="toggle-button-gray" fx:id="allToggleButton" text="All" />
+                    <ToggleButton styleClass="toggle-button-gray" fx:id="museumsToggleButton" text="Museums" />
+                    <ToggleButton styleClass="toggle-button-gray" fx:id="parksToggleButton" text="Parks" />
+                    <ToggleButton styleClass="toggle-button-gray" fx:id="restaurantsToggleButton" text="Restaurants" />
+                    <ToggleButton styleClass="toggle-button-gray" fx:id="theatersToggleButton" text="Theater" />
+                    <ToggleButton styleClass="toggle-button-gray" fx:id="touristicToggleButton" text="Touristic" />
+                </HBox>
+            </ScrollPane>
         <!-- Price Range Slider -->
         <VBox>
-            <Label text="Price Range:" />
+            <Label text="Price Range:" styleClass="text"/>
             <Slider fx:id="priceRangeSlider" value="50" showTickLabels="true" showTickMarks="true" />
         </VBox>
     </HBox>

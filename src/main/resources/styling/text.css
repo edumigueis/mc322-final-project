@@ -59,7 +59,6 @@
          -fx-font-family: "Overpass Light";
 }
 
-/* Style for the "Read more" label inside ExpandableText */
 .expandable-text .read-more {
     -fx-cursor: hand;
     -fx-font-size: 11px;

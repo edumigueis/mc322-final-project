@@ -5,23 +5,22 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="ui.controllers.AttractionModalController">
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ui.controllers.AttractionModalController">
     <stylesheets>
         <URL value="@/styling/listview.css"/>
         <URL value="@/styling/styles.css"/>
     </stylesheets>
-    <HBox alignment="CENTER" styleClass="filter-bar">
-        <padding>
-            <Insets left="10" right="10" top="5" bottom="5"/>
-        </padding>
-        <Pane fx:id="filterBarContainer"/>
-        <Region HBox.hgrow="ALWAYS"/>
-        <Button fx:id="closeButton" styleClass="yellow-button" text="Close" onAction="#handleReturnValue"
-                alignment="CENTER"/>
-    </HBox>
-    <HBox alignment="CENTER">
-        <ListView fx:id="cardsContainer" minHeight="600" HBox.hgrow="ALWAYS"/>
-    </HBox>
-</VBox>
+    <AnchorPane styleClass="filter-bar">
+        <Pane fx:id="filterBarContainer" AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10"/>
+        <ListView fx:id="cardsContainer" AnchorPane.topAnchor="60" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"/>
+        <Button fx:id="closeButton" styleClass="outlined-button" text="Select" onAction="#handleReturnValue"
+                AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20">
+            <graphic>
+                <FontIcon iconLiteral="jam-plus" iconSize="16" styleClass="icon"/>
+            </graphic>
+        </Button>
+    </AnchorPane>
+</StackPane>
