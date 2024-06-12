@@ -6,21 +6,20 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<StackPane xmlns="http://javafx.com/javafx"
-           xmlns:fx="http://javafx.com/fxml"
-           fx:controller="ui.controllers.AttractionModalController">
+<AnchorPane styleClass="filter-bar" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controllers.AttractionModalController" minHeight="600">
     <stylesheets>
         <URL value="@/styling/listview.css"/>
         <URL value="@/styling/styles.css"/>
     </stylesheets>
-    <AnchorPane styleClass="filter-bar">
-        <Pane fx:id="filterBarContainer" AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10"/>
-        <ListView fx:id="cardsContainer" AnchorPane.topAnchor="60" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"/>
-        <Button fx:id="closeButton" styleClass="outlined-button" text="Select" onAction="#handleReturnValue"
-                AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20">
-            <graphic>
-                <FontIcon iconLiteral="jam-plus" iconSize="16" styleClass="icon"/>
-            </graphic>
-        </Button>
-    </AnchorPane>
-</StackPane>
+    <Pane fx:id="filterBarContainer" AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10"/>
+    <ListView fx:id="cardsContainer" AnchorPane.topAnchor="60" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"
+              AnchorPane.bottomAnchor="0"/>
+    <Button fx:id="closeButton" styleClass="outlined-button" text="Select" onAction="#handleReturnValue"
+            AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20">
+        <graphic>
+            <FontIcon iconLiteral="jam-plus" iconSize="16" styleClass="icon"/>
+        </graphic>
+    </Button>
+</AnchorPane>
