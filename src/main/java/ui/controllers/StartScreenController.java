@@ -45,8 +45,23 @@ public class StartScreenController implements Initializable, CardParent {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.cities = new ArrayList<>();
-        // TO DO LOAD CITY FILE
-        this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<I_Activity>() {{
+        try {
+            List<Activity> activitiesParis = XMLReader.readActivities("data/activityParis.xml");
+            List<Hotel> hotelsParis = XMLReader.readHotels("data/hotelsParis.xml");
+            List<Activity> activitiesFlorence = XMLReader.readActivities("data/activityFlorence.xml");
+            List<Hotel> hotelsFlorence = XMLReader.readHotels("data/hotelsFlorence.xml");
+            List<Activity> activitiesShangai = XMLReader.readActivities("data/activityShangai.xml");
+            List<Hotel> hotelsShangai = XMLReader.readHotels("data/hotelsShangai.xml");
+
+            this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", activitiesParis, hotelsParis));
+            this.cities.add(new City("Shanghai", "The center of the future", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", activitiesShangai, hotelsShangai));
+            this.cities.add(new City("Florence", "The capital of Tuscany", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", activitiesFlorence, hotelsFlorence));
+
+        } catch (Exception e) {
+            System.err.println("Exception in StartScreenController 1!");
+        }
+        //test code TO DO: REMOVE
+        /*this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<I_Activity>() {{
             add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "Um dos mais famosos museus do mundo, onde da para tirar foto de tiozao segurando a ponta da piramide", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg","current expo", "Monalisa","website", 10));
             add(new Restaurant(new Location(1, 2), "Plénitude - Cheval Blanc Paris", new BusinessHours(),"three michelin star restaurant", "https://www.theworlds50best.com/discovery/filestore/jpg/plenitude%20(3).jpg",80, Avaliacao.CINCO_ESTRELAS));
         }}, new ArrayList<Hotel>() {{
@@ -55,8 +70,8 @@ public class StartScreenController implements Initializable, CardParent {
         }}));
         this.cities.add(new City("Shanghai", "The city of light", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", new ArrayList<I_Activity>(), new ArrayList<Hotel>()));
         this.cities.add(new City("Florence", "The city of light", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", new ArrayList<I_Activity>(), new ArrayList<Hotel>()));
-
-        // TO DO: aqui faremos leitura de arquivos
+        */
+        // Load UI
         try {
             loadCities();
             loadDatePicker();
