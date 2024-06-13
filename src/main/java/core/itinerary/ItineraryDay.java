@@ -74,7 +74,7 @@ public class ItineraryDay {
             transportation = null;
         }
 
-        TimeSlot ts = new TimeSlot(activity, transportation, acStart, acStart.plus(Duration.ofHours(1)));
+        TimeSlot ts = new TimeSlot(activity, null, acStart, acStart.plus(Duration.ofHours(1)));
         this.activities.add(ts);
     }
 
