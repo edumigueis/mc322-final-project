@@ -17,8 +17,8 @@
     </stylesheets>
     <VBox alignment="CENTER">
         <ListView fx:id="hotelListView"/>
-        <HBox alignment="CENTER" styleClass="main-container">
-            <Button styleClass="yellow-button" text="Select" onAction="#handleSelect"/>
+        <HBox alignment="CENTER" styleClass="main-container" prefHeight="48">
+            <Button styleClass="outlined-button" text="Select" onAction="#handleSelect"/>
         </HBox>
     </VBox>
 </AnchorPane>

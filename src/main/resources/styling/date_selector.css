@@ -1,90 +1,106 @@
 @import url("/styling/fonts.css");
- .date-picker .combo-box {
-     -fx-background-insets:0px ;
-     -fx-border-width: 0px;
-     -fx-border-color: transparent;
-     -fx-background-color: transparent;
+
+.date-picker .combo-box {
+    -fx-background-insets: 0px;
+    -fx-border-width: 0px;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
 }
- .date-picker{
-     -fx-background-insets:0px ;
-     -fx-border-width: 0px;
-     -fx-border-color: transparent;
-     -fx-background-color: transparent;
+
+.date-picker {
+    -fx-background-insets: 0px;
+    -fx-border-width: 0px;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
 }
- .date-picker .text-field{
-     -fx-border-color: transparent;
-     -fx-border-width: 0px;
-     -fx-background-radius: 11px 0 0 11px;
-     -fx-background-radius: 11px 0 0 11px;
-     -fx-padding: 10px;
-     -fx-background-color: #081e23;
-     -fx-font-size: 14px;
-     -fx-text-fill: #5e7d83;
-     -fx-font-family: "Overpass Bold";
+
+.date-picker .text-field {
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;
+    -fx-background-radius: 11px 0 0 11px;
+    -fx-background-radius: 11px 0 0 11px;
+    -fx-padding: 10px;
+    -fx-background-color: #081e23;
+    -fx-font-size: 14px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Bold";
 }
- .date-picker .arrow-button{
-     -fx-background-radius: 0 11px 11px 0;
-     -fx-background-color: #081e23;
-     -fx-padding: 0 15px 0 15px;
-     -fx-border-color: #070606;
-     -fx-border-width: 0 0 0 1px;
+
+.date-picker .arrow-button {
+    -fx-background-radius: 0 11px 11px 0;
+    -fx-background-color: #081e23;
+    -fx-padding: 0 15px 0 15px;
+    -fx-border-color: #070606;
+    -fx-border-width: 0 0 0 1px;
 }
- .date-picker .arrow-button .arrow{
-     -fx-background-radius:0px ;
-     -fx-background-color: #F7FF88;
-     -fx-pref-width: 14px;
-     -fx-pref-height: 14px;
+
+.date-picker .arrow-button .arrow {
+    -fx-background-radius: 0px;
+    -fx-background-color: #F7FF88;
+    -fx-pref-width: 14px;
+    -fx-pref-height: 14px;
 }
- .date-picker .arrow-button:hover{
-     -fx-background-color: #F7FF88;
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: #F7FF88;
 }
- .date-picker .arrow-button:hover .arrow{
-     -fx-background-color: #070606;
+
+.date-picker .arrow-button:hover .arrow {
+    -fx-background-color: #070606;
 }
- .date-picker .button {
-     -fx-background-color: transparent;
-     -fx-border-color:transparent;
-     -fx-pref-height: 35px;
-     -fx-pref-width: 35px;
+
+.date-picker .button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 35px;
 }
- .date-picker .button:hover {
-     -fx-border-color:transparent;
-     -fx-pref-height: 35px;
-     -fx-pref-width: 35px;
+
+.date-picker .button:hover {
+    -fx-border-color: transparent;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 35px;
 }
- .date-picker .button .arrow:pressed {
-     -fx-border-color:transparent;
-     -fx-pref-height: 35px;
-     -fx-pref-width: 35px;
+
+.date-picker .button .arrow:pressed {
+    -fx-border-color: transparent;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 35px;
 }
- .date-picker .cell {
-     -fx-background-color: #070606;
-     -fx-border-color: #081e23;
-     -fx-border-width: 1px;
-     -fx-pref-width:20px ;
-     -fx-pref-height:25px ;
-     -fx-font-size: 12px;
-     -fx-text-fill: white;
-     -fx-font-family: "Overpass Regular";
+
+.date-picker .cell {
+    -fx-background-color: #070606;
+    -fx-border-color: #081e23;
+    -fx-border-width: 1px;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 25px;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-font-family: "Overpass Regular";
 }
- .date-picker .cell:hover {
-     -fx-background-color: #5e7d83;
-     -fx-pref-width:20px ;
-     -fx-pref-height:25px ;
+
+.date-picker .cell:hover {
+    -fx-background-color: #5e7d83;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 25px;
 }
- .date-picker .cell:focused {
-     -fx-background-color:#22DD85;
-     -fx-pref-width:20px ;
-     -fx-pref-height:25px ;
+
+.date-picker .cell:focused {
+    -fx-background-color: #22DD85;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 25px;
 }
- .date-picker-popup {
-     -fx-border-color: transparent;
-     -fx-background-color: transparent;
+
+.date-picker-popup {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
 }
-.date-picker-popup > .month-year-pane {
+
+.date-picker-popup>.month-year-pane {
     -fx-background-color: #081e23 !important;
 }
-.date-picker-popup > .month-year-pane .label{
+
+.date-picker-popup>.month-year-pane .label {
     -fx-text-fill: #5e7d83 !important;
     -fx-font-family: "Overpass Bold" !important;
     -fx-font-size: 14px;

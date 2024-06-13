@@ -3,10 +3,15 @@ package ui.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -48,13 +53,19 @@ public class DurationSelectorController {
                         } else {
                             // Create HBox with Text and Icon
                             HBox hBox = new HBox();
+                            hBox.setPadding(new Insets(2, 10, 2, 10));
+                            hBox.setAlignment(Pos.CENTER);
+                            Region spacer = new Region();
+                            HBox.setHgrow(spacer, Priority.ALWAYS);
                             Label durationText = new Label(DurationFormatConverter.durationToString(item));
                             durationText.getStyleClass().add("text-label");
 
                             // Add an example icon
-                            FontIcon icon = new FontIcon("jam-arrow-circle-left");
+                            FontIcon icon = new FontIcon("jam-arrow-right");
+                            icon.setFill(Paint.valueOf("#070606"));
+                            icon.setIconSize(17);
 
-                            hBox.getChildren().addAll(icon, durationText);
+                            hBox.getChildren().addAll(durationText, spacer, icon);
                             setGraphic(hBox);
                         }
                     }

@@ -4,10 +4,15 @@ import entities.Hotel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import org.kordamp.ikonli.javafx.FontIcon;
@@ -42,13 +47,19 @@ public class HotelSelectorController {
                         } else {
                             // Create HBox with Text and Icon
                             HBox hBox = new HBox();
+                            hBox.setPadding(new Insets(2, 10, 2, 10));
+                            hBox.setAlignment(Pos.CENTER);
+                            Region spacer = new Region();
                             Label text = new Label(item.getName());
                             text.getStyleClass().add("text-label");
+                            HBox.setHgrow(spacer, Priority.ALWAYS);
 
                             // Add an example icon
-                            FontIcon icon = new FontIcon("jam-building");
+                            FontIcon icon = new FontIcon("jam-arrow-right");
+                            icon.setFill(Paint.valueOf("#070606"));
+                            icon.setIconSize(17);
 
-                            hBox.getChildren().addAll(icon, text);
+                            hBox.getChildren().addAll(text, spacer, icon);
                             setGraphic(hBox);
                         }
                     }

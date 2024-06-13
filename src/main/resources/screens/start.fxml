@@ -43,11 +43,11 @@
                 </GridPane>
             </VBox>
             <Label text="Create" onMouseClicked="#createItinerary"
-                   styleClass="purple-padded-card" alignment="center"/>
+                   styleClass="outlined-button" alignment="center"/>
         </VBox>
         <AnchorPane mouseTransparent="true">
             <ResponsiveImage AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefWidth="200" prefHeight="150"
-                             imageUrl="https://img.freepik.com/free-photo/3d-render-suitcase-with-traveler-accessories-purple-background-travel-concept-illustration-design_460848-11449.jpg">
+                             imageUrl="/assets/images/start_header.png">
                 <clipCornerRadii>
                     <Insets bottom="30"/>
                 </clipCornerRadii>

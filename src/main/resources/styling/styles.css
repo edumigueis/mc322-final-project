@@ -3,68 +3,78 @@
 @import url("/styling/scrollbar.css");
 
 .attraction-card {
-     -fx-background-color: #083740;
-     -fx-background-radius: 18px;
-     -fx-border-radius: 18px;
-}
-.main-container{
-     -fx-background-color: #070606;
-}
- .yellow-main-header{
-     -fx-background-color: #F7FF88;
-     -fx-padding: 15 20 15 20;
-}
- .line-container{
-     -fx-padding: 0 3 0 20;
-}
- .line{
-     -fx-stroke-dash-array: 5 5;
-     -fx-stroke-width: 2;
-     -fx-stroke: #5e7d83
-}
- .header-label{
-     -fx-font-size: 14px;
-     -fx-text-fill: #5e7d83;
-     -fx-font-family: "Overpass Black";
-}
- .header-label-day{
-     -fx-font-size: 14px;
-     -fx-text-fill: #5e7d83;
-     -fx-font-family: "Overpass Regular";
-}
- .padded-card{
-     -fx-padding: 5 10 5 10;
-}
- .purple-padded-card{
-     -fx-background-color: #BCA5ED;
-     -fx-background-radius: 12px;
-     -fx-border-radius: 12px;
-     -fx-padding: 5;
-     -fx-font-size: 12px;
-     -fx-text-fill: #070606;
-     -fx-font-family: "Overpass Bold";
-     -fx-cursor: hand;
+    -fx-background-color: #083740;
+    -fx-background-radius: 18px;
+    -fx-border-radius: 18px;
 }
 
- .gray-padded-card{
-     -fx-background-color: #081e23;
-     -fx-background-radius: 12px;
-          -fx-border-radius: 12px;
-          -fx-padding: 5;
-          -fx-font-size: 12px;
-     -fx-text-fill: #5e7d83;
-     -fx-font-family: "Overpass Bold";
-     -fx-cursor: hand;
+.main-container {
+    -fx-background-color: #070606;
 }
 
-.no-pane{
+.yellow-main-header {
+    -fx-background-color: #F7FF88;
+    -fx-padding: 15 20 15 20;
+}
+
+.line-container {
+    -fx-padding: 0 3 0 20;
+}
+
+.line {
+    -fx-stroke-dash-array: 5 5;
+    -fx-stroke-width: 2;
+    -fx-stroke: #5e7d83
+}
+
+.header-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Black";
+}
+
+.header-label-day {
+    -fx-font-size: 14px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Regular";
+}
+
+.padded-card {
+    -fx-padding: 5 10 5 10;
+}
+
+.purple-padded-card {
+    -fx-background-color: #BCA5ED;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5;
+    -fx-font-size: 12px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.gray-padded-card {
+    -fx-background-color: #081e23;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5;
+    -fx-font-size: 12px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.no-pane {
     -fx-background-color: transparent;
 }
+
 .no-pane .viewport {
     -fx-background: transparent;
     -fx-effect: null;
 }
- .yellow-bullet{
+
+.yellow-bullet {
     -fx-background-color: #F7FF88;
     -fx-border-width: 12px;
     -fx-border-radius: 12px;
@@ -75,11 +85,12 @@
 }
 
 .context-menu {
-     -fx-background-radius: 12px;
-        -fx-border-radius: 12px;
-        -fx-background-color: #070606;
-        -fx-text-fill: #5e7d83;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-background-color: #070606;
+    -fx-text-fill: #5e7d83;
 }
+
 .yellow-bullet-item {
     -fx-background-color: transparent;
     -fx-font-family: "Overpass Semi";
@@ -89,35 +100,46 @@
 .yellow-bullet-item:hover .label {
     -fx-text-fill: #F7FF88;
 }
+
 .yellow-bullet-item:focused .label {
     -fx-text-fill: #F7FF88;
 }
 
-.yellow-button{
+.yellow-button {
     -fx-background-color: #F7FF88;
-         -fx-background-radius: 12px;
-         -fx-border-radius: 12px;
-         -fx-padding: 5 10;
-         -fx-font-size: 12px;
-         -fx-text-fill: #070606;
-         -fx-font-family: "Overpass Bold";
-         -fx-cursor: hand;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
 }
 
-.outlined-button{
+.outlined-button {
     -fx-border-width: 2px;
     -fx-background-color: #070606;
     -fx-background-radius: 12px;
-             -fx-border-radius: 12px;
-             -fx-padding: 5 10;
+    -fx-border-radius: 12px;
+    -fx-padding: 5 10;
     -fx-font-size: 12px;
-             -fx-text-fill: #FFFFFF;
-             -fx-border-color: #FFFFFF;
-             -fx-font-family: "Overpass Bold";
-             -fx-cursor: hand;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
 }
 
-.outlined-button .icon{
+.outlined-button:hover {
+    -fx-background-color: #BCA5ED;
+    -fx-text-fill: #070606;
+    -fx-border-color: #BCA5ED;
+}
+
+.outlined-button:hover .icon {
+    -fx-fill: #070606;
+}
+
+.outlined-button .icon {
     -fx-fill: #FFFFFF;
 }
 
@@ -138,28 +160,27 @@
     -fx-fill: BCA5ED;
 }
 
-.filter-bar{
+.filter-bar {
     -fx-background-color: #070606;
 }
 
-.toggle-button-gray{
+.toggle-button-gray {
     -fx-background-color: #081e23;
-         -fx-background-radius: 10px;
-              -fx-border-radius: 10px;
-              -fx-padding: 5 10;
-              -fx-font-size: 12px;
-         -fx-text-fill: #5e7d83;
-         -fx-font-family: "Overpass Bold";
-         -fx-cursor: hand;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
 }
 
-.toggle-button-gray:hover{
+.toggle-button-gray:hover {
     -fx-background-color: #F7FF88;
     -fx-text-fill: #070606;
 }
 
-.toggle-button-gray:selected{
+.toggle-button-gray:selected {
     -fx-background-color: #F7FF88;
     -fx-text-fill: #070606;
 }
-

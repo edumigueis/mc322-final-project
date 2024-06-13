@@ -15,7 +15,7 @@ import ui.components.AttractionCardCell;
 import viewmodels.CityViewModel;
 import viewmodels.ItineraryDayViewModel;
 
-public class AttractionModalController implements FilterBarController.FilterChangeListener{
+public class AttractionModalController implements FilterBarController.FilterChangeListener {
     private ItineraryDayViewModel viewModel;
     private CityViewModel cityViewModel;
 
@@ -25,7 +25,6 @@ public class AttractionModalController implements FilterBarController.FilterChan
     private ListView<I_Activity> cardsContainer;
     @FXML
     private Pane filterBarContainer;
-
 
 
     @FXML
@@ -44,6 +43,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
     public void setViewModel(ItineraryDayViewModel viewModel) {
         this.viewModel = viewModel;
     }
+
     public void loadCity(CityViewModel viewModel) {
         this.cityViewModel = viewModel;
         cardsContainer.setItems(cityViewModel.getThingsToDo());
@@ -55,11 +55,10 @@ public class AttractionModalController implements FilterBarController.FilterChan
         cardsContainer.setItems(cityViewModel.getThingsToDo());
         FilteredList<I_Activity> filteredActivities;
 
-        if(filter.getCategory().equals("All")){
-            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getPrice()<=filter.getPriceRange()));
-
-        } else{
-            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.getCategory()))&&(i.getPrice()<=filter.getPriceRange()));
+        if (filter.category().equals("All")) {
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getPrice() <= filter.priceRange()));
+        } else {
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.category())) && (i.getPrice() <= filter.priceRange()));
         }
         cardsContainer.setItems(filteredActivities);
     }
@@ -69,7 +68,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
         I_Activity value = cardsContainer.getSelectionModel().getSelectedItem();
 
         // Call the callback method with the return value
-        if(value != null)
+        if (value != null)
             viewModel.addActivity(value);
 
         // Close the modal window
@@ -77,21 +76,5 @@ public class AttractionModalController implements FilterBarController.FilterChan
         stage.close();
     }
 
-    public static class Filter {
-        private final String category;
-        private final double priceRange;
-
-        public Filter(String category, double priceRange) {
-            this.category = category;
-            this.priceRange = priceRange;
-        }
-
-        public String getCategory() {
-            return category;
-        }
-
-        public double getPriceRange() {
-            return priceRange;
-        }
-    }
+    public record Filter(String category, double priceRange) {}
 }

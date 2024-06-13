@@ -131,7 +131,7 @@ public class ItineraryDayViewController {
 
             Hotel selectedHotel = controller.getSelectedHotel();
             if (selectedHotel != null) {
-                // TO DO: adicionar hotel.
+                this.viewModel.hotelProperty().set(selectedHotel);
             }
         } catch (NullPointerException | IOException e) {
             CustomAlert alert = CustomAlert.createErrorAlert("There are no registered hotels in this city.");

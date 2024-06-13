@@ -14,7 +14,7 @@
         <Label fx:id="dayLabel" styleClass="header-label-day"/>
     </HBox>
     <HBox spacing="5" style="-fx-padding: 0 0 10 0;">
-        <Button fx:id="hotelText" text="Copacabana Palace" onMouseClicked="#pickHotel" styleClass="gray-padded-card">
+        <Button fx:id="hotelText" onMouseClicked="#pickHotel" styleClass="gray-padded-card">
             <graphic>
                 <FontIcon fill="#5e7d83" iconLiteral="jam-building" iconSize="20" styleClass="icon"/>
             </graphic>
@@ -25,6 +25,7 @@
             </graphic>
         </Button>
     </HBox>
+    <Region prefHeight="7" />
     <VBox VBox.vgrow="ALWAYS" fx:id="cardsContainer"/>
 </VBox>
 

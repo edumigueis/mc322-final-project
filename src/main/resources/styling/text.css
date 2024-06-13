@@ -4,70 +4,79 @@
      -fx-text-fill: #CDCDCD;
      -fx-font-family: "Overpass Extra";
 }
+
 .label.extra-small-title {
      -fx-font-weight: bold;
      -fx-font-size: 11px;
      -fx-text-fill: #CDCDCD;
      -fx-font-family: "Overpass Extra";
 }
- .label.text {
+
+.label.text {
      -fx-font-size: 11px;
      -fx-text-fill: #FFFFFF;
      -fx-font-family: "Overpass Light";
 }
- .label.text-dark {
+
+.label.text-dark {
      -fx-font-size: 11px;
      -fx-text-fill: #070606;
      -fx-font-family: "Overpass Light";
 }
- .label.green-title {
+
+.label.green-title {
      -fx-font-size: 22;
      -fx-text-fill: #22DD85;
      -fx-line-spacing: -12px;
      -fx-font-family: "Poppins Bold";
 }
- .label.card-title-white {
+
+.label.card-title-white {
      -fx-font-size: 20;
      -fx-text-fill: #FFFFFF;
      -fx-line-spacing: -12px;
      -fx-font-family: "Poppins Bold";
 }
- .label.big-title{
+
+.label.big-title {
      -fx-font-size: 50px;
      -fx-text-fill: #FFFFFF;
      -fx-font-family: "Poppins Bold";
 }
-.label.sub-title{
+
+.label.sub-title {
      -fx-font-family: "Poppins Medium";
      -fx-font-size: 17px;
      -fx-text-fill: #5e7d83;
 }
- .start-title{
+
+.start-title {
      -fx-font-size: 50px;
      -fx-text-fill: #FFFFFF;
      -fx-font-family: "Poppins Bold";
 }
-.city-name{
-    -fx-font-size: 11px;
-         -fx-text-fill: #CDCDCD;
-         -fx-font-family: "Overpass Bold";
+
+.city-name {
+     -fx-font-size: 11px;
+     -fx-text-fill: #CDCDCD;
+     -fx-font-family: "Overpass Bold";
 }
 
 .expandable-text .main-text {
-    -fx-font-size: 11px;
-         -fx-text-fill: #FFFFFF;
-         -fx-font-family: "Overpass Light";
+     -fx-font-size: 11px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Overpass Light";
 }
 
 .expandable-text .read-more {
-    -fx-cursor: hand;
-    -fx-font-size: 11px;
-         -fx-text-fill: #FFFFFF;
-         -fx-font-family: "Overpass Bold";
+     -fx-cursor: hand;
+     -fx-font-size: 11px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Overpass Bold";
 }
 
-#descriptionLabel{
-    -fx-font-size: 11px;
-    -fx-text-fill: #CDCDCD !important;
-    -fx-font-family: "Overpass Light";
+#descriptionLabel {
+     -fx-font-size: 11px;
+     -fx-text-fill: #CDCDCD !important;
+     -fx-font-family: "Overpass Light";
 }

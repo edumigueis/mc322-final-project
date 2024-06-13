@@ -23,6 +23,7 @@
     font-family: 'Poppins Regular';
     src: url('/assets/fonts/Poppins/Poppins-Regular.ttf');
 }
+
 /* Overpass font */
 @font-face {
     font-family: 'Overpass Black';
