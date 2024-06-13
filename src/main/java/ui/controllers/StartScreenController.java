@@ -16,6 +16,7 @@ import entities.activities.Restaurant;
 import entities.activities.Restaurant.Avaliacao;
 import helpers.BusinessHours;
 import helpers.Location;
+import helpers.PriceRange;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -48,7 +49,7 @@ public class StartScreenController implements Initializable, CardParent {
         // TO DO LOAD CITY FILE
         this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", new ArrayList<I_Activity>() {{
             add(new Museum(new Location(1, 2), "Louvre Museum", new BusinessHours(), "Um dos mais famosos museus do mundo, onde da para tirar foto de tiozao segurando a ponta da piramide", "https://imgmd.net/images/v1/guia/1703527/museu-do-louvre-piramide.jpg","current expo", "Monalisa","website", 10));
-            add(new Restaurant(new Location(1, 2), "Plénitude - Cheval Blanc Paris", new BusinessHours(),"three michelin star restaurant", "https://www.theworlds50best.com/discovery/filestore/jpg/plenitude%20(3).jpg",80, Avaliacao.CINCO_ESTRELAS));
+            add(new Restaurant(new Location(1, 2), "Plénitude - Cheval Blanc Paris", new BusinessHours(),"three michelin star restaurant", "https://www.theworlds50best.com/discovery/filestore/jpg/plenitude%20(3).jpg", Avaliacao.CINCO_ESTRELAS, new PriceRange(30,80)));
         }}, new ArrayList<Hotel>() {{
             add(new Hotel(new Location(1, 2), "Copacabana palace"));
             add(new Hotel(new Location(1, 2), "Holiday Inn"));

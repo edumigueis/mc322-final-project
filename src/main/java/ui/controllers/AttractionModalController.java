@@ -2,7 +2,9 @@ package ui.controllers;
 
 import java.io.IOException;
 
+import core.itinerary.TimeSlot;
 import entities.activities.I_Activity;
+import helpers.PriceRange;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import ui.components.AttractionCardCell;
+import ui.components.Filter;
 import viewmodels.CityViewModel;
 import viewmodels.ItineraryDayViewModel;
 
@@ -55,10 +58,10 @@ public class AttractionModalController implements FilterBarController.FilterChan
         cardsContainer.setItems(cityViewModel.getThingsToDo());
         FilteredList<I_Activity> filteredActivities;
 
-        if (filter.category().equals("All")) {
-            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getPrice() <= filter.priceRange()));
+        if (filter.getCategory().equals("All")) {
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (filter.getPriceRange().contains(i.getPrice())));
         } else {
-            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.category())) && (i.getPrice() <= filter.priceRange()));
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.getCategory())) && (filter.getPriceRange().contains(i.getPrice())));
         }
         cardsContainer.setItems(filteredActivities);
     }
@@ -76,5 +79,4 @@ public class AttractionModalController implements FilterBarController.FilterChan
         stage.close();
     }
 
-    public record Filter(String category, double priceRange) {}
 }
