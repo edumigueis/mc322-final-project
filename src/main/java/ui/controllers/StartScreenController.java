@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
 import core.itinerary.Itinerary;
 import entities.City;
@@ -100,7 +101,7 @@ public class StartScreenController implements Initializable, CardParent {
     }
 
     @FXML
-    private void openItinerary(MouseEvent event) {
+    private void openItinerary(MouseEvent event) throws JAXBException {
         FileChooser fileChooser = new FileChooser();
 
         // Set extension filter
