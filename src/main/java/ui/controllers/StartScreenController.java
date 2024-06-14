@@ -11,12 +11,7 @@ import java.util.ResourceBundle;
 import entities.City;
 import entities.Hotel;
 import entities.activities.I_Activity;
-import entities.activities.Museum;
-import entities.activities.Restaurant;
-import entities.activities.Restaurant.Avaliacao;
-import helpers.BusinessHours;
-import helpers.Location;
-import helpers.PriceRange;
+import helpers.input.XMLReader;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -47,11 +42,11 @@ public class StartScreenController implements Initializable, CardParent {
     public void initialize(URL location, ResourceBundle resources) {
         this.cities = new ArrayList<>();
         try {
-            List<Activity> activitiesParis = XMLReader.readActivities("data/activityParis.xml");
+            List<I_Activity> activitiesParis = XMLReader.readActivities("data/activityParis.xml");
             List<Hotel> hotelsParis = XMLReader.readHotels("data/hotelsParis.xml");
-            List<Activity> activitiesFlorence = XMLReader.readActivities("data/activityFlorence.xml");
+            List<I_Activity> activitiesFlorence = XMLReader.readActivities("data/activityFlorence.xml");
             List<Hotel> hotelsFlorence = XMLReader.readHotels("data/hotelsFlorence.xml");
-            List<Activity> activitiesShangai = XMLReader.readActivities("data/activityShangai.xml");
+            List<I_Activity> activitiesShangai = XMLReader.readActivities("data/activityShangai.xml");
             List<Hotel> hotelsShangai = XMLReader.readHotels("data/hotelsShangai.xml");
 
             this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", activitiesParis, hotelsParis));

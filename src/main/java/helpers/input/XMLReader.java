@@ -1,6 +1,7 @@
 package helpers.input;
 
 import java.io.InputStream;
+
 import entities.Hotel;
 import helpers.PriceRange;
 import entities.activities.*;
@@ -22,18 +23,18 @@ public class XMLReader {
     public static List<Hotel> readHotels(String filePath) {
         List<Hotel> hotels = new ArrayList<>();
 
-        try{
-        InputStream inputFile = XMLReader.class.getClassLoader().getResourceAsStream(filePath);
-        if (inputFile == null) {
-            System.err.println("File not found: " + filePath);
-            return hotels;
-        }
+        try {
+            InputStream inputFile = XMLReader.class.getClassLoader().getResourceAsStream(filePath);
+            if (inputFile == null) {
+                System.err.println("File not found: " + filePath);
+                return hotels;
+            }
 
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(inputFile);
-        doc.getDocumentElement().normalize();
-        NodeList nList = doc.getElementsByTagName("hotel");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("hotel");
 
 
             for (int temp = 0; temp < nList.getLength(); temp++) {
@@ -47,25 +48,20 @@ public class XMLReader {
                     double longitude = Double.parseDouble(eElement.getElementsByTagName("longitude").item(0).getTextContent());
                     Location location = new Location(latitude, longitude);
 
-                    Hotel hotel = new Hotel();
-                    hotel.setLocation(location);
-                    hotel.setName(name);
+                    Hotel hotel = new Hotel(location, name);
                     hotels.add(hotel);
                 }
             }
 
-    } catch (Exception e) {
-        System.out.println("Erro em readHotels");
-    }
+        } catch (Exception e) {
+            System.out.println("Erro em readHotels");
+        }
         return hotels;
-}
+    }
 
 
-
-
-
-    public static List<Activity> readActivities(String filePath) {
-        List<Activity> activities = new ArrayList<>();
+    public static List<I_Activity> readActivities(String filePath) {
+        List<I_Activity> activities = new ArrayList<>();
         try {
             InputStream inputFile = XMLReader.class.getClassLoader().getResourceAsStream(filePath);
             if (inputFile == null) {
@@ -94,7 +90,7 @@ public class XMLReader {
                         if (dayNode.getNodeType() == Node.ELEMENT_NODE) {
                             String day = dayNode.getNodeName().substring(0, 1).toUpperCase() + dayNode.getNodeName().substring(1).toLowerCase();
                             String hours = dayNode.getTextContent().trim();
-                            businessHours.setHours(day, hours);
+                            businessHours.setHours(day.toUpperCase(), hours);
                         }
                     }
 
@@ -102,7 +98,7 @@ public class XMLReader {
                     if (tipo.equals("attraction")) {
                         String description = eElement.getElementsByTagName("description").item(0).getTextContent();
                         String imageThumbURL = eElement.getElementsByTagName("imageThumbURL").item(0).getTextContent();
-                        Activity activity = new Attraction(location, name, businessHours, description, imageThumbURL);
+                        Places activity = new Places(location, name, businessHours, description, imageThumbURL, Categories.ALL, 0);
                         activities.add(activity);
                     } else if (tipo.equals("museum")) {
                         String description = eElement.getElementsByTagName("description").item(0).getTextContent();
@@ -110,20 +106,21 @@ public class XMLReader {
                         String currentExpoName = eElement.getElementsByTagName("currentExpoName").item(0).getTextContent();
                         String mostFamousWork = eElement.getElementsByTagName("mostFamousWork").item(0).getTextContent();
                         String website = eElement.getElementsByTagName("website").item(0).getTextContent();
-                        Museum activity = new Museum(location, name, businessHours, description, imageThumbURL, currentExpoName, mostFamousWork, website);
+                        Museum activity = new Museum(location, name, businessHours, description, imageThumbURL, currentExpoName, mostFamousWork, website, 0);
                         activities.add(activity);
                     } else if (tipo.equals("culturalEvent")) {
-                        String description = eElement.getElementsByTagName("description").item(0).getTextContent();
+                        // TO DO
+                        /*String description = eElement.getElementsByTagName("description").item(0).getTextContent();
                         String imageThumbURL = eElement.getElementsByTagName("imageThumbURL").item(0).getTextContent();
                         CulturalEventType eventType = CulturalEventType.valueOf(eElement.getElementsByTagName("eventType").item(0).getTextContent());
                         String linkToBuy = eElement.getElementsByTagName("linkToBuy").item(0).getTextContent();
                         CulturalEvent activity = new CulturalEvent(location, name, businessHours, description, imageThumbURL, eventType, linkToBuy);
-                        activities.add(activity);
+                        activities.add(activity);*/
                     } else if (tipo.equals("restaurant")) {
                         float max = Float.parseFloat(eElement.getElementsByTagName("max").item(0).getTextContent());
                         float min = Float.parseFloat(eElement.getElementsByTagName("min").item(0).getTextContent());
                         PriceRange priceRange = new PriceRange(min, max);
-                        Restaurant activity = new Restaurant(location, name, businessHours, priceRange);
+                        Restaurant activity = new Restaurant(location, name, businessHours, "", "", priceRange.min(), Restaurant.Avaliacao.CINCO_ESTRELAS);
                         activities.add(activity);
                     } else if (tipo.equals("sight")) {
                         String description = eElement.getElementsByTagName("description").item(0).getTextContent();
@@ -138,7 +135,7 @@ public class XMLReader {
                                 images.add(url);
                             }
                         }
-                        Sight activity = new Sight(location, name, businessHours, description, imageThumbURL, images);
+                        TouristicSights activity = new TouristicSights(location, name, businessHours, description, imageThumbURL, 0, images);
                         activities.add(activity);
                     }
 
