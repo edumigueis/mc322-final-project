@@ -2,12 +2,13 @@ package ui.components;
 
 import javafx.beans.property.*;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 public class ResponsiveImage extends StackPane {
-    private StringProperty imageUrl = new SimpleStringProperty();
-    private ObjectProperty<Insets> clipCornerRadii = new SimpleObjectProperty<>(new Insets(0));
+    private final StringProperty imageUrl = new SimpleStringProperty();
+    private final ObjectProperty<Insets> clipCornerRadii = new SimpleObjectProperty<>(new Insets(0));
 
     public ResponsiveImage() {
         super();

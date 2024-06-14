@@ -106,26 +106,26 @@ public class XMLReader {
                         String currentExpoName = eElement.getElementsByTagName("currentExpoName").item(0).getTextContent();
                         String mostFamousWork = eElement.getElementsByTagName("mostFamousWork").item(0).getTextContent();
                         String website = eElement.getElementsByTagName("website").item(0).getTextContent();
-                        Museum activity = new Museum(location, name, businessHours, description, imageThumbURL, currentExpoName, mostFamousWork, website, 0);
+                        double price = Double.parseDouble(eElement.getElementsByTagName("price").item(0).getTextContent());
+                        Museum activity = new Museum(location, name, businessHours, description, imageThumbURL, currentExpoName, mostFamousWork, website, price);
                         activities.add(activity);
-                    } else if (tipo.equals("culturalEvent")) {
-                        // TO DO
-                        /*String description = eElement.getElementsByTagName("description").item(0).getTextContent();
+                    } else if (tipo.equals("theater")) {
+                        String description = eElement.getElementsByTagName("description").item(0).getTextContent();
                         String imageThumbURL = eElement.getElementsByTagName("imageThumbURL").item(0).getTextContent();
-                        CulturalEventType eventType = CulturalEventType.valueOf(eElement.getElementsByTagName("eventType").item(0).getTextContent());
-                        String linkToBuy = eElement.getElementsByTagName("linkToBuy").item(0).getTextContent();
-                        CulturalEvent activity = new CulturalEvent(location, name, businessHours, description, imageThumbURL, eventType, linkToBuy);
-                        activities.add(activity);*/
+                        double price = Double.parseDouble(eElement.getElementsByTagName("price").item(0).getTextContent());
+                        Theaters activity = new Theaters(location, name, businessHours, description, price, imageThumbURL, new ArrayList<>());
+                        activities.add(activity);
                     } else if (tipo.equals("restaurant")) {
                         float max = Float.parseFloat(eElement.getElementsByTagName("max").item(0).getTextContent());
                         float min = Float.parseFloat(eElement.getElementsByTagName("min").item(0).getTextContent());
                         PriceRange priceRange = new PriceRange(min, max);
-                        Restaurant activity = new Restaurant(location, name, businessHours, "", "", priceRange.min(), Restaurant.Avaliacao.CINCO_ESTRELAS);
+                        Restaurant activity = new Restaurant(location, name, businessHours, "", "", Restaurant.Avaliacao.CINCO_ESTRELAS, priceRange);
                         activities.add(activity);
                     } else if (tipo.equals("sight")) {
                         String description = eElement.getElementsByTagName("description").item(0).getTextContent();
                         String imageThumbURL = eElement.getElementsByTagName("imageThumbURL").item(0).getTextContent();
                         NodeList imagesNodeList = eElement.getElementsByTagName("image").item(0).getChildNodes();
+                        double price = Double.parseDouble(eElement.getElementsByTagName("price").item(0).getTextContent());
                         List<String> images = new ArrayList<>();
                         for (int i = 0; i < imagesNodeList.getLength(); i++) {
                             Node node = imagesNodeList.item(i);
@@ -135,7 +135,7 @@ public class XMLReader {
                                 images.add(url);
                             }
                         }
-                        TouristicSights activity = new TouristicSights(location, name, businessHours, description, imageThumbURL, 0, images);
+                        TouristicSights activity = new TouristicSights(location, name, businessHours, description, imageThumbURL, price, images);
                         activities.add(activity);
                     }
 

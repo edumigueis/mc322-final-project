@@ -9,7 +9,6 @@ import ui.controllers.ItineraryDayViewController;
 
 import java.io.IOException;
 
-// TO DO: way to refactor
 public class ItineraryDayView extends Pane {
     private final ItineraryDayViewController controller;
 

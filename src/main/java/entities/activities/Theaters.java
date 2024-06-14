@@ -8,8 +8,10 @@ import helpers.Location;
 public class Theaters extends Places{
     private ArrayList<String> schedule;
 
-    public Theaters(Location location, String name, BusinessHours openTime, String description, double price, ArrayList<String> schedule){
-        super(location, name, openTime, description, description, Categories.THEATERS, price);
+    private String imageThumbURL;
+
+    public Theaters(Location location, String name, BusinessHours openTime, String description, double price, String imageThumbURL, ArrayList<String> schedule){
+        super(location, name, openTime, description, imageThumbURL, Categories.THEATERS, price);
         this.schedule = schedule;
     }
 

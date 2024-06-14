@@ -17,8 +17,7 @@
     </rowConstraints>
     <ResponsiveImage GridPane.columnIndex="0" GridPane.rowIndex="0"
                      prefWidth="400"
-                     imageUrl="https://images.france.fr/zeaejvyq9bhj/22UaUAPjNqmsCaKMw4U4Ai/abaa86f8cc96ab0ac855844a0b07305e/louvre1.jpg"
-                     fx:id="attactionCardImage">
+                     fx:id="attractionCardImage">
         <clipCornerRadii>
             <Insets top="18" left="18"/>
         </clipCornerRadii>
