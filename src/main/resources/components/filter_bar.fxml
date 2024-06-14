@@ -22,7 +22,6 @@
         <VBox>
             <Label text="Price Range:" styleClass="text"/>
             <HBox>
-                <Slider fx:id="priceRangeSlider" value="50" showTickLabels="true" showTickMarks="true" />
                 <TextField fx:id="minPriceTextField" promptText="Min" styleClass="gray-padded-card"/>
                 <TextField fx:id="maxPriceTextField" promptText="Max" styleClass="gray-padded-card"/>
             </HBox>

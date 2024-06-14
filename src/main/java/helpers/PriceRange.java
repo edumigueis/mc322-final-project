@@ -1,8 +1,8 @@
 package helpers;
 
-public record PriceRange(float min, float max) {
+public record PriceRange(double  min, double max) {
 
-    public boolean contains(float value) {
+    public boolean contains(double value) {
         return value >= min && value <= max;
     }
 

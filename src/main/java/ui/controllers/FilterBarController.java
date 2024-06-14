@@ -1,10 +1,13 @@
 package ui.controllers;
 
+import helpers.PriceRange;
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
-import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import ui.controllers.AttractionModalController.Filter;
+import javafx.util.Duration;
+import ui.components.Filter;
 
 public class FilterBarController {
 
@@ -24,8 +27,14 @@ public class FilterBarController {
     @FXML
     private ToggleButton touristicToggleButton;
 
+
     @FXML
-    private Slider priceRangeSlider;
+    private TextField minPriceTextField;
+
+    @FXML
+    private TextField maxPriceTextField;
+
+
 
     private ToggleGroup categoryToggleGroup;
 
@@ -46,7 +55,22 @@ public class FilterBarController {
 
         // Add listeners to update the filter whenever a change occurs
         categoryToggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> notifyFilterChange());
-        priceRangeSlider.valueProperty().addListener((observable, oldValue, newValue) -> notifyFilterChange());
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));//adds a second before the listener catches the change
+
+        minPriceTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            pause.setOnFinished(event -> notifyFilterChange());
+            pause.playFromStart();
+        }
+        );
+
+        maxPriceTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            pause.setOnFinished(event -> notifyFilterChange());
+            pause.playFromStart();
+        }
+        );
+
+        
     }
 
     public void setFilterChangeListener(FilterChangeListener listener) {
@@ -56,8 +80,11 @@ public class FilterBarController {
     private void notifyFilterChange() {
         if (filterChangeListener != null) {
             String selectedCategory = ((ToggleButton) categoryToggleGroup.getSelectedToggle()).getText();
-            double selectedPrice = priceRangeSlider.getValue();
-            Filter filter = new Filter(selectedCategory, selectedPrice);
+            double selectedMinPrice = Double.parseDouble(minPriceTextField.getText());
+            double selectedMaxPrice = Double.parseDouble(maxPriceTextField.getText());
+            PriceRange selectedPriceRange = new PriceRange(selectedMinPrice, selectedMaxPrice);
+
+            Filter filter = new Filter(selectedCategory, selectedPriceRange);
             filterChangeListener.onFilterChange(filter);
         }
     }
