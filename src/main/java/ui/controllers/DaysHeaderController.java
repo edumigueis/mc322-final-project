@@ -2,9 +2,6 @@ package ui.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import viewmodels.CityViewModel;
-
-import java.time.Duration;
 
 public class DaysHeaderController {
     private ItineraryController itineraryController;

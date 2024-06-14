@@ -2,9 +2,7 @@ package ui.controllers;
 
 import java.io.IOException;
 
-import core.itinerary.TimeSlot;
 import entities.activities.I_Activity;
-import helpers.PriceRange;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

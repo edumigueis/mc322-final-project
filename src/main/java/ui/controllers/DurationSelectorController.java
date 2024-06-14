@@ -12,11 +12,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
 import org.kordamp.ikonli.javafx.FontIcon;
 import ui.helpers.DurationFormatConverter;
 

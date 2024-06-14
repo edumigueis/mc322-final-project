@@ -27,6 +27,11 @@
     -fx-stroke: #5e7d83
 }
 
+.line-filled {
+    -fx-stroke-width: 2;
+    -fx-stroke: #CDCDCD
+}
+
 .header-label {
     -fx-font-size: 14px;
     -fx-text-fill: #5e7d83;

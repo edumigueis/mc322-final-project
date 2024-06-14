@@ -4,8 +4,8 @@ import helpers.PriceRange;
 
 
 public class Filter {
-    private String category;
-    private PriceRange priceRange;
+    private final String category;
+    private final PriceRange priceRange;
 
 
     public Filter(String category, PriceRange priceRange){

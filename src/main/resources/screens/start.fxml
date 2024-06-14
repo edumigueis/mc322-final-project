@@ -11,8 +11,7 @@
             styleClass="edge-to-edge"
             stylesheets="/styling/styles.css"
             fitToWidth="true"
-            fitToHeight="true"
-            fx:id="hroot">
+            fitToHeight="true">
     <StackPane>
         <VBox styleClass="main-container" alignment="center"
               spacing="15" VBox.vgrow="ALWAYS">

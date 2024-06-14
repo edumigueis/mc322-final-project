@@ -7,10 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
-import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ui.components.ExpandableText;
+import ui.components.ResponsiveImage;
 import viewmodels.ItineraryDayViewModel;
 import viewmodels.TimeSlotViewModel;
 
@@ -20,7 +20,7 @@ import java.util.List;
 
 public class TimeSlotCardController {
     @FXML
-    private Region imageContainer;
+    private ResponsiveImage imageContainer;
     @FXML
     private Label titleLabel;
     @FXML
@@ -40,6 +40,7 @@ public class TimeSlotCardController {
         optionsMenu.textProperty().bind(timeSlotViewModel.startTimeBinding());
         durationLabel.textProperty().bind(timeSlotViewModel.durationBinding());
         descriptionLabel.fullTextProperty().bind(timeSlotViewModel.descriptionBinding());
+        imageContainer.setImageUrl(timeSlotViewModel.dataProperty().get().getImageThumbURL());
     }
 
     @FXML

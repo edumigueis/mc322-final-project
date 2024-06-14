@@ -6,9 +6,7 @@ import entities.Transportation;
 import javafx.collections.ListChangeListener;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Screen;
 import ui.components.CustomAlert;
 import ui.components.DisplacementCard;
 import ui.components.TimeSlotCard;
@@ -25,7 +23,6 @@ import javafx.stage.Stage;
 import viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 

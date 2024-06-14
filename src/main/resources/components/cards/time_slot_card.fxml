@@ -17,7 +17,7 @@
         <RowConstraints minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES"/>
     </rowConstraints>
     <StackPane>
-        <ResponsiveImage GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <ResponsiveImage fx:id="imageContainer" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <imageUrl>
                 https://francabrasil.com.br/wp-content/uploads/sites/11/2015/02/paris-1024x682.jpg
             </imageUrl>

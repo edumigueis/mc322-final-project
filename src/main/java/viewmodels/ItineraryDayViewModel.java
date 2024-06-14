@@ -10,7 +10,6 @@ import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -18,7 +17,7 @@ import java.util.List;
 
 public class ItineraryDayViewModel {
 
-    private ItineraryDay itineraryDay;
+    private final ItineraryDay itineraryDay;
     private final ObjectProperty<LocalDateTime> startOfDayProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<LocalDateTime> endOfDayProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<Hotel> hotelProperty = new SimpleObjectProperty<>();

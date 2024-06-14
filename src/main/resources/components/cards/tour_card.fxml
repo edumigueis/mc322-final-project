@@ -5,7 +5,7 @@
 <VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="ui.controllers.TimeSlotCardController" prefHeight="200"
       stylesheets="/styling/styles.css" styleClass="tour-card" minHeight="150">
-        <Region fx:id="colorRegion" minHeight="20"/>
+        <Region minHeight="20"/>
         <VBox>
             <Label fx:id="titleLabel" styleClass="green-title"/>
             <Label fx:id="businessTimeLabel" styleClass="small-title"/>

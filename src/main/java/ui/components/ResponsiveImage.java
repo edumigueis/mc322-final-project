@@ -2,7 +2,6 @@ package ui.components;
 
 import javafx.beans.property.*;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 

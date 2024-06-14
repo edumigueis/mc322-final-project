@@ -4,7 +4,6 @@ import entities.Hotel;
 import entities.Transportation;
 import entities.activities.I_Activity;
 
-import java.sql.Time;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;

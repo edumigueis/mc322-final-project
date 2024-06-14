@@ -1,11 +1,8 @@
 package ui.controllers;
 
 
-import entities.Tour;
 import entities.activities.I_Activity;
-import entities.activities.Museum;
 import entities.activities.Places;
-import entities.activities.Restaurant;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import ui.components.ExpandableText;

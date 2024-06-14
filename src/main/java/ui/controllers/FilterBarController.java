@@ -9,8 +9,6 @@ import javafx.scene.control.ToggleGroup;
 import javafx.util.Duration;
 import ui.components.Filter;
 
-import java.util.Objects;
-
 public class FilterBarController {
 
     @FXML
@@ -37,7 +35,6 @@ public class FilterBarController {
     private TextField maxPriceTextField;
 
 
-
     private ToggleGroup categoryToggleGroup;
 
     private FilterChangeListener filterChangeListener;
@@ -57,6 +54,20 @@ public class FilterBarController {
 
         // Add listeners to update the filter whenever a change occurs
         categoryToggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> notifyFilterChange());
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));//adds a second before the listener catches the change
+
+        minPriceTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+                    pause.setOnFinished(event -> notifyFilterChange());
+                    pause.playFromStart();
+                }
+        );
+
+        maxPriceTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+                    pause.setOnFinished(event -> notifyFilterChange());
+                    pause.playFromStart();
+                }
+        );
     }
 
     public void setFilterChangeListener(FilterChangeListener listener) {

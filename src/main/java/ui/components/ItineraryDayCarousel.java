@@ -1,7 +1,6 @@
 package ui.components;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import ui.controllers.ItineraryDayCarouselController;
 

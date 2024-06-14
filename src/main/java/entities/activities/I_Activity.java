@@ -19,4 +19,6 @@ public interface I_Activity {
     double getPrice();
     void setPrice(double price);
 
+    String getImageThumbURL();
+    void setImageThumbURL(String name);
 }

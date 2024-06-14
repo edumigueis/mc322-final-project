@@ -8,7 +8,7 @@ public enum Categories {
     TOURISTIC_SIGHTS("Touristic"),
     THEATERS("Theater");
 
-    private String stringValue;
+    private final String stringValue;
 
     private Categories(String stringValue){
         this.stringValue = stringValue;
