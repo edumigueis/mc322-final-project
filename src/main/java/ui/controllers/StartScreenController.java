@@ -1,5 +1,5 @@
 package ui.controllers;
-
+import java.io.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javax.xml.bind.JAXBContext;
+
+import core.itinerary.Itinerary;
 import entities.City;
 import entities.Hotel;
 import entities.activities.I_Activity;
@@ -19,7 +22,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -109,8 +111,10 @@ public class StartScreenController implements Initializable, CardParent {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         File file = fileChooser.showOpenDialog(stage);
 
+        JAXBContext jaxbContext = JAXBContext.newInstance(Itinerary.class);
         if (file != null) {
             try {
+                Itinerary itinerary = new Itinerary(null, null, null);
                 // TO DO - LER ARQUIVO SALVO
                 // Process the file (e.g., read and parse the XML)
                 // Example: System.out.println("File selected: " + file.getAbsolutePath());
