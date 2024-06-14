@@ -16,6 +16,8 @@ import core.itinerary.Itinerary;
 import entities.City;
 import entities.Hotel;
 import entities.activities.I_Activity;
+import helpers.input.ActivityParsingStrategy;
+import helpers.input.HotelParsingStrategy;
 import helpers.input.XMLReader;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,12 +50,16 @@ public class StartScreenController implements Initializable, CardParent {
     public void initialize(URL location, ResourceBundle resources) {
         this.cities = new ArrayList<>();
         try {
-            List<I_Activity> activitiesParis = XMLReader.readActivities("data/activityParis.xml");
-            List<Hotel> hotelsParis = XMLReader.readHotels("data/hotelsParis.xml");
-            List<I_Activity> activitiesFlorence = XMLReader.readActivities("data/activityFlorence.xml");
-            List<Hotel> hotelsFlorence = XMLReader.readHotels("data/hotelsFlorence.xml");
-            List<I_Activity> activitiesShanghai = XMLReader.readActivities("data/activityShangai.xml");
-            List<Hotel> hotelsShanghai = XMLReader.readHotels("data/hotelsShangai.xml");
+            XMLReader reader = new XMLReader();
+            reader.setParsingStrategy(new HotelParsingStrategy());
+            List<Hotel> hotelsParis = (List<Hotel>) reader.read("data/hotelsParis.xml");
+            List<Hotel> hotelsFlorence = (List<Hotel>)reader.read("data/hotelsFlorence.xml");
+            List<Hotel> hotelsShanghai = (List<Hotel>)reader.read("data/hotelsShangai.xml");
+
+            reader.setParsingStrategy(new ActivityParsingStrategy());
+            List<I_Activity> activitiesParis = (List<I_Activity>) reader.read("data/activityParis.xml");
+            List<I_Activity> activitiesFlorence = (List<I_Activity>) reader.read("data/activityFlorence.xml");
+            List<I_Activity> activitiesShanghai = (List<I_Activity>) reader.read("data/activityShangai.xml");
 
             this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", activitiesParis, hotelsParis));
             this.cities.add(new City("Shanghai", "The center of the future", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", activitiesShanghai, hotelsShanghai));
