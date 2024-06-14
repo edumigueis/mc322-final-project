@@ -18,6 +18,12 @@
      -fx-font-family: "Overpass Light";
 }
 
+.label.text-gray {
+     -fx-font-size: 11px;
+     -fx-text-fill: #CDCDCD;
+     -fx-font-family: "Overpass Light";
+}
+
 .label.text-dark {
      -fx-font-size: 11px;
      -fx-text-fill: #070606;

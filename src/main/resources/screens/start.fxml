@@ -11,7 +11,8 @@
             styleClass="edge-to-edge"
             stylesheets="/styling/styles.css"
             fitToWidth="true"
-            fitToHeight="true">
+            fitToHeight="true"
+            fx:id="hroot">
     <StackPane>
         <VBox styleClass="main-container" alignment="center"
               spacing="15" VBox.vgrow="ALWAYS">
@@ -42,7 +43,7 @@
                 </GridPane>
             </VBox>
             <Label text="Create" onMouseClicked="#createItinerary"
-                   styleClass="outlined-button" alignment="center"/>
+                   styleClass="outlined-button"/>
         </VBox>
         <AnchorPane mouseTransparent="true">
             <ResponsiveImage AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefWidth="200" prefHeight="150"
@@ -51,6 +52,10 @@
                     <Insets bottom="30"/>
                 </clipCornerRadii>
             </ResponsiveImage>
+        </AnchorPane>
+        <AnchorPane>
+            <Label text="I already have an itinerary." onMouseClicked="#openItinerary"
+                   styleClass="text-gray" AnchorPane.bottomAnchor="15" AnchorPane.rightAnchor="19"/>
         </AnchorPane>
     </StackPane>
 </ScrollPane>

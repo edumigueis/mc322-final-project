@@ -1,5 +1,6 @@
 package ui.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -18,9 +19,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import ui.components.CityCard;
 import ui.components.CustomAlert;
@@ -46,11 +49,11 @@ public class StartScreenController implements Initializable, CardParent {
             List<Hotel> hotelsParis = XMLReader.readHotels("data/hotelsParis.xml");
             List<I_Activity> activitiesFlorence = XMLReader.readActivities("data/activityFlorence.xml");
             List<Hotel> hotelsFlorence = XMLReader.readHotels("data/hotelsFlorence.xml");
-            List<I_Activity> activitiesShangai = XMLReader.readActivities("data/activityShangai.xml");
-            List<Hotel> hotelsShangai = XMLReader.readHotels("data/hotelsShangai.xml");
+            List<I_Activity> activitiesShanghai = XMLReader.readActivities("data/activityShangai.xml");
+            List<Hotel> hotelsShanghai = XMLReader.readHotels("data/hotelsShangai.xml");
 
             this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", activitiesParis, hotelsParis));
-            this.cities.add(new City("Shanghai", "The center of the future", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", activitiesShangai, hotelsShangai));
+            this.cities.add(new City("Shanghai", "The center of the future", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", activitiesShanghai, hotelsShanghai));
             this.cities.add(new City("Florence", "The capital of Tuscany", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", activitiesFlorence, hotelsFlorence));
 
         } catch (Exception e) {
@@ -91,6 +94,33 @@ public class StartScreenController implements Initializable, CardParent {
             ((Node) event.getSource()).getScene().getWindow().hide();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void openItinerary(MouseEvent event) {
+        FileChooser fileChooser = new FileChooser();
+
+        // Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XML files (*.xml)", "*.xml");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        // Show open file dialog
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        File file = fileChooser.showOpenDialog(stage);
+
+        if (file != null) {
+            try {
+                // TO DO - LER ARQUIVO SALVO
+                // Process the file (e.g., read and parse the XML)
+                // Example: System.out.println("File selected: " + file.getAbsolutePath());
+                throw new IOException();
+            } catch (IOException e) {
+                CustomAlert alert = CustomAlert.createErrorAlert("File not read. Check format and try again.");
+                alert.setTitle("Error");
+                alert.setHeaderText(null); // Remove header text
+                alert.showAndWait();
+            }
         }
     }
 
