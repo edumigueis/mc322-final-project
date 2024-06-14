@@ -42,20 +42,20 @@
                     </columnConstraints>
                 </GridPane>
             </VBox>
-            <Label text="Create" onMouseClicked="#createItinerary"
-                   styleClass="outlined-button"/>
+            <HBox alignment="CENTER" spacing="10">
+                <Label text="Load" onMouseClicked="#openItinerary"
+                       styleClass="outlined-button"/>
+                <Label text="Create" onMouseClicked="#createItinerary"
+                       styleClass="purple-padded-button"/>
+            </HBox>
         </VBox>
-        <AnchorPane mouseTransparent="true">
+        <AnchorPane mouseTransparent="true" prefWidth="200" prefHeight="150">
             <ResponsiveImage AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefWidth="200" prefHeight="150"
                              imageUrl="/assets/images/start_header.png">
                 <clipCornerRadii>
                     <Insets bottom="30"/>
                 </clipCornerRadii>
             </ResponsiveImage>
-        </AnchorPane>
-        <AnchorPane>
-            <Label text="I already have an itinerary." onMouseClicked="#openItinerary"
-                   styleClass="text-gray" AnchorPane.bottomAnchor="15" AnchorPane.rightAnchor="19"/>
         </AnchorPane>
     </StackPane>
 </ScrollPane>

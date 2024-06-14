@@ -14,9 +14,6 @@ public class AttractionCard extends Pane {
     @FXML
     private Label priceLabel;
 
-    
-
-
     public AttractionCard() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/cards/attraction_card.fxml"));
         try {
@@ -28,7 +25,7 @@ public class AttractionCard extends Pane {
         getChildren().add(fxmlLoader.getRoot());
     }
 
-    public String getPriceLabel(){
+    public String getPriceLabel() {
         return priceLabel.getText();
     }
 

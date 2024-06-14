@@ -134,10 +134,23 @@
     -fx-cursor: hand;
 }
 
-.outlined-button:hover {
+.purple-padded-button {
+    -fx-border-width: 2px;
     -fx-background-color: #BCA5ED;
-    -fx-text-fill: #070606;
     -fx-border-color: #BCA5ED;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.outlined-button:hover {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #070606;
+    -fx-border-color: #FFFFFF;
 }
 
 .outlined-button:hover .icon {

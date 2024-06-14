@@ -18,6 +18,7 @@ public class ItineraryDay {
     Hotel hotel;
 
     public ItineraryDay(LocalDateTime startOfDay, LocalDateTime endOfDay, Hotel hotel) {
+        validateDates(startOfDay, endOfDay);
         this.startOfDay = startOfDay;
         this.endOfDay = endOfDay;
         this.hotel = hotel;
@@ -37,6 +38,7 @@ public class ItineraryDay {
     }
 
     public void setStartOfDay(LocalDateTime startOfDay) {
+        validateDates(this.startOfDay, endOfDay);
         this.startOfDay = startOfDay;
     }
 
@@ -45,6 +47,7 @@ public class ItineraryDay {
     }
 
     public void setEndOfDay(LocalDateTime endOfDay) {
+        validateDates(this.startOfDay, endOfDay);
         this.endOfDay = endOfDay;
     }
 
@@ -80,38 +83,38 @@ public class ItineraryDay {
     public void removeActivity(I_Activity activity) {
         int pos_activity = -1;
         int n = this.activities.size();
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             if (this.activities.get(i).getData() == activity) {
                 pos_activity = i;
                 break;
             }
         }
-        if (pos_activity == n-1) {
+        if (pos_activity == n - 1) {
             this.activities.remove(n - 1);
             TimeSlot last = this.activities.get(n - 2);
             last.setWayToNext(null);
             return;
         }
         if (pos_activity == 0) {
-            for (int i=n-1; i>=1; i--) {
+            for (int i = n - 1; i >= 1; i--) {
                 // OBS: foi feito para a duração padrão de uma hora de cada ts
                 // alterar para possibilitar diferentes durações de ts
                 TimeSlot current = this.activities.get(i);
-                TimeSlot prev = this.activities.get(i-1);
+                TimeSlot prev = this.activities.get(i - 1);
                 current.setStart(prev.getStart());
                 current.setEnd(prev.getEnd());
             }
             this.activities.remove(0);
             return;
         }
-        for (int i=n-1; i>pos_activity; i--) {
+        for (int i = n - 1; i > pos_activity; i--) {
             TimeSlot current = this.activities.get(i);
-            TimeSlot prev = this.activities.get(i-1);
+            TimeSlot prev = this.activities.get(i - 1);
             current.setStart(prev.getStart());
             current.setEnd(prev.getEnd());
         }
         this.activities.remove(pos_activity);
-        TimeSlot prev = this.activities.get(pos_activity-1);
+        TimeSlot prev = this.activities.get(pos_activity - 1);
         TimeSlot next = this.activities.get(pos_activity);
         prev.setWayToNext(Transportation.betweenPlaces(prev.getEnd(), prev.getData().getLocation(), next.getData().getLocation()));
         return;
@@ -119,5 +122,14 @@ public class ItineraryDay {
 
     public void setAll(List<TimeSlot> slots) {
         // TO DO: implementar - lembre-se de recalcular todos os transportes porque a idea é setar apenas uma lista de atividades
+    }
+
+    private void validateDates(LocalDateTime startOfDay, LocalDateTime endOfDay) {
+        if (startOfDay == null || endOfDay == null) {
+            throw new IllegalArgumentException("Start of day and end of day must not be null.");
+        }
+        if (startOfDay.isAfter(endOfDay)) {
+            throw new IllegalArgumentException("Start of day must be before or equal to end of day.");
+        }
     }
 }
