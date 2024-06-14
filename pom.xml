@@ -16,6 +16,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.4.0-b180725.0427</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.4</version>
+        </dependency>
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>22.0.1</version>
@@ -41,4 +51,30 @@
             <version>12.3.1</version>
         </dependency>
     </dependencies>
+    <build>
+    <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jaxb2-maven-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <executions>
+                        <execution>
+                            <id>xjc</id>
+                            <goals>
+                                <goal>xjc</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <xjbSources>
+                            <xjbSource>src/main/resources/global.xjb</xjbSource>
+                        </xjbSources>
+                        <outputDirectory>${basedir}/src/main/java</outputDirectory>
+                        <clearOutputDir>false</clearOutputDir>
+                    </configuration>
+                </plugin>
+            </plugins>
+    </pluginManagement>
+    </build>
 </project>

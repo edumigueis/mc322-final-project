@@ -25,7 +25,7 @@ public class AttractionCardController {
         assert activity instanceof Places;
         descriptionLabel.setFullText(activity.getDescription());
         titleLabel.setText(activity.getName().toUpperCase());
-        businessTimeLabel.setText("Open hours: " + ((Places) activity).getOpenTime().getCurrentOpenHours());
+        businessTimeLabel.setText("Open: " + ((Places) activity).getOpenTime().getCurrentOpenHours());
         priceLabel.setText("$" + activity.getPrice());
         attractionCardImage.setImageUrl(((Places) activity).getImageThumbURL());
     }

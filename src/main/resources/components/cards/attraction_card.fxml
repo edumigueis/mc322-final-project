@@ -17,7 +17,7 @@
     </rowConstraints>
     <ResponsiveImage GridPane.columnIndex="0" GridPane.rowIndex="0"
                      prefWidth="400"
-                     fx:id="attractionCardImage">
+                     fx:id="attractionCardImage" imgWidth="600">
         <clipCornerRadii>
             <Insets top="18" left="18"/>
         </clipCornerRadii>

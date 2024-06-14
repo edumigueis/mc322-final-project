@@ -1,13 +1,20 @@
 package ui.components;
 
+import helpers.ImageCache;
 import javafx.beans.property.*;
 import javafx.geometry.Insets;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 public class ResponsiveImage extends StackPane {
     private final StringProperty imageUrl = new SimpleStringProperty();
+    private final DoubleProperty imgWidth = new SimpleDoubleProperty();
+    private final DoubleProperty imgHeight = new SimpleDoubleProperty();
     private final ObjectProperty<Insets> clipCornerRadii = new SimpleObjectProperty<>(new Insets(0));
+
+    //Singleton to cache images
+    private final ImageCache imageCache = ImageCache.getInstance();
 
     public ResponsiveImage() {
         super();
@@ -57,30 +64,67 @@ public class ResponsiveImage extends StackPane {
         clipCornerRadii.set(insets);
     }
 
+    public DoubleProperty imgWidthProperty() {
+        return imgWidth;
+    }
+
+    public double getImgWidth() {
+        return imgWidth.get();
+    }
+
+    public void setImgWidth(double value) {
+        imgWidth.set(value);
+    }
+
+    public DoubleProperty imgHeightProperty() {
+        return imgHeight;
+    }
+
+    public double getImgHeight() {
+        return imgHeight.get();
+    }
+
+    public void setImgHeight(double value) {
+        imgHeight.set(value);
+    }
+
     private void updateBackground() {
-        if (imageUrl != null && !imageUrl.isEmpty().get()) {
+        String url = imageUrl.get();
+        if (url != null && !url.isEmpty()) {
             Region region = new Region();
-            Image backgroundImage = new Image(imageUrl.get());
+            ProgressBar progressBar = new ProgressBar();
+            progressBar.setProgress(-1);
+            getChildren().addAll(region, progressBar);
 
-            BackgroundSize backgroundSize = new BackgroundSize(
-                    BackgroundSize.AUTO,
-                    BackgroundSize.AUTO,
-                    false,
-                    true,
-                    false,
-                    true
-            );
+            // Check if image is already cached
+            if (imageCache.containsImage(url)) {
+                Image cachedImage = imageCache.getImage(url);
+                setBackgroundImage(region, cachedImage);
+                progressBar.setVisible(false); // Hide progress bar since image is already loaded
+            } else {
+                // Image not cached, load it and cache
+                Image backgroundImage = new Image(url, imgWidth.get(), imgHeight.get(), true, true, true);
+                backgroundImage.progressProperty().addListener((obs, oldProgress, newProgress) -> {
+                    progressBar.setProgress(newProgress.doubleValue());
 
-            BackgroundImage background = new BackgroundImage(
-                    backgroundImage,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundPosition.CENTER,
-                    backgroundSize
-            );
-
-            region.setBackground(new Background(background));
-            getChildren().add(region);
+                    if (newProgress.doubleValue() >= 1.0) {
+                        setBackgroundImage(region, backgroundImage);
+                        progressBar.setVisible(false); // Hide progress bar
+                        imageCache.putImage(url, backgroundImage); // Cache the loaded image
+                    }
+                });
+            }
         }
+    }
+
+    private void setBackgroundImage(Region region, Image image) {
+        BackgroundImage backgroundImage = new BackgroundImage(
+                image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, true, false, true)
+        );
+        region.setBackground(new Background(backgroundImage));
     }
 }

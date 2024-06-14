@@ -1,14 +1,19 @@
 package core.itinerary;
 
-import entities.City;
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import entities.City;
+
+@XmlRootElement
 public class Itinerary {
+    @XmlElement
     City city;
     LocalDate startDate;
     LocalDate endDate;
