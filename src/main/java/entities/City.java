@@ -3,6 +3,7 @@ package entities;
 import java.util.List;
 
 import entities.activities.I_Activity;
+import helpers.Location;
 
 public class City {
     private String name;
@@ -10,13 +11,15 @@ public class City {
     private String thumbImageUrl;
     private List<I_Activity> thingsToDo;
     private List<Hotel> hotels;
+    private Location location;
 
-    public City(String name, String description, String thumbImageUrl, List<I_Activity> thingsToDo, List<Hotel> hotels) {
+    public City(String name, String description, String thumbImageUrl, List<I_Activity> thingsToDo, List<Hotel> hotels, Location loc) {
         this.name = name;
         this.description = description;
         this.thumbImageUrl = thumbImageUrl;
         this.thingsToDo = thingsToDo;
         this.hotels = hotels;
+        this.location = loc;
     }
 
     public String getName() {
@@ -57,6 +60,14 @@ public class City {
 
     public void setHotels(List<Hotel> hotels) {
         this.hotels = hotels;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Override

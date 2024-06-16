@@ -1,7 +1,11 @@
 package ui.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
+import com.gluonhq.maps.MapPoint;
+import com.gluonhq.maps.MapView;
+import entities.Hotel;
 import entities.activities.I_Activity;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
@@ -13,6 +17,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import ui.components.AttractionCardCell;
 import ui.components.Filter;
+import ui.helpers.map.AttractionMapLayer;
+import ui.helpers.map.HotelMapLayer;
 import viewmodels.CityViewModel;
 import viewmodels.ItineraryDayViewModel;
 
@@ -26,6 +32,8 @@ public class AttractionModalController implements FilterBarController.FilterChan
     private ListView<I_Activity> cardsContainer;
     @FXML
     private Pane filterBarContainer;
+    @FXML
+    private MapView mapView;
 
 
     @FXML
@@ -36,6 +44,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
             FilterBarController controller = loader.getController();
             controller.setFilterChangeListener(this);
             filterBarContainer.getChildren().add(filterBar);
+            mapView.setPrefSize(400, 600);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -49,6 +58,27 @@ public class AttractionModalController implements FilterBarController.FilterChan
         this.cityViewModel = viewModel;
         cardsContainer.setItems(cityViewModel.getThingsToDo());
         cardsContainer.setCellFactory(param -> new AttractionCardCell());
+        loadMap();
+    }
+
+    private void loadMap() {
+        mapView.setCenter(new MapPoint(this.cityViewModel.getLocation().get().latitude(), this.cityViewModel.getLocation().get().longitude()));
+        mapView.setZoom(12.5);
+
+        List<I_Activity> attractions = this.cityViewModel.getThingsToDo();
+        AttractionMapLayer pinLayer = new AttractionMapLayer(attractions);
+        if(attractions != null && !attractions.isEmpty())
+            mapView.addLayer(pinLayer);
+
+        Hotel dayHotel = this.viewModel.hotelProperty().get();
+        if(dayHotel != null)
+            mapView.addLayer(new HotelMapLayer(dayHotel));
+
+        cardsContainer.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                pinLayer.select(newValue);
+            }
+        });
     }
 
     @Override

@@ -3,6 +3,7 @@ package viewmodels;
 import entities.City;
 import entities.activities.I_Activity;
 import entities.Hotel;
+import helpers.Location;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -14,7 +15,7 @@ public class CityViewModel {
     private final ObjectProperty<String> thumbImageUrlProperty = new SimpleObjectProperty<>();
     private final ObservableList<I_Activity> thingsToDo = FXCollections.observableArrayList();
     private final ObservableList<Hotel> hotels = FXCollections.observableArrayList();
-
+    private final ObjectProperty<Location> location = new SimpleObjectProperty<>();
     public CityViewModel(City city) {
         this.nameProperty.set(city.getName());
         this.descriptionProperty.set(city.getDescription());
@@ -22,6 +23,7 @@ public class CityViewModel {
         this.thingsToDo.addAll(city.getThingsToDo());
         if(city.getHotels() != null)
             this.hotels.addAll(city.getHotels());
+        this.location.set(city.getLocation());
     }
 
     public ObjectProperty<String> nameProperty() {
@@ -42,6 +44,9 @@ public class CityViewModel {
 
     public ObservableList<Hotel> getHotels() {
         return hotels;
+    }
+    public ObjectProperty<Location> getLocation() {
+        return location;
     }
 }
 

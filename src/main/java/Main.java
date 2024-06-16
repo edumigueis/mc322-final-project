@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 import ui.controllers.StartScreenController;
 
 import java.io.IOException;
-
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {

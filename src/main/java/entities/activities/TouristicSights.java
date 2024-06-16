@@ -13,7 +13,6 @@ public class TouristicSights extends Places{
         this.images = images;
     }
 
-
     public List<String> getImages() {
         return images;
     }

@@ -16,6 +16,7 @@ import core.itinerary.Itinerary;
 import entities.City;
 import entities.Hotel;
 import entities.activities.I_Activity;
+import helpers.Location;
 import helpers.input.ActivityParsingStrategy;
 import helpers.input.HotelParsingStrategy;
 import helpers.input.XMLReader;
@@ -61,9 +62,9 @@ public class StartScreenController implements Initializable, CardParent {
             List<I_Activity> activitiesFlorence = (List<I_Activity>) reader.read("data/activityFlorence.xml");
             List<I_Activity> activitiesShanghai = (List<I_Activity>) reader.read("data/activityShangai.xml");
 
-            this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", activitiesParis, hotelsParis));
-            this.cities.add(new City("Shanghai", "The center of the future", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", activitiesShanghai, hotelsShanghai));
-            this.cities.add(new City("Florence", "The capital of Tuscany", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", activitiesFlorence, hotelsFlorence));
+            this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", activitiesParis, hotelsParis, new Location(48.864716, 2.349014)));
+            this.cities.add(new City("Shanghai", "The center of the future", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", activitiesShanghai, hotelsShanghai, new Location(31.224361, 121.469170)));
+            this.cities.add(new City("Florence", "The capital of Tuscany", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", activitiesFlorence, hotelsFlorence, new Location(43.769562, 11.255814)));
 
         } catch (Exception e) {
             System.err.println("Exception in StartScreenController 1!");
