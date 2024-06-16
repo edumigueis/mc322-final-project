@@ -57,10 +57,17 @@ public class AttractionModalController implements FilterBarController.FilterChan
         cardsContainer.setCellFactory(param -> new AttractionCardCell());
         loadMap();
     }
-    private void loadMap(){
+
+    private void loadMap() {
+        AttractionMapLayer pinLayer = new AttractionMapLayer(this.cityViewModel.getThingsToDo());
         mapView.setCenter(new MapPoint(this.cityViewModel.getLocation().get().latitude(), this.cityViewModel.getLocation().get().longitude()));
         mapView.setZoom(12.5);
-        mapView.addLayer(new AttractionMapLayer(this.cityViewModel.getThingsToDo()));
+        mapView.addLayer(pinLayer);
+        cardsContainer.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                pinLayer.select(newValue);
+            }
+        });
     }
 
     @Override
