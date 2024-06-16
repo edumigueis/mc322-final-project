@@ -1,4 +1,4 @@
-package ui.helpers;
+package ui.helpers.map;
 
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;
