@@ -2,6 +2,7 @@ package ui.controllers;
 
 import java.io.IOException;
 
+import com.gluonhq.maps.MapView;
 import entities.activities.I_Activity;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
@@ -26,6 +27,8 @@ public class AttractionModalController implements FilterBarController.FilterChan
     private ListView<I_Activity> cardsContainer;
     @FXML
     private Pane filterBarContainer;
+    @FXML
+    private MapView mapView;
 
 
     @FXML
@@ -36,6 +39,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
             FilterBarController controller = loader.getController();
             controller.setFilterChangeListener(this);
             filterBarContainer.getChildren().add(filterBar);
+            mapView.setPrefSize(300, 400);
         } catch (IOException e) {
             e.printStackTrace();
         }
