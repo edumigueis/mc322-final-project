@@ -1,26 +1,34 @@
 package entities.activities;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import helpers.BusinessHours;
 import helpers.Location;
 import helpers.PriceRange;
 
-public class Restaurant extends Places{
-    private Avaliacao estrelas;
+@JacksonXmlRootElement(localName = "restaurant")
+public class Restaurant extends Places {
+    @JacksonXmlProperty(localName = "stars")
+    private Stars stars;
+
+    @JacksonXmlProperty(localName = "priceRange")
     private PriceRange priceRange;
     
 
-    public Restaurant(Location location, String name, BusinessHours openTime, String description, String image, Avaliacao estrelas, PriceRange priceRange) {
+    public Restaurant(Location location, String name, BusinessHours openTime, String description, String image, Stars estrelas, PriceRange priceRange) {
         super(location, name, openTime, description, image, Categories.RESTAURANTS, 0);
-        this.estrelas = estrelas;
+        this.stars = estrelas;
         this.priceRange = priceRange;
     }
 
-    public Avaliacao getEstrelas() {
-        return this.estrelas;
+    public Restaurant(){}
+
+    public Stars getEstrelas() {
+        return this.stars;
     }
 
-    public void setEstrelas(Avaliacao estrelas) {
-        this.estrelas = estrelas;
+    public void setEstrelas(Stars estrelas) {
+        this.stars = estrelas;
     }
 
     @Override
@@ -29,12 +37,12 @@ public class Restaurant extends Places{
         return valorMedio;
     }
 
-    public enum Avaliacao{
-        UMA_ESTRELA,
-        DUAS_ESTRELAS,
-        TRES_ESTRELAS,
-        QUATRO_ESTRELAS,
-        CINCO_ESTRELAS
+    public enum Stars {
+        ONE,
+        TWO,
+        THREE,
+        FOUR,
+        FIVE
     }
 
 }

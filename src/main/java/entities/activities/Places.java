@@ -1,17 +1,29 @@
 package entities.activities;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import helpers.BusinessHours;
 import helpers.Location;
 
 public abstract class Places implements I_Activity {
+    @JacksonXmlProperty(localName = "name")
     private String name;
+
+    @JacksonXmlProperty(localName = "imageThumbURL")
     private String imageThumbURL;
+
+    @JacksonXmlProperty(localName = "location")
     private Location location;
+
+    @JacksonXmlProperty(localName = "openTime")
     private BusinessHours openTime;
+
+    @JacksonXmlProperty(localName = "description")
     private String description;
 
-    //filter attributes
+    @JacksonXmlProperty(localName = "category")
     private Categories category;
+
+    @JacksonXmlProperty(localName = "price")
     private double price;
 
     public Places(Location location, String name, BusinessHours openTime, String description, String imageThumbURL, Categories category, double price) {
@@ -26,6 +38,8 @@ public abstract class Places implements I_Activity {
         this.category = category;
         this.price = price;
     }
+
+    public Places() {}
 
     @Override
     public Location getLocation() {

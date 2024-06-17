@@ -1,5 +1,6 @@
 package entities;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import entities.TransportationType;
 import helpers.Location;
 
@@ -7,9 +8,16 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 public class Transportation {
+    @JacksonXmlProperty(localName = "type")
     private TransportationType type;
+
+    @JacksonXmlProperty(localName = "estimated-duration")
     private Duration estimatedDuration;
+
+    @JacksonXmlProperty(localName = "start")
     private LocalTime start;
+
+    @JacksonXmlProperty(localName = "price")
     private float price;
 
     public Transportation(TransportationType type, Duration estimatedDuration, LocalTime start, float price) {
@@ -18,6 +26,8 @@ public class Transportation {
         this.start = start;
         this.price = price;
     }
+
+    public Transportation(){}
 
     public TransportationType getType() {
         return type;

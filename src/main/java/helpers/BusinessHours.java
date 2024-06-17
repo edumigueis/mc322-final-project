@@ -1,17 +1,29 @@
 package helpers;
 
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 public class BusinessHours {
+    @JacksonXmlElementWrapper(useWrapping = false)
+    @JacksonXmlProperty(localName = "day")
     private final Map<String, String> hoursMap;
 
     private BusinessHours(Builder builder) {
         this.hoursMap = builder.hoursMap;
     }
 
+    public BusinessHours() {
+        // Default constructor for Jackson
+        this.hoursMap = new HashMap<>();
+    }
+
+    @JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         private final Map<String, String> hoursMap = new HashMap<>();
 

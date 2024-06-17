@@ -69,7 +69,7 @@ public class ActivityParsingStrategy implements ParsingStrategy {
                         float max = Float.parseFloat(eElement.getElementsByTagName("max").item(0).getTextContent());
                         float min = Float.parseFloat(eElement.getElementsByTagName("min").item(0).getTextContent());
                         PriceRange priceRange = new PriceRange(min, max);
-                        Restaurant activity = new Restaurant(location, name, businessHours, "", "", Restaurant.Avaliacao.CINCO_ESTRELAS, priceRange);
+                        Restaurant activity = new Restaurant(location, name, businessHours, "", "", Restaurant.Stars.FIVE, priceRange);
                         activities.add(activity);
                     } else if (tipo.equals("sight")) {
                         String description = eElement.getElementsByTagName("description").item(0).getTextContent();

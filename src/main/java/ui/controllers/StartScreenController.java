@@ -1,17 +1,24 @@
 package ui.controllers;
+
 import java.io.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import core.itinerary.Itinerary;
 import entities.City;
 import entities.Hotel;
@@ -54,8 +61,8 @@ public class StartScreenController implements Initializable, CardParent {
             XMLReader reader = new XMLReader();
             reader.setParsingStrategy(new HotelParsingStrategy());
             List<Hotel> hotelsParis = (List<Hotel>) reader.read("data/hotelsParis.xml");
-            List<Hotel> hotelsFlorence = (List<Hotel>)reader.read("data/hotelsFlorence.xml");
-            List<Hotel> hotelsShanghai = (List<Hotel>)reader.read("data/hotelsShangai.xml");
+            List<Hotel> hotelsFlorence = (List<Hotel>) reader.read("data/hotelsFlorence.xml");
+            List<Hotel> hotelsShanghai = (List<Hotel>) reader.read("data/hotelsShangai.xml");
 
             reader.setParsingStrategy(new ActivityParsingStrategy());
             List<I_Activity> activitiesParis = (List<I_Activity>) reader.read("data/activityParis.xml");
@@ -82,19 +89,22 @@ public class StartScreenController implements Initializable, CardParent {
 
     @FXML
     private void createItinerary(MouseEvent event) {
-        try {
             if (pickedCity == -1) {
                 CustomAlert alert = CustomAlert.createErrorAlert("Please select a city");
                 alert.setTitle("Error");
                 alert.setHeaderText(null); // Remove header text
                 alert.showAndWait();
-                return;
             }
+            goToSecondScreen(event, new Itinerary(this.cities.get(pickedCity), dateController.getStartDate(), dateController.getEndDate()));
+    }
+
+    private void goToSecondScreen(MouseEvent event, Itinerary itinerary){
+        try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/itinerary.fxml"));
             Parent root = loader.load();
 
             ItineraryController secondScreenController = loader.getController();
-            secondScreenController.initData(cities.get(pickedCity), dateController.getStartDate(), dateController.getEndDate());
+            secondScreenController.initData(itinerary);
 
             Scene scene = new Scene(root, 900, 600);
             Stage stage = new Stage();
@@ -108,7 +118,7 @@ public class StartScreenController implements Initializable, CardParent {
     }
 
     @FXML
-    private void openItinerary(MouseEvent event) throws JAXBException {
+    private void openItinerary(MouseEvent event) {
         FileChooser fileChooser = new FileChooser();
 
         // Set extension filter
@@ -119,21 +129,24 @@ public class StartScreenController implements Initializable, CardParent {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         File file = fileChooser.showOpenDialog(stage);
 
-        JAXBContext jaxbContext = JAXBContext.newInstance(Itinerary.class);
+        XmlMapper xmlMapper = new XmlMapper();
+        JavaTimeModule javaTimeModule = new JavaTimeModule();
+        javaTimeModule.addDeserializer(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        xmlMapper.registerModule(javaTimeModule);
+
+        Itinerary readItinerary = null;
         if (file != null) {
             try {
-                Itinerary itinerary = new Itinerary(null, null, null);
-                // TO DO - LER ARQUIVO SALVO
-                // Process the file (e.g., read and parse the XML)
-                // Example: System.out.println("File selected: " + file.getAbsolutePath());
-                throw new IOException();
+                readItinerary = xmlMapper.readValue(file, Itinerary.class);
             } catch (IOException e) {
+                e.printStackTrace();
                 CustomAlert alert = CustomAlert.createErrorAlert("File not read. Check format and try again.");
                 alert.setTitle("Error");
                 alert.setHeaderText(null); // Remove header text
                 alert.showAndWait();
             }
         }
+        goToSecondScreen(event, readItinerary);
     }
 
     private void loadCities() throws IOException {

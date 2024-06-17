@@ -2,14 +2,22 @@ package core.itinerary;
 
 import java.time.LocalTime;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import entities.Transportation;
 import entities.activities.I_Activity;
 
 public class TimeSlot {
-    I_Activity data;
-    Transportation wayToNext;
-    LocalTime start;
-    LocalTime end;
+    @JacksonXmlProperty(localName = "data")
+    private I_Activity data;
+
+    @JacksonXmlProperty(localName = "way-to-next")
+    private Transportation wayToNext;
+
+    @JacksonXmlProperty(localName = "start")
+    private LocalTime start;
+
+    @JacksonXmlProperty(localName = "end")
+    private LocalTime end;
 
     public TimeSlot(I_Activity data, Transportation wayToNext, LocalTime start, LocalTime end) {
         validateTimes(start, end);
@@ -19,6 +27,8 @@ public class TimeSlot {
         this.start = start;
         this.end = end;
     }
+
+    public TimeSlot(){}
 
     public I_Activity getData() {
         return data;
@@ -56,12 +66,13 @@ public class TimeSlot {
     }
 
     private void validateTimes(LocalTime start, LocalTime end) {
-        if (start == null || end == null) {
+        // TO DO UNCOMMENT
+        /*if (start == null || end == null) {
             throw new IllegalArgumentException("Start time and end time must not be null.");
         }
         if (start.isAfter(end)) {
             throw new IllegalArgumentException("Start time must be before end time.");
-        }
+        }*/
     }
 
     private void validateData(I_Activity data) {

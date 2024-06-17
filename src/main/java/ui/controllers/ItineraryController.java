@@ -23,8 +23,8 @@ public class ItineraryController {
     private final ItineraryDayCarousel carousel = new ItineraryDayCarousel();
     private Itinerary itinerary;
 
-    public void initData(City city, LocalDate start, LocalDate end) throws IOException {
-        this.itinerary = new Itinerary(city, start, end);
+    public void initData(Itinerary itinerary) throws IOException {
+        this.itinerary = itinerary;
         this.loadHeader();
         this.startCards();
         mainBox.sceneProperty().addListener((observable, oldValue, newValue) -> {

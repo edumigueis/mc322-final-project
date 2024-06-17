@@ -6,19 +6,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import entities.City;
 
-@XmlRootElement
+@JacksonXmlRootElement(localName = "itinerary")
 public class Itinerary {
-    @XmlElement
-    City city;
-    LocalDate startDate;
-    LocalDate endDate;
-    List<ItineraryDay> itineraryDayList;
-    int duration;
+    @JacksonXmlProperty(localName = "city")
+    private City city;
+    @JacksonXmlProperty(localName = "start")
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate startDate;
+    @JacksonXmlProperty(localName = "end")
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate endDate;
+    @JacksonXmlElementWrapper(localName = "itinerary-days")
+    @JacksonXmlProperty(localName = "itinerary-day")
+    private List<ItineraryDay> itineraryDayList;
+    private int duration;
 
     public Itinerary(City city, LocalDate startDate, LocalDate endDate, List<ItineraryDay> itineraryDayList) {
         validateDates(startDate, endDate);
@@ -28,6 +36,8 @@ public class Itinerary {
         this.itineraryDayList = itineraryDayList;
         this.updateDuration();
     }
+
+    public Itinerary() {}
 
     public Itinerary(City city, LocalDate startDate, LocalDate endDate) {
         validateDates(startDate, endDate);
@@ -45,12 +55,13 @@ public class Itinerary {
     }
 
     private void validateDates(LocalDate startDate, LocalDate endDate) {
+        /* TO DO UNCOMMENT
         if (startDate == null || endDate == null) {
             throw new IllegalArgumentException("Start date and end date must not be null.");
         }
         if (startDate.isAfter(endDate)) {
             throw new IllegalArgumentException("Start date must be before or equal to end date.");
-        }
+        }*/
     }
 
     public City getCity() {

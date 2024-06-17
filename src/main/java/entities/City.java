@@ -2,15 +2,32 @@ package entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import entities.activities.I_Activity;
 import helpers.Location;
 
+@JacksonXmlRootElement(localName = "city")
 public class City {
+    @JacksonXmlProperty(localName = "name")
     private String name;
+
+    @JacksonXmlProperty(localName = "description")
     private String description;
+
+    @JacksonXmlProperty(localName = "thumb-image-url")
     private String thumbImageUrl;
+
+    @JacksonXmlElementWrapper(localName = "things-to-do")
+    @JacksonXmlProperty(localName = "activity")
     private List<I_Activity> thingsToDo;
+
+    @JacksonXmlElementWrapper(localName = "hotels")
+    @JacksonXmlProperty(localName = "hotel")
     private List<Hotel> hotels;
+
+    @JacksonXmlProperty(localName = "location")
     private Location location;
 
     public City(String name, String description, String thumbImageUrl, List<I_Activity> thingsToDo, List<Hotel> hotels, Location loc) {
@@ -21,6 +38,8 @@ public class City {
         this.hotels = hotels;
         this.location = loc;
     }
+
+    public City() {}
 
     public String getName() {
         return name;

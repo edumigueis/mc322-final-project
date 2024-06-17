@@ -1,11 +1,19 @@
 package entities.activities;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import helpers.BusinessHours;
 import helpers.Location;
 
+@JacksonXmlRootElement(localName = "museum")
 public class Museum extends Places {
+    @JacksonXmlProperty(localName = "currentExpoName")
     private String currentExpoName;
+
+    @JacksonXmlProperty(localName = "mostFamousWorks")
     private String mostFamousWorks;
+
+    @JacksonXmlProperty(localName = "website")
     private String website;
 
     public Museum(Location location, String name, BusinessHours openTime, String description, String imageThumbURL, String currentExpoName, String mostFamousWorks, String website, double price) {
@@ -14,7 +22,7 @@ public class Museum extends Places {
         this.mostFamousWorks = mostFamousWorks;
         this.website = website;
     }
-
+    public Museum(){}
 
     public String getCurrentExpoName() {
         return this.currentExpoName;

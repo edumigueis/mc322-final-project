@@ -1,6 +1,9 @@
 package helpers;
 
-public record Location(double latitude, double longitude) {
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+
+public record Location(@JacksonXmlProperty(localName = "latitude") double latitude,
+                       @JacksonXmlProperty(localName = "longitude") double longitude) {
     public double calculateDistance(Location other) {
         double latDistance = Math.toRadians(other.latitude() - this.latitude());
         double lonDistance = Math.toRadians(other.longitude() - this.longitude());
