@@ -27,6 +27,6 @@ public class AttractionCardController {
         titleLabel.setText(activity.getName().toUpperCase());
         businessTimeLabel.setText("Open: " + ((Places) activity).getOpenTime().getCurrentOpenHours());
         priceLabel.setText("$" + activity.getPrice());
-        attractionCardImage.setImageUrl(((Places) activity).getImageThumbURL());
+        attractionCardImage.setImageUrl(activity.getImageThumbURL());
     }
 }

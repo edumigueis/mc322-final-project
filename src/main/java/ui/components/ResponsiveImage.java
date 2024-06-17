@@ -103,7 +103,7 @@ public class ResponsiveImage extends StackPane {
                 progressBar.setVisible(false); // Hide progress bar since image is already loaded
             } else {
                 // Image not cached, load it and cache
-                Image backgroundImage = new Image(url, imgWidth.get(), imgHeight.get(), true, true, true);
+                Image backgroundImage = new Image(url.replace("\n", ""), imgWidth.get(), imgHeight.get(), true, true, true);
                 backgroundImage.progressProperty().addListener((obs, oldProgress, newProgress) -> {
                     progressBar.setProgress(newProgress.doubleValue());
 

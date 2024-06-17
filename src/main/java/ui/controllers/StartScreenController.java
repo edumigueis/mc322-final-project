@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.sun.tools.javac.Main;
 import core.itinerary.Itinerary;
 import entities.City;
 import entities.Hotel;
@@ -57,7 +58,23 @@ public class StartScreenController implements Initializable, CardParent {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.cities = new ArrayList<>();
+        XmlMapper xmlMapper = new XmlMapper();
+        JavaTimeModule javaTimeModule = new JavaTimeModule();
+        javaTimeModule.addDeserializer(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        xmlMapper.registerModule(javaTimeModule);
+
         try {
+            InputStream inputStream = Main.class.getClassLoader().getResourceAsStream("data/cities.xml");
+            this.cities = xmlMapper.readValue(inputStream, xmlMapper.getTypeFactory().constructCollectionType(List.class, City.class));
+        } catch (IOException e) {
+            e.printStackTrace();
+            CustomAlert alert = CustomAlert.createErrorAlert("Cities not loaded. Check format and try again.");
+            alert.setTitle("Error");
+            alert.setHeaderText(null); // Remove header text
+            alert.showAndWait();
+        }
+
+        /*try {
             XMLReader reader = new XMLReader();
             reader.setParsingStrategy(new HotelParsingStrategy());
             List<Hotel> hotelsParis = (List<Hotel>) reader.read("data/hotelsParis.xml");
@@ -75,7 +92,7 @@ public class StartScreenController implements Initializable, CardParent {
 
         } catch (Exception e) {
             System.err.println("Exception in StartScreenController 1!");
-        }
+        }*/
 
         // Load UI
         try {
@@ -89,17 +106,17 @@ public class StartScreenController implements Initializable, CardParent {
 
     @FXML
     private void createItinerary(MouseEvent event) {
-            if (pickedCity == -1) {
-                CustomAlert alert = CustomAlert.createErrorAlert("Please select a city");
-                alert.setTitle("Error");
-                alert.setHeaderText(null); // Remove header text
-                alert.showAndWait();
-            }
-            goToSecondScreen(event, new Itinerary(this.cities.get(pickedCity), dateController.getStartDate(), dateController.getEndDate()));
+        if (pickedCity == -1) {
+            CustomAlert alert = CustomAlert.createErrorAlert("Please select a city");
+            alert.setTitle("Error");
+            alert.setHeaderText(null); // Remove header text
+            alert.showAndWait();
+        }
+        goToSecondScreen(event, new Itinerary(this.cities.get(pickedCity), dateController.getStartDate(), dateController.getEndDate()));
     }
 
-    private void goToSecondScreen(MouseEvent event, Itinerary itinerary){
-        try{
+    private void goToSecondScreen(MouseEvent event, Itinerary itinerary) {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/itinerary.fxml"));
             Parent root = loader.load();
 

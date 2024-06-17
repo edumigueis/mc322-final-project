@@ -2,10 +2,16 @@ package entities.activities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import helpers.BusinessHours;
 import helpers.Location;
 
+@JacksonXmlRootElement(localName = "touristic")
 public class TouristicSights extends Places{
+    @JacksonXmlElementWrapper(localName = "images")
+    @JacksonXmlProperty(localName = "url")
     private List<String> images;
 
     public TouristicSights(Location location, String name, BusinessHours openTime, String description, String imageThumbURL, double price, List<String>images) {
