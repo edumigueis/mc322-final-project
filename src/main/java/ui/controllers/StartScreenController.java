@@ -72,27 +72,8 @@ public class StartScreenController implements Initializable, CardParent {
             alert.setTitle("Error");
             alert.setHeaderText(null); // Remove header text
             alert.showAndWait();
+            return;
         }
-
-        /*try {
-            XMLReader reader = new XMLReader();
-            reader.setParsingStrategy(new HotelParsingStrategy());
-            List<Hotel> hotelsParis = (List<Hotel>) reader.read("data/hotelsParis.xml");
-            List<Hotel> hotelsFlorence = (List<Hotel>) reader.read("data/hotelsFlorence.xml");
-            List<Hotel> hotelsShanghai = (List<Hotel>) reader.read("data/hotelsShangai.xml");
-
-            reader.setParsingStrategy(new ActivityParsingStrategy());
-            List<I_Activity> activitiesParis = (List<I_Activity>) reader.read("data/activityParis.xml");
-            List<I_Activity> activitiesFlorence = (List<I_Activity>) reader.read("data/activityFlorence.xml");
-            List<I_Activity> activitiesShanghai = (List<I_Activity>) reader.read("data/activityShangai.xml");
-
-            this.cities.add(new City("Paris", "The city of light", "https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg", activitiesParis, hotelsParis, new Location(48.864716, 2.349014)));
-            this.cities.add(new City("Shanghai", "The center of the future", "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/01/04161010/shanghai-fi.jpeg?tr=w-1200,q-60", activitiesShanghai, hotelsShanghai, new Location(31.224361, 121.469170)));
-            this.cities.add(new City("Florence", "The capital of Tuscany", "https://cdn.britannica.com/71/8671-050-2EE6A745/Cathedral-Florence-Santa-Maria-del-Fiore.jpg", activitiesFlorence, hotelsFlorence, new Location(43.769562, 11.255814)));
-
-        } catch (Exception e) {
-            System.err.println("Exception in StartScreenController 1!");
-        }*/
 
         // Load UI
         try {
@@ -166,7 +147,8 @@ public class StartScreenController implements Initializable, CardParent {
         goToSecondScreen(event, readItinerary);
     }
 
-    private void loadCities() throws IOException {
+    private void loadCities() {
+        this.cityGrid.setMinHeight((double)(((this.cities.size() + 2) / 3) * 250));
         for (int i = 0; i < this.cities.size(); i++) {
             CityCard card = new CityCard(this);
             card.getController().setData(cities.get(i), i);

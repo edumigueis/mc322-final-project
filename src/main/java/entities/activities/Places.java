@@ -1,8 +1,11 @@
 package entities.activities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import helpers.BusinessHours;
 import helpers.Location;
+import helpers.input.CategoriesDeserializer;
 
 public abstract class Places implements I_Activity {
     @JacksonXmlProperty(localName = "name")
@@ -25,6 +28,10 @@ public abstract class Places implements I_Activity {
 
     @JacksonXmlProperty(localName = "price")
     private double price;
+
+    @JacksonXmlProperty(localName = "type")
+    @JsonIgnore
+    private String type;
 
     public Places(Location location, String name, BusinessHours openTime, String description, String imageThumbURL, Categories category, double price) {
         if (location == null || name == null || openTime == null || description == null || imageThumbURL == null || category == null) {

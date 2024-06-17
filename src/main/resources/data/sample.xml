@@ -5,7 +5,7 @@
         <thumb-image-url>https://example.com/nyc.jpg</thumb-image-url>
         <things-to-do>
             <activity>
-                <category>museum</category>
+                <category>MUSEUMS</category>
                 <name>The Metropolitan Museum of Art</name>
                 <description>One of the world's largest and finest art museums.</description>
                 <imageThumbURL>https://example.com/met.jpg</imageThumbURL>
@@ -49,7 +49,7 @@
                 <price>25.0</price>
             </activity>
             <activity>
-                <category>park</category>
+                <category>PARKS</category>
                 <name>Central Park</name>
                 <description>A large public park in New York City.</description>
                 <imageThumbURL>https://example.com/centralpark.jpg</imageThumbURL>
@@ -90,7 +90,7 @@
                 <price>0.0</price>
             </activity>
             <activity>
-                    <category>restaurant</category>
+                    <category>RESTAURANTS</category>
                     <name>Joe's Pizza</name>
                     <description>Famous for its classic New York slices.</description>
                     <imageThumbURL>https://example.com/joespizza.jpg</imageThumbURL>
@@ -155,7 +155,7 @@
             <activities>
                 <activity>
                     <data>
-                        <category>museum</category>
+                        <category>MUSEUMS</category>
                         <name>The Metropolitan Museum of Art</name>
                         <description>One of the world's largest and finest art museums.</description>
                         <imageThumbURL>https://example.com/met.jpg</imageThumbURL>

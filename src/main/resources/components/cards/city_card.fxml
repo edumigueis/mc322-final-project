@@ -5,12 +5,11 @@
 <?import javafx.scene.control.Label?>
 <?import ui.components.ResponsiveImage?>
 <?import javafx.geometry.Insets?>
-<VBox GridPane.columnIndex="1" xmlns="http://javafx.com/javafx"
+<VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="ui.controllers.CityCardController" onMouseClicked="#selectSelf" fx:id="card" spacing="4">
     <StackPane fx:id="imageContainer" style="-fx-border-radius: 12px">
-        <ResponsiveImage prefWidth="200" prefHeight="200" fx:id="cityImage" GridPane.columnIndex="0"
-                         GridPane.rowIndex="0" imgWidth="400">
+        <ResponsiveImage prefHeight="200" prefWidth="200" fx:id="cityImage" imgWidth="400">
             <clipCornerRadii>
                 <Insets top="12" right="12" bottom="12" left="12"/>
             </clipCornerRadii>

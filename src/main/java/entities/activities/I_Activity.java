@@ -4,13 +4,13 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import helpers.Location;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "category")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Museum.class, name = "museum"),
-        @JsonSubTypes.Type(value = Parks.class, name = "park"),
-        @JsonSubTypes.Type(value = Restaurant.class, name = "restaurant"),
-        @JsonSubTypes.Type(value = TouristicSights.class, name = "touristic"),
-        @JsonSubTypes.Type(value = Theaters.class, name = "theaters"),
+        @JsonSubTypes.Type(value = Museum.class, name = "MUSEUMS"),
+        @JsonSubTypes.Type(value = Parks.class, name = "PARKS"),
+        @JsonSubTypes.Type(value = Restaurant.class, name = "RESTAURANTS"),
+        @JsonSubTypes.Type(value = TouristicSights.class, name = "TOURISTIC_SIGHTS"),
+        @JsonSubTypes.Type(value = Theaters.class, name = "THEATERS"),
 })
 public interface I_Activity {
 

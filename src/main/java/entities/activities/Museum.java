@@ -22,7 +22,9 @@ public class Museum extends Places {
         this.mostFamousWorks = mostFamousWorks;
         this.website = website;
     }
-    public Museum(){}
+    public Museum(){
+        super();
+    }
 
     public String getCurrentExpoName() {
         return this.currentExpoName;

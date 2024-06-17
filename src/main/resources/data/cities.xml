@@ -9,7 +9,8 @@
         </location>
         <things-to-do>
             <activity>
-                <category>museum</category>
+                <type>MUSEUMS</type>
+                <category>MUSEUMS</category>
                 <name>Louvre Museum</name>
                 <location>
                     <latitude>48.86074</latitude>
@@ -53,7 +54,8 @@
                 <price>10.0</price>
             </activity>
             <activity>
-                <category>museum</category>
+                <type>MUSEUMS</type>
+                <category>MUSEUMS</category>
                 <name>Musée d’Orsay</name>
                 <location>
                     <latitude>48.86004</latitude>
@@ -97,7 +99,8 @@
                 <price>12.0</price>
             </activity>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+                <category>TOURISTIC_SIGHTS</category>
                 <name>Eiffel Tower</name>
                 <location>
                     <latitude>48.85838</latitude>
@@ -141,7 +144,8 @@
                 </images>
             </activity>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+                <category>TOURISTIC_SIGHTS</category>
                 <name>Seine River</name>
                 <location>
                     <latitude>48.856750</latitude>
@@ -187,7 +191,8 @@
                 </images>
             </activity>
             <activity>
-                <category>theaters</category>
+                <type>THEATERS</type>
+                <category>THEATERS</category>
                 <name>Moulin Rouge</name>
                 <location>
                     <latitude>48.884129</latitude>
@@ -259,7 +264,8 @@
         </location>
         <things-to-do>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+                <category>TOURISTIC_SIGHTS</category>
                 <name>The Bund</name>
                 <location>
                     <latitude>31.2397</latitude>
@@ -302,7 +308,8 @@
                 <price>0.0</price>
             </activity>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Shanghai Tower</name>
                 <location>
                     <latitude>31.2336</latitude>
@@ -345,7 +352,8 @@
                 <price>150.0</price>
             </activity>
             <activity>
-                <category>museum</category>
+                <type>MUSEUMS</type>
+<category>MUSEUMS</category>
                 <name>Shanghai Museum</name>
                 <location>
                     <latitude>31.2297</latitude>
@@ -388,7 +396,8 @@
                 <price>50.0</price>
             </activity>
             <activity>
-                <category>restaurant</category>
+                <type>RESTAURANTS</type>
+<category>RESTAURANTS</category>
                 <name>Lost Heaven</name>
                 <location>
                     <latitude>31.2130</latitude>
@@ -428,7 +437,10 @@
                     and live music.
                 </description>
                 <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/SHANGHAI_-Lost_Heaven.jpg/1280px-SHANGHAI_-Lost_Heaven.jpg</imageThumbURL>
-                <price>40.0</price>
+                <stars>FOUR</stars>
+                <priceRange>
+                    <min>900.0</min><max>1000.0</max>
+                </priceRange>
             </activity>
         </things-to-do>
         <hotels>
@@ -459,7 +471,8 @@
         </location>
         <things-to-do>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Florence Cathedral (Duomo)</name>
                 <location>
                     <latitude>43.7731</latitude>
@@ -502,7 +515,8 @@
                 <price>18.0</price>
             </activity>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Uffizi Gallery</name>
                 <location>
                     <latitude>43.7685</latitude>
@@ -545,7 +559,8 @@
                 <price>20.0</price>
             </activity>
             <activity>
-                <category>restaurant</category>
+                <type>RESTAURANTS</type>
+<category>RESTAURANTS</category>
                 <name>Trattoria Mario</name>
                 <location>
                     <latitude>43.7718</latitude>
@@ -584,7 +599,10 @@
                 <description>Traditional trattoria serving authentic Tuscan cuisine in a casual atmosphere.
                 </description>
                 <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Florence_Trattoria.jpg/1280px-Florence_Trattoria.jpg</imageThumbURL>
-                <price>30.0</price>
+                <stars>FOUR</stars>
+                <priceRange>
+                    <min>900.0</min><max>1000.0</max>
+                </priceRange>
             </activity>
         </things-to-do>
         <hotels>
@@ -616,7 +634,8 @@
         </location>
         <things-to-do>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Golden Gate Bridge</name>
                 <location>
                     <latitude>37.8199</latitude>
@@ -659,7 +678,8 @@
                 <price>0.0</price>
             </activity>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Alcatraz Island</name>
                 <location>
                     <latitude>37.8267</latitude>
@@ -702,7 +722,8 @@
                 <price>49.0</price>
             </activity>
             <activity>
-                <category>restaurant</category>
+                <type>RESTAURANTS</type>
+<category>RESTAURANTS</category>
                 <name>The Slanted Door</name>
                 <location>
                     <latitude>37.7969</latitude>
@@ -742,10 +763,14 @@
                     Bay at the Ferry Building.
                 </description>
                 <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/The_Slanted_Door%2C_Ferry_Building%2C_SF.jpg/1280px-The_Slanted_Door%2C_Ferry_Building%2C_SF.jpg</imageThumbURL>
-                <price>75.0</price>
+                <stars>FOUR</stars>
+                <priceRange>
+                    <min>900.0</min><max>1000.0</max>
+                </priceRange>
             </activity>
             <activity>
-                <category>museum</category>
+                <type>MUSEUMS</type>
+<category>MUSEUMS</category>
                 <name>San Francisco Museum of Modern Art (SFMOMA)</name>
                 <location>
                     <latitude>37.7858</latitude>
@@ -818,7 +843,8 @@
         </location>
         <things-to-do>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Tulum Ruins</name>
                 <location>
                     <latitude>20.2114</latitude>
@@ -861,7 +887,8 @@
                 <price>5.0</price>
             </activity>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Playa Paraíso</name>
                 <location>
                     <latitude>20.2090</latitude>
@@ -904,7 +931,8 @@
                 <price>0.0</price>
             </activity>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Gran Cenote</name>
                 <location>
                     <latitude>20.2152</latitude>
@@ -976,7 +1004,8 @@
         </location>
         <things-to-do>
             <activity>
-                <category>touristic</category>
+                <type>TOURISTIC_SIGHTS</type>
+<category>TOURISTIC_SIGHTS</category>
                 <name>Gateway of India</name>
                 <location>
                     <latitude>18.9220</latitude>
@@ -1019,7 +1048,8 @@
                 <price>0.0</price>
             </activity>
             <activity>
-                <category>theaters</category>
+                <type>THEATERS</type>
+                <category>THEATERS</category>
                 <name>Prithvi Theatre</name>
                 <location>
                     <latitude>19.1067</latitude>
@@ -1062,7 +1092,8 @@
                 <price>10.0</price>
             </activity>
             <activity>
-                <category>restaurant</category>
+                <type>RESTAURANTS</type>
+                <category>RESTAURANTS</category>
                 <name>Leopold Cafe</name>
                 <location>
                     <latitude>18.9248</latitude>
@@ -1102,10 +1133,14 @@
                     international menu and lively atmosphere.
                 </description>
                 <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Leopold_Cafe_in_Colaba%2C_Mumbai.jpg/1280px-Leopold_Cafe_in_Colaba%2C_Mumbai.jpg</imageThumbURL>
-                <price>25.0</price>
+                <stars>FOUR</stars>
+                <priceRange>
+                    <min>900.0</min><max>1000.0</max>
+                </priceRange>
             </activity>
             <activity>
-                <category>museum</category>
+                <type>MUSEUMS</type>
+                <category>MUSEUMS</category>
                 <name>Chhatrapati Shivaji Maharaj Vastu Sangrahalaya</name>
                 <location>
                     <latitude>18.9261</latitude>

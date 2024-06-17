@@ -7,7 +7,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import helpers.BusinessHours;
 import helpers.Location;
 
-@JacksonXmlRootElement(localName = "theaters")
+@JacksonXmlRootElement(localName = "theater")
 public class Theaters extends Places {
     @JacksonXmlProperty(localName = "schedule")
     private ArrayList<String> schedule;

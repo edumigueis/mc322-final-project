@@ -1,8 +1,8 @@
 package entities.activities;
 
 public enum Categories {
-    ALL ("All"),
-    MUSEUMS ("Museums"),
+    ALL("All"),
+    MUSEUMS("Museums"),
     RESTAURANTS("Restaurants"),
     PARKS("Parks"),
     TOURISTIC_SIGHTS("Touristic"),
@@ -10,11 +10,11 @@ public enum Categories {
 
     private final String stringValue;
 
-    private Categories(String stringValue){
+    Categories(String stringValue) {
         this.stringValue = stringValue;
     }
 
-    public String getStringValue(){
-        return this.stringValue;
+    public String getStringValue() {
+        return stringValue;
     }
 }
