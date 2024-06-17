@@ -4,6 +4,7 @@ import core.itinerary.Itinerary;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import entities.City;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import ui.components.ItineraryDayCarousel;
@@ -64,5 +65,10 @@ public class ItineraryController {
 
     public void prevWeek() {
         this.carousel.getController().previous();
+    }
+
+    @FXML
+    private void saveItinerary(MouseEvent mouseEvent) {
+        //AQUI VEM O SAVE
     }
 }

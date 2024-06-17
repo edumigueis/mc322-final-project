@@ -5,6 +5,7 @@
         <thumb-image-url>https://example.com/nyc.jpg</thumb-image-url>
         <things-to-do>
             <activity>
+                <type>MUSEUMS</type>
                 <category>MUSEUMS</category>
                 <name>The Metropolitan Museum of Art</name>
                 <description>One of the world's largest and finest art museums.</description>
@@ -49,6 +50,7 @@
                 <price>25.0</price>
             </activity>
             <activity>
+                <type>PARKS</type>
                 <category>PARKS</category>
                 <name>Central Park</name>
                 <description>A large public park in New York City.</description>
@@ -90,6 +92,7 @@
                 <price>0.0</price>
             </activity>
             <activity>
+                    <type>RESTAURANTS</type>
                     <category>RESTAURANTS</category>
                     <name>Joe's Pizza</name>
                     <description>Famous for its classic New York slices.</description>
@@ -155,6 +158,7 @@
             <activities>
                 <activity>
                     <data>
+                        <type>MUSEUMS</type>
                         <category>MUSEUMS</category>
                         <name>The Metropolitan Museum of Art</name>
                         <description>One of the world's largest and finest art museums.</description>

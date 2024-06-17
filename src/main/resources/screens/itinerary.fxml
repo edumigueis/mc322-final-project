@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
             fx:controller="ui.controllers.ItineraryController" stylesheets="/styling/styles.css">
-    <center>
-        <VBox spacing="15" fx:id="mainBox" styleClass="main-container"/>
-    </center>
-</BorderPane>
+        <VBox spacing="15" fx:id="mainBox" styleClass="main-container" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0"/>
+    <Button text="Save" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" onMouseClicked="#saveItinerary"/>
+</AnchorPane>
