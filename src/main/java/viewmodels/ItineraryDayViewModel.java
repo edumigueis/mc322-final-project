@@ -32,6 +32,7 @@ public class ItineraryDayViewModel {
         this.startOfDayProperty.set(itineraryDay.getStartOfDay());
         this.endOfDayProperty.set(itineraryDay.getEndOfDay());
         this.hotelProperty.set(itineraryDay.getHotel());
+        this.activities.setAll(itineraryDay.getActivities());
     }
 
     // Getters for properties to bind with the View

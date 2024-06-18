@@ -36,12 +36,13 @@ public class ItineraryDayViewController {
     @FXML
     private VBox cardsContainer;
 
-    private ItineraryDayViewModel viewModel;
+    private ItineraryDayViewModel viewModel = null;
     private CityViewModel cityViewModel;
 
     public void initialize(LocalDate date) {
         // Initialize the ViewModel
-        this.viewModel = new ItineraryDayViewModel(date);
+        if(this.viewModel == null)
+            this.viewModel = new ItineraryDayViewModel(date);
 
         DateTimeFormatter formatterWeekday = DateTimeFormatter.ofPattern("EEE");
         DateTimeFormatter formatterDate = DateTimeFormatter.ofPattern("dd/MM");
@@ -54,6 +55,9 @@ public class ItineraryDayViewController {
 
     public void setCityViewModel(CityViewModel viewModel) {
         this.cityViewModel = viewModel;
+    }
+    public void setItineraryViewModel(ItineraryDayViewModel viewModel) {
+        this.viewModel = viewModel;
     }
 
     private void bindCards() {

@@ -1,6 +1,7 @@
 package ui.controllers;
 
 import core.itinerary.Itinerary;
+import core.itinerary.ItineraryDay;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import entities.City;
@@ -10,6 +11,7 @@ import javafx.scene.layout.VBox;
 import ui.components.ItineraryDayCarousel;
 import ui.components.ItineraryDayView;
 import viewmodels.CityViewModel;
+import viewmodels.ItineraryDayViewModel;
 
 import java.time.LocalDate;
 
@@ -24,10 +26,10 @@ public class ItineraryController {
     private final ItineraryDayCarousel carousel = new ItineraryDayCarousel();
     private Itinerary itinerary;
 
-    public void initData(Itinerary itinerary) throws IOException {
+    public void initData(Itinerary itinerary, boolean preLoaded) throws IOException {
         this.itinerary = itinerary;
         this.loadHeader();
-        this.startCards();
+        this.startCards(preLoaded);
         mainBox.sceneProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 mainBox.maxHeightProperty().bind(newValue.heightProperty());
@@ -44,14 +46,17 @@ public class ItineraryController {
         mainBox.getChildren().add(header); // Add first card to grid
     }
 
-    private void startCards() {
+    private void startCards(boolean preLoaded) {
         List<ItineraryDayView> views = new ArrayList<ItineraryDayView>();
         LocalDate startUp = this.itinerary.getStartDate();
         for (int i = 0; i < this.itinerary.getDuration(); i++) {
             ItineraryDayView view = new ItineraryDayView();
             ItineraryDayViewController controller = view.getController();
-            controller.initialize(startUp.plusDays(i));
+            if(preLoaded){
+                controller.setItineraryViewModel(new ItineraryDayViewModel(this.itinerary.getItineraryDayList().get(i)));
+            }
             controller.setCityViewModel(new CityViewModel(this.itinerary.getCity()));
+            controller.initialize(startUp.plusDays(i));
             views.add(view);
         }
         carousel.setChildren(views);

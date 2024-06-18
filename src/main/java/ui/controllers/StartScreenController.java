@@ -93,16 +93,16 @@ public class StartScreenController implements Initializable, CardParent {
             alert.setHeaderText(null); // Remove header text
             alert.showAndWait();
         }
-        goToSecondScreen(event, new Itinerary(this.cities.get(pickedCity), dateController.getStartDate(), dateController.getEndDate()));
+        goToSecondScreen(event, new Itinerary(this.cities.get(pickedCity), dateController.getStartDate(), dateController.getEndDate()), false);
     }
 
-    private void goToSecondScreen(MouseEvent event, Itinerary itinerary) {
+    private void goToSecondScreen(MouseEvent event, Itinerary itinerary, boolean fromSource) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/itinerary.fxml"));
             Parent root = loader.load();
 
             ItineraryController secondScreenController = loader.getController();
-            secondScreenController.initData(itinerary);
+            secondScreenController.initData(itinerary, fromSource);
 
             Scene scene = new Scene(root, 900, 600);
             Stage stage = new Stage();
@@ -144,7 +144,7 @@ public class StartScreenController implements Initializable, CardParent {
                 alert.showAndWait();
             }
         }
-        goToSecondScreen(event, readItinerary);
+        goToSecondScreen(event, readItinerary, true);
     }
 
     private void loadCities() {
