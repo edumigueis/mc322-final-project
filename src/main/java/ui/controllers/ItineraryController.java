@@ -1,21 +1,27 @@
 package ui.controllers;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import core.itinerary.Itinerary;
-import core.itinerary.ItineraryDay;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import entities.City;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import ui.components.CustomAlert;
 import ui.components.ItineraryDayCarousel;
 import ui.components.ItineraryDayView;
 import viewmodels.CityViewModel;
 import viewmodels.ItineraryDayViewModel;
 
+import java.io.File;
 import java.time.LocalDate;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,6 +80,33 @@ public class ItineraryController {
 
     @FXML
     private void saveItinerary(MouseEvent mouseEvent) {
-        //AQUI VEM O SAVE
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Itinerary");
+
+        // Set extension filter for XML files
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XML files (*.xml)", "*.xml");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        // Show save file dialog
+        Stage stage = (Stage) ((javafx.scene.Node) mouseEvent.getSource()).getScene().getWindow();
+        File file = fileChooser.showSaveDialog(stage);
+
+        if (file != null) {
+            if (!file.getPath().toLowerCase().endsWith(".xml"))
+                file = new File(file.getPath() + ".xml");
+
+            XmlMapper xmlMapper = new XmlMapper();
+            JavaTimeModule javaTimeModule = new JavaTimeModule();
+            javaTimeModule.addDeserializer(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            xmlMapper.registerModule(javaTimeModule);
+            try {
+                xmlMapper.writeValue(file, itinerary);
+            } catch (IOException e) {
+                CustomAlert alert = CustomAlert.createErrorAlert("Not able to save. Try again later.");
+                alert.setTitle("Error");
+                alert.setHeaderText(null); // Remove header text
+                alert.showAndWait();
+            }
+        }
     }
 }
