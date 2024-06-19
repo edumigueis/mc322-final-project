@@ -4,18 +4,20 @@ import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;
 import entities.activities.I_Activity;
 import helpers.Location;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.control.Tooltip;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
+import javafx.scene.control.Tooltip;
+import javafx.scene.input.MouseEvent;
 import org.kordamp.ikonli.javafx.FontIcon;
+import viewmodels.CityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AttractionMapLayer extends MapLayer {
-    private final List<I_Activity> attractions;
+    private List<I_Activity> attractions;
     private final List<FontIcon> markers = new ArrayList<>();
-    private boolean markersCreated = false;
     private final AttractionClickListener listener;
 
     public AttractionMapLayer(List<I_Activity> attractions, AttractionClickListener listener) {
@@ -24,6 +26,10 @@ public class AttractionMapLayer extends MapLayer {
     }
 
     private void createMarkers() {
+        // Remove old markers
+        getChildren().clear();
+        markers.clear();
+
         for (I_Activity attraction : attractions) {
             FontIcon marker = new FontIcon("jam-periscope");
             marker.setIconSize(30);
@@ -41,11 +47,16 @@ public class AttractionMapLayer extends MapLayer {
         }
     }
 
+    public void updateMarkers(List<I_Activity> newPins) {
+        this.attractions = newPins;
+        createMarkers();
+        layoutLayer(); // This will re-position the markers
+    }
+
     @Override
     protected void layoutLayer() {
-        if (!markersCreated) {
+        if (markers.isEmpty()) {
             createMarkers();
-            markersCreated = true;
         }
 
         // Position markers correctly on the map
@@ -61,7 +72,7 @@ public class AttractionMapLayer extends MapLayer {
         }
     }
 
-    public void select(I_Activity activity){
+    public void select(I_Activity activity) {
         // Reset all markers to default size and color
         for (FontIcon marker : markers) {
             marker.setIconSize(30);

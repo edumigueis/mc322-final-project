@@ -8,6 +8,7 @@ import com.gluonhq.maps.MapView;
 import entities.Hotel;
 import entities.activities.I_Activity;
 import javafx.application.Platform;
+import javafx.collections.ListChangeListener;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +28,7 @@ import viewmodels.ItineraryDayViewModel;
 public class AttractionModalController implements FilterBarController.FilterChangeListener {
     private ItineraryDayViewModel viewModel;
     private CityViewModel cityViewModel;
+    private AttractionMapLayer pinLayer;
 
     @FXML
     private Button closeButton;
@@ -63,7 +65,21 @@ public class AttractionModalController implements FilterBarController.FilterChan
         mapView.setCenter(new MapPoint(this.cityViewModel.getLocation().get().latitude(), this.cityViewModel.getLocation().get().longitude()));
         mapView.setZoom(12.5);
 
-        List<I_Activity> attractions = this.cityViewModel.getThingsToDo();
+        this.pinLayer = getAttractionMapLayer();
+        mapView.addLayer(pinLayer);
+
+        Hotel dayHotel = this.viewModel.hotelProperty().get();
+        if (dayHotel != null)
+            mapView.addLayer(new HotelMapLayer(dayHotel));
+
+        cardsContainer.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                pinLayer.select(newValue);
+            }
+        });
+    }
+
+    private AttractionMapLayer getAttractionMapLayer() {
         AttractionClickListener listener = attraction -> {
             int index = cardsContainer.getItems().indexOf(attraction);
 
@@ -75,20 +91,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
                 });
             }
         };
-        AttractionMapLayer pinLayer = new AttractionMapLayer(attractions, listener);
-
-        if (attractions != null && !attractions.isEmpty())
-            mapView.addLayer(pinLayer);
-
-        Hotel dayHotel = this.viewModel.hotelProperty().get();
-        if (dayHotel != null)
-            mapView.addLayer(new HotelMapLayer(dayHotel));
-
-        cardsContainer.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null) {
-                pinLayer.select(newValue);
-            }
-        });
+        return new AttractionMapLayer(this.cardsContainer.getItems(), listener);
     }
 
     @Override
@@ -102,6 +105,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
             filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.getCategory())) && (filter.getPriceRange().contains(i.getPrice())));
         }
         cardsContainer.setItems(filteredActivities);
+        pinLayer.updateMarkers(filteredActivities);
     }
 
     @FXML
