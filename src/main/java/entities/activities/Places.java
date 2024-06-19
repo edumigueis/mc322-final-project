@@ -3,7 +3,7 @@ package entities.activities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import helpers.BusinessHours;
-import helpers.Location;
+import helpers.location.Location;
 
 public abstract class Places implements I_Activity {
     @JacksonXmlProperty(localName = "name")

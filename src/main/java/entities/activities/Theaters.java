@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import helpers.BusinessHours;
-import helpers.Location;
+import helpers.location.Location;
 
 @JacksonXmlRootElement(localName = "theater")
 public class Theaters extends Places {

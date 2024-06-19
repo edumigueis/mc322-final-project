@@ -2,7 +2,7 @@ package entities.activities;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import helpers.BusinessHours;
-import helpers.Location;
+import helpers.location.Location;
 
 @JacksonXmlRootElement(localName = "parks")
 public class Parks extends Places {

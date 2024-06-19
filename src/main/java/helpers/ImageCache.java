@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import java.util.HashMap;
 import java.util.Map;
 
+// Design pattern: singleton
 public class ImageCache {
     private static ImageCache instance;
     private final Map<String, Image> cache;

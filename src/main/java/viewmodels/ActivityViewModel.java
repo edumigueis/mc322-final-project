@@ -7,7 +7,7 @@ import entities.activities.Places;
 import entities.activities.Restaurant;
 import entities.activities.Theaters;
 import entities.activities.TouristicSights;
-import helpers.Location;
+import helpers.location.Location;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;

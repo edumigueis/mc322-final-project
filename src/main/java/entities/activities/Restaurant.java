@@ -3,7 +3,7 @@ package entities.activities;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import helpers.BusinessHours;
-import helpers.Location;
+import helpers.location.Location;
 import helpers.PriceRange;
 
 @JacksonXmlRootElement(localName = "restaurant")
@@ -33,8 +33,7 @@ public class Restaurant extends Places {
 
     @Override
     public double getPrice(){
-        double valorMedio = (priceRange.max()+priceRange.min())/2;
-        return valorMedio;
+        return priceRange.mean();
     }
 
     public enum Stars {

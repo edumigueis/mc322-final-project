@@ -3,14 +3,11 @@ package ui.helpers.map;
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;
 import entities.activities.I_Activity;
-import helpers.Location;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
+import helpers.location.Location;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import org.kordamp.ikonli.javafx.FontIcon;
-import viewmodels.CityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

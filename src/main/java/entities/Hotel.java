@@ -1,7 +1,7 @@
 package entities;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import helpers.Location;
+import helpers.location.Location;
 
 public class Hotel {
     @JacksonXmlProperty(localName = "location")

@@ -2,8 +2,7 @@ package entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import entities.TransportationType;
-import helpers.Location;
+import helpers.location.Location;
 
 import java.time.Duration;
 import java.time.LocalTime;

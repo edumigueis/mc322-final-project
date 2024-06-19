@@ -3,7 +3,7 @@ package viewmodels;
 import entities.City;
 import entities.activities.I_Activity;
 import entities.Hotel;
-import helpers.Location;
+import helpers.location.Location;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;

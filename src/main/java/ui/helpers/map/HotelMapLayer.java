@@ -3,18 +3,12 @@ package ui.helpers.map;
 import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;
 import entities.Hotel;
-import entities.activities.I_Activity;
-import helpers.Location;
+import helpers.location.Location;
 import javafx.geometry.Point2D;
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.kordamp.ikonli.javafx.FontIcon;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
 
 public class HotelMapLayer extends MapLayer {
     private final Hotel hotel;

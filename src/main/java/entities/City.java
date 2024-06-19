@@ -6,7 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import entities.activities.I_Activity;
-import helpers.Location;
+import helpers.location.Location;
 
 @JacksonXmlRootElement(localName = "city")
 public class City {
