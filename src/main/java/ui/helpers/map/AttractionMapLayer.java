@@ -4,8 +4,9 @@ import com.gluonhq.maps.MapLayer;
 import com.gluonhq.maps.MapPoint;
 import entities.activities.I_Activity;
 import helpers.Location;
-import javafx.geometry.Point2D;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Tooltip;
+import javafx.geometry.Point2D;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.util.ArrayList;
@@ -15,9 +16,11 @@ public class AttractionMapLayer extends MapLayer {
     private final List<I_Activity> attractions;
     private final List<FontIcon> markers = new ArrayList<>();
     private boolean markersCreated = false;
+    private final AttractionClickListener listener;
 
-    public AttractionMapLayer(List<I_Activity> attractions) {
+    public AttractionMapLayer(List<I_Activity> attractions, AttractionClickListener listener) {
         this.attractions = attractions;
+        this.listener = listener;
     }
 
     private void createMarkers() {
@@ -28,6 +31,10 @@ public class AttractionMapLayer extends MapLayer {
             // Add a tooltip to display additional information
             Tooltip tooltip = new Tooltip("Name: " + attraction.getName() + "\nPrice: $" + attraction.getPrice());
             Tooltip.install(marker, tooltip);
+
+            marker.setOnMouseClicked((MouseEvent event) -> {
+                listener.onAttractionClicked(attraction);
+            });
 
             markers.add(marker);
             getChildren().add(marker);

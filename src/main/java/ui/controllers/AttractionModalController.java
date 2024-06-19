@@ -7,6 +7,7 @@ import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
 import entities.Hotel;
 import entities.activities.I_Activity;
+import javafx.application.Platform;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import ui.components.AttractionCardCell;
 import ui.components.Filter;
+import ui.helpers.map.AttractionClickListener;
 import ui.helpers.map.AttractionMapLayer;
 import ui.helpers.map.HotelMapLayer;
 import viewmodels.CityViewModel;
@@ -37,17 +39,13 @@ public class AttractionModalController implements FilterBarController.FilterChan
 
 
     @FXML
-    public void initialize() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/filter_bar.fxml"));
-            AnchorPane filterBar = loader.load();
-            FilterBarController controller = loader.getController();
-            controller.setFilterChangeListener(this);
-            filterBarContainer.getChildren().add(filterBar);
-            mapView.setPrefSize(400, 600);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void initialize() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/filter_bar.fxml"));
+        AnchorPane filterBar = loader.load();
+        FilterBarController controller = loader.getController();
+        controller.setFilterChangeListener(this);
+        filterBarContainer.getChildren().add(filterBar);
+        mapView.setPrefSize(400, 600);
     }
 
     public void setViewModel(ItineraryDayViewModel viewModel) {
@@ -66,12 +64,24 @@ public class AttractionModalController implements FilterBarController.FilterChan
         mapView.setZoom(12.5);
 
         List<I_Activity> attractions = this.cityViewModel.getThingsToDo();
-        AttractionMapLayer pinLayer = new AttractionMapLayer(attractions);
-        if(attractions != null && !attractions.isEmpty())
+        AttractionClickListener listener = attraction -> {
+            int index = cardsContainer.getItems().indexOf(attraction);
+
+            if (index != -1) {
+                cardsContainer.scrollTo(index);
+                Platform.runLater(() -> {
+                    cardsContainer.requestFocus();
+                    cardsContainer.getSelectionModel().select(index);
+                });
+            }
+        };
+        AttractionMapLayer pinLayer = new AttractionMapLayer(attractions, listener);
+
+        if (attractions != null && !attractions.isEmpty())
             mapView.addLayer(pinLayer);
 
         Hotel dayHotel = this.viewModel.hotelProperty().get();
-        if(dayHotel != null)
+        if (dayHotel != null)
             mapView.addLayer(new HotelMapLayer(dayHotel));
 
         cardsContainer.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {

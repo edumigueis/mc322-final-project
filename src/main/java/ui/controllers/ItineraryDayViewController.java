@@ -105,8 +105,10 @@ public class ItineraryDayViewController {
             stage.initOwner(((Node) event.getSource()).getScene().getWindow());
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Modal not available. Check path.");
+            CustomAlert alert = CustomAlert.createErrorAlert("It was not possible to open the modal. Check paths.");
+            alert.setTitle("Error");
+            alert.setHeaderText(null); // Remove header text
+            alert.showAndWait();
         }
     }
 

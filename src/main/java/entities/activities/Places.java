@@ -1,11 +1,9 @@
 package entities.activities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import helpers.BusinessHours;
 import helpers.Location;
-import helpers.input.CategoriesDeserializer;
 
 public abstract class Places implements I_Activity {
     @JacksonXmlProperty(localName = "name")
