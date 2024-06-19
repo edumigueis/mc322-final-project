@@ -1,5 +1,6 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import entities.TransportationType;
 import helpers.Location;
@@ -15,6 +16,7 @@ public class Transportation {
     private Duration estimatedDuration;
 
     @JacksonXmlProperty(localName = "start")
+    @JsonFormat(pattern = "HH:mm")
     private LocalTime start;
 
     @JacksonXmlProperty(localName = "price")

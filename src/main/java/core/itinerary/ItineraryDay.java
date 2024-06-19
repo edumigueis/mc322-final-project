@@ -1,5 +1,6 @@
 package core.itinerary;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import entities.Hotel;
@@ -19,9 +20,11 @@ public class ItineraryDay {
     private List<TimeSlot> activities = new ArrayList<>();
 
     @JacksonXmlProperty(localName = "start-of-day")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime startOfDay;
 
     @JacksonXmlProperty(localName = "end-of-day")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime endOfDay;
 
     @JacksonXmlProperty(localName = "hotel")
@@ -50,7 +53,7 @@ public class ItineraryDay {
     }
 
     public void setStartOfDay(LocalDateTime startOfDay) {
-        validateDates(this.startOfDay, endOfDay);
+        validateDates(startOfDay, this.endOfDay);
         this.startOfDay = startOfDay;
     }
 
@@ -137,12 +140,11 @@ public class ItineraryDay {
     }
 
     private void validateDates(LocalDateTime startOfDay, LocalDateTime endOfDay) {
-        /* TO DO UNCOMMENT
-        if (startOfDay == null || endOfDay == null) {
+        if (startOfDay == null && endOfDay == null)
             throw new IllegalArgumentException("Start of day and end of day must not be null.");
-        }
-        if (startOfDay.isAfter(endOfDay)) {
-            throw new IllegalArgumentException("Start of day must be before or equal to end of day.");
-        }*/
+
+        if (startOfDay != null && endOfDay != null)
+            if (startOfDay.isAfter(endOfDay))
+                throw new IllegalArgumentException("Start of day must be before or equal to end of day.");
     }
 }

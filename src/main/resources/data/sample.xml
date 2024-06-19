@@ -208,12 +208,12 @@
                         <start>09:00</start>
                         <price>350.0</price>
                     </way-to-next>
-                    <start>08:00:00</start>
-                    <end>22:00:00</end>
+                    <start>08:00</start>
+                    <end>22:00</end>
                 </activity>
             </activities>
-            <start-of-day>2023-07-01T08:00:00</start-of-day>
-            <end-of-day>2023-07-01T22:00:00</end-of-day>
+            <start-of-day>01/12/2000 08:00:00</start-of-day>
+            <end-of-day>01/12/2000 22:00:00</end-of-day>
             <hotel>
                 <location>
                     <latitude>40.712776</latitude>

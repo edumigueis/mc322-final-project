@@ -2,6 +2,7 @@ package core.itinerary;
 
 import java.time.LocalTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import entities.Transportation;
 import entities.activities.I_Activity;
@@ -14,9 +15,11 @@ public class TimeSlot {
     private Transportation wayToNext;
 
     @JacksonXmlProperty(localName = "start")
+    @JsonFormat(pattern = "HH:mm")
     private LocalTime start;
 
     @JacksonXmlProperty(localName = "end")
+    @JsonFormat(pattern = "HH:mm")
     private LocalTime end;
 
     public TimeSlot(I_Activity data, Transportation wayToNext, LocalTime start, LocalTime end) {
