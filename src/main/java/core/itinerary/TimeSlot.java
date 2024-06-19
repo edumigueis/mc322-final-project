@@ -69,13 +69,12 @@ public class TimeSlot {
     }
 
     private void validateTimes(LocalTime start, LocalTime end) {
-        // TO DO UNCOMMENT
-        /*if (start == null || end == null) {
+        if (start == null && end == null)
             throw new IllegalArgumentException("Start time and end time must not be null.");
-        }
-        if (start.isAfter(end)) {
-            throw new IllegalArgumentException("Start time must be before end time.");
-        }*/
+
+        if (start != null && end != null)
+            if (start.isAfter(end))
+                throw new IllegalArgumentException("Start time must be before end time.");
     }
 
     private void validateData(I_Activity data) {
