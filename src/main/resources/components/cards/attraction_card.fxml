@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
-<?import ui.components.ResponsiveImage?>
-<?import ui.components.ExpandableText?>
+<?import mc322project.ui.components.ResponsiveImage?>
+<?import mc322project.ui.components.ExpandableText?>
 
 <GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="ui.controllers.AttractionCardController" hgap="10"
+          fx:controller="mc322project.ui.controllers.AttractionCardController" hgap="10"
           stylesheets="/styling/styles.css" styleClass="attraction-card" prefHeight="200.0" prefWidth="420.0"
           minWidth="420.0">
     <rowConstraints>

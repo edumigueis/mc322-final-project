@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Line?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.controllers.FilterBarController">
+            fx:controller="mc322project.ui.controllers.FilterBarController">
     <HBox spacing="10" alignment="CENTER_LEFT" styleClass="filter-bar">
         <!-- Category Filter Buttons -->
             <ScrollPane styleClass="no-pane">

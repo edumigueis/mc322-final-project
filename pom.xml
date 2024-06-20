@@ -74,31 +74,22 @@
             <artifactId>maps</artifactId>
             <version>2.0.0-ea+6</version>
         </dependency>
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>storage</artifactId>
+            <version>4.0.11</version>
+        </dependency>
     </dependencies>
     <build>
-    <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>jaxb2-maven-plugin</artifactId>
-                    <version>3.1.0</version>
-                    <executions>
-                        <execution>
-                            <id>xjc</id>
-                            <goals>
-                                <goal>xjc</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <xjbSources>
-                            <xjbSource>src/main/resources/global.xjb</xjbSource>
-                        </xjbSources>
-                        <outputDirectory>${basedir}/src/main/java</outputDirectory>
-                        <clearOutputDir>false</clearOutputDir>
-                    </configuration>
-                </plugin>
-            </plugins>
-    </pluginManagement>
+            <resources>
+                <resource>
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.xml</include> <!-- Include XML files -->
+                        <include>**/*.css</include> <!-- Include CSS files -->
+                        <include>**/*.fxml</include> <!-- Include CSS files -->
+                    </includes>
+                </resource>
+            </resources>
     </build>
 </project>

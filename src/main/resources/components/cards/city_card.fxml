@@ -3,11 +3,11 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.control.Label?>
-<?import ui.components.ResponsiveImage?>
+<?import mc322project.ui.components.ResponsiveImage?>
 <?import javafx.geometry.Insets?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="ui.controllers.CityCardController" onMouseClicked="#selectSelf" fx:id="card" spacing="4">
+      fx:controller="mc322project.ui.controllers.CityCardController" onMouseClicked="#selectSelf" fx:id="card" spacing="4">
     <StackPane fx:id="imageContainer" style="-fx-border-radius: 12px">
         <ResponsiveImage prefHeight="200" prefWidth="200" fx:id="cityImage" imgWidth="400">
             <clipCornerRadii>

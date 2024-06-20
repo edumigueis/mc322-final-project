@@ -8,7 +8,7 @@
 <?import com.gluonhq.maps.MapView?>
 <AnchorPane styleClass="filter-bar" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.controllers.AttractionModalController" minHeight="600">
+            fx:controller="mc322project.ui.controllers.AttractionModalController" minHeight="600">
     <stylesheets>
         <URL value="@/styling/listview.css"/>
         <URL value="@/styling/styles.css"/>

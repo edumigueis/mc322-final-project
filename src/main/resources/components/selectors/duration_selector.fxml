@@ -7,7 +7,7 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             prefWidth="200" prefHeight="300"
-            fx:controller="ui.controllers.DurationSelectorController">
+            fx:controller="mc322project.ui.controllers.DurationSelectorController">
     <stylesheets>
         <URL value="@/styling/listview.css"/>
         <URL value="@/styling/styles.css"/>

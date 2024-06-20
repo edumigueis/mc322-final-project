@@ -3,11 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import ui.components.ResponsiveImage?>
+<?import mc322project.ui.components.ResponsiveImage?>
 <?import javafx.geometry.Insets?>
 <ScrollPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.controllers.StartScreenController"
+            fx:controller="mc322project.ui.controllers.StartScreenController"
             styleClass="edge-to-edge"
             stylesheets="/styling/styles.css"
             fitToWidth="true"
@@ -54,7 +54,7 @@
         </VBox>
         <AnchorPane mouseTransparent="true" prefWidth="200" prefHeight="150">
             <ResponsiveImage AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" prefWidth="200" prefHeight="150"
-                             imageUrl="/assets/images/start_header.png">
+                             imageUrl="https://img.freepik.com/free-photo/3d-render-suitcase-with-traveler-accessories-purple-background-travel-concept-illustration-design_460848-11449.jpg?t=st=1718862047~exp=1718865647~hmac=e9c14b28f270932306fb0d9eec17d9b9fc0267accac59b7b713acf5f59ebaf85&amp;w=740">
                 <clipCornerRadii>
                     <Insets bottom="30"/>
                 </clipCornerRadii>

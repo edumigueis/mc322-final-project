@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.controllers.DraggableListController"
+            fx:controller="mc322project.ui.controllers.DraggableListController"
             stylesheets="/styling/listview.css">
     <ListView fx:id="listView" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0"
               AnchorPane.bottomAnchor="0"/>

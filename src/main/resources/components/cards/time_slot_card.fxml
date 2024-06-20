@@ -2,12 +2,12 @@
 
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import ui.components.ResponsiveImage?>
+<?import mc322project.ui.components.ResponsiveImage?>
 <?import javafx.geometry.Insets?>
 
-<?import ui.components.ExpandableText?>
+<?import mc322project.ui.components.ExpandableText?>
 <GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="ui.controllers.TimeSlotCardController" prefHeight="130" hgap="10"
+          fx:controller="mc322project.ui.controllers.TimeSlotCardController" prefHeight="130" hgap="10"
           stylesheets="/styling/styles.css" styleClass="attraction-card" minHeight="130">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" prefWidth="130.0"/>

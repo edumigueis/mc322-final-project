@@ -12,7 +12,7 @@
             fitToHeight="true"
             fitToWidth="true"
             styleClass="no-pane"
-            fx:controller="ui.controllers.ItineraryDayCarouselController" vbarPolicy="NEVER">
+            fx:controller="mc322project.ui.controllers.ItineraryDayCarouselController" vbarPolicy="NEVER">
     <padding>
         <Insets left="20" right="20"/>
     </padding>
