@@ -3,6 +3,7 @@ package mc322project.ui.controllers;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import mc322project.GUIStarter;
 import mc322project.core.itinerary.Itinerary;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,7 +45,7 @@ public class ItineraryController {
     }
 
     private void loadHeader() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/days_header.fxml"));
+        FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/days_header.fxml"));
         HBox header = loader.load();
         DaysHeaderController controller = loader.getController();
         controller.setItineraryController(this);

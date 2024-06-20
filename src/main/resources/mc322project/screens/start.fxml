@@ -9,7 +9,6 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="mc322project.ui.controllers.StartScreenController"
             styleClass="edge-to-edge"
-            stylesheets="/styling/styles.css"
             fitToWidth="true"
             fitToHeight="true">
     <StackPane>

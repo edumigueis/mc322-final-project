@@ -1,6 +1,6 @@
-@import url("/styling/fonts.css");
-@import url("/styling/text.css");
-@import url("/styling/scrollbar.css");
+@import url("fonts.css");
+@import url("text.css");
+@import url("scrollbar.css");
 
 .attraction-card {
     -fx-background-color: #083740;

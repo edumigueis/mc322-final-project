@@ -6,7 +6,6 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="mc322project.ui.controllers.ItineraryDayViewController"
-      stylesheets="/styling/styles.css"
       VBox.vgrow="ALWAYS">
     <HBox spacing="5" styleClass="padded-card">
         <Label fx:id="indexLabel" styleClass="header-label"/>

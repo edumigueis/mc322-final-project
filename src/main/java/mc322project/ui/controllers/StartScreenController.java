@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import mc322project.GUIStarter;
 import mc322project.core.itinerary.Itinerary;
 import mc322project.entities.City;
 import javafx.application.Platform;
@@ -55,7 +56,7 @@ public class StartScreenController implements Initializable, CardParent {
         xmlMapper.registerModule(javaTimeModule);
 
         try {
-            InputStream inputStream = getClass().getResourceAsStream("/data/cities.xml");
+            InputStream inputStream = GUIStarter.class.getResourceAsStream("data/cities.xml");
             this.cities = xmlMapper.readValue(inputStream, xmlMapper.getTypeFactory().constructCollectionType(List.class, City.class));
 
             loadCities();
@@ -84,7 +85,7 @@ public class StartScreenController implements Initializable, CardParent {
 
     private void goToSecondScreen(MouseEvent event, Itinerary itinerary, boolean fromSource) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/itinerary.fxml"));
+            FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("screens/itinerary.fxml"));
             Parent root = loader.load();
 
             ItineraryController secondScreenController = loader.getController();
@@ -92,6 +93,9 @@ public class StartScreenController implements Initializable, CardParent {
 
             Scene scene = new Scene(root, 900, 600);
             Stage stage = new Stage();
+            String stylesheet = GUIStarter.class.getResource("styling/styles.css").toExternalForm();
+            scene.getStylesheets().add(stylesheet);
+
             stage.setScene(scene);
             stage.show();
 
@@ -165,7 +169,7 @@ public class StartScreenController implements Initializable, CardParent {
     }
 
     private void loadDatePicker() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/date_selector.fxml"));
+        FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/selectors/date_selector.fxml"));
         Parent datePickerRoot = loader.load();
         this.dateController = loader.getController();
         dateContainer.getChildren().add(datePickerRoot);

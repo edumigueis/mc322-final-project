@@ -6,8 +6,7 @@
 
 <?import javafx.geometry.Insets?>
 <HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="mc322project.ui.controllers.DaysHeaderController"
-      stylesheets="/styling/styles.css">
+      fx:controller="mc322project.ui.controllers.DaysHeaderController">
     <padding>
         <Insets left="20" right="20" top="15"/>
     </padding>

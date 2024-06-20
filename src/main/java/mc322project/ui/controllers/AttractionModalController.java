@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
+import mc322project.GUIStarter;
 import mc322project.entities.Hotel;
 import mc322project.entities.activities.I_Activity;
 import javafx.application.Platform;
@@ -42,7 +43,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
 
     @FXML
     public void initialize() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/filter_bar.fxml"));
+        FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/filter_bar.fxml"));
         AnchorPane filterBar = loader.load();
         FilterBarController controller = loader.getController();
         controller.setFilterChangeListener(this);

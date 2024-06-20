@@ -2,6 +2,7 @@ package mc322project.ui.components;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
+import mc322project.GUIStarter;
 import mc322project.ui.controllers.ItineraryDayCarouselController;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ public class ItineraryDayCarousel extends HBox {
     private final ItineraryDayCarouselController controller;
 
     public ItineraryDayCarousel() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/itinerary_day_carousel.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(GUIStarter.class.getResource("components/itinerary_day_carousel.fxml"));
         try {
             fxmlLoader.load();
             this.controller = fxmlLoader.getController();

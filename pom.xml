@@ -88,6 +88,10 @@
                         <include>**/*.xml</include> <!-- Include XML files -->
                         <include>**/*.css</include> <!-- Include CSS files -->
                         <include>**/*.fxml</include> <!-- Include CSS files -->
+                        <include>**/*.ttf</include> <!-- Include font files -->
+                        <include>**/*.otf</include> <!-- Include font files -->
+                        <include>**/*.jpg</include> <!-- Include img files -->
+                        <include>**/*.png</include> <!-- Include img files -->
                     </includes>
                 </resource>
             </resources>

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import mc322project.GUIStarter;
 import mc322project.ui.controllers.AttractionCardController;
 
 public class AttractionCard extends Pane {
@@ -15,7 +16,7 @@ public class AttractionCard extends Pane {
     private Label priceLabel;
 
     public AttractionCard() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/components/cards/attraction_card.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(GUIStarter.class.getResource("components/cards/attraction_card.fxml"));
         try {
             fxmlLoader.load();
             this.controller = fxmlLoader.getController();

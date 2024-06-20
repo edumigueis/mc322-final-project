@@ -7,6 +7,8 @@ module mc322project {
     requires javafx.graphics;
     requires javafx.base;
     requires org.kordamp.ikonli.javafx;
+    requires org.kordamp.ikonli.core;
+    requires org.kordamp.ikonli.jam;
     requires com.fasterxml.jackson.dataformat.xml;
     requires com.fasterxml.jackson.datatype.jsr310;
     requires com.fasterxml.jackson.annotation;

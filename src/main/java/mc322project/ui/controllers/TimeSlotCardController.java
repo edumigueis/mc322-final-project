@@ -1,5 +1,6 @@
 package mc322project.ui.controllers;
 
+import mc322project.GUIStarter;
 import mc322project.core.itinerary.TimeSlot;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,7 +53,7 @@ public class TimeSlotCardController {
     private void alterDuration() {
         try {
             // Load the FXML for the modal
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/duration_selector.fxml"));
+            FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/selectors/duration_selector.fxml"));
             Parent root = loader.load();
             DurationSelectorController controller = loader.getController();
 
@@ -81,7 +82,7 @@ public class TimeSlotCardController {
     private void alterOrder() {
         try {
             // Load the FXML for the modal
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/reorder_selector.fxml"));
+            FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/selectors/reorder_selector.fxml"));
             Parent root = loader.load();
             DraggableListController controller = loader.getController();
             controller.setTimeSlots(itineraryViewModel.getActivities());

@@ -8,7 +8,7 @@ import mc322project.entities.Transportation;
 import mc322project.entities.activities.I_Activity;
 
 public class TimeSlot {
-    @JacksonXmlProperty(localName = "data")
+    @JacksonXmlProperty(localName = "mc322project/data")
     private I_Activity data;
 
     @JacksonXmlProperty(localName = "way-to-next")

@@ -1,5 +1,6 @@
 package mc322project.ui.controllers;
 
+import mc322project.GUIStarter;
 import mc322project.core.itinerary.TimeSlot;
 import mc322project.entities.Hotel;
 import mc322project.entities.Transportation;
@@ -94,17 +95,23 @@ public class ItineraryDayViewController {
     private void addAttractionModal(MouseEvent event) {
         try {
             Stage stage = new Stage();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/attraction_modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("screens/attraction_modal.fxml"));
             Parent root = loader.load();
             AttractionModalController modalController = loader.getController();
             modalController.setViewModel(this.viewModel);
             modalController.loadCity(this.cityViewModel);
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            String stylesheet = GUIStarter.class.getResource("styling/styles.css").toExternalForm();
+            String stylesheet2 = GUIStarter.class.getResource("styling/date_selector.css").toExternalForm();
+            scene.getStylesheets().add(stylesheet);
+            scene.getStylesheets().add(stylesheet2);
+            stage.setScene(scene);
             stage.setTitle("Things to do in " + this.cityViewModel.nameProperty().get());
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(((Node) event.getSource()).getScene().getWindow());
             stage.show();
         } catch (IOException e) {
+            e.printStackTrace();
             CustomAlert alert = CustomAlert.createErrorAlert("It was not possible to open the modal. Check paths.");
             alert.setTitle("Error");
             alert.setHeaderText(null); // Remove header text
@@ -116,7 +123,7 @@ public class ItineraryDayViewController {
     private void pickHotel(MouseEvent event){
         try {
             // Load the FXML for the modal
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/components/selectors/hotel_selector.fxml"));
+            FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/selectors/hotel_selector.fxml"));
             Parent root = loader.load();
             HotelSelectorController controller = loader.getController();
             controller.start(this.cityViewModel.getHotels());

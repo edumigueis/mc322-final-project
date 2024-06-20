@@ -8,7 +8,6 @@
 <?import javafx.geometry.Insets?>
 <ScrollPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            stylesheets="/styling/styles.css"
             fitToHeight="true"
             fitToWidth="true"
             styleClass="no-pane"

@@ -5,7 +5,9 @@
 
 <HBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="mc322project.ui.controllers.DateSelectorController" alignment="center" stylesheets="/styling/date_selector.css" spacing="10">
+      fx:controller="mc322project.ui.controllers.DateSelectorController"
+      alignment="center"
+      spacing="10">
     <DatePicker fx:id="datePickerStart"/>
     <DatePicker fx:id="datePickerEnd"/>
 </HBox>

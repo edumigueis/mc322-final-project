@@ -16,9 +16,14 @@ import java.util.Optional;
 public class GUIStarter extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/screens/start.fxml"));
+        FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("screens/start.fxml"));
         Parent root = loader.load();
+        System.setProperty("javafx.verbose", "true");
         Scene scene = new Scene(root, 800, 600);
+        String stylesheet = GUIStarter.class.getResource("styling/styles.css").toExternalForm();
+        String stylesheet2 = GUIStarter.class.getResource("styling/date_selector.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+        scene.getStylesheets().add(stylesheet2);
         stage.setTitle("Itinerary Maker");
         stage.setScene(scene);
         stage.show();

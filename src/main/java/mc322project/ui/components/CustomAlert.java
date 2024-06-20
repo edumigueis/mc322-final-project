@@ -1,6 +1,7 @@
 package mc322project.ui.components;
 
 import javafx.scene.control.Alert;
+import mc322project.GUIStarter;
 
 public class CustomAlert extends Alert {
 
@@ -8,7 +9,7 @@ public class CustomAlert extends Alert {
         super(alertType);
         setContentText(contentText);
         // Apply custom styles
-        getDialogPane().getStylesheets().add(getClass().getResource("/styling/alert.css").toExternalForm());
+        getDialogPane().getStylesheets().add(GUIStarter.class.getResource("styling/alert.css").toExternalForm());
     }
 
     public static CustomAlert createInfoAlert(String contentText) {

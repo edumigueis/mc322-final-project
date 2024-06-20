@@ -9,10 +9,6 @@
 <AnchorPane styleClass="filter-bar" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="mc322project.ui.controllers.AttractionModalController" minHeight="600">
-    <stylesheets>
-        <URL value="@/styling/listview.css"/>
-        <URL value="@/styling/styles.css"/>
-    </stylesheets>
     <Pane fx:id="filterBarContainer" AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10"/>
     <HBox AnchorPane.topAnchor="60" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"
           AnchorPane.bottomAnchor="0">
