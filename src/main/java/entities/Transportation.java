@@ -1,7 +1,13 @@
 package entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.datatype.jsr310.deser.DurationDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.DurationSerializer;
+import helpers.DurationFromStringDeserializer;
+import helpers.DurationToStringSerializer;
 import helpers.location.Location;
 
 import java.time.Duration;
@@ -12,6 +18,8 @@ public class Transportation {
     private TransportationType type;
 
     @JacksonXmlProperty(localName = "estimated-duration")
+    @JsonSerialize(using = DurationToStringSerializer.class)
+    @JsonDeserialize(using = DurationFromStringDeserializer.class)
     private Duration estimatedDuration;
 
     @JacksonXmlProperty(localName = "start")

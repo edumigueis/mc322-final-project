@@ -1,94 +1,102 @@
 package helpers;
 
-import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class BusinessHours {
-    @JacksonXmlElementWrapper(useWrapping = false)
-    @JacksonXmlProperty(localName = "day")
-    private final Map<String, String> hoursMap;
 
-    private BusinessHours(Builder builder) {
-        this.hoursMap = builder.hoursMap;
-    }
+    @JacksonXmlElementWrapper(localName = "openTime", useWrapping = false)
+    @JacksonXmlProperty(localName = "day")
+    private List<Day> days;
 
     public BusinessHours() {
-        // Default constructor for Jackson
-        this.hoursMap = new HashMap<>();
     }
 
-    @JsonPOJOBuilder(withPrefix = "")
-    public static class Builder {
-        private final Map<String, String> hoursMap = new HashMap<>();
+    public static class Day {
+        @JacksonXmlProperty(localName = "key")
+        private String key;
 
-        public Builder() {
-            // Initialize with default closed hours for each day
-            hoursMap.put("MONDAY", "Closed");
-            hoursMap.put("TUESDAY", "Closed");
-            hoursMap.put("WEDNESDAY", "Closed");
-            hoursMap.put("THURSDAY", "Closed");
-            hoursMap.put("FRIDAY", "Closed");
-            hoursMap.put("SATURDAY", "Closed");
-            hoursMap.put("SUNDAY", "Closed");
+        @JacksonXmlProperty(localName = "value")
+        private String value;
+        @JsonIgnore
+        private LocalTime openingTime;
+        @JsonIgnore
+        private LocalTime closingTime;
+        @JsonIgnore
+        private boolean isClosed;
+        private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("H:mm");
+
+        public String getKey() {
+            return key;
         }
 
-        public Builder setHours(String dayOfWeek, String hours) throws Exception {
-            if (!hoursMap.containsKey(dayOfWeek)) {
-                throw new Exception("Invalid day of the week.");
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+            if (value.equalsIgnoreCase("Closed")) {
+                this.isClosed = true;
+            } else {
+                String[] times = value.split("-");
+                this.openingTime = LocalTime.parse(times[0].trim(), TIME_FORMATTER);
+                this.closingTime = LocalTime.parse(times[1].trim(), TIME_FORMATTER);
+                this.isClosed = false;
             }
-            hoursMap.put(dayOfWeek, hours);
-            return this;
         }
 
-        public BusinessHours build() {
-            return new BusinessHours(this);
+        public LocalTime getOpeningTime() {
+            return openingTime;
+        }
+
+        public LocalTime getClosingTime() {
+            return closingTime;
+        }
+
+        @JsonIgnore
+        public boolean isClosed() {
+            return isClosed;
         }
     }
 
-    public void updateHours(String dayOfWeek, String hours) throws Exception {
-        if (!hoursMap.containsKey(dayOfWeek)) {
-            throw new Exception("Invalid day of the week.");
+    @JsonIgnore
+    public boolean isOpenAtGivenTime(String dayOfWeek, String time) {
+        LocalTime givenTime = LocalTime.parse(time, Day.TIME_FORMATTER);
+        for (Day day : days) {
+            if (day.getKey().equalsIgnoreCase(dayOfWeek)) {
+                if (day.isClosed()) {
+                    return false;
+                }
+                return !givenTime.isBefore(day.getOpeningTime()) && !givenTime.isAfter(day.getClosingTime());
+            }
         }
-        hoursMap.put(dayOfWeek, hours);
-    }
-
-    public boolean isOpenAtGivenTime(String dayOfWeek, String time) throws Exception {
-        if (!hoursMap.containsKey(dayOfWeek)) throw new Exception("Invalid day of the week.");
-
-        String hours = hoursMap.get(dayOfWeek);
-        if (hours.equals("Closed")) return false;
-
-        String[] openingClosing = hours.split("-");
-        String openingTime = openingClosing[0].trim();
-        String closingTime = openingClosing[1].trim();
-
-        String[] givenTimeSplit = time.split(":");
-        int givenHour = Integer.parseInt(givenTimeSplit[0]);
-        int givenMinute = Integer.parseInt(givenTimeSplit[1]);
-
-        String[] openingTimeSplit = openingTime.split(":");
-        int openingHour = Integer.parseInt(openingTimeSplit[0]);
-        int openingMinute = Integer.parseInt(openingTimeSplit[1]);
-
-        String[] closingTimeSplit = closingTime.split(":");
-        int closingHour = Integer.parseInt(closingTimeSplit[0]);
-        int closingMinute = Integer.parseInt(closingTimeSplit[1]);
-
-        if (givenHour > openingHour || (givenHour == openingHour && givenMinute >= openingMinute))
-            return givenHour < closingHour || (givenHour == closingHour && givenMinute <= closingMinute);
         return false;
     }
 
+    @JsonIgnore
     public String getCurrentOpenHours() {
         LocalDate currentDate = LocalDate.now();
         DayOfWeek dayOfWeek = currentDate.getDayOfWeek();
-        return hoursMap.get(dayOfWeek.name());
+        for (Day day : days) {
+            if (day.getKey().equalsIgnoreCase(dayOfWeek.name())) {
+                return day.getValue();
+            }
+        }
+        return "Closed";
     }
 }
-

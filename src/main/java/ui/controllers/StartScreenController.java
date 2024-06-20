@@ -4,6 +4,7 @@ import java.io.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.ResourceBundle;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.DurationDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.sun.tools.javac.Main;
 import core.itinerary.Itinerary;
@@ -57,7 +59,6 @@ public class StartScreenController implements Initializable, CardParent {
             InputStream inputStream = Main.class.getClassLoader().getResourceAsStream("data/cities.xml");
             this.cities = xmlMapper.readValue(inputStream, xmlMapper.getTypeFactory().constructCollectionType(List.class, City.class));
         } catch (IOException e) {
-            e.printStackTrace();
             CustomAlert alert = CustomAlert.createErrorAlert("Cities not loaded. Check format and try again.");
             alert.setTitle("Error");
             alert.setHeaderText(null); // Remove header text
@@ -120,6 +121,7 @@ public class StartScreenController implements Initializable, CardParent {
         XmlMapper xmlMapper = new XmlMapper();
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         javaTimeModule.addDeserializer(LocalDate.class, new LocalDateDeserializer(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+
         xmlMapper.registerModule(javaTimeModule);
 
         Itinerary readItinerary = null;

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import entities.Transportation;
 import org.kordamp.ikonli.javafx.FontIcon;
+import ui.helpers.DurationFormatConverter;
 
 public class DisplacementCardController {
     @FXML
@@ -15,8 +16,8 @@ public class DisplacementCardController {
 
     public void setData(Transportation transportation) {
         typeLabel.setText(transportation.getType().toString());
-        durationLabel.setText(transportation.getEstimatedDuration().toString());
-        switch (transportation.getType()){
+        durationLabel.setText(DurationFormatConverter.durationToString(transportation.getEstimatedDuration()));
+        switch (transportation.getType()) {
             case BUS -> transportIcon.setIconLiteral("jam-bus");
             case CAR -> transportIcon.setIconLiteral("jam-car");
             case WALK -> transportIcon.setIconLiteral("jam-gps");

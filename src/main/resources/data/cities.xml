@@ -732,31 +732,31 @@
                 <openTime>
                     <day>
                         <key>MONDAY</key>
-                        <value>11:30-14:30, 17:30-22:00</value>
+                        <value>11:30-22:00</value>
                     </day>
                     <day>
                         <key>TUESDAY</key>
-                        <value>11:30-14:30, 17:30-22:00</value>
+                        <value>11:30-22:00</value>
                     </day>
                     <day>
                         <key>WEDNESDAY</key>
-                        <value>11:30-14:30, 17:30-22:00</value>
+                        <value>11:30-22:00</value>
                     </day>
                     <day>
                         <key>THURSDAY</key>
-                        <value>11:30-14:30, 17:30-22:00</value>
+                        <value>11:30-22:00</value>
                     </day>
                     <day>
                         <key>FRIDAY</key>
-                        <value>11:30-14:30, 17:30-22:00</value>
+                        <value>11:30-22:00</value>
                     </day>
                     <day>
                         <key>SATURDAY</key>
-                        <value>11:30-15:00, 17:30-22:30</value>
+                        <value>11:30-22:30</value>
                     </day>
                     <day>
                         <key>SUNDAY</key>
-                        <value>11:30-15:00, 17:30-22:00</value>
+                        <value>11:30-22:00</value>
                     </day>
                 </openTime>
                 <description>Acclaimed modern Vietnamese cuisine served in an elegant setting overlooking San Francisco
@@ -897,31 +897,31 @@
                 <openTime>
                     <day>
                         <key>MONDAY</key>
-                        <value>Open 24 hours</value>
+                        <value>00:00-23:59</value>
                     </day>
                     <day>
                         <key>TUESDAY</key>
-                        <value>Open 24 hours</value>
+                        <value>00:00-23:59</value>
                     </day>
                     <day>
                         <key>WEDNESDAY</key>
-                        <value>Open 24 hours</value>
+                        <value>00:00-23:59</value>
                     </day>
                     <day>
                         <key>THURSDAY</key>
-                        <value>Open 24 hours</value>
+                        <value>00:00-23:59</value>
                     </day>
                     <day>
                         <key>FRIDAY</key>
-                        <value>Open 24 hours</value>
+                        <value>00:00-23:59</value>
                     </day>
                     <day>
                         <key>SATURDAY</key>
-                        <value>Open 24 hours</value>
+                        <value>00:00-23:59</value>
                     </day>
                     <day>
                         <key>SUNDAY</key>
-                        <value>Open 24 hours</value>
+                        <value>00:00-23:59</value>
                     </day>
                 </openTime>
                 <description>Scenic beach with white sand and crystal-clear waters, perfect for relaxing and
@@ -1005,7 +1005,7 @@
         <things-to-do>
             <activity>
                 <type>TOURISTIC_SIGHTS</type>
-<category>TOURISTIC_SIGHTS</category>
+                <category>TOURISTIC_SIGHTS</category>
                 <name>Gateway of India</name>
                 <location>
                     <latitude>18.9220</latitude>
