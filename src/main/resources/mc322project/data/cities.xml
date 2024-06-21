@@ -418,6 +418,50 @@
                 <price>150.0</price>
             </activity>
             <activity>
+                <type>TOURISTIC_SIGHTS</type>
+                <category>TOURISTIC_SIGHTS</category>
+                <name>Longhua Temple</name>
+                <location>
+                    <latitude>31.17392</latitude>
+                    <longitude>121.45189</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>08:30-21:00</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>08:30-21:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>08:30-21:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>08:30-21:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>08:30-21:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>08:30-21:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>08:30-21:00</value>
+                    </day>
+                </openTime>
+                <description>Originally built in 242 AD, it was destroyed in war in 906 and later rebuilt.
+                    It consists of a very tall structure surrended by beautiful gardens and carrying a lot of history.
+                </description>
+                <imageThumbURL>https://lh3.googleusercontent.com/proxy/pnGfiz_CCqYTZOHGVz4DwL0qrpzQALMgHJlJ4iIAHHO7E8TEyrahFLCfHLhvMlvkp3hJMO2GPAThT4gLgw</imageThumbURL>
+                <price>0.0</price>
+            </activity>
+            <activity>
                 <type>MUSEUMS</type>
 <category>MUSEUMS</category>
                 <name>Shanghai Museum</name>
@@ -460,6 +504,50 @@
                 </description>
                 <imageThumbURL>https://www.tudosobreshanghai.com/f/china/shanghai/guia/museo-shanghai.jpg</imageThumbURL>
                 <price>50.0</price>
+            </activity>
+            <activity>
+                <type>THEATERS</type>
+                <category>THEATERS</category>
+                <name>Shanghai Circus World</name>
+                <location>
+                    <latitude>31.30667</latitude>
+                    <longitude>121.44781</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>14:00-16:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>14:00-16:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>14:00-16:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>19:30-21:30</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>19:30-21:30</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>19:30-21:30</value>
+                    </day>
+                </openTime>
+                <description>Unique and comparable to the tradition of Broadway, it is a stunning acrobatic show
+                    (which has elements performed in the Han dynasty (206BC–220AD)) combining traditional Chinese arts and modern technologies.
+                </description>
+                <imageThumbURL>https://veronikasadventure.com/wp-content/uploads/2024/02/2_shanghai-circus-world-era-intersection-of-time-acrobatics-show.jpg</imageThumbURL>
+                <price>40.0</price>
             </activity>
             <activity>
                 <type>RESTAURANTS</type>
