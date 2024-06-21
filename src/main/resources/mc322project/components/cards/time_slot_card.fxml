@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import mc322project.ui.components.ResponsiveImage?>
+<?import javafx.geometry.Insets?>
+
+<?import mc322project.ui.components.ExpandableText?>
+<GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="mc322project.ui.controllers.TimeSlotCardController" prefHeight="130" hgap="10"
+          styleClass="attraction-card" minHeight="130">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" prefWidth="130.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="60.0" prefWidth="195.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <StackPane>
+        <ResponsiveImage fx:id="imageContainer" GridPane.columnIndex="0" GridPane.rowIndex="0" imgWidth="300">
+            <clipCornerRadii>
+                <Insets left="18" bottom="18"/>
+            </clipCornerRadii>
+        </ResponsiveImage>
+        <AnchorPane>
+            <MenuButton fx:id="optionsMenu" text="9:00" styleClass="yellow-bullet" AnchorPane.topAnchor="5"
+                        AnchorPane.leftAnchor="5">
+                <items>
+                    <MenuItem styleClass="yellow-bullet-item" onAction="#removeSelf" text="Remove"/>
+                    <MenuItem styleClass="yellow-bullet-item" onAction="#alterDuration" text="Alter Duration"/>
+                    <MenuItem styleClass="yellow-bullet-item" onAction="#alterOrder" text="Alter Start"/>
+                </items>
+            </MenuButton>
+        </AnchorPane>
+    </StackPane>
+    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="195.0">
+        <padding>
+            <Insets top="10" bottom="10"/>
+        </padding>
+        <Label fx:id="titleLabel" styleClass="card-title-white"/>
+        <ExpandableText readMore="false" maximumWidth="170" maxLength="60" fx:id="descriptionLabel">
+            <padding>
+                <Insets top="5" bottom="5"/>
+            </padding>
+        </ExpandableText>
+        <Region VBox.vgrow="ALWAYS"/>
+        <Label fx:id="durationLabel" styleClass="small-title"/>
+    </VBox>
+</GridPane>

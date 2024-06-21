@@ -1,0 +1,17 @@
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.HBox?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefWidth="200" prefHeight="300"
+            fx:controller="mc322project.ui.controllers.DurationSelectorController">
+    <VBox alignment="CENTER">
+        <ListView fx:id="timeListView"/>
+        <HBox alignment="CENTER" styleClass="main-container" prefHeight="48">
+            <Button styleClass="outlined-button" text="Select" onAction="#handleSelect"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

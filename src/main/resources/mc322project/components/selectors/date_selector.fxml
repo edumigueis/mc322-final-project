@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="mc322project.ui.controllers.DateSelectorController"
+      alignment="center"
+      spacing="10">
+    <DatePicker fx:id="datePickerStart"/>
+    <DatePicker fx:id="datePickerEnd"/>
+</HBox>

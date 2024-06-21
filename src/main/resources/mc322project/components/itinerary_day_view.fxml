@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="mc322project.ui.controllers.ItineraryDayViewController"
+      VBox.vgrow="ALWAYS">
+    <HBox spacing="5" styleClass="padded-card">
+        <Label fx:id="indexLabel" styleClass="header-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="dayLabel" styleClass="header-label-day"/>
+    </HBox>
+    <HBox spacing="5" style="-fx-padding: 0 0 10 0;">
+        <Button fx:id="hotelText" onMouseClicked="#pickHotel" styleClass="gray-padded-card">
+            <graphic>
+                <FontIcon fill="#5e7d83" iconLiteral="jam-building" iconSize="20" styleClass="icon"/>
+            </graphic>
+        </Button>
+        <Button text="Attraction" onMouseClicked="#addAttractionModal" styleClass="purple-padded-card">
+            <graphic>
+                <FontIcon fill="#070606" iconLiteral="jam-plus" iconSize="20" styleClass="icon"/>
+            </graphic>
+        </Button>
+    </HBox>
+    <Region prefHeight="7" />
+    <VBox VBox.vgrow="ALWAYS" fx:id="cardsContainer"/>
+</VBox>
+

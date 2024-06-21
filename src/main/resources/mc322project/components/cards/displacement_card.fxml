@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.shape.Line?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" spacing="10" prefWidth="325"
+      fx:controller="mc322project.ui.controllers.DisplacementCardController"
+      prefHeight="40"
+      alignment="CENTER_LEFT">
+    <StackPane styleClass="line-container">
+        <Line endY="40.0" styleClass="line"/>
+    </StackPane>
+    <FontIcon fx:id="transportIcon" iconLiteral="jam-bus" iconSize="22" fill="#BCA5ED"/>
+    <VBox spacing="-1" alignment="CENTER_LEFT" prefHeight="40">
+        <Label fx:id="durationLabel" styleClass="small-title"/>
+        <Label fx:id="typeLabel" styleClass="text"/>
+    </VBox>
+</HBox>

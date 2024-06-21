@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import com.gluonhq.maps.MapView?>
+<AnchorPane styleClass="filter-bar" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mc322project.ui.controllers.AttractionModalController" minHeight="600">
+    <Pane fx:id="filterBarContainer" AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10"/>
+    <HBox AnchorPane.topAnchor="60" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0"
+          AnchorPane.bottomAnchor="0">
+        <ListView fx:id="cardsContainer"
+                  AnchorPane.bottomAnchor="0" HBox.hgrow="ALWAYS" prefWidth="440"/>
+        <MapView fx:id="mapView" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <Button fx:id="closeButton" styleClass="outlined-button" text="Select" onAction="#handleReturnValue"
+            AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20">
+        <graphic>
+            <FontIcon iconLiteral="jam-plus" iconSize="16" styleClass="icon"/>
+        </graphic>
+    </Button>
+</AnchorPane>

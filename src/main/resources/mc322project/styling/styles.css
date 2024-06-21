@@ -1,0 +1,204 @@
+@import url("fonts.css");
+@import url("text.css");
+@import url("scrollbar.css");
+
+.attraction-card {
+    -fx-background-color: #083740;
+    -fx-background-radius: 18px;
+    -fx-border-radius: 18px;
+}
+
+.main-container {
+    -fx-background-color: #070606;
+}
+
+.yellow-main-header {
+    -fx-background-color: #F7FF88;
+    -fx-padding: 15 20 15 20;
+}
+
+.line-container {
+    -fx-padding: 0 3 0 20;
+}
+
+.line {
+    -fx-stroke-dash-array: 5 5;
+    -fx-stroke-width: 2;
+    -fx-stroke: #5e7d83
+}
+
+.line-filled {
+    -fx-stroke-width: 2;
+    -fx-stroke: #CDCDCD
+}
+
+.header-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Black";
+}
+
+.header-label-day {
+    -fx-font-size: 14px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Regular";
+}
+
+.padded-card {
+    -fx-padding: 5 10 5 10;
+}
+
+.purple-padded-card {
+    -fx-background-color: #BCA5ED;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5;
+    -fx-font-size: 12px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.gray-padded-card {
+    -fx-background-color: #081e23;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5;
+    -fx-font-size: 12px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.no-pane {
+    -fx-background-color: transparent;
+}
+
+.no-pane .viewport {
+    -fx-background: transparent;
+    -fx-effect: null;
+}
+
+.yellow-bullet {
+    -fx-background-color: #F7FF88;
+    -fx-border-width: 12px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: -1px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Semi";
+}
+
+.context-menu {
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-background-color: #070606;
+    -fx-text-fill: #5e7d83;
+}
+
+.yellow-bullet-item {
+    -fx-background-color: transparent;
+    -fx-font-family: "Overpass Semi";
+    -fx-text-fill: #5e7d83;
+}
+
+.yellow-bullet-item:hover .label {
+    -fx-text-fill: #F7FF88;
+}
+
+.yellow-bullet-item:focused .label {
+    -fx-text-fill: #F7FF88;
+}
+
+.yellow-button {
+    -fx-background-color: #F7FF88;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.outlined-button {
+    -fx-border-width: 2px;
+    -fx-background-color: #070606;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.purple-padded-button {
+    -fx-border-width: 2px;
+    -fx-background-color: #BCA5ED;
+    -fx-border-color: #BCA5ED;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.outlined-button:hover {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #070606;
+    -fx-border-color: #FFFFFF;
+}
+
+.outlined-button:hover .icon {
+    -fx-fill: #070606;
+}
+
+.outlined-button .icon {
+    -fx-fill: #FFFFFF;
+}
+
+.icon-button {
+    -fx-padding: 0;
+    -fx-background-color: #070606;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-cursor: hand;
+}
+
+.icon-button .icon {
+    -fx-fill: #FFFFFF;
+}
+
+.icon-button:hover .icon {
+    -fx-fill: BCA5ED;
+}
+
+.filter-bar {
+    -fx-background-color: #070606;
+}
+
+.toggle-button-gray {
+    -fx-background-color: #081e23;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #5e7d83;
+    -fx-font-family: "Overpass Bold";
+    -fx-cursor: hand;
+}
+
+.toggle-button-gray:hover {
+    -fx-background-color: #F7FF88;
+    -fx-text-fill: #070606;
+}
+
+.toggle-button-gray:selected {
+    -fx-background-color: #F7FF88;
+    -fx-text-fill: #070606;
+}
