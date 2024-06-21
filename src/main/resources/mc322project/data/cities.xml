@@ -56,6 +56,50 @@
             <activity>
                 <type>MUSEUMS</type>
                 <category>MUSEUMS</category>
+                <name>Louvre Museum</name>
+                <location>
+                    <latitude>48.80499</latitude>
+                    <longitude>2.12033</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>9:00-18:30</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>9:00-18:30</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>9:00-18:30</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>9:00-18:30</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>9:00-18:30</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>9:00-18:30</value>
+                    </day>
+                </openTime>
+                <description>One of the most famous palaces in the world, former residence of King Louis XIV.</description>
+                <imageThumbURL>https:https://i.natgeofe.com/n/5f01634d-6d3c-49a8-beb4-75283b26e411/Versailles_p262_3x2.jpg</imageThumbURL>                <currentExpoName>The MET at the Louvre</currentExpoName>
+                <mostFamousWorks>Hall of mirrors</mostFamousWorks>
+                <website>https://www.chateauversailles.fr/</website>
+                <price>50.0</price>
+            </activity>
+            <activity>
+                <type>MUSEUMS</type>
+                <category>MUSEUMS</category>
                 <name>Musée d’Orsay</name>
                 <location>
                     <latitude>48.86004</latitude>
@@ -248,6 +292,27 @@
                 <location>
                     <latitude>48.82365</latitude>
                     <longitude>2.32509</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Hôtel Astoria - Astotel</name>
+                <location>
+                    <latitude>48.88187</latitude>
+                    <longitude>2.32310</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Hotel Lumières Montmartre Paris</name>
+                <location>
+                    <latitude>48.89420</latitude>
+                    <longitude>2.33672</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>ibis Clichy Centre Mairie</name>
+                <location>
+                    <latitude>48.90390</latitude>
+                    <longitude>2.30397</longitude>
                 </location>
             </hotel>
         </hotels>
@@ -456,6 +521,27 @@
                 <location>
                     <latitude>31.2367</latitude>
                     <longitude>121.5068</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Courtyard by Marriott Shanghai Puxi</name>
+                <location>
+                    <latitude>31.24314</latitude>
+                    <longitude>121.45520</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>The Langham Yangtze Boutique Hotel</name>
+                <location>
+                    <latitude>31.23353</latitude>
+                    <longitude>121.47645</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Shanghai Meego Yes Hotel</name>
+                <location>
+                    <latitude>31.23054</latitude>
+                    <longitude>121.47368</longitude>
                 </location>
             </hotel>
         </hotels>
