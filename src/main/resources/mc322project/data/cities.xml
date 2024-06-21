@@ -686,7 +686,7 @@
                 <description>Iconic Renaissance cathedral known for its dome by Brunelleschi and its Giotto's
                     Campanile.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Florence_Cathedral_from_Michelangelo_Hill.jpg/1280px-Florence_Cathedral_from_Michelangelo_Hill.jpg</imageThumbURL>
+                <imageThumbURL>https://cdn.getyourguide.com/img/tour/62ca8b1a0e95a.jpeg/97.jpg</imageThumbURL>
                 <price>18.0</price>
             </activity>
             <activity>
@@ -730,7 +730,7 @@
                 <description>Famous art museum featuring works by Botticelli, Michelangelo, Leonardo da Vinci, and
                     more.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Firenze_Uffizi.jpg/1280px-Firenze_Uffizi.jpg</imageThumbURL>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Florence%2C_Italy_-_panoramio_%28125%29.jpg/1200px-Florence%2C_Italy_-_panoramio_%28125%29.jpg</imageThumbURL>
                 <price>20.0</price>
             </activity>
             <activity>
@@ -773,11 +773,146 @@
                 </openTime>
                 <description>Traditional trattoria serving authentic Tuscan cuisine in a casual atmosphere.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Florence_Trattoria.jpg/1280px-Florence_Trattoria.jpg</imageThumbURL>
+                <imageThumbURL>https://media-cdn.sygictraveldata.com/media/1200x630/612664395a40232133447d33247d383336363237383539</imageThumbURL>
                 <stars>FOUR</stars>
                 <priceRange>
                     <min>900.0</min><max>1000.0</max>
                 </priceRange>
+            </activity>
+            <activity>
+                <type>MUSEUMS</type>
+                <category>MUSEUMS</category>
+                <name>Dante's House</name>
+                <location>
+                    <latitude>43.77121</latitude>
+                    <longitude>11.25707</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                </openTime>
+                <description>The location of the houses of the Alighieri family, the museum is arranged on three floors according to the three most important stages of Dante's life.</description>
+                <imageThumbURL>https://tuscanyplanet.com/wp-content/uploads/2022/08/Museo-Casa-di-Dante-Florence.jpg</imageThumbURL>
+                <currentExpoName>The MET at the Louvre</currentExpoName>
+                <mostFamousWorks>Hall of mirrors</mostFamousWorks>
+                <website>https://www.chateauversailles.fr/</website>
+                <price>50.0</price>
+            </activity>
+            <activity>
+                <type>MUSEUMS</type>
+                <category>MUSEUMS</category>
+                <name>Chapel of the Magi</name>
+                <location>
+                    <latitude>43.77518</latitude>
+                    <longitude>11.25595</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>09:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>09:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>09:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>09:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>09:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>09:00-19:00</value>
+                    </day>
+                </openTime>
+                <description>The Chapel of the Magi occupies an important place in the Medici Palace which Cosimo the Elder built, starting in about 1444, in accordance to the architectural design by Michelozzo di Bartolomeo.</description>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Le_mus%C3%A9e_dOrsay_%28Paris%29_%284725795882%29.jpg/1024px-Le_mus%C3%A9e_dOrsay_%28Paris%29_%284725795882%29.jpg</imageThumbURL>
+                <currentExpoName>Benozzo Gozzoli</currentExpoName>
+                <mostFamousWorks>Procession of the Magi - The Young Giuliano de Medici</mostFamousWorks>
+                <website>http://www.palazzomediciriccardi.it/</website>
+                <price>0.0</price>
+            </activity>
+            <activity>
+                <type>TOURISTIC_SIGHTS</type>
+                <category>TOURISTIC_SIGHTS</category>
+                <name>Botanical Garden</name>
+                <location>
+                    <latitude>43.77894</latitude>
+                    <longitude>11.26146</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>10:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>10:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>10:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>10:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>10:00-19:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>10:00-19:00</value>
+                    </day>
+                </openTime>
+                <description>The Gardens currently take up an area of 2.39 hectars, divided into smaller and larger avenues. The structure also has its own greenhouses and hot houses for the cultivation of special plants.</description>
+                <imageThumbURL>http://www.museumsinflorence.com/foto/Botanical%20garden/thumbnails/stri.jpg</imageThumbURL>
+                <price>0.0</price>
+                <images>
+                    <url>alo</url>
+                </images>
             </activity>
         </things-to-do>
         <hotels>
