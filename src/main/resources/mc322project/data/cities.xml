@@ -1190,6 +1190,7 @@
         </hotels>
     </city>
 
+
     <city>
         <name>Tulum</name>
         <description>Historical Mayan city located on the coast of the Caribbean Sea, in the state of Quintana Roo,
@@ -1242,7 +1243,7 @@
                 <description>Preserved Mayan ruins overlooking the Caribbean Sea, known for its beautiful setting and
                     historical significance.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tulum-Mexico-TEMPLO-DE-LAS-PINTURAS2.JPG/1200px-Tulum-Mexico-TEMPLO-DE-LAS-PINTURAS2.JPG</imageThumbURL>
+                <imageThumbURL>https://www.cancunadventure.net/images/mayanruins/tulum.jpg</imageThumbURL>
                 <price>5.0</price>
             </activity>
             <activity>
@@ -1286,7 +1287,7 @@
                 <description>Scenic beach with white sand and crystal-clear waters, perfect for relaxing and
                     snorkeling.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Playa_Paraiso_Tulum.jpg/1280px-Playa_Paraiso_Tulum.jpg</imageThumbURL>
+                <imageThumbURL>https://www.bookaway.com/blog/wp-content/uploads/2023/01/Playa-paraiso-.jpg</imageThumbURL>
                 <price>0.0</price>
             </activity>
             <activity>
@@ -1330,7 +1331,7 @@
                 <description>Beautiful cenote with crystal-clear waters ideal for swimming and snorkeling, surrounded by
                     lush vegetation.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Gran_Cenote_4_Tulum_Mexico.jpg/1280px-Gran_Cenote_4_Tulum_Mexico.jpg</imageThumbURL>
+                <imageThumbURL>https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/ba/35.jpg</imageThumbURL>
                 <price>15.0</price>
             </activity>
         </things-to-do>
