@@ -56,7 +56,7 @@
             <activity>
                 <type>MUSEUMS</type>
                 <category>MUSEUMS</category>
-                <name>Louvre Museum</name>
+                <name>Palace of Versailles</name>
                 <location>
                     <latitude>48.80499</latitude>
                     <longitude>2.12033</longitude>
@@ -92,7 +92,8 @@
                     </day>
                 </openTime>
                 <description>One of the most famous palaces in the world, former residence of King Louis XIV.</description>
-                <imageThumbURL>https:https://i.natgeofe.com/n/5f01634d-6d3c-49a8-beb4-75283b26e411/Versailles_p262_3x2.jpg</imageThumbURL>                <currentExpoName>The MET at the Louvre</currentExpoName>
+                <imageThumbURL>https://i.natgeofe.com/n/5f01634d-6d3c-49a8-beb4-75283b26e411/Versailles_p262_3x2.jpg</imageThumbURL>
+                <currentExpoName>The MET at the Louvre</currentExpoName>
                 <mostFamousWorks>Hall of mirrors</mostFamousWorks>
                 <website>https://www.chateauversailles.fr/</website>
                 <price>50.0</price>
@@ -706,6 +707,27 @@
                     <longitude>11.2555</longitude>
                 </location>
             </hotel>
+            <hotel>
+                <name>Soggiorno Battistero</name>
+                <location>
+                    <latitude>43.77300</latitude>
+                    <longitude>11.25511</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Hotel Spadai</name>
+                <location>
+                    <latitude>43.77486</latitude>
+                    <longitude>11.25590</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Italiana Hotels Florence</name>
+                <location>
+                    <latitude>43.75783</latitude>
+                    <longitude>11.29862</longitude>
+                </location>
+            </hotel>
         </hotels>
     </city>
 
@@ -914,6 +936,34 @@
                     <longitude>-122.4108</longitude>
                 </location>
             </hotel>
+            <hotel>
+                <name>Nap York, San Francisco</name>
+                <location>
+                    <latitude>37.78889</latitude>
+                    <longitude>-122.42418</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Warfield Hotel</name>
+                <location>
+                    <latitude>37.78371</latitude>
+                    <longitude>-122.41068</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>YOTEL San Francisco</name>
+                <location>
+                    <latitude>37.78050</latitude>
+                    <longitude>-122.41209</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Fitzgerald Hotel Union Square</name>
+                <location>
+                    <latitude>37.78820</latitude>
+                    <longitude>-122.41212</longitude>
+                </location>
+            </hotel>
         </hotels>
     </city>
 
@@ -1074,6 +1124,27 @@
                 <location>
                     <latitude>20.2142</latitude>
                     <longitude>-87.4314</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Naala Tulum</name>
+                <location>
+                    <latitude>20.20619</latitude>
+                    <longitude>-87.45076</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Mi Amor</name>
+                <location>
+                    <latitude>20.19446</latitude>
+                    <longitude>-87.43923</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Villa Pescadores Tulum</name>
+                <location>
+                    <latitude>20.20615</latitude>
+                    <longitude>-87.43190</longitude>
                 </location>
             </hotel>
         </hotels>
@@ -1282,6 +1353,20 @@
                 <location>
                     <latitude>18.9217</latitude>
                     <longitude>72.8331</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Hotel Hilton Suites</name>
+                <location>
+                    <latitude>19.12501</latitude>
+                    <longitude>72.84656</longitude>
+                </location>
+            </hotel>
+            <hotel>
+                <name>Hotel Sahara Star</name>
+                <location>
+                    <latitude>19.09595</latitude>
+                    <longitude>72.85371</longitude>
                 </location>
             </hotel>
         </hotels>
