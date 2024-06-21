@@ -56,13 +56,13 @@
      -fx-text-fill: #5e7d83;
 }
 
-.start-title {
+.label.start-title {
      -fx-font-size: 50px;
      -fx-text-fill: #FFFFFF;
      -fx-font-family: "Poppins Bold";
 }
 
-.city-name {
+.label.city-name {
      -fx-font-size: 11px;
      -fx-text-fill: #CDCDCD;
      -fx-font-family: "Overpass Bold";

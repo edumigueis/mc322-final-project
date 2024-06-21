@@ -76,24 +76,30 @@
         </dependency>
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
+            <artifactId>util</artifactId>
+            <version>4.0.20</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
             <artifactId>storage</artifactId>
-            <version>4.0.11</version>
+            <version>4.0.20</version>
+            <classifier>desktop</classifier>
         </dependency>
     </dependencies>
     <build>
-            <resources>
-                <resource>
-                    <directory>src/main/resources</directory>
-                    <includes>
-                        <include>**/*.xml</include> <!-- Include XML files -->
-                        <include>**/*.css</include> <!-- Include CSS files -->
-                        <include>**/*.fxml</include> <!-- Include CSS files -->
-                        <include>**/*.ttf</include> <!-- Include font files -->
-                        <include>**/*.otf</include> <!-- Include font files -->
-                        <include>**/*.jpg</include> <!-- Include img files -->
-                        <include>**/*.png</include> <!-- Include img files -->
-                    </includes>
-                </resource>
-            </resources>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.xml</include> <!-- Include XML files -->
+                    <include>**/*.css</include> <!-- Include CSS files -->
+                    <include>**/*.fxml</include> <!-- Include CSS files -->
+                    <include>**/*.ttf</include> <!-- Include font files -->
+                    <include>**/*.otf</include> <!-- Include font files -->
+                    <include>**/*.jpg</include> <!-- Include img files -->
+                    <include>**/*.png</include> <!-- Include img files -->
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>

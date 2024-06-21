@@ -10,7 +10,8 @@
 <GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="mc322project.ui.controllers.AttractionCardController" hgap="10"
           styleClass="attraction-card" prefHeight="200.0" prefWidth="420.0"
-          minWidth="420.0">
+          minWidth="420.0"
+          fx:id="rootPane">
     <rowConstraints>
         <RowConstraints vgrow="SOMETIMES" percentHeight="40.0"/>
         <RowConstraints vgrow="SOMETIMES" percentHeight="60.0"/>

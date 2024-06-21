@@ -26,6 +26,7 @@ import mc322project.viewmodels.TimeSlotViewModel;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class ItineraryDayViewController {
     @FXML
@@ -42,7 +43,7 @@ public class ItineraryDayViewController {
 
     public void initialize(LocalDate date) {
         // Initialize the ViewModel
-        if(this.viewModel == null)
+        if (this.viewModel == null)
             this.viewModel = new ItineraryDayViewModel(date);
 
         DateTimeFormatter formatterWeekday = DateTimeFormatter.ofPattern("EEE");
@@ -57,6 +58,7 @@ public class ItineraryDayViewController {
     public void setCityViewModel(CityViewModel viewModel) {
         this.cityViewModel = viewModel;
     }
+
     public void setItineraryViewModel(ItineraryDayViewModel viewModel) {
         this.viewModel = viewModel;
     }
@@ -94,24 +96,38 @@ public class ItineraryDayViewController {
     @FXML
     private void addAttractionModal(MouseEvent event) {
         try {
+            // Create a new stage for the modal
             Stage stage = new Stage();
+
+            // Load the FXML for the modal
             FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("screens/attraction_modal.fxml"));
             Parent root = loader.load();
+
+            // Create the scene and add stylesheets
+            Scene scene = new Scene(root);
+            String stylesheet = Objects.requireNonNull(GUIStarter.class.getResource("styling/styles.css")).toExternalForm();
+            String stylesheet2 = Objects.requireNonNull(GUIStarter.class.getResource("styling/listview.css")).toExternalForm();
+            scene.getStylesheets().addAll(stylesheet, stylesheet2);
+
+            // Set the scene to the stage
+            stage.setScene(scene);
+
+            // Set the title of the stage
+            stage.setTitle("Things to do in " + this.cityViewModel.nameProperty().get());
+
+            // Get the controller and pass the necessary data
             AttractionModalController modalController = loader.getController();
             modalController.setViewModel(this.viewModel);
             modalController.loadCity(this.cityViewModel);
-            Scene scene = new Scene(root);
-            String stylesheet = GUIStarter.class.getResource("styling/styles.css").toExternalForm();
-            String stylesheet2 = GUIStarter.class.getResource("styling/date_selector.css").toExternalForm();
-            scene.getStylesheets().add(stylesheet);
-            scene.getStylesheets().add(stylesheet2);
-            stage.setScene(scene);
-            stage.setTitle("Things to do in " + this.cityViewModel.nameProperty().get());
+
+            // Configure the stage modality and owner
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+
+            // Show the modal
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            // Handle IOException and show an error alert
             CustomAlert alert = CustomAlert.createErrorAlert("It was not possible to open the modal. Check paths.");
             alert.setTitle("Error");
             alert.setHeaderText(null); // Remove header text
@@ -120,26 +136,35 @@ public class ItineraryDayViewController {
     }
 
     @FXML
-    private void pickHotel(MouseEvent event){
+    private void pickHotel(MouseEvent event) {
         try {
             // Load the FXML for the modal
             FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/selectors/hotel_selector.fxml"));
             Parent root = loader.load();
-            HotelSelectorController controller = loader.getController();
-            controller.start(this.cityViewModel.getHotels());
 
             // Create a new stage for the modal
             Stage modalStage = new Stage();
             modalStage.initModality(Modality.APPLICATION_MODAL);
             modalStage.setTitle("Select Hotel");
-            modalStage.setScene(new Scene(root));
 
-            // Pass the stage reference to the modal controller
+            // Create the scene and add stylesheets
+            Scene scene = new Scene(root);
+            String stylesheet = Objects.requireNonNull(GUIStarter.class.getResource("styling/styles.css")).toExternalForm();
+            String stylesheet2 = Objects.requireNonNull(GUIStarter.class.getResource("styling/listview.css")).toExternalForm();
+            scene.getStylesheets().addAll(stylesheet, stylesheet2);
+
+            // Set the scene to the stage
+            modalStage.setScene(scene);
+
+            // Get the controller and pass the necessary data
+            HotelSelectorController controller = loader.getController();
             controller.setStage(modalStage);
+            controller.start(this.cityViewModel.getHotels());
 
-            // Show the modal
+            // Show the modal and wait for it to close
             modalStage.showAndWait();
 
+            // Handle the selected hotel
             Hotel selectedHotel = controller.getSelectedHotel();
             if (selectedHotel != null) {
                 this.viewModel.hotelProperty().set(selectedHotel);

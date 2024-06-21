@@ -18,6 +18,7 @@ import mc322project.viewmodels.TimeSlotViewModel;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Objects;
 
 public class TimeSlotCardController {
     @FXML
@@ -61,7 +62,12 @@ public class TimeSlotCardController {
             Stage modalStage = new Stage();
             modalStage.initModality(Modality.APPLICATION_MODAL);
             modalStage.setTitle("Select Duration");
-            modalStage.setScene(new Scene(root));
+
+            Scene scene = new Scene(root);
+            String stylesheet = Objects.requireNonNull(GUIStarter.class.getResource("styling/styles.css")).toExternalForm();
+            String stylesheet2 = Objects.requireNonNull(GUIStarter.class.getResource("styling/listview.css")).toExternalForm();
+            scene.getStylesheets().addAll(stylesheet, stylesheet2);
+            modalStage.setScene(scene);
 
             // Pass the stage reference to the modal controller
             controller.setStage(modalStage);
@@ -91,7 +97,12 @@ public class TimeSlotCardController {
             Stage modalStage = new Stage();
             modalStage.initModality(Modality.APPLICATION_MODAL);
             modalStage.setTitle("Reorder");
-            modalStage.setScene(new Scene(root));
+
+            Scene scene = new Scene(root);
+            String stylesheet = Objects.requireNonNull(GUIStarter.class.getResource("styling/styles.css")).toExternalForm();
+            String stylesheet2 = Objects.requireNonNull(GUIStarter.class.getResource("styling/listview.css")).toExternalForm();
+            scene.getStylesheets().addAll(stylesheet, stylesheet2);
+            modalStage.setScene(scene);
 
             // Show the modal
             modalStage.showAndWait();
