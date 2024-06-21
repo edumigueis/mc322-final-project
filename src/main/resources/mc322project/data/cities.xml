@@ -1247,6 +1247,100 @@
                 <price>5.0</price>
             </activity>
             <activity>
+                <type>RESTAURANTS</type>
+                <category>RESTAURANTS</category>
+                <name>Campanella Cremerie</name>
+                <location>
+                    <latitude>20.20028</latitude>
+                    <longitude>-87.46264</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>08:20-22:00</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>08:20-22:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>08:20-22:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>08:20-22:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>08:20-22:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>08:20-22:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>08:20-22:00</value>
+                    </day>
+                </openTime>
+                <description>With delicious gelato, high-quality coffee made with beans from Veracruz, and waffles,
+                    Tulum’s most inviting cafe is a crowd favorite any time of day.
+                </description>
+                <imageThumbURL>https://media-cdn.tripadvisor.com/media/photo-s/0c/99/1c/8f/campanella-cremerie.jpg</imageThumbURL>
+                <stars>FOUR</stars>
+                <priceRange>
+                    <min>20.0</min><max>40.0</max>
+                </priceRange>
+            </activity>
+            <activity>
+                <type>RESTAURANTS</type>
+                <category>RESTAURANTS</category>
+                <name>La Negra Tomasa</name>
+                <location>
+                    <latitude>20.21127</latitude>
+                    <longitude>-87.45997</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>12:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>12:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>12:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>12:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>12:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>12:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>12:00-23:00</value>
+                    </day>
+                </openTime>
+                <description>This spot is named after a song written by Cuban composer Guillermo Rodríguez Fiffe that was covered by Mexican rockers Caifanes
+                    in 1989, and like the song, this mod Sinaloan cevicheria is a little cumbia, a little rock and roll.
+                </description>
+                <imageThumbURL>https://mbmarcobeteta.com/wp-content/uploads/2022/12/la-negra-tomasa-tulum.jpg</imageThumbURL>
+                    <stars>FIVE</stars>
+                <priceRange>
+                    <min>3.0</min><max>15.0</max>
+                </priceRange>
+            </activity>
+            <activity>
                 <type>TOURISTIC_SIGHTS</type>
 <category>TOURISTIC_SIGHTS</category>
                 <name>Playa Paraíso</name>
