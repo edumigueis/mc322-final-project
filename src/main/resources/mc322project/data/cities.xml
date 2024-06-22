@@ -966,7 +966,7 @@
         <things-to-do>
             <activity>
                 <type>TOURISTIC_SIGHTS</type>
-<category>TOURISTIC_SIGHTS</category>
+                <category>TOURISTIC_SIGHTS</category>
                 <name>Golden Gate Bridge</name>
                 <location>
                     <latitude>37.8199</latitude>
@@ -1005,12 +1005,12 @@
                 <description>Iconic suspension bridge connecting San Francisco Bay and the Pacific Ocean, offering
                     stunning views and scenic walks.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Golden_Gate_Bridge_and_the_Presidio.jpg/1280px-Golden_Gate_Bridge_and_the_Presidio.jpg</imageThumbURL>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/GG-ftpoint-bridge-2.jpg/1280px-GG-ftpoint-bridge-2.jpg</imageThumbURL>
                 <price>0.0</price>
             </activity>
             <activity>
                 <type>TOURISTIC_SIGHTS</type>
-<category>TOURISTIC_SIGHTS</category>
+                <category>TOURISTIC_SIGHTS</category>
                 <name>Alcatraz Island</name>
                 <location>
                     <latitude>37.8267</latitude>
@@ -1049,12 +1049,12 @@
                 <description>Former federal prison known for housing notorious criminals, now a popular tourist
                     attraction offering tours of its historic facilities.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Alcatraz_Island.jpg/1280px-Alcatraz_Island.jpg</imageThumbURL>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Alcatraz_Island_03.jpg/1200px-Alcatraz_Island_03.jpg</imageThumbURL>
                 <price>49.0</price>
             </activity>
             <activity>
                 <type>RESTAURANTS</type>
-<category>RESTAURANTS</category>
+                <category>RESTAURANTS</category>
                 <name>The Slanted Door</name>
                 <location>
                     <latitude>37.7969</latitude>
@@ -1093,7 +1093,7 @@
                 <description>Acclaimed modern Vietnamese cuisine served in an elegant setting overlooking San Francisco
                     Bay at the Ferry Building.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/The_Slanted_Door%2C_Ferry_Building%2C_SF.jpg/1280px-The_Slanted_Door%2C_Ferry_Building%2C_SF.jpg</imageThumbURL>
+                <imageThumbURL>https://static.toiimg.com/photo/44848271.cms</imageThumbURL>
                 <stars>FOUR</stars>
                 <priceRange>
                     <min>900.0</min><max>1000.0</max>
@@ -1101,7 +1101,7 @@
             </activity>
             <activity>
                 <type>MUSEUMS</type>
-<category>MUSEUMS</category>
+                <category>MUSEUMS</category>
                 <name>San Francisco Museum of Modern Art (SFMOMA)</name>
                 <location>
                     <latitude>37.7858</latitude>
@@ -1140,8 +1140,305 @@
                 <description>Modern and contemporary art museum showcasing a diverse collection of paintings,
                     sculptures, and multimedia installations.
                 </description>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/SFMOMA-Aerial-1-1200px.jpg/1280px-SFMOMA-Aerial-1-1200px.jpg</imageThumbURL>
+                <imageThumbURL>https://media.licdn.com/dms/image/C5622AQGDGKUBcFOddg/feedshare-shrink_800/0/1658444837248?e=2147483647&amp;v=beta&amp;t=dkJSoZrCxf3MlPLTCdhaIGtNFXnk2kAypdYcScdLXXk</imageThumbURL>
                 <price>25.0</price>
+            </activity>
+            <activity>
+                <type>TOURISTIC_SIGHTS</type>
+                <category>TOURISTIC_SIGHTS</category>
+                <name>Coit Tower</name>
+                <location>
+                    <latitude>37.8024</latitude>
+                    <longitude>-122.4058</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>10:00-18:00</value>
+                    </day>
+                </openTime>
+                <description>Historic tower in the Telegraph Hill neighborhood offering panoramic views of San Francisco.</description>
+                <imageThumbURL>https://as2.ftcdn.net/v2/jpg/03/27/93/47/1000_F_327934754_uJInHChzRXd0dN6t2dIlrQnDvY84M6t6.jpg</imageThumbURL>
+                <price>10.0</price>
+            </activity>
+            <activity>
+                <type>PARKS</type>
+                <category>PARKS</category>
+                <name>Golden Gate Park</name>
+                <location>
+                    <latitude>37.7694</latitude>
+                    <longitude>-122.4862</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>05:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>05:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>05:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>05:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>05:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>05:00-23:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>05:00-23:00</value>
+                    </day>
+                </openTime>
+                <description>Large urban park featuring gardens, museums, lakes, and recreational facilities.</description>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Golden_Gate_Park.jpg/1200px-Golden_Gate_Park.jpg</imageThumbURL>
+                <price>0.0</price>
+            </activity>
+            <activity>
+                <type>RESTAURANTS</type>
+                <category>RESTAURANTS</category>
+                <name>Tartine Bakery</name>
+                <location>
+                    <latitude>37.7614</latitude>
+                    <longitude>-122.4241</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>07:30-19:30</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>07:30-19:30</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>07:30-19:30</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>07:30-19:30</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>07:30-19:30</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>08:00-20:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>08:00-20:00</value>
+                    </day>
+                </openTime>
+                <description>Renowned bakery offering artisanal bread, pastries, and sandwiches in a cozy, casual setting.</description>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Tartine_bakery_exterior_in_2006.jpg/800px-Tartine_bakery_exterior_in_2006.jpg</imageThumbURL>
+                <stars>FOUR</stars>
+                <priceRange>
+                    <min>200.0</min><max>500.0</max>
+                </priceRange>
+            </activity>
+            <activity>
+                <type>MUSEUMS</type>
+                <category>MUSEUMS</category>
+                <name>Exploratorium</name>
+                <location>
+                    <latitude>37.8008</latitude>
+                    <longitude>-122.3980</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>10:00-17:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>10:00-17:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>10:00-17:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>10:00-21:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>10:00-17:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>10:00-17:00</value>
+                    </day>
+                </openTime>
+                <description>Interactive science museum offering hands-on exhibits and educational programs for all ages.</description>
+                <imageThumbURL>https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/sanmateoca/Location.0019.San-Francisco.Exploratorium-d27bddc75056a36_d27bde93-5056-a36a-0bcdfd1e49226c3c.jpg</imageThumbURL>
+                <price>30.0</price>
+            </activity>
+            <activity>
+                <type>THEATERS</type>
+                <category>THEATERS</category>
+                <name>Orpheum Theatre</name>
+                <location>
+                    <latitude>37.7784</latitude>
+                    <longitude>-122.4142</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>11:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>11:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>11:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>11:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>11:00-18:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>11:00-18:00</value>
+                    </day>
+                </openTime>
+                <description>Historic theater in downtown San Francisco hosting Broadway shows, concerts, and other performances.</description>
+                <imageThumbURL>https://www.sftourismtips.com/images/orpheum-theater-inside.jpg</imageThumbURL>
+                <price>100.0</price>
+            </activity>
+            <activity>
+                <type>TOURISTIC_SIGHTS</type>
+                <category>TOURISTIC_SIGHTS</category>
+                <name>Lombard Street</name>
+                <location>
+                    <latitude>37.8021</latitude>
+                    <longitude>-122.4188</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                </openTime>
+                <description>Famous winding road known for its eight sharp turns in one block, lined with beautiful flowers and houses.</description>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Lombard_Street_San_Francisco_2004.jpg/640px-Lombard_Street_San_Francisco_2004.jpg</imageThumbURL>
+                <price>0.0</price>
+            </activity>
+            <activity>
+                <type>PARKS</type>
+                <category>PARKS</category>
+                <name>Presidio of San Francisco</name>
+                <location>
+                    <latitude>37.7989</latitude>
+                    <longitude>-122.4662</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>06:00-22:00</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>06:00-22:00</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>06:00-22:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>06:00-22:00</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>06:00-22:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>06:00-22:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>06:00-22:00</value>
+                    </day>
+                </openTime>
+                <description>Historic park offering hiking trails, scenic overlooks, and museums, with views of the Golden Gate Bridge.</description>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/e/ef/Aerial_view_-_Presidio-whole.jpg</imageThumbURL>
+                <price>0.0</price>
             </activity>
         </things-to-do>
         <hotels>

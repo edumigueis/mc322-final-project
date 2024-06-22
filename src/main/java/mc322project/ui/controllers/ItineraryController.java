@@ -33,10 +33,10 @@ public class ItineraryController {
     private final ItineraryDayCarousel carousel = new ItineraryDayCarousel();
     private Itinerary itinerary;
 
-    public void initData(Itinerary itinerary, boolean preLoaded) throws IOException {
+    public void initData(Itinerary itinerary) throws IOException {
         this.itinerary = itinerary;
         this.loadHeader();
-        this.startCards(preLoaded);
+        this.startCards();
         mainBox.sceneProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 mainBox.maxHeightProperty().bind(newValue.heightProperty());
@@ -53,15 +53,13 @@ public class ItineraryController {
         mainBox.getChildren().add(header); // Add first card to grid
     }
 
-    private void startCards(boolean preLoaded) {
+    private void startCards() {
         List<ItineraryDayView> views = new ArrayList<>();
         LocalDate startUp = this.itinerary.getStartDate();
         for (int i = 0; i < this.itinerary.getDuration(); i++) {
             ItineraryDayView view = new ItineraryDayView();
             ItineraryDayViewController controller = view.getController();
-            if(preLoaded){
-                controller.setItineraryViewModel(new ItineraryDayViewModel(this.itinerary.getItineraryDayList().get(i)));
-            }
+            controller.setItineraryViewModel(new ItineraryDayViewModel(this.itinerary.getItineraryDayList().get(i)));
             controller.setCityViewModel(new CityViewModel(this.itinerary.getCity()));
             controller.initialize(startUp.plusDays(i));
             views.add(view);

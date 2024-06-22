@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mc322project.ui.components.AttractionCardCell;
+import mc322project.ui.components.CustomAlert;
 import mc322project.ui.components.Filter;
 import mc322project.ui.helpers.map.AttractionClickListener;
 import mc322project.ui.helpers.map.AttractionMapLayer;
@@ -112,8 +113,16 @@ public class AttractionModalController implements FilterBarController.FilterChan
         I_Activity value = cardsContainer.getSelectionModel().getSelectedItem();
 
         // Call the callback method with the return value
-        if (value != null)
-            viewModel.addActivity(value);
+        if (value != null){
+            try{
+                viewModel.addActivity(value);
+            }catch(UnsupportedOperationException e){
+                CustomAlert alert = CustomAlert.createWarningAlert("This duration is too long for this day.");
+                alert.setTitle("Warning");
+                alert.setHeaderText(null); // Remove header text
+                alert.showAndWait();
+            }
+        }
 
         // Close the modal window
         Stage stage = (Stage) closeButton.getScene().getWindow();

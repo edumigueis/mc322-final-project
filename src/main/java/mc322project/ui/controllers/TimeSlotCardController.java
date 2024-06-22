@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import mc322project.ui.components.CustomAlert;
 import mc322project.ui.components.ExpandableText;
 import mc322project.ui.components.ResponsiveImage;
 import mc322project.viewmodels.ItineraryDayViewModel;
@@ -78,7 +79,14 @@ public class TimeSlotCardController {
 
             Duration selectedDuration = controller.getSelectedDuration();
             if (selectedDuration != null) {
-                this.itineraryViewModel.alterDuration(timeSlotViewModel.dataProperty().get(), timeSlotViewModel.appearancesProperty().get(), selectedDuration);
+                try {
+                    this.itineraryViewModel.alterDuration(timeSlotViewModel.dataProperty().get(), timeSlotViewModel.appearancesProperty().get(), selectedDuration);
+                } catch (UnsupportedOperationException e) {
+                    CustomAlert alert = CustomAlert.createWarningAlert("This duration is too long for this day.");
+                    alert.setTitle("Warning");
+                    alert.setHeaderText(null); // Remove header text
+                    alert.showAndWait();
+                }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

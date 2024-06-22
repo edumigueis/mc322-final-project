@@ -86,6 +86,13 @@ public class ItineraryDay {
 
         if (!this.activities.isEmpty()) {
             last = this.activities.getLast();
+
+            LocalDateTime currentDateTime = LocalDateTime.of(LocalDate.now(), last.getEnd());
+            LocalDateTime newEndDateTime = currentDateTime.plus(Duration.ofMinutes(15));
+
+            if (newEndDateTime.toLocalTime().isBefore(last.getEnd()))
+                throw new UnsupportedOperationException("The duration surpasses the day mark.");
+
             startTrns = last.getEnd();
             transportation = Transportation.betweenPlaces(startTrns, last.getData().getLocation(), activity.getLocation());
             last.setWayToNext(transportation);
@@ -148,14 +155,22 @@ public class ItineraryDay {
                 .findFirst().orElse(-1);
         if (posActivity == -1)
             throw new NoSuchElementException("This activity is absent");
-
         TimeSlot base = activities.get(posActivity);
+
+        LocalDateTime currentDateTime = LocalDateTime.of(LocalDate.now(), base.getEnd());
+        LocalDateTime newEndDateTime = currentDateTime.plus(newDuration);
+
+        if (newEndDateTime.toLocalTime().isBefore(base.getEnd()))
+            throw new UnsupportedOperationException("The duration surpasses the day mark.");
+
         base.setEndFromDuration(newDuration);
         if (n > 1) {
             for (int i = posActivity + 1; i < n; i++) {
                 TimeSlot current = activities.get(i);
                 Duration dur = current.getDuration();
-                current.setStart(activities.get(i - 1).getEnd());
+                current.setEnd(LocalTime.of(23,59,59));
+                TimeSlot prev = activities.get(i - 1);
+                current.setStart(prev.getEnd().plus(prev.getWayToNext().getEstimatedDuration()));
                 current.setEndFromDuration(dur);
             }
         }
