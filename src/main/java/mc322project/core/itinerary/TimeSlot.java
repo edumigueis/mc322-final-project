@@ -5,6 +5,7 @@ import java.time.LocalTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import mc322project.entities.Transportation;
 import mc322project.entities.activities.I_Activity;
@@ -14,6 +15,7 @@ public class TimeSlot {
     private I_Activity data;
 
     @JacksonXmlProperty(localName = "way-to-next")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Transportation wayToNext;
 
     @JacksonXmlProperty(localName = "start")
