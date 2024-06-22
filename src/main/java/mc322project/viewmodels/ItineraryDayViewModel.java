@@ -53,7 +53,6 @@ public class ItineraryDayViewModel {
     }
 
     public void addActivity(I_Activity activity) {
-        // Assuming TimeSlot has a method to add an activity
         itineraryDay.addActivity(activity);
         refreshActivities();
     }
@@ -68,9 +67,9 @@ public class ItineraryDayViewModel {
         refreshActivities();
     }
 
-    public void setAllActivities(List<TimeSlot> slots) {
-        itineraryDay.setAll(slots);
-        refreshActivities();
+    public void swapActivity(TimeSlot slot, int currIndex, int newIndex) {
+        itineraryDay.swapPosition(slot, currIndex, newIndex);
+        //refreshActivities();
     }
 
     private void refreshActivities() {

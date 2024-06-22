@@ -1,6 +1,6 @@
 package mc322project.helpers.location;
 
-// Vincenty strategy implementation
+// Vincenty's strategy implementation
 // Needed for long distances - future implementation
 public class VincentyDistanceCalculator implements DistanceCalculator {
     @Override

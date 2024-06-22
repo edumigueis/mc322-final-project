@@ -92,7 +92,7 @@ public class TimeSlotCardController {
             FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/selectors/reorder_selector.fxml"));
             Parent root = loader.load();
             DraggableListController controller = loader.getController();
-            controller.setTimeSlots(itineraryViewModel.getActivities());
+            controller.setViewModel(itineraryViewModel);
 
             // Create a new stage for the modal
             Stage modalStage = new Stage();
@@ -107,9 +107,6 @@ public class TimeSlotCardController {
 
             // Show the modal
             modalStage.showAndWait();
-
-            List<TimeSlot> newOrder = controller.getCurrentTimeSlotsOrder();
-            this.itineraryViewModel.setAllActivities(newOrder);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

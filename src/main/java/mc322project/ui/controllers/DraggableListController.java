@@ -12,6 +12,7 @@ import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
+import mc322project.viewmodels.ItineraryDayViewModel;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class DraggableListController {
 
     @FXML
     private ListView<TimeSlot> listView;
+    private ItineraryDayViewModel viewModel;
 
     @FXML
     public void initialize() {
@@ -84,6 +86,7 @@ public class DraggableListController {
                             if (draggedIndex != thisIndex) {
                                 TimeSlot draggedItem = listView.getItems().remove(draggedIndex);
                                 listView.getItems().add(thisIndex, draggedItem);
+                                viewModel.swapActivity(draggedItem, draggedIndex, thisIndex);
                                 success = true;
                             }
                         }
@@ -99,8 +102,9 @@ public class DraggableListController {
         });
     }
 
-    public void setTimeSlots(ObservableList<TimeSlot> timeSlots) {
-        listView.setItems(timeSlots);
+    public void setViewModel(ItineraryDayViewModel viewModel) {
+        this.viewModel = viewModel;
+        listView.setItems(viewModel.getActivities());
     }
 
     private int findIndexByName(String name) {
