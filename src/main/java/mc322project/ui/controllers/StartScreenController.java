@@ -135,9 +135,10 @@ public class StartScreenController implements Initializable, CardParent {
                 alert.setTitle("Error");
                 alert.setHeaderText(null); // Remove header text
                 alert.showAndWait();
+                return;
             }
+            goToSecondScreen(event, readItinerary, true);
         }
-        goToSecondScreen(event, readItinerary, true);
     }
 
     private void loadCities() {
