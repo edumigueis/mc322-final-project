@@ -47,7 +47,8 @@ public class TimeSlotCardController {
 
     @FXML
     private void removeSelf() {
-        this.itineraryViewModel.removeActivity(this.timeSlotViewModel.dataProperty().get());
+        optionsMenu.hide();
+        this.itineraryViewModel.removeActivity(this.timeSlotViewModel.dataProperty().get(), this.timeSlotViewModel.appearancesProperty().get());
     }
 
     @FXML
@@ -77,7 +78,7 @@ public class TimeSlotCardController {
 
             Duration selectedDuration = controller.getSelectedDuration();
             if (selectedDuration != null) {
-                this.itineraryViewModel.alterStart(timeSlotViewModel.dataProperty().get(), timeSlotViewModel.startProperty().get().plus(selectedDuration));
+                this.itineraryViewModel.alterDuration(timeSlotViewModel.dataProperty().get(), timeSlotViewModel.appearancesProperty().get(), selectedDuration);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

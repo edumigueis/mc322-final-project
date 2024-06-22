@@ -1,8 +1,12 @@
 package mc322project.core.itinerary;
 
+import java.time.Duration;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import mc322project.entities.Transportation;
 import mc322project.entities.activities.I_Activity;
@@ -22,6 +26,12 @@ public class TimeSlot {
     @JsonFormat(pattern = "HH:mm")
     private LocalTime end;
 
+    @JsonIgnore
+    private int appearances;
+
+    @JsonIgnore
+    private Duration duration;
+
     public TimeSlot(I_Activity data, Transportation wayToNext, LocalTime start, LocalTime end) {
         validateTimes(start, end);
         validateData(data);
@@ -29,9 +39,11 @@ public class TimeSlot {
         this.wayToNext = wayToNext;
         this.start = start;
         this.end = end;
+        this.updateDuration();
     }
 
-    public TimeSlot(){}
+    public TimeSlot() {
+    }
 
     public I_Activity getData() {
         return data;
@@ -57,6 +69,7 @@ public class TimeSlot {
     public void setStart(LocalTime start) {
         validateTimes(start, this.end);
         this.start = start;
+        this.updateDuration();
     }
 
     public LocalTime getEnd() {
@@ -66,7 +79,31 @@ public class TimeSlot {
     public void setEnd(LocalTime end) {
         validateTimes(this.start, end);
         this.end = end;
+        this.updateDuration();
     }
+
+    public int getAppearances() {
+        return appearances;
+    }
+
+    public void setAppearances(int appearances) {
+        this.appearances = appearances;
+    }
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setEndFromDuration(Duration duration){
+        this.end = this.start.plus(duration);
+        this.duration = duration;
+    }
+
+    private void updateDuration() {
+        if (start != null && end != null)
+            this.duration = Duration.between(start, end);
+    }
+
 
     private void validateTimes(LocalTime start, LocalTime end) {
         if (start == null && end == null)

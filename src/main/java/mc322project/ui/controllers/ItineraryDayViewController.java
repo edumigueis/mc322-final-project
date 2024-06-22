@@ -72,8 +72,10 @@ public class ItineraryDayViewController {
                     cardsContainer.getChildren().clear();
                     populate();
                 }
-                if (c.wasRemoved())
-                    cardsContainer.getChildren().removeAll(c.getRemoved());
+                if (c.wasRemoved()){
+                    cardsContainer.getChildren().clear();
+                    populate();
+                }
             }
         });
     }

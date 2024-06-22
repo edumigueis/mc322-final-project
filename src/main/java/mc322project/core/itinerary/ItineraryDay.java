@@ -11,8 +11,8 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.IntStream;
 
 public class ItineraryDay {
     @JacksonXmlElementWrapper(localName = "activities")
@@ -42,7 +42,8 @@ public class ItineraryDay {
         this.endOfDay = LocalDateTime.of(date, LocalTime.of(23, 59));
     }
 
-    public ItineraryDay() {}
+    public ItineraryDay() {
+    }
 
     public List<TimeSlot> getActivities() {
         return activities;
@@ -79,6 +80,9 @@ public class ItineraryDay {
         LocalTime startTrns;
         LocalTime acStart;
         Transportation transportation;
+        int appearances = (int) activities.stream()
+                .filter(timeSlot -> timeSlot.getData().equals(activity))
+                .count();
 
         if (!this.activities.isEmpty()) {
             last = this.activities.getLast();
@@ -88,25 +92,24 @@ public class ItineraryDay {
             acStart = startTrns.plus(transportation.getEstimatedDuration());
         } else {
             acStart = LocalTime.of(8, 0);
-            transportation = null;
         }
 
         TimeSlot ts = new TimeSlot(activity, null, acStart, acStart.plus(Duration.ofHours(1)));
+        ts.setAppearances(appearances + 1);
         this.activities.add(ts);
     }
 
-    public void removeActivity(I_Activity activity) {
-        int pos_activity = -1;
+    public void removeActivity(I_Activity activity, int appearances) {
         int n = this.activities.size();
-        for (int i=0; i<n; i++) {
-            if (this.activities.get(i).getData() == activity) {
-                pos_activity = i;
-                break;
-            }
-        }
-        if (pos_activity == n-1) {
+        int pos_activity = IntStream.range(0, activities.size())
+                .filter(i -> activities.get(i).getData().equals(activity) && activities.get(i).getAppearances() == appearances)
+                .findFirst().orElse(-1);
+        if (pos_activity == -1)
+            throw new NoSuchElementException("This activity is absent");
+
+        if (pos_activity == n - 1) {
             this.activities.remove(n - 1);
-            if (n-2 >= 0) {
+            if (n - 2 >= 0) {
                 TimeSlot last = this.activities.get(n - 2);
                 last.setWayToNext(null);
             }
@@ -114,45 +117,64 @@ public class ItineraryDay {
         }
         if (pos_activity == 0) {
             LocalTime c_start = this.activities.getFirst().getStart();
-            for (int i=1; i<=n-1; i++) {
+            for (int i = 1; i <= n - 1; i++) {
                 TimeSlot current = this.activities.get(i);
-                Duration duration = Duration.between(current.getStart(), current.getEnd());
                 current.setStart(c_start);
-                current.setEnd(c_start.plus(duration));
-                if (i != n-1) c_start = current.getEnd().plus(current.getWayToNext().getEstimatedDuration());
+                current.setEnd(c_start.plus(current.getDuration()));
+                if (i != n - 1) c_start = current.getEnd().plus(current.getWayToNext().getEstimatedDuration());
             }
             this.activities.removeFirst();
             return;
         }
 
-        TimeSlot prev = this.activities.get(pos_activity-1);
-        TimeSlot next = this.activities.get(pos_activity+1);
+        TimeSlot prev = this.activities.get(pos_activity - 1);
+        TimeSlot next = this.activities.get(pos_activity + 1);
         Transportation transportation = Transportation.betweenPlaces(prev.getEnd(), prev.getData().getLocation(), next.getData().getLocation());
         LocalTime c_start = prev.getEnd().plus(transportation.getEstimatedDuration());
         prev.setWayToNext(transportation);
-        for (int i=pos_activity+1; i<=n-1; i++) {
+        for (int i = pos_activity + 1; i <= n - 1; i++) {
             TimeSlot current = this.activities.get(i);
-            Duration duration = Duration.between(current.getStart(), current.getEnd());
             current.setStart(c_start);
-            current.setEnd(c_start.plus(duration));
-            if (i != n-1) c_start = current.getEnd().plus(current.getWayToNext().getEstimatedDuration());
+            current.setEnd(c_start.plus(current.getDuration()));
+            if (i != n - 1) c_start = current.getEnd().plus(current.getWayToNext().getEstimatedDuration());
         }
         this.activities.remove(pos_activity);
+        System.out.println(this.activities.toString());
     }
 
-    public void swapPosition (TimeSlot timeslot, int new_position) {
+    public void alterActivityDuration(I_Activity activity, int appearances, Duration newDuration) {
+        int n = this.activities.size();
+        int posActivity = IntStream.range(0, activities.size())
+                .filter(i -> activities.get(i).getData().equals(activity) && activities.get(i).getAppearances() == appearances)
+                .findFirst().orElse(-1);
+        if (posActivity == -1)
+            throw new NoSuchElementException("This activity is absent");
+
+        TimeSlot base = activities.get(posActivity);
+        base.setEndFromDuration(newDuration);
+        if (n > 1) {
+            for (int i = posActivity; i < n; i++) {
+                TimeSlot current = activities.get(i);
+                Duration dur = current.getDuration();
+                current.setStart(activities.get(i - 1).getEnd());
+                current.setEndFromDuration(dur);
+            }
+        }
+    }
+
+    public void swapPosition(TimeSlot timeslot, int new_position) {
         int cur_position = -1;
         int n = this.activities.size();
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             if (this.activities.get(i) == timeslot) {
                 cur_position = i;
                 break;
             }
         }
         if (new_position == cur_position) return;
-        if (cur_position-1>=0 && cur_position+1<=n-1) {
-            TimeSlot prev = this.activities.get(cur_position-1);
-            TimeSlot next = this.activities.get(cur_position+1);
+        if (cur_position - 1 >= 0 && cur_position + 1 <= n - 1) {
+            TimeSlot prev = this.activities.get(cur_position - 1);
+            TimeSlot next = this.activities.get(cur_position + 1);
             Transportation transportation = Transportation.betweenPlaces(prev.getEnd(), prev.getData().getLocation(), next.getData().getLocation());
             prev.setWayToNext(transportation);
         }
@@ -163,61 +185,60 @@ public class ItineraryDay {
                 timeslot.setWayToNext(transportation2);
                 LocalTime new_start = next.getStart();
                 TimeSlot aux1 = next, aux2;
-                for (int i=new_position+1; i<=cur_position; i++) {
+                for (int i = new_position + 1; i <= cur_position; i++) {
                     aux2 = this.activities.get(i);
                     this.activities.set(i, aux1);
                     aux1 = aux2;
                 }
                 this.activities.set(new_position, timeslot);
-                Duration duration = Duration.between(timeslot.getStart(), timeslot.getEnd());
+                Duration duration = timeslot.getDuration();
                 timeslot.setStart(new_start);
                 timeslot.setEnd(new_start.plus(duration));
-                for (int i=1; i<n; i++) {
+                for (int i = 1; i < n; i++) {
                     TimeSlot current = this.activities.get(i);
-                    TimeSlot prev = this.activities.get(i-1);
-                    duration = Duration.between(current.getStart(), current.getEnd());
+                    TimeSlot prev = this.activities.get(i - 1);
+                    duration = current.getDuration();
                     current.setStart(prev.getEnd().plus(prev.getWayToNext().getEstimatedDuration()));
                     current.setEnd(current.getStart().plus(duration));
                 }
-                if (cur_position == n-1) {
+                if (cur_position == n - 1) {
                     TimeSlot last = this.activities.getLast();
                     last.setWayToNext(null);
                 }
                 return;
             }
-            TimeSlot prev = this.activities.get(new_position-1);
+            TimeSlot prev = this.activities.get(new_position - 1);
             TimeSlot next = this.activities.get(new_position);
             Transportation transportation1 = Transportation.betweenPlaces(prev.getEnd(), prev.getData().getLocation(), timeslot.getData().getLocation());
             prev.setWayToNext(transportation1);
             Transportation transportation2 = Transportation.betweenPlaces(timeslot.getEnd(), timeslot.getData().getLocation(), next.getData().getLocation());
             timeslot.setWayToNext(transportation2);
             TimeSlot aux1 = next, aux2;
-            for (int i=new_position+1; i<=cur_position; i++) {
+            for (int i = new_position + 1; i <= cur_position; i++) {
                 aux2 = this.activities.get(i);
                 this.activities.set(i, aux1);
                 aux1 = aux2;
             }
             this.activities.set(new_position, timeslot);
-            for (int i=1; i<n; i++) {
+            for (int i = 1; i < n; i++) {
                 TimeSlot current = this.activities.get(i);
-                prev = this.activities.get(i-1);
+                prev = this.activities.get(i - 1);
                 Duration duration = Duration.between(current.getStart(), current.getEnd());
                 current.setStart(prev.getEnd().plus(prev.getWayToNext().getEstimatedDuration()));
                 current.setEnd(current.getStart().plus(duration));
             }
-            if (cur_position == n-1) {
+            if (cur_position == n - 1) {
                 TimeSlot last = this.activities.getLast();
                 last.setWayToNext(null);
             }
-        }
-        else {
-            if (new_position == n-1) {
+        } else {
+            if (new_position == n - 1) {
                 TimeSlot prev = this.activities.getLast();
                 Transportation transportation1 = Transportation.betweenPlaces(prev.getEnd(), prev.getData().getLocation(), timeslot.getData().getLocation());
                 prev.setWayToNext(transportation1);
                 timeslot.setWayToNext(null);
                 TimeSlot aux1 = prev, aux2;
-                for (int i=new_position-1; i>=cur_position; i--) {
+                for (int i = new_position - 1; i >= cur_position; i--) {
                     aux2 = this.activities.get(i);
                     this.activities.set(i, aux1);
                     aux1 = aux2;
@@ -230,9 +251,9 @@ public class ItineraryDay {
                     first.setStart(new_start);
                     first.setEnd(new_start.plus(duration));
                 }
-                for (int i=1; i<n; i++) {
+                for (int i = 1; i < n; i++) {
                     TimeSlot current = this.activities.get(i);
-                    prev = this.activities.get(i-1);
+                    prev = this.activities.get(i - 1);
                     Duration duration = Duration.between(current.getStart(), current.getEnd());
                     current.setStart(prev.getEnd().plus(prev.getWayToNext().getEstimatedDuration()));
                     current.setEnd(current.getStart().plus(duration));
@@ -240,13 +261,13 @@ public class ItineraryDay {
                 return;
             }
             TimeSlot prev = this.activities.get(new_position);
-            TimeSlot next = this.activities.get(new_position+1);
+            TimeSlot next = this.activities.get(new_position + 1);
             Transportation transportation1 = Transportation.betweenPlaces(prev.getEnd(), prev.getData().getLocation(), timeslot.getData().getLocation());
             prev.setWayToNext(transportation1);
             Transportation transportation2 = Transportation.betweenPlaces(timeslot.getEnd(), timeslot.getData().getLocation(), next.getData().getLocation());
             timeslot.setWayToNext(transportation2);
             TimeSlot aux1 = prev, aux2;
-            for (int i=new_position-1; i>=cur_position; i--) {
+            for (int i = new_position - 1; i >= cur_position; i--) {
                 aux2 = this.activities.get(i);
                 this.activities.set(i, aux1);
                 aux1 = aux2;
@@ -259,9 +280,9 @@ public class ItineraryDay {
                 first.setStart(new_start);
                 first.setEnd(new_start.plus(duration));
             }
-            for (int i=1; i<n; i++) {
+            for (int i = 1; i < n; i++) {
                 TimeSlot current = this.activities.get(i);
-                prev = this.activities.get(i-1);
+                prev = this.activities.get(i - 1);
                 Duration duration = Duration.between(current.getStart(), current.getEnd());
                 current.setStart(prev.getEnd().plus(prev.getWayToNext().getEstimatedDuration()));
                 current.setEnd(current.getStart().plus(duration));

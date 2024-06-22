@@ -10,6 +10,7 @@ import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -58,14 +59,14 @@ public class ItineraryDayViewModel {
         refreshActivities();
     }
 
-    public void alterStart(I_Activity activity, LocalTime newStart) {
-        // TO DO: implement
-        System.out.println(newStart.toString());
+    public void alterDuration(I_Activity activity, int appearances, Duration newDuration) {
+        itineraryDay.alterActivityDuration(activity, appearances, newDuration);
+        System.out.println(newDuration.toString());
     }
 
     // Additional methods to manipulate activities
-    public void removeActivity(I_Activity activity) {
-        itineraryDay.removeActivity(activity);
+    public void removeActivity(I_Activity activity, int appearances) {
+        itineraryDay.removeActivity(activity, appearances);
         refreshActivities();
     }
 
