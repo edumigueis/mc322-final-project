@@ -61,10 +61,9 @@ public class ItineraryDayViewModel {
 
     public void alterDuration(I_Activity activity, int appearances, Duration newDuration) {
         itineraryDay.alterActivityDuration(activity, appearances, newDuration);
-        System.out.println(newDuration.toString());
+        refreshActivities();
     }
 
-    // Additional methods to manipulate activities
     public void removeActivity(I_Activity activity, int appearances) {
         itineraryDay.removeActivity(activity, appearances);
         refreshActivities();

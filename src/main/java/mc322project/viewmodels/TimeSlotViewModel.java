@@ -27,7 +27,6 @@ public class TimeSlotViewModel {
 
         this.durationProperty.bind(Bindings.createObjectBinding(timeSlot::getDuration));
         this.appearancesProperty.bind(Bindings.createObjectBinding(timeSlot::getAppearances));
-
     }
 
     public ObjectProperty<I_Activity> dataProperty() {

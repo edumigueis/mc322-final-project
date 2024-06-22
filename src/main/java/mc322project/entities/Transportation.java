@@ -71,19 +71,19 @@ public class Transportation {
     public static Transportation betweenPlaces(LocalTime startTime, Location start, Location end) {
         double distance = start.calculateDistance(end);
         TransportationType suggested;
-        if (distance < 2000) {
+        if (distance < 2) {
             suggested = TransportationType.WALK;
-        } else if (distance >= 2000 && distance < 15000) {
+        } else if (distance >= 2 && distance < 20) {
             suggested = TransportationType.CAR;
         } else
             suggested = TransportationType.BUS;
-        //TO DO: ALTERAR TUDO PRA KM/H
+
         double duration = distance / suggested.getAverageSpeed();
 
         float price = estimatePrice(distance, suggested);
 
         // Create and return the Transportation instance
-        return new Transportation(suggested, Duration.ofHours((long) duration), startTime, price);
+        return new Transportation(suggested, Duration.ofSeconds((long)(duration * 3600)), startTime, price);
     }
 
     private static float estimatePrice(double distance, TransportationType type) {

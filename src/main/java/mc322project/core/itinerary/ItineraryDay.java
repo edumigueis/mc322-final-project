@@ -153,7 +153,7 @@ public class ItineraryDay {
         TimeSlot base = activities.get(posActivity);
         base.setEndFromDuration(newDuration);
         if (n > 1) {
-            for (int i = posActivity; i < n; i++) {
+            for (int i = posActivity + 1; i < n; i++) {
                 TimeSlot current = activities.get(i);
                 Duration dur = current.getDuration();
                 current.setStart(activities.get(i - 1).getEnd());
