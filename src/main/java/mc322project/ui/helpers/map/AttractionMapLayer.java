@@ -35,9 +35,7 @@ public class AttractionMapLayer extends MapLayer {
             Tooltip tooltip = new Tooltip("Name: " + attraction.getName() + "\nPrice: $" + attraction.getPrice());
             Tooltip.install(marker, tooltip);
 
-            marker.setOnMouseClicked((MouseEvent event) -> {
-                listener.onAttractionClicked(attraction);
-            });
+            marker.setOnMouseClicked((MouseEvent event) -> listener.onAttractionClicked(attraction));
 
             markers.add(marker);
             getChildren().add(marker);

@@ -40,32 +40,16 @@ public class Transportation {
         return type;
     }
 
-    public void setType(TransportationType type) {
-        this.type = type;
-    }
-
     public Duration getEstimatedDuration() {
         return estimatedDuration;
-    }
-
-    public void setEstimatedDuration(Duration estimatedDuration) {
-        this.estimatedDuration = estimatedDuration;
     }
 
     public LocalTime getStart() {
         return start;
     }
 
-    public void setStart(LocalTime start) {
-        this.start = start;
-    }
-
     public float getPrice() {
         return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
     }
 
     public static Transportation betweenPlaces(LocalTime startTime, Location start, Location end) {

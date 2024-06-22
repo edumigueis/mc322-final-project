@@ -30,7 +30,7 @@ public class DateSelectorController implements Initializable {
         datePickerStart.setValue(LocalDate.now()); // Set today's date as default
         datePickerEnd.setValue(LocalDate.now().plusDays(1)); // Set tomorrow's date as default
 
-        datePickerEnd.setDayCellFactory(new Callback<DatePicker, DateCell>() {
+        datePickerEnd.setDayCellFactory(new Callback<>() {
             @Override
             public DateCell call(DatePicker param) {
                 return new DateCell() {

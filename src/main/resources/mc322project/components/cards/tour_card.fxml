@@ -8,6 +8,5 @@
     <Region minHeight="20"/>
     <VBox>
         <Label fx:id="titleLabel" styleClass="green-title"/>
-        <Label fx:id="businessTimeLabel" styleClass="small-title"/>
     </VBox>
 </VBox>

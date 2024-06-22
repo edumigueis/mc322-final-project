@@ -1,14 +1,10 @@
 module mc322project {
     requires javafx.controls;
     requires com.gluonhq.maps;
-    requires com.gluonhq.attach.storage;
-    requires com.gluonhq.attach.util;
     requires javafx.fxml;
     requires javafx.graphics;
     requires javafx.base;
     requires org.kordamp.ikonli.javafx;
-    requires org.kordamp.ikonli.core;
-    requires org.kordamp.ikonli.jam;
     requires com.fasterxml.jackson.dataformat.xml;
     requires com.fasterxml.jackson.datatype.jsr310;
     requires com.fasterxml.jackson.annotation;

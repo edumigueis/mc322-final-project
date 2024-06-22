@@ -1,7 +1,6 @@
 package mc322project.ui.controllers;
 
 import java.io.IOException;
-import java.util.List;
 
 import com.gluonhq.maps.MapPoint;
 import com.gluonhq.maps.MapView;
@@ -9,7 +8,6 @@ import mc322project.GUIStarter;
 import mc322project.entities.Hotel;
 import mc322project.entities.activities.I_Activity;
 import javafx.application.Platform;
-import javafx.collections.ListChangeListener;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -100,10 +98,10 @@ public class AttractionModalController implements FilterBarController.FilterChan
         cardsContainer.setItems(cityViewModel.getThingsToDo());
         FilteredList<I_Activity> filteredActivities;
 
-        if (filter.getCategory().equals("All")) {
-            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (filter.getPriceRange().contains(i.getPrice())));
+        if (filter.category().equals("All")) {
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (filter.priceRange().contains(i.getPrice())));
         } else {
-            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.getCategory())) && (filter.getPriceRange().contains(i.getPrice())));
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.category())) && (filter.priceRange().contains(i.getPrice())));
         }
         cardsContainer.setItems(filteredActivities);
         pinLayer.updateMarkers(filteredActivities);

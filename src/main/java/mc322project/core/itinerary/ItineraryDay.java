@@ -139,7 +139,6 @@ public class ItineraryDay {
             if (i != n - 1) c_start = current.getEnd().plus(current.getWayToNext().getEstimatedDuration());
         }
         this.activities.remove(pos_activity);
-        System.out.println(this.activities.toString());
     }
 
     public void alterActivityDuration(I_Activity activity, int appearances, Duration newDuration) {

@@ -13,7 +13,7 @@
             fitToHeight="true">
     <StackPane>
         <VBox styleClass="main-container" alignment="center"
-              spacing="15" VBox.vgrow="ALWAYS">
+              spacing="20" VBox.vgrow="ALWAYS">
             <padding>
                 <Insets left="20" right="20" top="15" bottom="15"/>
             </padding>
@@ -30,11 +30,11 @@
                     <Pane fx:id="dateContainer"/>
                 </HBox>
             </VBox>
-            <VBox spacing="5" VBox.vgrow="ALWAYS" alignment="CENTER">
+            <VBox spacing="25" VBox.vgrow="ALWAYS" alignment="CENTER">
                 <Label text="Select a city" styleClass="small-title"/>
                 <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="no-pane">
                     <HBox alignment="CENTER">
-                        <GridPane hgap="20" vgap="20" fx:id="cityGrid" minWidth="700" alignment="center">
+                        <GridPane hgap="20" vgap="20" fx:id="cityGrid" minWidth="700" alignment="TOP_CENTER">
                             <columnConstraints>
                                 <ColumnConstraints percentWidth="33.33333" halignment="CENTER"/>
                                 <ColumnConstraints percentWidth="33.33333" halignment="CENTER"/>

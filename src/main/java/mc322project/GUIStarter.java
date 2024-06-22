@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class GUIStarter extends Application {
     @Override
@@ -15,8 +16,8 @@ public class GUIStarter extends Application {
         Parent root = loader.load();
         System.setProperty("javafx.verbose", "true");
         Scene scene = new Scene(root, 800, 600);
-        String stylesheet = GUIStarter.class.getResource("styling/styles.css").toExternalForm();
-        String stylesheet2 = GUIStarter.class.getResource("styling/date_selector.css").toExternalForm();
+        String stylesheet = Objects.requireNonNull(GUIStarter.class.getResource("styling/styles.css")).toExternalForm();
+        String stylesheet2 = Objects.requireNonNull(GUIStarter.class.getResource("styling/date_selector.css")).toExternalForm();
         scene.getStylesheets().add(stylesheet);
         scene.getStylesheets().add(stylesheet2);
         stage.setTitle("Itinerary Maker");

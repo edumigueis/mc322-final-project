@@ -39,54 +39,31 @@ public class City {
         this.location = loc;
     }
 
-    public City() {}
+    public City() {
+    }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getThumbImageUrl() {
         return thumbImageUrl;
-    }
-
-    public void setThumbImageUrl(String thumbImageUrl) {
-        this.thumbImageUrl = thumbImageUrl;
     }
 
     public List<I_Activity> getThingsToDo() {
         return thingsToDo;
     }
 
-    public void setThingsToDo(List<I_Activity> thingsToDo) {
-        this.thingsToDo = thingsToDo;
-    }
-
     public List<Hotel> getHotels() {
         return hotels;
     }
 
-    public void setHotels(List<Hotel> hotels) {
-        this.hotels = hotels;
-    }
-
     public Location getLocation() {
         return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
     }
 
     @Override

@@ -2,8 +2,6 @@ package mc322project.core.itinerary;
 
 import java.time.Duration;
 import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
-import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -12,7 +10,7 @@ import mc322project.entities.Transportation;
 import mc322project.entities.activities.I_Activity;
 
 public class TimeSlot {
-    @JacksonXmlProperty(localName = "mc322project/data")
+    @JacksonXmlProperty(localName = "data")
     private I_Activity data;
 
     @JacksonXmlProperty(localName = "way-to-next")
@@ -94,7 +92,7 @@ public class TimeSlot {
         return duration;
     }
 
-    public void setEndFromDuration(Duration duration){
+    public void setEndFromDuration(Duration duration) {
         this.end = this.start.plus(duration);
         this.duration = duration;
     }

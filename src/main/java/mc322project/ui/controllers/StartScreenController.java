@@ -1,17 +1,10 @@
 package mc322project.ui.controllers;
 
 import java.io.*;
-import java.io.File;
-import java.io.IOException;
 import java.net.URL;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -93,7 +86,7 @@ public class StartScreenController implements Initializable, CardParent {
 
             Scene scene = new Scene(root, 900, 600);
             Stage stage = new Stage();
-            String stylesheet = GUIStarter.class.getResource("styling/styles.css").toExternalForm();
+            String stylesheet = Objects.requireNonNull(GUIStarter.class.getResource("styling/styles.css")).toExternalForm();
             scene.getStylesheets().add(stylesheet);
 
             stage.setScene(scene);
@@ -126,8 +119,8 @@ public class StartScreenController implements Initializable, CardParent {
 
         xmlMapper.registerModule(javaTimeModule);
 
-        Itinerary readItinerary = null;
         if (file != null) {
+            Itinerary readItinerary;
             try {
                 readItinerary = xmlMapper.readValue(file, Itinerary.class);
             } catch (IOException e) {
@@ -142,7 +135,7 @@ public class StartScreenController implements Initializable, CardParent {
     }
 
     private void loadCities() {
-        this.cityGrid.setMinHeight((double)(((this.cities.size() + 2) / 3) * 250));
+        this.cityGrid.setMinHeight(((double) (this.cities.size() + 2) / 3) * 250);
         for (int i = 0; i < this.cities.size(); i++) {
             CityCard card = new CityCard(this);
             card.getController().setData(cities.get(i), i);

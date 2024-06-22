@@ -67,10 +67,6 @@ public class Itinerary {
         return city;
     }
 
-    public void setCity(City city) {
-        this.city = city;
-    }
-
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -97,10 +93,6 @@ public class Itinerary {
 
     public List<ItineraryDay> getItineraryDayList() {
         return itineraryDayList;
-    }
-
-    public void setItineraryDayList(List<ItineraryDay> itineraryDayList) {
-        this.itineraryDayList = itineraryDayList;
     }
 
     public int getDuration() {

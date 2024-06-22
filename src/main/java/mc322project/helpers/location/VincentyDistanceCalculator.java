@@ -34,9 +34,8 @@ public class VincentyDistanceCalculator implements DistanceCalculator {
         do {
             double sinLambda = Math.sin(lambda);
             double cosLambda = Math.cos(lambda);
-            sinSigma = Math.sqrt((cosU2 * sinLambda) * (cosU2 * sinLambda) +
-                    (cosU1 * sinU2 - sinU1 * cosU2 * cosLambda) *
-                            (cosU1 * sinU2 - sinU1 * cosU2 * cosLambda));
+            double v = cosU1 * sinU2 - sinU1 * cosU2 * cosLambda;
+            sinSigma = Math.sqrt((cosU2 * sinLambda) * (cosU2 * sinLambda) + v * v);
             if (sinSigma == 0) {
                 return 0; // Co-incident points
             }
@@ -59,8 +58,7 @@ public class VincentyDistanceCalculator implements DistanceCalculator {
         double deltaSigma = B * sinSigma * (cos2SigmaM + B / 4 *
                 (cosSigma * (-1 + 2 * cos2SigmaM * cos2SigmaM) - B / 6 * cos2SigmaM *
                         (-3 + 4 * sinSigma * sinSigma) * (-3 + 4 * cos2SigmaM * cos2SigmaM)));
-        double s = 6356752.314245179 * A * (sigma - deltaSigma); // Distance in meters
 
-        return s;
+        return 6356752.314245179 * A * (sigma - deltaSigma);
     }
 }

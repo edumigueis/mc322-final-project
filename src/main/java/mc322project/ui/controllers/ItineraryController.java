@@ -54,7 +54,7 @@ public class ItineraryController {
     }
 
     private void startCards(boolean preLoaded) {
-        List<ItineraryDayView> views = new ArrayList<ItineraryDayView>();
+        List<ItineraryDayView> views = new ArrayList<>();
         LocalDate startUp = this.itinerary.getStartDate();
         for (int i = 0; i < this.itinerary.getDuration(); i++) {
             ItineraryDayView view = new ItineraryDayView();
