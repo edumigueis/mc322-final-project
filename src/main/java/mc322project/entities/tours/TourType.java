@@ -1,4 +1,4 @@
-package mc322project.entities;
+package mc322project.entities.tours;
 
 public enum TourType {
     EAT_AND_DRINK,

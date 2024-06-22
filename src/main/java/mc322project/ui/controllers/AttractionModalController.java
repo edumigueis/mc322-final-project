@@ -16,6 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import mc322project.entities.activities.Places;
 import mc322project.ui.components.AttractionCardCell;
 import mc322project.ui.components.CustomAlert;
 import mc322project.ui.components.Filter;
@@ -102,7 +103,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
         if (filter.category().equals("All")) {
             filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (filter.priceRange().contains(i.getPrice())));
         } else {
-            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (i.getCategory().getStringValue().equals(filter.category())) && (filter.priceRange().contains(i.getPrice())));
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (((Places) i).getCategory().getStringValue().equals(filter.category())) && (filter.priceRange().contains(i.getPrice())));
         }
         cardsContainer.setItems(filteredActivities);
         pinLayer.updateMarkers(filteredActivities);

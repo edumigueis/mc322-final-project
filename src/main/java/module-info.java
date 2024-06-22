@@ -21,4 +21,5 @@ module mc322project {
     opens mc322project.entities to com.fasterxml.jackson.databind;
     opens mc322project.helpers.location to com.fasterxml.jackson.databind;
     opens mc322project.helpers to com.fasterxml.jackson.databind;
+    opens mc322project.entities.tours to com.fasterxml.jackson.databind;
 }

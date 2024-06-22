@@ -44,7 +44,8 @@ public abstract class Places implements I_Activity {
         this.price = price;
     }
 
-    public Places() {}
+    public Places() {
+    }
 
     @Override
     public Location getLocation() {
@@ -94,12 +95,10 @@ public abstract class Places implements I_Activity {
         this.imageThumbURL = imageThumbURL;
     }
 
-    @Override
     public Categories getCategory() {
         return this.category;
     }
 
-    @Override
     public void setCategory(Categories category) {
         this.category = category;
     }
