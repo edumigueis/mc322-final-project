@@ -1,5 +1,7 @@
 package mc322project.ui.controllers;
 
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import mc322project.GUIStarter;
 import mc322project.core.itinerary.TimeSlot;
 import javafx.fxml.FXML;
@@ -10,6 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import mc322project.entities.activities.I_Activity;
+import mc322project.entities.activities.Places;
+import mc322project.entities.tours.Tour;
 import mc322project.ui.components.CustomAlert;
 import mc322project.ui.components.ExpandableText;
 import mc322project.ui.components.ResponsiveImage;
@@ -32,18 +37,35 @@ public class TimeSlotCardController {
     private ExpandableText descriptionLabel;
     @FXML
     private MenuButton optionsMenu;
+    @FXML
+    private Label tourLanguage;
+    @FXML
+    private VBox tourData;
+    @FXML
+    private GridPane mainContainer;
 
     private ItineraryDayViewModel itineraryViewModel;
     private TimeSlotViewModel timeSlotViewModel;
 
     public void initData(TimeSlotViewModel viewModel, ItineraryDayViewModel itineraryViewModel) {
+        I_Activity data = viewModel.dataProperty().get();
+        if(data instanceof Tour){
+            mainContainer.setPrefHeight(250);
+            tourLanguage.setText(((Tour) data).getLanguage());
+            for(I_Activity activity: ((Tour) data).getAttractionList()){
+                tourData.getChildren().add(new Label(activity.getName()));
+            }
+        } else if (data instanceof Places) {
+            tourData.setVisible(false);
+            tourLanguage.setVisible(false);
+        }
         this.itineraryViewModel = itineraryViewModel;
         this.timeSlotViewModel = viewModel;
         titleLabel.textProperty().bind(timeSlotViewModel.nameBinding());
         optionsMenu.textProperty().bind(timeSlotViewModel.startTimeBinding());
         durationLabel.textProperty().bind(timeSlotViewModel.durationBinding());
         descriptionLabel.fullTextProperty().bind(timeSlotViewModel.descriptionBinding());
-        imageContainer.setImageUrl(timeSlotViewModel.dataProperty().get().getImageThumbURL());
+        imageContainer.setImageUrl(data.getImageThumbURL());
     }
 
     @FXML

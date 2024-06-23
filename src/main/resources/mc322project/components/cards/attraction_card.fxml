@@ -28,16 +28,19 @@
             <Insets top="10" bottom="15" left="15" right="15"/>
         </padding>
         <VBox>
-            <Label text="Name of Place" maxWidth="150" wrapText="true" fx:id="titleLabel" styleClass="green-title"/>
+            <Label prefWidth="150" wrapText="true" fx:id="titleLabel" styleClass="green-title"/>
+            <VBox fx:id="expandableTextPlaceholder1"/>
+            <Label fx:id="tourSpecifics"/>
             <Region VBox.vgrow="ALWAYS"/>
-            <Label text="Time" fx:id="businessTimeLabel" styleClass="extra-small-title"/>
+            <Label fx:id="businessTimeLabel" styleClass="extra-small-title"/>
+            <Label fx:id="languageLabel" styleClass="extra-small-title"/>
         </VBox>
         <Region HBox.hgrow="ALWAYS"/>
-        <VBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-            <ExpandableText fx:id="descriptionLabel"
-                            maximumWidth="260"
-                            maxLength="100"
-                            styleClass="expandable-text"/>
+        <VBox spacing="4" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+            <VBox fx:id="expandableTextPlaceholder2"/>
+            <VBox fx:id="tourData" minWidth="70">
+                <Label text="Stops at: " styleClass="small-white-title"/>
+            </VBox>
             <Region VBox.vgrow="ALWAYS"/>
             <Label alignment="CENTER_RIGHT" text="\$10" fx:id="priceLabel" styleClass="small-title"/>
         </VBox>

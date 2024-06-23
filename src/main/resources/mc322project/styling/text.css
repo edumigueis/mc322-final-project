@@ -1,15 +1,25 @@
 .label.small-title {
-     -fx-font-weight: bold;
      -fx-font-size: 13px;
      -fx-text-fill: #CDCDCD;
      -fx-font-family: "Overpass Extra";
 }
 
 .label.extra-small-title {
-     -fx-font-weight: bold;
      -fx-font-size: 11px;
      -fx-text-fill: #CDCDCD;
      -fx-font-family: "Overpass Extra";
+}
+
+.label.small-text-list-item {
+     -fx-font-size: 10px;
+     -fx-text-fill: #CDCDCD;
+     -fx-font-family: "Overpass Light";
+}
+
+.label.small-white-title {
+     -fx-font-size: 11px;
+     -fx-text-fill: #FFFFFF;
+     -fx-font-family: "Overpass Bold";
 }
 
 .label.text {

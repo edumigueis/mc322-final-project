@@ -8,10 +8,11 @@
 <?import mc322project.ui.components.ExpandableText?>
 <GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="mc322project.ui.controllers.TimeSlotCardController" prefHeight="130" hgap="10"
-          styleClass="attraction-card" minHeight="130">
+          fx:id="mainContainer"
+          styleClass="attraction-card">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" prefWidth="130.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" percentWidth="60.0" prefWidth="195.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="60.0"/>
     </columnConstraints>
     <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES"/>
@@ -31,6 +32,7 @@
                     <MenuItem styleClass="yellow-bullet-item" onAction="#alterOrder" text="Alter Start"/>
                 </items>
             </MenuButton>
+            <Label fx:id="tourLanguage" AnchorPane.bottomAnchor="5" AnchorPane.rightAnchor="5"/>
         </AnchorPane>
     </StackPane>
     <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="195.0">
@@ -43,6 +45,11 @@
                 <Insets top="5" bottom="5"/>
             </padding>
         </ExpandableText>
+        <ScrollPane prefHeight="100">
+            <VBox fx:id="tourData">
+
+            </VBox>
+        </ScrollPane>
         <Region VBox.vgrow="ALWAYS"/>
         <Label fx:id="durationLabel" styleClass="small-title"/>
     </VBox>

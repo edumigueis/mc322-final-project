@@ -48,7 +48,11 @@ public class ResponsiveImage extends StackPane {
     }
 
     public final void setImageUrl(String value) {
-        imageUrl.set(value);
+        if(value == null){
+            System.out.println("Image will not be shown.");
+            return;
+        }
+        imageUrl.set(formatUrl(value));
         updateBackground();
     }
 
@@ -95,22 +99,21 @@ public class ResponsiveImage extends StackPane {
             ProgressBar progressBar = new ProgressBar();
             progressBar.setProgress(-1);
             getChildren().addAll(region, progressBar);
-            String formattedUrl = formatUrl(url);
             // Check if image is already cached
             if (imageCache.containsImage(url)) {
-                Image cachedImage = imageCache.getImage(formattedUrl);
+                Image cachedImage = imageCache.getImage(url);
                 setBackgroundImage(region, cachedImage);
                 progressBar.setVisible(false); // Hide progress bar since image is already loaded
             } else {
                 // Image not cached, load it and cache
-                Image backgroundImage = new Image(formattedUrl, imgWidth.get(), imgHeight.get(), true, true, true);
+                Image backgroundImage = new Image(url, imgWidth.get(), imgHeight.get(), true, true, true);
                 backgroundImage.progressProperty().addListener((obs, oldProgress, newProgress) -> {
                     progressBar.setProgress(newProgress.doubleValue());
 
                     if (newProgress.doubleValue() >= 1.0) {
                         setBackgroundImage(region, backgroundImage);
                         progressBar.setVisible(false); // Hide progress bar
-                        imageCache.putImage(formattedUrl, backgroundImage); // Cache the loaded image
+                        imageCache.putImage(url, backgroundImage); // Cache the loaded image
                     }
                 });
             }

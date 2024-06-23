@@ -21,17 +21,22 @@ import mc322project.helpers.location.Location;
 public interface I_Activity {
 
     String getName();
+
     void setName(String name);
 
     String getDescription();
+
     void setDescription(String name);
 
     Location getLocation();
+
     void setLocation(Location location);
 
     double getPrice();
+
     void setPrice(double price);
 
     String getImageThumbURL();
+
     void setImageThumbURL(String name);
 }

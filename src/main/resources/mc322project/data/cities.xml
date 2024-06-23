@@ -288,6 +288,71 @@
                 </imageThumbURL>
                 <price>30.0</price>
             </activity>
+            <activity>
+                <type>CITY_TOUR</type>
+                <name>Aloooooo</name>
+                <imageThumbURL>
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/GG-ftpoint-bridge-2.jpg/1280px-GG-ftpoint-bridge-2.jpg
+                </imageThumbURL>
+                <location>
+                    <latitude>37.8267</latitude>
+                    <longitude>-122.4233</longitude>
+                </location>
+                <description>Former federal prison known for housing notorious criminals, now a popular tourist
+                    attraction offering tours of its historic facilities.
+                </description>
+                <language>EN</language>
+                <category>CITY_TOURING</category>
+                <price>49.0</price>
+                <activities>
+                    <activity type="TOURISTIC_SIGHTS">
+                        <name>Golden Gate Bridge</name>
+                        <imageThumbURL>
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/GG-ftpoint-bridge-2.jpg/1280px-GG-ftpoint-bridge-2.jpg
+                        </imageThumbURL>
+                        <location>
+                            <latitude>37.8199</latitude>
+                            <longitude>-122.4783</longitude>
+                        </location>
+                        <openTime>
+                            <day>
+                                <key>MONDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>TUESDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>WEDNESDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>THURSDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>FRIDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>SATURDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>SUNDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                        </openTime>
+                        <description>Iconic suspension bridge connecting San Francisco Bay and the Pacific
+                            Ocean, offering
+                            stunning views and scenic walks.
+                        </description>
+                        <category>TOURISTIC_SIGHTS</category>
+                        <price>0.0</price>
+                    </activity>
+                </activities>
+            </activity>
         </things-to-do>
         <hotels>
             <hotel>

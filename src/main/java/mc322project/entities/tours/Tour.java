@@ -1,18 +1,18 @@
 package mc322project.entities.tours;
 
-import java.time.LocalTime;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import mc322project.entities.activities.I_Activity;
-import mc322project.entities.activities.Places;
 import mc322project.helpers.location.Location;
 
 public abstract class Tour implements I_Activity {
-    @JacksonXmlProperty(localName = "name")private String name;
-    @JacksonXmlProperty(localName = "imageThumbURL")private String imageThumbURL;
+    @JacksonXmlProperty(localName = "name")
+    private String name;
+    @JacksonXmlProperty(localName = "imageThumbURL")
+    private String imageThumbURL;
     @JacksonXmlProperty(localName = "location")
     private Location location;
     @JacksonXmlProperty(localName = "description")
@@ -42,18 +42,31 @@ public abstract class Tour implements I_Activity {
         this.type = type;
     }
 
+    public Tour() {
+    }
+    @Override
     public String getName() {
         return name;
     }
-
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
+    public String getImageThumbURL() {
+        return imageThumbURL;
+    }
+
+    @Override
+    public void setImageThumbURL(String imageThumbURL) {
+        this.imageThumbURL = imageThumbURL;
+    }
+    @Override
     public String getDescription() {
         return description;
     }
-
+    @Override
     public void setDescription(String description) {
         this.description = description;
     }
@@ -76,16 +89,6 @@ public abstract class Tour implements I_Activity {
     @Override
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public String getImageThumbURL() {
-        return imageThumbURL;
-    }
-
-    @Override
-    public void setImageThumbURL(String name) {
-        this.imageThumbURL = imageThumbURL;
     }
 
     public String getLanguage() {
