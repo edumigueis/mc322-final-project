@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mc322project.entities.activities.Places;
+import mc322project.entities.tours.Tour;
 import mc322project.ui.components.AttractionCardCell;
 import mc322project.ui.components.CustomAlert;
 import mc322project.ui.components.Filter;
@@ -103,7 +104,7 @@ public class AttractionModalController implements FilterBarController.FilterChan
         if (filter.category().equals("All")) {
             filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (filter.priceRange().contains(i.getPrice())));
         } else {
-            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (((Places) i).getCategory().getStringValue().equals(filter.category())) && (filter.priceRange().contains(i.getPrice())));
+            filteredActivities = new FilteredList<>(cardsContainer.getItems(), i -> (!(i instanceof Tour) && ((Places) i).getCategory().getStringValue().equals(filter.category())) && (filter.priceRange().contains(i.getPrice())));
         }
         cardsContainer.setItems(filteredActivities);
         pinLayer.updateMarkers(filteredActivities);
@@ -114,10 +115,10 @@ public class AttractionModalController implements FilterBarController.FilterChan
         I_Activity value = cardsContainer.getSelectionModel().getSelectedItem();
 
         // Call the callback method with the return value
-        if (value != null){
-            try{
+        if (value != null) {
+            try {
                 viewModel.addActivity(value);
-            }catch(UnsupportedOperationException e){
+            } catch (UnsupportedOperationException e) {
                 CustomAlert alert = CustomAlert.createWarningAlert("This duration is too long for this day.");
                 alert.setTitle("Warning");
                 alert.setHeaderText(null); // Remove header text

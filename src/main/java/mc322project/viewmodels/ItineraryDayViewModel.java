@@ -69,7 +69,7 @@ public class ItineraryDayViewModel {
 
     public void swapActivity(TimeSlot slot, int currIndex, int newIndex) {
         itineraryDay.swapPosition(slot, currIndex, newIndex);
-        //refreshActivities();
+        refreshActivities();
     }
 
     private void refreshActivities() {
