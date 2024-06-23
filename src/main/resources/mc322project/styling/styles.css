@@ -202,3 +202,16 @@
     -fx-background-color: #F7FF88;
     -fx-text-fill: #070606;
 }
+
+.tour-language-wrapper{
+    -fx-background-color: #CDCDCD;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 2 5;
+}
+
+.tour-language-wrapper > .label{
+    -fx-font-size: 12px;
+    -fx-text-fill: #070606;
+    -fx-font-family: "Overpass Bold";
+}
