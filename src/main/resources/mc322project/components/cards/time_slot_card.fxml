@@ -45,9 +45,9 @@
                 <Insets top="5" bottom="5"/>
             </padding>
         </ExpandableText>
-        <ScrollPane prefHeight="100">
+        <ScrollPane maxHeight="60" styleClass="no-pane">
             <VBox fx:id="tourData">
-
+                <Label text="Stops at: " styleClass="small-white-title"/>
             </VBox>
         </ScrollPane>
         <Region VBox.vgrow="ALWAYS"/>

@@ -49,16 +49,21 @@ public class TimeSlotCardController {
 
     public void initData(TimeSlotViewModel viewModel, ItineraryDayViewModel itineraryViewModel) {
         I_Activity data = viewModel.dataProperty().get();
-        if(data instanceof Tour){
-            mainContainer.setPrefHeight(250);
+
+        if (data instanceof Tour) {
+            mainContainer.setPrefHeight(230);
             tourLanguage.setText(((Tour) data).getLanguage());
-            for(I_Activity activity: ((Tour) data).getAttractionList()){
-                tourData.getChildren().add(new Label(activity.getName()));
+
+            for (I_Activity activity : ((Tour) data).getAttractionList()) {
+                Label l = new Label(activity.getName());
+                l.getStyleClass().add("small-text-list-item");
+                tourData.getChildren().add(l);
             }
         } else if (data instanceof Places) {
             tourData.setVisible(false);
             tourLanguage.setVisible(false);
         }
+
         this.itineraryViewModel = itineraryViewModel;
         this.timeSlotViewModel = viewModel;
         titleLabel.textProperty().bind(timeSlotViewModel.nameBinding());

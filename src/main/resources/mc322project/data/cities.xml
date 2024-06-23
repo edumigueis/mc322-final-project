@@ -289,67 +289,183 @@
                 <price>30.0</price>
             </activity>
             <activity>
-                <type>CITY_TOUR</type>
-                <name>Aloooooo</name>
+                <type>TOURISTIC_SIGHTS</type>
+                <category>TOURISTIC_SIGHTS</category>
+                <name>Sacré Couer</name>
+                <location>
+                    <latitude>48.8867</latitude> <!-- Corrected latitude for Sacré-Cœur -->
+                    <longitude>2.3431</longitude> <!-- Corrected longitude for Sacré-Cœur -->
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>06:00-22:30</value> <!-- Sample opening hours for Sacré-Cœur -->
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                </openTime>
+                <description>Sacré-Cœur Basilica is a Roman Catholic church and minor basilica, dedicated to the Sacred
+                    Heart of Jesus, in Paris, France.
+                </description>
                 <imageThumbURL>
-                    https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/GG-ftpoint-bridge-2.jpg/1280px-GG-ftpoint-bridge-2.jpg
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sacre_Coeur1.JPG/1200px-Sacre_Coeur1.JPG
+                </imageThumbURL>
+                <price>0.0</price>
+                <images>
+                    <url>
+                        https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Basilique_du_Sacre_Coeur_de_Montmartre.jpg/1200px-Basilique_du_Sacre_Coeur_de_Montmartre.jpg
+                    </url>
+                    <url>
+                        https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg/1200px-Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg
+                    </url>
+                    <url>
+                        https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sacre_Coeur_Paris_France.jpg/1200px-Sacre_Coeur_Paris_France.jpg
+                    </url>
+                </images>
+            </activity>
+            <activity>
+                <type>CITY_TOUR</type>
+                <name>Paris is Burning</name>
+                <imageThumbURL>
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sacre_Coeur_1.JPG/1200px-Sacre_Coeur_1.JPG
                 </imageThumbURL>
                 <location>
-                    <latitude>37.8267</latitude>
-                    <longitude>-122.4233</longitude>
+                    <latitude>48.885496458</latitude>
+                    <longitude>2.337998648</longitude>
                 </location>
-                <description>Former federal prison known for housing notorious criminals, now a popular tourist
-                    attraction offering tours of its historic facilities.
+                <description>Experience the vibrant and historic side of Paris with the "Paris is Burning" tour. This
+                    unforgettable journey takes you to two of the city's most iconic landmarks: the legendary Moulin
+                    Rouge.
                 </description>
                 <language>EN</language>
                 <category>CITY_TOURING</category>
                 <price>49.0</price>
                 <activities>
-                    <activity type="TOURISTIC_SIGHTS">
-                        <name>Golden Gate Bridge</name>
-                        <imageThumbURL>
-                            https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/GG-ftpoint-bridge-2.jpg/1280px-GG-ftpoint-bridge-2.jpg
-                        </imageThumbURL>
+                    <activity>
+                        <type>TOURISTIC_SIGHTS</type>
+                        <category>TOURISTIC_SIGHTS</category>
+                        <name>Sacré Couer</name>
                         <location>
-                            <latitude>37.8199</latitude>
-                            <longitude>-122.4783</longitude>
+                            <latitude>48.8867</latitude> <!-- Corrected latitude for Sacré-Cœur -->
+                            <longitude>2.3431</longitude> <!-- Corrected longitude for Sacré-Cœur -->
                         </location>
                         <openTime>
                             <day>
                                 <key>MONDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>06:00-22:30</value> <!-- Sample opening hours for Sacré-Cœur -->
                             </day>
                             <day>
                                 <key>TUESDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>WEDNESDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>THURSDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>FRIDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>SATURDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>SUNDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>06:00-22:30</value>
                             </day>
                         </openTime>
-                        <description>Iconic suspension bridge connecting San Francisco Bay and the Pacific
-                            Ocean, offering
-                            stunning views and scenic walks.
+                        <description>Sacré-Cœur Basilica is a Roman Catholic church and minor basilica, dedicated to the
+                            Sacred Heart of Jesus, in Paris, France.
                         </description>
-                        <category>TOURISTIC_SIGHTS</category>
+                        <imageThumbURL>
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sacre_Coeur1.JPG/1200px-Sacre_Coeur1.JPG
+                        </imageThumbURL>
                         <price>0.0</price>
+                        <images>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Basilique_du_Sacre_Coeur_de_Montmartre.jpg/1200px-Basilique_du_Sacre_Coeur_de_Montmartre.jpg
+                            </url>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg/1200px-Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg
+                            </url>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sacre_Coeur_Paris_France.jpg/1200px-Sacre_Coeur_Paris_France.jpg
+                            </url>
+                        </images>
+                    </activity>
+                    <activity>
+                        <type>THEATERS</type>
+                        <category>THEATERS</category>
+                        <name>Moulin Rouge</name>
+                        <location>
+                            <latitude>48.884129</latitude>
+                            <longitude>2.332400</longitude>
+                        </location>
+                        <openTime>
+                            <day>
+                                <key>MONDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>TUESDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>WEDNESDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>THURSDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>FRIDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>SATURDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>SUNDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                        </openTime>
+                        <description>One of France's most traditional Cabarets, elegant, extravagant, and glamorous: a
+                            true
+                            show-stopper.
+                        </description>
+                        <imageThumbURL>
+                            https://frenchmoments.eu/wp-content/uploads/2018/09/Moulin-Rouge-05-%C2%A9-French-Moments-%C2%A9-French-Moments.jpg
+                        </imageThumbURL>
+                        <price>30.0</price>
                     </activity>
                 </activities>
             </activity>

@@ -48,7 +48,7 @@ public class ResponsiveImage extends StackPane {
     }
 
     public final void setImageUrl(String value) {
-        if(value == null){
+        if (value == null) {
             System.out.println("Image will not be shown.");
             return;
         }
@@ -120,8 +120,8 @@ public class ResponsiveImage extends StackPane {
         }
     }
 
-    private String formatUrl(String url){
-        return url.trim().replace("\n", "");
+    private String formatUrl(String url) {
+        return url.trim().replaceAll("[\\n\\t\\r]", "");
     }
 
     private void setBackgroundImage(Region region, Image image) {

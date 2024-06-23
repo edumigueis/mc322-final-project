@@ -1,10 +1,12 @@
 .label.small-title {
+     -fx-font-weight: bold;
      -fx-font-size: 13px;
      -fx-text-fill: #CDCDCD;
      -fx-font-family: "Overpass Extra";
 }
 
 .label.extra-small-title {
+     -fx-font-weight: bold;
      -fx-font-size: 11px;
      -fx-text-fill: #CDCDCD;
      -fx-font-family: "Overpass Extra";
