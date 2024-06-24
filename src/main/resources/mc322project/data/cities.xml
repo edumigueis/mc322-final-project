@@ -460,14 +460,160 @@
                             </day>
                         </openTime>
                         <description>One of France's most traditional Cabarets, elegant, extravagant, and glamorous: a
-                            true
-                            show-stopper.
+                            true show-stopper.
                         </description>
                         <imageThumbURL>
                             https://frenchmoments.eu/wp-content/uploads/2018/09/Moulin-Rouge-05-%C2%A9-French-Moments-%C2%A9-French-Moments.jpg
                         </imageThumbURL>
                         <price>30.0</price>
                     </activity>
+                </activities>
+            </activity>
+            <activity>
+                <type>CITY_TOUR</type>
+                <name>Historical Paris Walk</name>
+                <includesFood>false</includesFood>
+                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/1/1c/Notre-Dame-Paris_east_2.jpg
+                </imageThumbURL>
+                <location>
+                    <latitude>48.8566</latitude>
+                    <longitude>2.3522</longitude>
+                </location>
+                <description>Discover the rich history of Paris on the "Historical Paris Walk" tour. This immersive
+                    experience will take you through the city's most significant historical sites.
+                </description>
+                <language>EN</language>
+                <category>HISTORICAL_SITES</category>
+                <price>35.0</price>
+                <activities>
+                    <activity>
+                        <type>TOURISTIC_SIGHTS</type>
+                        <category>TOURISTIC_SIGHTS</category>
+                        <name>Sacré Couer</name>
+                        <location>
+                            <latitude>48.8867</latitude> <!-- Corrected latitude for Sacré-Cœur -->
+                            <longitude>2.3431</longitude> <!-- Corrected longitude for Sacré-Cœur -->
+                        </location>
+                        <openTime>
+                            <day>
+                                <key>MONDAY</key>
+                                <value>06:00-22:30</value> <!-- Sample opening hours for Sacré-Cœur -->
+                            </day>
+                            <day>
+                                <key>TUESDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>WEDNESDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>THURSDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>FRIDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>SATURDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>SUNDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                        </openTime>
+                        <description>Sacré-Cœur Basilica is a Roman Catholic church and minor basilica, dedicated to the
+                            Sacred
+                            Heart of Jesus, in Paris, France.
+                        </description>
+                        <imageThumbURL>
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sacre_Coeur1.JPG/1200px-Sacre_Coeur1.JPG
+                        </imageThumbURL>
+                        <price>0.0</price>
+                        <images>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Basilique_du_Sacre_Coeur_de_Montmartre.jpg/1200px-Basilique_du_Sacre_Coeur_de_Montmartre.jpg
+                            </url>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg/1200px-Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg
+                            </url>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sacre_Coeur_Paris_France.jpg/1200px-Sacre_Coeur_Paris_France.jpg
+                            </url>
+                        </images>
+                    </activity>
+                    <activity>
+                        <type>TOURISTIC_SIGHTS</type>
+                        <category>TOURISTIC_SIGHTS</category>
+                        <name>Seine River</name>
+                        <location>
+                            <latitude>48.856750</latitude>
+                            <longitude>2.341033</longitude>
+                        </location>
+                        <openTime>
+                            <day>
+                                <key>MONDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>TUESDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>WEDNESDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>THURSDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>FRIDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>SATURDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>SUNDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                        </openTime>
+                        <description>776 km long, the Seine crosses the city. You can take boat rides, cross its many
+                            bridges
+                            and enjoy the environment the city of love brings.
+                        </description>
+                        <imageThumbURL>
+                            https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/dc/15/ae/pont-neuf.jpg?w=1200&amp;h=-1&amp;s=1
+                        </imageThumbURL>
+                        <price>2.0</price>
+                        <images>
+                            <url>alo</url>
+                        </images>
+                    </activity>
+                </activities>
+            </activity>
+            <activity>
+                <type>FOOD_TOUR</type>
+                <name>Gourmet Paris</name>
+                <foodDescription>amazing food</foodDescription>
+                <imageThumbURL>
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/D%C3%A9lices_de_Paris.jpg/1200px-D%C3%A9lices_de_Paris.jpg
+                </imageThumbURL>
+                <location>
+                    <latitude>48.8566</latitude>
+                    <longitude>2.3522</longitude>
+                </location>
+                <description>Indulge in the finest French cuisine with the "Gourmet Paris" tour. Taste the best
+                    pastries, cheeses, and wines Paris has to offer.
+                </description>
+                <language>EN</language>
+                <category>WINE_AND_FOOD</category>
+                <price>59.0</price>
+                <activities>
                 </activities>
             </activity>
         </things-to-do>
@@ -1696,6 +1842,95 @@
                 <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/e/ef/Aerial_view_-_Presidio-whole.jpg
                 </imageThumbURL>
                 <price>0.0</price>
+            </activity>
+            <activity>
+                <type>CITY_TOUR</type>
+                <name>Golden Gate Experience</name>
+                <includesFood>false</includesFood>
+                <imageThumbURL>
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg
+                </imageThumbURL>
+                <location>
+                    <latitude>37.8199</latitude>
+                    <longitude>-122.4783</longitude>
+                </location>
+                <description>Discover the iconic Golden Gate Bridge and its surrounding areas with the "Golden Gate
+                    Experience" tour. This journey offers stunning views and a deep dive into the history of this
+                    world-famous landmark.
+                </description>
+                <language>EN</language>
+                <category>CITY_TOURING</category>
+                <price>39.0</price>
+                <activities>
+                    <activity>
+                        <type>TOURISTIC_SIGHTS</type>
+                        <category>TOURISTIC_SIGHTS</category>
+                        <name>Golden Gate Bridge</name>
+                        <location>
+                            <latitude>37.8199</latitude>
+                            <longitude>-122.4783</longitude>
+                        </location>
+                        <openTime>
+                            <day>
+                                <key>MONDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>TUESDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>WEDNESDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>THURSDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>FRIDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>SATURDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                            <day>
+                                <key>SUNDAY</key>
+                                <value>00:00-23:59</value>
+                            </day>
+                        </openTime>
+                        <description>Iconic suspension bridge connecting San Francisco Bay and the Pacific Ocean,
+                            offering
+                            stunning views and scenic walks.
+                        </description>
+                        <imageThumbURL>
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/GG-ftpoint-bridge-2.jpg/1280px-GG-ftpoint-bridge-2.jpg
+                        </imageThumbURL>
+                        <price>0.0</price>
+                    </activity>
+                </activities>
+            </activity>
+            <activity>
+                <type>ADVENTURE_TOUR</type>
+                <name>San Francisco Adventure</name>
+                <includesFood>false</includesFood>
+                <imageThumbURL>
+                    https://upload.wikimedia.org/wikipedia/commons/d/d3/Crash%21_%2867652421%29.jpg
+                </imageThumbURL>
+                <location>
+                    <latitude>37.806116</latitude>
+                    <longitude>-122.466918</longitude>
+                </location>
+                <description>Experience the thrill of San Francisco with the "San Francisco Adventure" tour. This
+                    action-packed tour includes exciting activities like biking across the Golden Gate Bridge and
+                    exploring the famous hills of the city.
+                </description>
+                <language>EN</language>
+                <category>EXTREME_SPORTS</category>
+                <price>75.0</price>
+                <activities>
+                </activities>
             </activity>
         </things-to-do>
         <hotels>

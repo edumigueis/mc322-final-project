@@ -77,8 +77,8 @@ public class DurationSelectorController {
 
     private void populateTimeList() {
         List<Duration> times = new ArrayList<>();
-        for (int hours = 0; hours <= 4; hours++) {
-            for (int minutes = 15; minutes < 60; minutes += 15) {
+        for (int hours = 0; hours <= 8; hours++) {
+            for (int minutes = 15; minutes <= 60; minutes += 15) {
                 times.add(Duration.ofHours(hours).plusMinutes(minutes));
             }
         }

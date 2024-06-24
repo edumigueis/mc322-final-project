@@ -37,10 +37,13 @@
         <Region HBox.hgrow="ALWAYS"/>
         <VBox spacing="4" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
             <VBox fx:id="expandableTextPlaceholder2"/>
-            <ScrollPane fx:id="tourDataContainer" maxHeight="70" styleClass="no-pane">
-                <VBox fx:id="tourData" minWidth="70">
-                    <Label text="Stops at: " styleClass="small-white-title"/>
-                </VBox>
+            <ScrollPane fx:id="tourDataContainer" prefHeight="90" styleClass="no-pane" fitToWidth="true"
+                        fitToHeight="true">
+                <HBox alignment="CENTER_RIGHT">
+                    <VBox fx:id="tourData" minWidth="70" maxWidth="140" prefHeight="70" alignment="CENTER_RIGHT">
+                        <Label text="Stops at: " styleClass="small-white-title"/>
+                    </VBox>
+                </HBox>
             </ScrollPane>
             <Region VBox.vgrow="ALWAYS"/>
             <Label alignment="CENTER_RIGHT" text="\$10" fx:id="priceLabel" styleClass="small-title"/>

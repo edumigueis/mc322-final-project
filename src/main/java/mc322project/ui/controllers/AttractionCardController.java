@@ -13,6 +13,7 @@ import mc322project.entities.tours.Tour;
 import mc322project.ui.components.ExpandableText;
 import mc322project.ui.components.ResponsiveImage;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -52,10 +53,18 @@ public class AttractionCardController {
 
             businessTimeLabel.setVisible(false);
             businessTimeLabel.setManaged(false);
-
-            for (I_Activity ac : ((Tour) activity).getAttractionList()) {
-                Label l = new Label(ac.getName());
+            List<I_Activity> activities = ((Tour) activity).getAttractionList();
+            if(activities != null && !activities.isEmpty())
+                for (I_Activity ac : ((Tour) activity).getAttractionList()) {
+                    Label l = new Label(ac.getName());
+                    l.getStyleClass().add("small-text-list-item");
+                    l.setWrapText(true);
+                    tourData.getChildren().add(l);
+                }
+            else{
+                Label l = new Label("The tour varies depending on season and day.");
                 l.getStyleClass().add("small-text-list-item");
+                l.setWrapText(true);
                 tourData.getChildren().add(l);
             }
 
