@@ -55,7 +55,6 @@ public class StartScreenController implements Initializable, CardParent {
             loadCities();
             loadDatePicker();
         } catch (IOException | RuntimeException e) {
-            e.printStackTrace();
             CustomAlert alert = CustomAlert.createErrorAlert("Cities not loaded. Check format and try again.");
             alert.setTitle("Error");
             alert.setHeaderText(null); // Remove header text

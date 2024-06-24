@@ -27,10 +27,6 @@ public abstract class Places implements I_Activity {
     @JacksonXmlProperty(localName = "price")
     private double price;
 
-    @JacksonXmlProperty(localName = "type")
-    @JsonIgnore
-    private String type;
-
     public Places(Location location, String name, BusinessHours openTime, String description, String imageThumbURL, Categories category, double price) {
         if (location == null || name == null || openTime == null || description == null || imageThumbURL == null || category == null) {
             throw new IllegalArgumentException("None of the parameters can be null");

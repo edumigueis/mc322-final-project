@@ -5,7 +5,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import mc322project.ui.components.ResponsiveImage?>
-<?import mc322project.ui.components.ExpandableText?>
 
 <GridPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="mc322project.ui.controllers.AttractionCardController" hgap="10"

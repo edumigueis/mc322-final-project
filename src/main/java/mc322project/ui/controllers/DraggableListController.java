@@ -1,7 +1,6 @@
 package mc322project.ui.controllers;
 
 import mc322project.core.itinerary.TimeSlot;
-import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

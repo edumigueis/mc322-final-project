@@ -26,11 +26,8 @@ public abstract class Tour implements I_Activity {
     private TourType category;
     @JacksonXmlProperty(localName = "price")
     private double price;
-    @JacksonXmlProperty(localName = "type")
-    @JsonIgnore
-    private String type;
 
-    public Tour(String name, String imageThumbURL, Location location, String description, String language, List<I_Activity> attractionList, TourType category, double price, String type) {
+    public Tour(String name, String imageThumbURL, Location location, String description, String language, List<I_Activity> attractionList, TourType category, double price) {
         this.name = name;
         this.imageThumbURL = imageThumbURL;
         this.location = location;
@@ -39,15 +36,16 @@ public abstract class Tour implements I_Activity {
         this.attractionList = attractionList;
         this.category = category;
         this.price = price;
-        this.type = type;
     }
 
     public Tour() {
     }
+
     @Override
     public String getName() {
         return name;
     }
+
     @Override
     public void setName(String name) {
         this.name = name;
@@ -62,10 +60,12 @@ public abstract class Tour implements I_Activity {
     public void setImageThumbURL(String imageThumbURL) {
         this.imageThumbURL = imageThumbURL;
     }
+
     @Override
     public String getDescription() {
         return description;
     }
+
     @Override
     public void setDescription(String description) {
         this.description = description;

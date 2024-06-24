@@ -3,7 +3,6 @@ package mc322project.ui.controllers;
 
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import mc322project.GUIStarter;
 import mc322project.entities.activities.I_Activity;
