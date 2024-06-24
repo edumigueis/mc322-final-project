@@ -1,165 +1,23 @@
 <itinerary>
-    <duration>5</duration>
+    <duration>7</duration>
     <city>
-        <name>San Francisco</name>
-        <description>A vibrant city known for its iconic landmarks, hilly terrain, and diverse cultural attractions.
-        </description>
-        <thumb-image-url>
-            https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Golden_Gate_Bridge_at_Sunset_from_Marin.jpg/1200px-Golden_Gate_Bridge_at_Sunset_from_Marin.jpg
-        </thumb-image-url>
+        <name>Paris</name>
+        <description>The city of light.</description>
+        <thumb-image-url>https://i.pinimg.com/originals/d7/0c/c9/d70cc9765d8453704872287f8160536a.jpg</thumb-image-url>
         <things-to-do>
-            <activity type="TOURISTIC_SIGHTS">
-                <name>Golden Gate Bridge</name>
-                <imageThumbURL>
-                    https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/GG-ftpoint-bridge-2.jpg/1280px-GG-ftpoint-bridge-2.jpg
-                </imageThumbURL>
-                <location>
-                    <latitude>37.8199</latitude>
-                    <longitude>-122.4783</longitude>
-                </location>
-                <openTime>
-                    <day>
-                        <key>MONDAY</key>
-                        <value>00:00-23:59</value>
-                    </day>
-                    <day>
-                        <key>TUESDAY</key>
-                        <value>00:00-23:59</value>
-                    </day>
-                    <day>
-                        <key>WEDNESDAY</key>
-                        <value>00:00-23:59</value>
-                    </day>
-                    <day>
-                        <key>THURSDAY</key>
-                        <value>00:00-23:59</value>
-                    </day>
-                    <day>
-                        <key>FRIDAY</key>
-                        <value>00:00-23:59</value>
-                    </day>
-                    <day>
-                        <key>SATURDAY</key>
-                        <value>00:00-23:59</value>
-                    </day>
-                    <day>
-                        <key>SUNDAY</key>
-                        <value>00:00-23:59</value>
-                    </day>
-                </openTime>
-                <description>Iconic suspension bridge connecting San Francisco Bay and the Pacific Ocean, offering
-                    stunning views and scenic walks.
-                </description>
-                <category>TOURISTIC_SIGHTS</category>
-                <price>0.0</price>
-            </activity>
-            <activity type="TOURISTIC_SIGHTS">
-                <name>Alcatraz Island</name>
-                <imageThumbURL>
-                    https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Alcatraz_Island_03.jpg/1200px-Alcatraz_Island_03.jpg
-                </imageThumbURL>
-                <location>
-                    <latitude>37.8267</latitude>
-                    <longitude>-122.4233</longitude>
-                </location>
-                <openTime>
-                    <day>
-                        <key>MONDAY</key>
-                        <value>08:45-18:45</value>
-                    </day>
-                    <day>
-                        <key>TUESDAY</key>
-                        <value>08:45-18:45</value>
-                    </day>
-                    <day>
-                        <key>WEDNESDAY</key>
-                        <value>08:45-18:45</value>
-                    </day>
-                    <day>
-                        <key>THURSDAY</key>
-                        <value>08:45-18:45</value>
-                    </day>
-                    <day>
-                        <key>FRIDAY</key>
-                        <value>08:45-18:45</value>
-                    </day>
-                    <day>
-                        <key>SATURDAY</key>
-                        <value>08:45-18:45</value>
-                    </day>
-                    <day>
-                        <key>SUNDAY</key>
-                        <value>08:45-18:45</value>
-                    </day>
-                </openTime>
-                <description>Former federal prison known for housing notorious criminals, now a popular tourist
-                    attraction offering tours of its historic facilities.
-                </description>
-                <category>TOURISTIC_SIGHTS</category>
-                <price>49.0</price>
-            </activity>
-            <activity type="RESTAURANTS">
-                <estrelas>FOUR</estrelas>
-                <name>The Slanted Door</name>
-                <imageThumbURL>https://static.toiimg.com/photo/44848271.cms</imageThumbURL>
-                <location>
-                    <latitude>37.7969</latitude>
-                    <longitude>-122.3943</longitude>
-                </location>
-                <openTime>
-                    <day>
-                        <key>MONDAY</key>
-                        <value>11:30-22:00</value>
-                    </day>
-                    <day>
-                        <key>TUESDAY</key>
-                        <value>11:30-22:00</value>
-                    </day>
-                    <day>
-                        <key>WEDNESDAY</key>
-                        <value>11:30-22:00</value>
-                    </day>
-                    <day>
-                        <key>THURSDAY</key>
-                        <value>11:30-22:00</value>
-                    </day>
-                    <day>
-                        <key>FRIDAY</key>
-                        <value>11:30-22:00</value>
-                    </day>
-                    <day>
-                        <key>SATURDAY</key>
-                        <value>11:30-22:30</value>
-                    </day>
-                    <day>
-                        <key>SUNDAY</key>
-                        <value>11:30-22:00</value>
-                    </day>
-                </openTime>
-                <description>Acclaimed modern Vietnamese cuisine served in an elegant setting overlooking San Francisco
-                    Bay at the Ferry Building.
-                </description>
-                <category>RESTAURANTS</category>
-                <price>950.0</price>
-                <stars>FOUR</stars>
-                <priceRange>
-                    <min>900.0</min>
-                    <max>1000.0</max>
-                </priceRange>
-            </activity>
             <activity type="MUSEUMS">
-                <name>San Francisco Museum of Modern Art (SFMOMA)</name>
+                <name>Louvre Museum</name>
                 <imageThumbURL>
-                    https://media.licdn.com/dms/image/C5622AQGDGKUBcFOddg/feedshare-shrink_800/0/1658444837248?e=2147483647&amp;v=beta&amp;t=dkJSoZrCxf3MlPLTCdhaIGtNFXnk2kAypdYcScdLXXk
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/1200px-Louvre_Museum_Wikimedia_Commons.jpg
                 </imageThumbURL>
                 <location>
-                    <latitude>37.7858</latitude>
-                    <longitude>-122.4011</longitude>
+                    <latitude>48.86074</latitude>
+                    <longitude>2.33772</longitude>
                 </location>
                 <openTime>
                     <day>
                         <key>MONDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:00</value>
                     </day>
                     <day>
                         <key>TUESDAY</key>
@@ -167,182 +25,39 @@
                     </day>
                     <day>
                         <key>WEDNESDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:00</value>
                     </day>
                     <day>
                         <key>THURSDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:00</value>
                     </day>
                     <day>
                         <key>FRIDAY</key>
-                        <value>10:00-21:00</value>
+                        <value>9:00-18:00</value>
                     </day>
                     <day>
                         <key>SATURDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:00</value>
                     </day>
                     <day>
                         <key>SUNDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:00</value>
                     </day>
                 </openTime>
-                <description>Modern and contemporary art museum showcasing a diverse collection of paintings,
-                    sculptures, and multimedia installations.
-                </description>
+                <description>World-famous art museum home of the Mona Lisa.</description>
                 <category>MUSEUMS</category>
-                <price>25.0</price>
-                <currentExpoName></currentExpoName>
-                <mostFamousWorks></mostFamousWorks>
-                <website></website>
-            </activity>
-            <activity type="TOURISTIC_SIGHTS">
-                <name>Coit Tower</name>
-                <imageThumbURL>
-                    https://as2.ftcdn.net/v2/jpg/03/27/93/47/1000_F_327934754_uJInHChzRXd0dN6t2dIlrQnDvY84M6t6.jpg
-                </imageThumbURL>
-                <location>
-                    <latitude>37.8024</latitude>
-                    <longitude>-122.4058</longitude>
-                </location>
-                <openTime>
-                    <day>
-                        <key>MONDAY</key>
-                        <value>10:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>TUESDAY</key>
-                        <value>10:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>WEDNESDAY</key>
-                        <value>10:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>THURSDAY</key>
-                        <value>10:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>FRIDAY</key>
-                        <value>10:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>SATURDAY</key>
-                        <value>10:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>SUNDAY</key>
-                        <value>10:00-18:00</value>
-                    </day>
-                </openTime>
-                <description>Historic tower in the Telegraph Hill neighborhood offering panoramic views of San
-                    Francisco.
-                </description>
-                <category>TOURISTIC_SIGHTS</category>
                 <price>10.0</price>
-            </activity>
-            <activity type="PARKS">
-                <name>Golden Gate Park</name>
-                <imageThumbURL>
-                    https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Golden_Gate_Park.jpg/1200px-Golden_Gate_Park.jpg
-                </imageThumbURL>
-                <location>
-                    <latitude>37.7694</latitude>
-                    <longitude>-122.4862</longitude>
-                </location>
-                <openTime>
-                    <day>
-                        <key>MONDAY</key>
-                        <value>05:00-23:00</value>
-                    </day>
-                    <day>
-                        <key>TUESDAY</key>
-                        <value>05:00-23:00</value>
-                    </day>
-                    <day>
-                        <key>WEDNESDAY</key>
-                        <value>05:00-23:00</value>
-                    </day>
-                    <day>
-                        <key>THURSDAY</key>
-                        <value>05:00-23:00</value>
-                    </day>
-                    <day>
-                        <key>FRIDAY</key>
-                        <value>05:00-23:00</value>
-                    </day>
-                    <day>
-                        <key>SATURDAY</key>
-                        <value>05:00-23:00</value>
-                    </day>
-                    <day>
-                        <key>SUNDAY</key>
-                        <value>05:00-23:00</value>
-                    </day>
-                </openTime>
-                <description>Large urban park featuring gardens, museums, lakes, and recreational facilities.
-                </description>
-                <category>PARKS</category>
-                <price>0.0</price>
-            </activity>
-            <activity type="RESTAURANTS">
-                <estrelas>FOUR</estrelas>
-                <name>Tartine Bakery</name>
-                <imageThumbURL>
-                    https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Tartine_bakery_exterior_in_2006.jpg/800px-Tartine_bakery_exterior_in_2006.jpg
-                </imageThumbURL>
-                <location>
-                    <latitude>37.7614</latitude>
-                    <longitude>-122.4241</longitude>
-                </location>
-                <openTime>
-                    <day>
-                        <key>MONDAY</key>
-                        <value>07:30-19:30</value>
-                    </day>
-                    <day>
-                        <key>TUESDAY</key>
-                        <value>07:30-19:30</value>
-                    </day>
-                    <day>
-                        <key>WEDNESDAY</key>
-                        <value>07:30-19:30</value>
-                    </day>
-                    <day>
-                        <key>THURSDAY</key>
-                        <value>07:30-19:30</value>
-                    </day>
-                    <day>
-                        <key>FRIDAY</key>
-                        <value>07:30-19:30</value>
-                    </day>
-                    <day>
-                        <key>SATURDAY</key>
-                        <value>08:00-20:00</value>
-                    </day>
-                    <day>
-                        <key>SUNDAY</key>
-                        <value>08:00-20:00</value>
-                    </day>
-                </openTime>
-                <description>Renowned bakery offering artisanal bread, pastries, and sandwiches in a cozy, casual
-                    setting.
-                </description>
-                <category>RESTAURANTS</category>
-                <price>350.0</price>
-                <stars>FOUR</stars>
-                <priceRange>
-                    <min>200.0</min>
-                    <max>500.0</max>
-                </priceRange>
+                <currentExpoName>The MET at the Louvre</currentExpoName>
+                <mostFamousWorks>Mona Lisa</mostFamousWorks>
+                <website>https://www.louvre.fr/en</website>
             </activity>
             <activity type="MUSEUMS">
-                <name>Exploratorium</name>
-                <imageThumbURL>
-                    https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/sanmateoca/Location.0019.San-Francisco.Exploratorium-d27bddc75056a36_d27bde93-5056-a36a-0bcdfd1e49226c3c.jpg
+                <name>Palace of Versailles</name>
+                <imageThumbURL>https://i.natgeofe.com/n/5f01634d-6d3c-49a8-beb4-75283b26e411/Versailles_p262_3x2.jpg
                 </imageThumbURL>
                 <location>
-                    <latitude>37.8008</latitude>
-                    <longitude>-122.398</longitude>
+                    <latitude>48.80499</latitude>
+                    <longitude>2.12033</longitude>
                 </location>
                 <openTime>
                     <day>
@@ -351,917 +66,892 @@
                     </day>
                     <day>
                         <key>TUESDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:30</value>
                     </day>
                     <day>
                         <key>WEDNESDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:30</value>
                     </day>
                     <day>
                         <key>THURSDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:30</value>
                     </day>
                     <day>
                         <key>FRIDAY</key>
-                        <value>10:00-21:00</value>
+                        <value>9:00-18:30</value>
                     </day>
                     <day>
                         <key>SATURDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:30</value>
                     </day>
                     <day>
                         <key>SUNDAY</key>
-                        <value>10:00-17:00</value>
+                        <value>9:00-18:30</value>
                     </day>
                 </openTime>
-                <description>Interactive science museum offering hands-on exhibits and educational programs for all
-                    ages.
+                <description>One of the most famous palaces in the world, former residence of King Louis XIV.
                 </description>
                 <category>MUSEUMS</category>
-                <price>30.0</price>
-                <currentExpoName></currentExpoName>
-                <mostFamousWorks></mostFamousWorks>
-                <website></website>
+                <price>50.0</price>
+                <currentExpoName>The MET at the Louvre</currentExpoName>
+                <mostFamousWorks>Hall of mirrors</mostFamousWorks>
+                <website>https://www.chateauversailles.fr/</website>
+            </activity>
+            <activity type="MUSEUMS">
+                <name>Musée d’Orsay</name>
+                <imageThumbURL>
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Le_mus%C3%A9e_dOrsay_%28Paris%29_%284725795882%29.jpg/1024px-Le_mus%C3%A9e_dOrsay_%28Paris%29_%284725795882%29.jpg
+                </imageThumbURL>
+                <location>
+                    <latitude>48.86004</latitude>
+                    <longitude>2.32658</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>Closed</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>09:30-18:00</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>09:30-21:45</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>09:30-18:00</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>09:30-18:00</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>09:30-18:00</value>
+                    </day>
+                </openTime>
+                <description>Beautiful museum next to the Seine. French art from 1848-1914</description>
+                <category>MUSEUMS</category>
+                <price>12.0</price>
+                <currentExpoName>Paris 1874</currentExpoName>
+                <mostFamousWorks>monalisa</mostFamousWorks>
+                <website>https://www.musee-orsay.fr/en/</website>
+            </activity>
+            <activity type="TOURISTIC_SIGHTS">
+                <name>Eiffel Tower</name>
+                <imageThumbURL>https://pm1.aminoapps.com/6714/3fcfa29cb54b0576ef3ca7aceb416faaba7239a4_hq.jpg
+                </imageThumbURL>
+                <location>
+                    <latitude>48.85838</latitude>
+                    <longitude>2.29452</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>09:30-22:45</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>09:30-22:45</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>09:30-22:45</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>09:30-22:45</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>09:30-22:45</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>09:30-22:45</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>09:30-22:45</value>
+                    </day>
+                </openTime>
+                <description>The iconic landmark of the city, a must-go</description>
+                <category>TOURISTIC_SIGHTS</category>
+                <price>2.0</price>
+                <images>
+                    <url>alo</url>
+                </images>
+            </activity>
+            <activity type="TOURISTIC_SIGHTS">
+                <name>Seine River</name>
+                <imageThumbURL>https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/dc/15/ae/pont-neuf.jpg?w=1200&amp;h=-1&amp;s=1</imageThumbURL>
+                <location>
+                    <latitude>48.85675</latitude>
+                    <longitude>2.341033</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>00:00-23:59</value>
+                    </day>
+                </openTime>
+                <description>776 km long, the Seine crosses the city. You can take boat rides, cross its many bridges
+                    and enjoy the environment the city of love brings.
+                </description>
+                <category>TOURISTIC_SIGHTS</category>
+                <price>2.0</price>
+                <images>
+                    <url>alo</url>
+                </images>
             </activity>
             <activity type="THEATERS">
-                <name>Orpheum Theatre</name>
-                <imageThumbURL>https://www.sftourismtips.com/images/orpheum-theater-inside.jpg</imageThumbURL>
-                <location>
-                    <latitude>37.7784</latitude>
-                    <longitude>-122.4142</longitude>
-                </location>
-                <openTime>
-                    <day>
-                        <key>MONDAY</key>
-                        <value>Closed</value>
-                    </day>
-                    <day>
-                        <key>TUESDAY</key>
-                        <value>11:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>WEDNESDAY</key>
-                        <value>11:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>THURSDAY</key>
-                        <value>11:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>FRIDAY</key>
-                        <value>11:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>SATURDAY</key>
-                        <value>11:00-18:00</value>
-                    </day>
-                    <day>
-                        <key>SUNDAY</key>
-                        <value>11:00-18:00</value>
-                    </day>
-                </openTime>
-                <description>Historic theater in downtown San Francisco hosting Broadway shows, concerts, and other
-                    performances.
-                </description>
-                <category>THEATERS</category>
-                <price>100.0</price>
-            </activity>
-            <activity type="TOURISTIC_SIGHTS">
-                <name>Lombard Street</name>
+                <name>Moulin Rouge</name>
                 <imageThumbURL>
-                    https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Lombard_Street_San_Francisco_2004.jpg/640px-Lombard_Street_San_Francisco_2004.jpg
+                    https://frenchmoments.eu/wp-content/uploads/2018/09/Moulin-Rouge-05-%C2%A9-French-Moments-%C2%A9-French-Moments.jpg
                 </imageThumbURL>
                 <location>
-                    <latitude>37.8021</latitude>
-                    <longitude>-122.4188</longitude>
+                    <latitude>48.884129</latitude>
+                    <longitude>2.3324</longitude>
                 </location>
                 <openTime>
                     <day>
                         <key>MONDAY</key>
-                        <value>00:00-23:59</value>
+                        <value>19:00-23:00</value>
                     </day>
                     <day>
                         <key>TUESDAY</key>
-                        <value>00:00-23:59</value>
+                        <value>19:00-23:00</value>
                     </day>
                     <day>
                         <key>WEDNESDAY</key>
-                        <value>00:00-23:59</value>
+                        <value>19:00-23:00</value>
                     </day>
                     <day>
                         <key>THURSDAY</key>
-                        <value>00:00-23:59</value>
+                        <value>19:00-23:00</value>
                     </day>
                     <day>
                         <key>FRIDAY</key>
-                        <value>00:00-23:59</value>
+                        <value>19:00-23:00</value>
                     </day>
                     <day>
                         <key>SATURDAY</key>
-                        <value>00:00-23:59</value>
+                        <value>19:00-23:00</value>
                     </day>
                     <day>
                         <key>SUNDAY</key>
-                        <value>00:00-23:59</value>
+                        <value>19:00-23:00</value>
                     </day>
                 </openTime>
-                <description>Famous winding road known for its eight sharp turns in one block, lined with beautiful
-                    flowers and houses.
+                <description>One of France's most traditional Cabarets, elegant, extravagant, and glamorous: a true
+                    show-stopper.
+                </description>
+                <category>THEATERS</category>
+                <price>30.0</price>
+            </activity>
+            <activity type="TOURISTIC_SIGHTS">
+                <name>Sacré Couer</name>
+                <imageThumbURL>
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sacre_Coeur1.JPG/1200px-Sacre_Coeur1.JPG
+                </imageThumbURL>
+                <location>
+                    <latitude>48.8867</latitude>
+                    <longitude>2.3431</longitude>
+                </location>
+                <openTime>
+                    <day>
+                        <key>MONDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>TUESDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>WEDNESDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>THURSDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>FRIDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>SATURDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                    <day>
+                        <key>SUNDAY</key>
+                        <value>06:00-22:30</value>
+                    </day>
+                </openTime>
+                <description>Sacré-Cœur Basilica is a Roman Catholic church and minor basilica, dedicated to the Sacred
+                    Heart of Jesus, in Paris, France.
                 </description>
                 <category>TOURISTIC_SIGHTS</category>
                 <price>0.0</price>
+                <images>
+                    <url>
+                        https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Basilique_du_Sacre_Coeur_de_Montmartre.jpg/1200px-Basilique_du_Sacre_Coeur_de_Montmartre.jpg
+                    </url>
+                    <url>
+                        https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg/1200px-Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg
+                    </url>
+                    <url>
+                        https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sacre_Coeur_Paris_France.jpg/1200px-Sacre_Coeur_Paris_France.jpg
+                    </url>
+                </images>
             </activity>
-            <activity type="PARKS">
-                <name>Presidio of San Francisco</name>
-                <imageThumbURL>https://upload.wikimedia.org/wikipedia/commons/e/ef/Aerial_view_-_Presidio-whole.jpg
+            <activity type="CITY_TOUR">
+                <name>Paris is Burning</name>
+                <imageThumbURL>
+                    https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sacre_Coeur_1.JPG/1200px-Sacre_Coeur_1.JPG
                 </imageThumbURL>
                 <location>
-                    <latitude>37.7989</latitude>
-                    <longitude>-122.4662</longitude>
+                    <latitude>48.885496458</latitude>
+                    <longitude>2.337998648</longitude>
                 </location>
-                <openTime>
-                    <day>
-                        <key>MONDAY</key>
-                        <value>06:00-22:00</value>
-                    </day>
-                    <day>
-                        <key>TUESDAY</key>
-                        <value>06:00-22:00</value>
-                    </day>
-                    <day>
-                        <key>WEDNESDAY</key>
-                        <value>06:00-22:00</value>
-                    </day>
-                    <day>
-                        <key>THURSDAY</key>
-                        <value>06:00-22:00</value>
-                    </day>
-                    <day>
-                        <key>FRIDAY</key>
-                        <value>06:00-22:00</value>
-                    </day>
-                    <day>
-                        <key>SATURDAY</key>
-                        <value>06:00-22:00</value>
-                    </day>
-                    <day>
-                        <key>SUNDAY</key>
-                        <value>06:00-22:00</value>
-                    </day>
-                </openTime>
-                <description>Historic park offering hiking trails, scenic overlooks, and museums, with views of the
-                    Golden Gate Bridge.
+                <description>Experience the vibrant and historic side of Paris with the "Paris is Burning" tour. This
+                    unforgettable journey takes you to two of the city's most iconic landmarks: the legendary Moulin
+                    Rouge.
                 </description>
-                <category>PARKS</category>
-                <price>0.0</price>
+                <language>EN</language>
+                <activities>
+                    <activity type="TOURISTIC_SIGHTS">
+                        <name>Sacré Couer</name>
+                        <imageThumbURL>
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sacre_Coeur1.JPG/1200px-Sacre_Coeur1.JPG
+                        </imageThumbURL>
+                        <location>
+                            <latitude>48.8867</latitude>
+                            <longitude>2.3431</longitude>
+                        </location>
+                        <openTime>
+                            <day>
+                                <key>MONDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>TUESDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>WEDNESDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>THURSDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>FRIDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>SATURDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                            <day>
+                                <key>SUNDAY</key>
+                                <value>06:00-22:30</value>
+                            </day>
+                        </openTime>
+                        <description>Sacré-Cœur Basilica is a Roman Catholic church and minor basilica, dedicated to the
+                            Sacred Heart of Jesus, in Paris, France.
+                        </description>
+                        <category>TOURISTIC_SIGHTS</category>
+                        <price>0.0</price>
+                        <images>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Basilique_du_Sacre_Coeur_de_Montmartre.jpg/1200px-Basilique_du_Sacre_Coeur_de_Montmartre.jpg
+                            </url>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg/1200px-Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg
+                            </url>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sacre_Coeur_Paris_France.jpg/1200px-Sacre_Coeur_Paris_France.jpg
+                            </url>
+                        </images>
+                    </activity>
+                    <activity type="THEATERS">
+                        <name>Moulin Rouge</name>
+                        <imageThumbURL>
+                            https://frenchmoments.eu/wp-content/uploads/2018/09/Moulin-Rouge-05-%C2%A9-French-Moments-%C2%A9-French-Moments.jpg
+                        </imageThumbURL>
+                        <location>
+                            <latitude>48.884129</latitude>
+                            <longitude>2.3324</longitude>
+                        </location>
+                        <openTime>
+                            <day>
+                                <key>MONDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>TUESDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>WEDNESDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>THURSDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>FRIDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>SATURDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                            <day>
+                                <key>SUNDAY</key>
+                                <value>19:00-23:00</value>
+                            </day>
+                        </openTime>
+                        <description>One of France's most traditional Cabarets, elegant, extravagant, and glamorous: a
+                            true
+                            show-stopper.
+                        </description>
+                        <category>THEATERS</category>
+                        <price>30.0</price>
+                    </activity>
+                </activities>
+                <category>CITY_TOURING</category>
+                <price>49.0</price>
+                <includesFood>false</includesFood>
             </activity>
         </things-to-do>
         <hotels>
             <hotel>
                 <location>
-                    <latitude>37.7917</latitude>
-                    <longitude>-122.4022</longitude>
+                    <latitude>48.87656</latitude>
+                    <longitude>2.34887</longitude>
                 </location>
-                <name>The Ritz-Carlton, San Francisco</name>
+                <name>Hôtel Paris Lafayette</name>
             </hotel>
             <hotel>
                 <location>
-                    <latitude>37.792</latitude>
-                    <longitude>-122.4108</longitude>
+                    <latitude>48.82365</latitude>
+                    <longitude>2.32509</longitude>
                 </location>
-                <name>Fairmont San Francisco</name>
+                <name>Hôtel Acropole</name>
             </hotel>
             <hotel>
                 <location>
-                    <latitude>37.78889</latitude>
-                    <longitude>-122.42418</longitude>
+                    <latitude>48.88187</latitude>
+                    <longitude>2.3231</longitude>
                 </location>
-                <name>Nap York, San Francisco</name>
+                <name>Hôtel Astoria - Astotel</name>
             </hotel>
             <hotel>
                 <location>
-                    <latitude>37.78371</latitude>
-                    <longitude>-122.41068</longitude>
+                    <latitude>48.8942</latitude>
+                    <longitude>2.33672</longitude>
                 </location>
-                <name>Warfield Hotel</name>
+                <name>Hotel Lumières Montmartre Paris</name>
             </hotel>
             <hotel>
                 <location>
-                    <latitude>37.7805</latitude>
-                    <longitude>-122.41209</longitude>
+                    <latitude>48.9039</latitude>
+                    <longitude>2.30397</longitude>
                 </location>
-                <name>YOTEL San Francisco</name>
-            </hotel>
-            <hotel>
-                <location>
-                    <latitude>37.7882</latitude>
-                    <longitude>-122.41212</longitude>
-                </location>
-                <name>Fitzgerald Hotel Union Square</name>
+                <name>ibis Clichy Centre Mairie</name>
             </hotel>
         </hotels>
         <location>
-            <latitude>37.7749</latitude>
-            <longitude>-122.4194</longitude>
+            <latitude>48.864716</latitude>
+            <longitude>2.349014</longitude>
         </location>
     </city>
-    <start>22/06/2024</start>
-    <end>26/06/2024</end>
+    <start>24/06/2024</start>
+    <end>30/06/2024</end>
     <itinerary-days>
         <itinerary-day>
             <activities>
                 <activity>
-                    <data type="TOURISTIC_SIGHTS">
-                        <name>Golden Gate Bridge</name>
+                    <data type="MUSEUMS">
+                        <name>Louvre Museum</name>
                         <imageThumbURL>
-                            https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/GG-ftpoint-bridge-2.jpg/1280px-GG-ftpoint-bridge-2.jpg
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/1200px-Louvre_Museum_Wikimedia_Commons.jpg
                         </imageThumbURL>
                         <location>
-                            <latitude>37.8199</latitude>
-                            <longitude>-122.4783</longitude>
+                            <latitude>48.86074</latitude>
+                            <longitude>2.33772</longitude>
                         </location>
                         <openTime>
                             <day>
                                 <key>MONDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>9:00-18:00</value>
                             </day>
                             <day>
                                 <key>TUESDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>Closed</value>
                             </day>
                             <day>
                                 <key>WEDNESDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>9:00-18:00</value>
                             </day>
                             <day>
                                 <key>THURSDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>9:00-18:00</value>
                             </day>
                             <day>
                                 <key>FRIDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>9:00-18:00</value>
                             </day>
                             <day>
                                 <key>SATURDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>9:00-18:00</value>
                             </day>
                             <day>
                                 <key>SUNDAY</key>
-                                <value>00:00-23:59</value>
+                                <value>9:00-18:00</value>
                             </day>
                         </openTime>
-                        <description>Iconic suspension bridge connecting San Francisco Bay and the Pacific Ocean,
-                            offering
-                            stunning views and scenic walks.
-                        </description>
-                        <category>TOURISTIC_SIGHTS</category>
-                        <price>0.0</price>
+                        <description>World-famous art museum home of the Mona Lisa.</description>
+                        <category>MUSEUMS</category>
+                        <price>10.0</price>
+                        <currentExpoName>The MET at the Louvre</currentExpoName>
+                        <mostFamousWorks>Mona Lisa</mostFamousWorks>
+                        <website>https://www.louvre.fr/en</website>
                     </data>
-                    <way-to-next>
-                        <type>CAR</type>
-                        <estimated-duration>407</estimated-duration>
-                        <start>09:00</start>
-                        <price>0.0022632345</price>
-                    </way-to-next>
-                    <start>08:00</start>
-                    <end>09:00</end>
-                </activity>
-                <activity>
-                    <data type="PARKS">
-                        <name>Golden Gate Park</name>
-                        <imageThumbURL>
-                            https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Golden_Gate_Park.jpg/1200px-Golden_Gate_Park.jpg
-                        </imageThumbURL>
-                        <location>
-                            <latitude>37.7694</latitude>
-                            <longitude>-122.4862</longitude>
-                        </location>
-                        <openTime>
-                            <day>
-                                <key>MONDAY</key>
-                                <value>05:00-23:00</value>
-                            </day>
-                            <day>
-                                <key>TUESDAY</key>
-                                <value>05:00-23:00</value>
-                            </day>
-                            <day>
-                                <key>WEDNESDAY</key>
-                                <value>05:00-23:00</value>
-                            </day>
-                            <day>
-                                <key>THURSDAY</key>
-                                <value>05:00-23:00</value>
-                            </day>
-                            <day>
-                                <key>FRIDAY</key>
-                                <value>05:00-23:00</value>
-                            </day>
-                            <day>
-                                <key>SATURDAY</key>
-                                <value>05:00-23:00</value>
-                            </day>
-                            <day>
-                                <key>SUNDAY</key>
-                                <value>05:00-23:00</value>
-                            </day>
-                        </openTime>
-                        <description>Large urban park featuring gardens, museums, lakes, and recreational facilities.
-                        </description>
-                        <category>PARKS</category>
-                        <price>0.0</price>
-                    </data>
-                    <start>09:06</start>
-                    <end>10:06</end>
+                    <start>11:00</start>
+                    <end>15:45</end>
                 </activity>
             </activities>
-            <start-of-day>22/06/2024 00:00:00</start-of-day>
-            <end-of-day>22/06/2024 23:59:00</end-of-day>
-            <hotel>
-                <location/>
-                <name/>
-            </hotel>
+            <start-of-day>24/06/2024 11:00:00</start-of-day>
+            <end-of-day>24/06/2024 23:59:00</end-of-day>
+            <hotel/>
         </itinerary-day>
         <itinerary-day>
             <activities>
                 <activity>
-                    <data type="RESTAURANTS">
-                        <estrelas>FOUR</estrelas>
-                        <name>Tartine Bakery</name>
+                    <data type="CITY_TOUR">
+                        <name>Paris is Burning</name>
                         <imageThumbURL>
-                            https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Tartine_bakery_exterior_in_2006.jpg/800px-Tartine_bakery_exterior_in_2006.jpg
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sacre_Coeur_1.JPG/1200px-Sacre_Coeur_1.JPG
                         </imageThumbURL>
                         <location>
-                            <latitude>37.7614</latitude>
-                            <longitude>-122.4241</longitude>
+                            <latitude>48.885496458</latitude>
+                            <longitude>2.337998648</longitude>
+                        </location>
+                        <description>Experience the vibrant and historic side of Paris with the "Paris is Burning" tour.
+                            This
+                            unforgettable journey takes you to two of the city's most iconic landmarks: the legendary
+                            Moulin
+                            Rouge.
+                        </description>
+                        <language>EN</language>
+                        <activities>
+                            <activity type="TOURISTIC_SIGHTS">
+                                <name>Sacré Couer</name>
+                                <imageThumbURL>
+                                    https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sacre_Coeur1.JPG/1200px-Sacre_Coeur1.JPG
+                                </imageThumbURL>
+                                <location>
+                                    <latitude>48.8867</latitude>
+                                    <longitude>2.3431</longitude>
+                                </location>
+                                <openTime>
+                                    <day>
+                                        <key>MONDAY</key>
+                                        <value>06:00-22:30</value>
+                                    </day>
+                                    <day>
+                                        <key>TUESDAY</key>
+                                        <value>06:00-22:30</value>
+                                    </day>
+                                    <day>
+                                        <key>WEDNESDAY</key>
+                                        <value>06:00-22:30</value>
+                                    </day>
+                                    <day>
+                                        <key>THURSDAY</key>
+                                        <value>06:00-22:30</value>
+                                    </day>
+                                    <day>
+                                        <key>FRIDAY</key>
+                                        <value>06:00-22:30</value>
+                                    </day>
+                                    <day>
+                                        <key>SATURDAY</key>
+                                        <value>06:00-22:30</value>
+                                    </day>
+                                    <day>
+                                        <key>SUNDAY</key>
+                                        <value>06:00-22:30</value>
+                                    </day>
+                                </openTime>
+                                <description>Sacré-Cœur Basilica is a Roman Catholic church and minor basilica,
+                                    dedicated to the
+                                    Sacred Heart of Jesus, in Paris, France.
+                                </description>
+                                <category>TOURISTIC_SIGHTS</category>
+                                <price>0.0</price>
+                                <images>
+                                    <url>
+                                        https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Basilique_du_Sacre_Coeur_de_Montmartre.jpg/1200px-Basilique_du_Sacre_Coeur_de_Montmartre.jpg
+                                    </url>
+                                    <url>
+                                        https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg/1200px-Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg
+                                    </url>
+                                    <url>
+                                        https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sacre_Coeur_Paris_France.jpg/1200px-Sacre_Coeur_Paris_France.jpg
+                                    </url>
+                                </images>
+                            </activity>
+                            <activity type="THEATERS">
+                                <name>Moulin Rouge</name>
+                                <imageThumbURL>
+                                    https://frenchmoments.eu/wp-content/uploads/2018/09/Moulin-Rouge-05-%C2%A9-French-Moments-%C2%A9-French-Moments.jpg
+                                </imageThumbURL>
+                                <location>
+                                    <latitude>48.884129</latitude>
+                                    <longitude>2.3324</longitude>
+                                </location>
+                                <openTime>
+                                    <day>
+                                        <key>MONDAY</key>
+                                        <value>19:00-23:00</value>
+                                    </day>
+                                    <day>
+                                        <key>TUESDAY</key>
+                                        <value>19:00-23:00</value>
+                                    </day>
+                                    <day>
+                                        <key>WEDNESDAY</key>
+                                        <value>19:00-23:00</value>
+                                    </day>
+                                    <day>
+                                        <key>THURSDAY</key>
+                                        <value>19:00-23:00</value>
+                                    </day>
+                                    <day>
+                                        <key>FRIDAY</key>
+                                        <value>19:00-23:00</value>
+                                    </day>
+                                    <day>
+                                        <key>SATURDAY</key>
+                                        <value>19:00-23:00</value>
+                                    </day>
+                                    <day>
+                                        <key>SUNDAY</key>
+                                        <value>19:00-23:00</value>
+                                    </day>
+                                </openTime>
+                                <description>One of France's most traditional Cabarets, elegant, extravagant, and
+                                    glamorous: a
+                                    true
+                                    show-stopper.
+                                </description>
+                                <category>THEATERS</category>
+                                <price>30.0</price>
+                            </activity>
+                        </activities>
+                        <category>CITY_TOURING</category>
+                        <price>49.0</price>
+                        <includesFood>false</includesFood>
+                    </data>
+                    <start>10:00</start>
+                    <end>11:00</end>
+                </activity>
+            </activities>
+            <start-of-day>25/06/2024 10:00:00</start-of-day>
+            <end-of-day>25/06/2024 23:59:00</end-of-day>
+            <hotel/>
+        </itinerary-day>
+        <itinerary-day>
+            <activities>
+                <activity>
+                    <data type="MUSEUMS">
+                        <name>Palace of Versailles</name>
+                        <imageThumbURL>
+                            https://i.natgeofe.com/n/5f01634d-6d3c-49a8-beb4-75283b26e411/Versailles_p262_3x2.jpg
+                        </imageThumbURL>
+                        <location>
+                            <latitude>48.80499</latitude>
+                            <longitude>2.12033</longitude>
                         </location>
                         <openTime>
                             <day>
                                 <key>MONDAY</key>
-                                <value>07:30-19:30</value>
+                                <value>Closed</value>
                             </day>
                             <day>
                                 <key>TUESDAY</key>
-                                <value>07:30-19:30</value>
+                                <value>9:00-18:30</value>
                             </day>
                             <day>
                                 <key>WEDNESDAY</key>
-                                <value>07:30-19:30</value>
+                                <value>9:00-18:30</value>
                             </day>
                             <day>
                                 <key>THURSDAY</key>
-                                <value>07:30-19:30</value>
+                                <value>9:00-18:30</value>
                             </day>
                             <day>
                                 <key>FRIDAY</key>
-                                <value>07:30-19:30</value>
+                                <value>9:00-18:30</value>
                             </day>
                             <day>
                                 <key>SATURDAY</key>
-                                <value>08:00-20:00</value>
+                                <value>9:00-18:30</value>
                             </day>
                             <day>
                                 <key>SUNDAY</key>
-                                <value>08:00-20:00</value>
+                                <value>9:00-18:30</value>
                             </day>
                         </openTime>
-                        <description>Renowned bakery offering artisanal bread, pastries, and sandwiches in a cozy,
-                            casual setting.
+                        <description>One of the most famous palaces in the world, former residence of King Louis XIV.
                         </description>
-                        <category>RESTAURANTS</category>
-                        <price>350.0</price>
-                        <stars>FOUR</stars>
-                        <priceRange>
-                            <min>200.0</min>
-                            <max>500.0</max>
-                        </priceRange>
+                        <category>MUSEUMS</category>
+                        <price>50.0</price>
+                        <currentExpoName>The MET at the Louvre</currentExpoName>
+                        <mostFamousWorks>Hall of mirrors</mostFamousWorks>
+                        <website>https://www.chateauversailles.fr/</website>
                     </data>
                     <way-to-next>
                         <type>CAR</type>
-                        <estimated-duration>149</estimated-duration>
-                        <start>09:00</start>
-                        <price>8.323942E-4</price>
+                        <estimated-duration>1284</estimated-duration>
+                        <start>18:45</start>
+                        <price>0.0071360604</price>
                     </way-to-next>
-                    <start>08:00</start>
-                    <end>09:00</end>
+                    <start>14:00</start>
+                    <end>18:45</end>
                 </activity>
                 <activity>
                     <data type="THEATERS">
-                        <name>Orpheum Theatre</name>
-                        <imageThumbURL>https://www.sftourismtips.com/images/orpheum-theater-inside.jpg</imageThumbURL>
+                        <name>Moulin Rouge</name>
+                        <imageThumbURL>
+                            https://frenchmoments.eu/wp-content/uploads/2018/09/Moulin-Rouge-05-%C2%A9-French-Moments-%C2%A9-French-Moments.jpg
+                        </imageThumbURL>
                         <location>
-                            <latitude>37.7784</latitude>
-                            <longitude>-122.4142</longitude>
+                            <latitude>48.884129</latitude>
+                            <longitude>2.3324</longitude>
                         </location>
                         <openTime>
                             <day>
                                 <key>MONDAY</key>
-                                <value>Closed</value>
+                                <value>19:00-23:00</value>
                             </day>
                             <day>
                                 <key>TUESDAY</key>
-                                <value>11:00-18:00</value>
+                                <value>19:00-23:00</value>
                             </day>
                             <day>
                                 <key>WEDNESDAY</key>
-                                <value>11:00-18:00</value>
+                                <value>19:00-23:00</value>
                             </day>
                             <day>
                                 <key>THURSDAY</key>
-                                <value>11:00-18:00</value>
+                                <value>19:00-23:00</value>
                             </day>
                             <day>
                                 <key>FRIDAY</key>
-                                <value>11:00-18:00</value>
+                                <value>19:00-23:00</value>
                             </day>
                             <day>
                                 <key>SATURDAY</key>
-                                <value>11:00-18:00</value>
+                                <value>19:00-23:00</value>
                             </day>
                             <day>
                                 <key>SUNDAY</key>
-                                <value>11:00-18:00</value>
+                                <value>19:00-23:00</value>
                             </day>
                         </openTime>
-                        <description>Historic theater in downtown San Francisco hosting Broadway shows, concerts, and
-                            other performances.
+                        <description>One of France's most traditional Cabarets, elegant, extravagant, and glamorous: a
+                            true
+                            show-stopper.
                         </description>
                         <category>THEATERS</category>
-                        <price>100.0</price>
-                    </data>
-                    <way-to-next>
-                        <type>WALK</type>
-                        <estimated-duration>1018</estimated-duration>
-                        <start>10:02</start>
-                        <price>0.0</price>
-                    </way-to-next>
-                    <start>09:02</start>
-                    <end>10:02</end>
-                </activity>
-                <activity>
-                    <data type="MUSEUMS">
-                        <name>San Francisco Museum of Modern Art (SFMOMA)</name>
-                        <imageThumbURL>
-                            https://media.licdn.com/dms/image/C5622AQGDGKUBcFOddg/feedshare-shrink_800/0/1658444837248?e=2147483647&amp;v=beta&amp;t=dkJSoZrCxf3MlPLTCdhaIGtNFXnk2kAypdYcScdLXXk
-                        </imageThumbURL>
-                        <location>
-                            <latitude>37.7858</latitude>
-                            <longitude>-122.4011</longitude>
-                        </location>
-                        <openTime>
-                            <day>
-                                <key>MONDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                            <day>
-                                <key>TUESDAY</key>
-                                <value>Closed</value>
-                            </day>
-                            <day>
-                                <key>WEDNESDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                            <day>
-                                <key>THURSDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                            <day>
-                                <key>FRIDAY</key>
-                                <value>10:00-21:00</value>
-                            </day>
-                            <day>
-                                <key>SATURDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                            <day>
-                                <key>SUNDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                        </openTime>
-                        <description>Modern and contemporary art museum showcasing a diverse collection of paintings,
-                            sculptures, and multimedia installations.
-                        </description>
-                        <category>MUSEUMS</category>
-                        <price>25.0</price>
-                        <currentExpoName></currentExpoName>
-                        <mostFamousWorks></mostFamousWorks>
-                        <website></website>
-                    </data>
-                    <start>10:19</start>
-                    <end>11:19</end>
-                </activity>
-            </activities>
-            <start-of-day>23/06/2024 00:00:00</start-of-day>
-            <end-of-day>23/06/2024 23:59:00</end-of-day>
-            <hotel>
-                <location/>
-                <name/>
-            </hotel>
-        </itinerary-day>
-        <itinerary-day>
-            <activities>
-                <activity>
-                    <data type="MUSEUMS">
-                        <name>Exploratorium</name>
-                        <imageThumbURL>
-                            https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/sanmateoca/Location.0019.San-Francisco.Exploratorium-d27bddc75056a36_d27bde93-5056-a36a-0bcdfd1e49226c3c.jpg
-                        </imageThumbURL>
-                        <location>
-                            <latitude>37.8008</latitude>
-                            <longitude>-122.398</longitude>
-                        </location>
-                        <openTime>
-                            <day>
-                                <key>MONDAY</key>
-                                <value>Closed</value>
-                            </day>
-                            <day>
-                                <key>TUESDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                            <day>
-                                <key>WEDNESDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                            <day>
-                                <key>THURSDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                            <day>
-                                <key>FRIDAY</key>
-                                <value>10:00-21:00</value>
-                            </day>
-                            <day>
-                                <key>SATURDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                            <day>
-                                <key>SUNDAY</key>
-                                <value>10:00-17:00</value>
-                            </day>
-                        </openTime>
-                        <description>Interactive science museum offering hands-on exhibits and educational programs for
-                            all ages.
-                        </description>
-                        <category>MUSEUMS</category>
                         <price>30.0</price>
-                        <currentExpoName></currentExpoName>
-                        <mostFamousWorks></mostFamousWorks>
-                        <website></website>
                     </data>
-                    <way-to-next>
-                        <type>WALK</type>
-                        <estimated-duration>390</estimated-duration>
-                        <start>09:00</start>
-                        <price>0.0</price>
-                    </way-to-next>
-                    <start>08:00</start>
-                    <end>09:00</end>
-                </activity>
-                <activity>
-                    <data type="RESTAURANTS">
-                        <estrelas>FOUR</estrelas>
-                        <name>The Slanted Door</name>
-                        <imageThumbURL>https://static.toiimg.com/photo/44848271.cms</imageThumbURL>
-                        <location>
-                            <latitude>37.7969</latitude>
-                            <longitude>-122.3943</longitude>
-                        </location>
-                        <openTime>
-                            <day>
-                                <key>MONDAY</key>
-                                <value>11:30-22:00</value>
-                            </day>
-                            <day>
-                                <key>TUESDAY</key>
-                                <value>11:30-22:00</value>
-                            </day>
-                            <day>
-                                <key>WEDNESDAY</key>
-                                <value>11:30-22:00</value>
-                            </day>
-                            <day>
-                                <key>THURSDAY</key>
-                                <value>11:30-22:00</value>
-                            </day>
-                            <day>
-                                <key>FRIDAY</key>
-                                <value>11:30-22:00</value>
-                            </day>
-                            <day>
-                                <key>SATURDAY</key>
-                                <value>11:30-22:30</value>
-                            </day>
-                            <day>
-                                <key>SUNDAY</key>
-                                <value>11:30-22:00</value>
-                            </day>
-                        </openTime>
-                        <description>Acclaimed modern Vietnamese cuisine served in an elegant setting overlooking San
-                            Francisco
-                            Bay at the Ferry Building.
-                        </description>
-                        <category>RESTAURANTS</category>
-                        <price>950.0</price>
-                        <stars>FOUR</stars>
-                        <priceRange>
-                            <min>900.0</min>
-                            <max>1000.0</max>
-                        </priceRange>
-                    </data>
-                    <way-to-next>
-                        <type>WALK</type>
-                        <estimated-duration>850</estimated-duration>
-                        <start>10:06</start>
-                        <price>0.0</price>
-                    </way-to-next>
-                    <start>09:06</start>
-                    <end>10:06</end>
-                </activity>
-                <activity>
-                    <data type="TOURISTIC_SIGHTS">
-                        <name>Coit Tower</name>
-                        <imageThumbURL>
-                            https://as2.ftcdn.net/v2/jpg/03/27/93/47/1000_F_327934754_uJInHChzRXd0dN6t2dIlrQnDvY84M6t6.jpg
-                        </imageThumbURL>
-                        <location>
-                            <latitude>37.8024</latitude>
-                            <longitude>-122.4058</longitude>
-                        </location>
-                        <openTime>
-                            <day>
-                                <key>MONDAY</key>
-                                <value>10:00-18:00</value>
-                            </day>
-                            <day>
-                                <key>TUESDAY</key>
-                                <value>10:00-18:00</value>
-                            </day>
-                            <day>
-                                <key>WEDNESDAY</key>
-                                <value>10:00-18:00</value>
-                            </day>
-                            <day>
-                                <key>THURSDAY</key>
-                                <value>10:00-18:00</value>
-                            </day>
-                            <day>
-                                <key>FRIDAY</key>
-                                <value>10:00-18:00</value>
-                            </day>
-                            <day>
-                                <key>SATURDAY</key>
-                                <value>10:00-18:00</value>
-                            </day>
-                            <day>
-                                <key>SUNDAY</key>
-                                <value>10:00-18:00</value>
-                            </day>
-                        </openTime>
-                        <description>Historic tower in the Telegraph Hill neighborhood offering panoramic views of San
-                            Francisco.
-                        </description>
-                        <category>TOURISTIC_SIGHTS</category>
-                        <price>10.0</price>
-                    </data>
-                    <start>10:20</start>
-                    <end>11:20</end>
+                    <start>19:06</start>
+                    <end>20:06</end>
                 </activity>
             </activities>
-            <start-of-day>24/06/2024 00:00:00</start-of-day>
-            <end-of-day>24/06/2024 23:59:00</end-of-day>
-            <hotel>
-                <location/>
-                <name/>
-            </hotel>
+            <start-of-day>26/06/2024 14:00:00</start-of-day>
+            <end-of-day>26/06/2024 23:59:00</end-of-day>
+            <hotel/>
         </itinerary-day>
         <itinerary-day>
             <activities>
                 <activity>
                     <data type="TOURISTIC_SIGHTS">
-                        <name>Coit Tower</name>
+                        <name>Sacré Couer</name>
                         <imageThumbURL>
-                            https://as2.ftcdn.net/v2/jpg/03/27/93/47/1000_F_327934754_uJInHChzRXd0dN6t2dIlrQnDvY84M6t6.jpg
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sacre_Coeur1.JPG/1200px-Sacre_Coeur1.JPG
                         </imageThumbURL>
                         <location>
-                            <latitude>37.8024</latitude>
-                            <longitude>-122.4058</longitude>
+                            <latitude>48.8867</latitude>
+                            <longitude>2.3431</longitude>
                         </location>
                         <openTime>
                             <day>
                                 <key>MONDAY</key>
-                                <value>10:00-18:00</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>TUESDAY</key>
-                                <value>10:00-18:00</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>WEDNESDAY</key>
-                                <value>10:00-18:00</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>THURSDAY</key>
-                                <value>10:00-18:00</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>FRIDAY</key>
-                                <value>10:00-18:00</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>SATURDAY</key>
-                                <value>10:00-18:00</value>
+                                <value>06:00-22:30</value>
                             </day>
                             <day>
                                 <key>SUNDAY</key>
-                                <value>10:00-18:00</value>
+                                <value>06:00-22:30</value>
                             </day>
                         </openTime>
-                        <description>Historic tower in the Telegraph Hill neighborhood offering panoramic views of San
-                            Francisco.
-                        </description>
-                        <category>TOURISTIC_SIGHTS</category>
-                        <price>10.0</price>
-                    </data>
-                    <way-to-next>
-                        <type>WALK</type>
-                        <estimated-duration>822</estimated-duration>
-                        <start>09:00</start>
-                        <price>0.0</price>
-                    </way-to-next>
-                    <start>08:00</start>
-                    <end>09:00</end>
-                </activity>
-                <activity>
-                    <data type="TOURISTIC_SIGHTS">
-                        <name>Lombard Street</name>
-                        <imageThumbURL>
-                            https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Lombard_Street_San_Francisco_2004.jpg/640px-Lombard_Street_San_Francisco_2004.jpg
-                        </imageThumbURL>
-                        <location>
-                            <latitude>37.8021</latitude>
-                            <longitude>-122.4188</longitude>
-                        </location>
-                        <openTime>
-                            <day>
-                                <key>MONDAY</key>
-                                <value>00:00-23:59</value>
-                            </day>
-                            <day>
-                                <key>TUESDAY</key>
-                                <value>00:00-23:59</value>
-                            </day>
-                            <day>
-                                <key>WEDNESDAY</key>
-                                <value>00:00-23:59</value>
-                            </day>
-                            <day>
-                                <key>THURSDAY</key>
-                                <value>00:00-23:59</value>
-                            </day>
-                            <day>
-                                <key>FRIDAY</key>
-                                <value>00:00-23:59</value>
-                            </day>
-                            <day>
-                                <key>SATURDAY</key>
-                                <value>00:00-23:59</value>
-                            </day>
-                            <day>
-                                <key>SUNDAY</key>
-                                <value>00:00-23:59</value>
-                            </day>
-                        </openTime>
-                        <description>Famous winding road known for its eight sharp turns in one block, lined with
-                            beautiful flowers and houses.
+                        <description>Sacré-Cœur Basilica is a Roman Catholic church and minor basilica, dedicated to the
+                            Sacred
+                            Heart of Jesus, in Paris, France.
                         </description>
                         <category>TOURISTIC_SIGHTS</category>
                         <price>0.0</price>
+                        <images>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Basilique_du_Sacre_Coeur_de_Montmartre.jpg/1200px-Basilique_du_Sacre_Coeur_de_Montmartre.jpg
+                            </url>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg/1200px-Paris_Montmartre_Sacre_Coeur_Quadriga_7124.jpg
+                            </url>
+                            <url>
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sacre_Coeur_Paris_France.jpg/1200px-Sacre_Coeur_Paris_France.jpg
+                            </url>
+                        </images>
                     </data>
                     <way-to-next>
                         <type>CAR</type>
-                        <estimated-duration>300</estimated-duration>
-                        <start>10:13</start>
-                        <price>0.0016719069</price>
+                        <estimated-duration>230</estimated-duration>
+                        <start>01:00</start>
+                        <price>0.0012804847</price>
                     </way-to-next>
-                    <start>09:13</start>
-                    <end>10:13</end>
+                    <start>14:00</start>
+                    <end>15:00</end>
                 </activity>
                 <activity>
-                    <data type="PARKS">
-                        <name>Presidio of San Francisco</name>
+                    <data type="MUSEUMS">
+                        <name>Musée d’Orsay</name>
                         <imageThumbURL>
-                            https://upload.wikimedia.org/wikipedia/commons/e/ef/Aerial_view_-_Presidio-whole.jpg
+                            https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Le_mus%C3%A9e_dOrsay_%28Paris%29_%284725795882%29.jpg/1024px-Le_mus%C3%A9e_dOrsay_%28Paris%29_%284725795882%29.jpg
                         </imageThumbURL>
                         <location>
-                            <latitude>37.7989</latitude>
-                            <longitude>-122.4662</longitude>
+                            <latitude>48.86004</latitude>
+                            <longitude>2.32658</longitude>
                         </location>
                         <openTime>
                             <day>
                                 <key>MONDAY</key>
-                                <value>06:00-22:00</value>
+                                <value>Closed</value>
                             </day>
                             <day>
                                 <key>TUESDAY</key>
-                                <value>06:00-22:00</value>
+                                <value>Closed</value>
                             </day>
                             <day>
                                 <key>WEDNESDAY</key>
-                                <value>06:00-22:00</value>
+                                <value>09:30-18:00</value>
                             </day>
                             <day>
                                 <key>THURSDAY</key>
-                                <value>06:00-22:00</value>
+                                <value>09:30-21:45</value>
                             </day>
                             <day>
                                 <key>FRIDAY</key>
-                                <value>06:00-22:00</value>
+                                <value>09:30-18:00</value>
                             </day>
                             <day>
                                 <key>SATURDAY</key>
-                                <value>06:00-22:00</value>
+                                <value>09:30-18:00</value>
                             </day>
                             <day>
                                 <key>SUNDAY</key>
-                                <value>06:00-22:00</value>
+                                <value>09:30-18:00</value>
                             </day>
                         </openTime>
-                        <description>Historic park offering hiking trails, scenic overlooks, and museums, with views of
-                            the Golden Gate Bridge.
-                        </description>
-                        <category>PARKS</category>
-                        <price>0.0</price>
+                        <description>Beautiful museum next to the Seine. French art from 1848-1914</description>
+                        <category>MUSEUMS</category>
+                        <price>12.0</price>
+                        <currentExpoName>Paris 1874</currentExpoName>
+                        <mostFamousWorks>monalisa</mostFamousWorks>
+                        <website>https://www.musee-orsay.fr/en/</website>
                     </data>
-                    <start>10:18</start>
-                    <end>11:18</end>
+                    <start>15:03</start>
+                    <end>16:03</end>
                 </activity>
             </activities>
-            <start-of-day>25/06/2024 00:00:00</start-of-day>
-            <end-of-day>25/06/2024 23:59:00</end-of-day>
-            <hotel>
-                <location/>
-                <name/>
-            </hotel>
+            <start-of-day>27/06/2024 14:00:00</start-of-day>
+            <end-of-day>27/06/2024 23:59:00</end-of-day>
+            <hotel/>
         </itinerary-day>
         <itinerary-day>
-            <activities>
-                <activity>
-                    <data type="TOURISTIC_SIGHTS">
-                        <name>Alcatraz Island</name>
-                        <imageThumbURL>
-                            https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Alcatraz_Island_03.jpg/1200px-Alcatraz_Island_03.jpg
-                        </imageThumbURL>
-                        <location>
-                            <latitude>37.8267</latitude>
-                            <longitude>-122.4233</longitude>
-                        </location>
-                        <openTime>
-                            <day>
-                                <key>MONDAY</key>
-                                <value>08:45-18:45</value>
-                            </day>
-                            <day>
-                                <key>TUESDAY</key>
-                                <value>08:45-18:45</value>
-                            </day>
-                            <day>
-                                <key>WEDNESDAY</key>
-                                <value>08:45-18:45</value>
-                            </day>
-                            <day>
-                                <key>THURSDAY</key>
-                                <value>08:45-18:45</value>
-                            </day>
-                            <day>
-                                <key>FRIDAY</key>
-                                <value>08:45-18:45</value>
-                            </day>
-                            <day>
-                                <key>SATURDAY</key>
-                                <value>08:45-18:45</value>
-                            </day>
-                            <day>
-                                <key>SUNDAY</key>
-                                <value>08:45-18:45</value>
-                            </day>
-                        </openTime>
-                        <description>Former federal prison known for housing notorious criminals, now a popular tourist
-                            attraction offering tours of its historic facilities.
-                        </description>
-                        <category>TOURISTIC_SIGHTS</category>
-                        <price>49.0</price>
-                    </data>
-                    <start>08:00</start>
-                    <end>09:00</end>
-                </activity>
-            </activities>
-            <start-of-day>26/06/2024 00:00:00</start-of-day>
-            <end-of-day>26/06/2024 23:59:00</end-of-day>
-            <hotel>
-                <location/>
-                <name/>
-            </hotel>
+            <activities/>
+            <start-of-day>28/06/2024 00:00:00</start-of-day>
+            <end-of-day>28/06/2024 23:59:00</end-of-day>
+            <hotel/>
+        </itinerary-day>
+        <itinerary-day>
+            <activities/>
+            <start-of-day>29/06/2024 00:00:00</start-of-day>
+            <end-of-day>29/06/2024 23:59:00</end-of-day>
+            <hotel/>
+        </itinerary-day>
+        <itinerary-day>
+            <activities/>
+            <start-of-day>30/06/2024 00:00:00</start-of-day>
+            <end-of-day>30/06/2024 23:59:00</end-of-day>
+            <hotel/>
         </itinerary-day>
     </itinerary-days>
 </itinerary>

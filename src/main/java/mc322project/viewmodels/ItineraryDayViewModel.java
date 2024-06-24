@@ -40,7 +40,7 @@ public class ItineraryDayViewModel {
     }
 
     public void setStartOfDayProperty(LocalDateTime newDateTime) {
-        this.itineraryDay.setStartOfDay(newDateTime);
+        this.itineraryDay.updateStartOfDay(newDateTime);
         startOfDayProperty.set(newDateTime);
         refreshActivities();
     }

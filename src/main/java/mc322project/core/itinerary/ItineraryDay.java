@@ -55,6 +55,11 @@ public class ItineraryDay {
 
     public void setStartOfDay(LocalDateTime newStart) {
         validateDates(newStart, this.endOfDay);
+        this.startOfDay = newStart;
+    }
+
+    public void updateStartOfDay(LocalDateTime newStart){
+        validateDates(newStart, this.endOfDay);
         TimeSlot lastActivity = this.activities.getLast();
         Duration timeFromStartToLastActivityEnd = Duration.between(startOfDay.toLocalTime(), lastActivity.getEnd());
 
@@ -69,7 +74,6 @@ public class ItineraryDay {
         first.setStart(newStart.toLocalTime());
         first.setEndFromDuration(dur);
         updateAllTimeslots(1);
-
         this.startOfDay = newStart;
     }
 
