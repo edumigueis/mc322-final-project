@@ -1,6 +1,4 @@
 # mc322-project
-
-# Travel Itinerary Planner
 ![Example Image](repo/image2.png)
 
 ## Summary
@@ -38,17 +36,18 @@ Technical Highlights:
 - **Jackson**: For XML serialization and deserialization.
 - **Kordamp**: To facilitate development with JavaFX.
 - **Gluon**: For additional JavaFX functionalities.
+- **Ikonli**: For access to jam icons.
 
 ## Getting Started
 ### Prerequisites
-- Java Development Kit (JDK) 8 or higher
+- Java Development Kit (JDK) 21 or higher
 - Apache Maven
 - IntelliJ IDEA
 
 ### Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your_username/your_repository.git
+   git clone https://github.com/edumigueis/mc322-final-project.git
    cd your_repository
 #### Installation
 1. Open the project in IntelliJ IDEA. The java API used is 21.
