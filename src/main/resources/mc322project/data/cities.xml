@@ -348,6 +348,7 @@
             <activity>
                 <type>CITY_TOUR</type>
                 <name>Paris is Burning</name>
+                <includesFood>false</includesFood>
                 <imageThumbURL>
                     https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sacre_Coeur_1.JPG/1200px-Sacre_Coeur_1.JPG
                 </imageThumbURL>
