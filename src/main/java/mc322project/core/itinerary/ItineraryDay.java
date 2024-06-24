@@ -55,6 +55,15 @@ public class ItineraryDay {
 
     public void setStartOfDay(LocalDateTime startOfDay) {
         validateDates(startOfDay, this.endOfDay);
+        TimeSlot lastActivity = this.activities.getLast();
+        LocalTime newStartTime = startOfDay.toLocalTime();
+        Duration timeFromStartToLastActivityEnd = Duration.between(startOfDay.toLocalTime(), lastActivity.getEnd());
+
+        // Check if the new start time plus the duration exceeds 24 hours
+        if (timeFromStartToLastActivityEnd.toSeconds() + newStartTime.toSecondOfDay() > Duration.ofHours(24).toSeconds()) {
+            throw new IllegalArgumentException("The new start time causes the last activity to exceed 24 hours and go into the next day.");
+        }
+
         this.startOfDay = startOfDay;
     }
 
@@ -98,7 +107,7 @@ public class ItineraryDay {
             last.setWayToNext(transportation);
             acStart = startTrns.plus(transportation.getEstimatedDuration());
         } else {
-            acStart = LocalTime.of(8, 0);
+            acStart = this.startOfDay.toLocalTime();
         }
 
         TimeSlot ts = new TimeSlot(activity, null, acStart, acStart.plus(Duration.ofHours(1)));

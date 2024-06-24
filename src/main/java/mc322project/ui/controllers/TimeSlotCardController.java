@@ -1,6 +1,8 @@
 package mc322project.ui.controllers;
 
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import mc322project.GUIStarter;
 import mc322project.core.itinerary.TimeSlot;
@@ -23,6 +25,8 @@ import mc322project.viewmodels.TimeSlotViewModel;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
 
@@ -38,21 +42,23 @@ public class TimeSlotCardController {
     @FXML
     private MenuButton optionsMenu;
     @FXML
-    private Label tourLanguage;
+    private HBox tourLanguage;
     @FXML
     private VBox tourData;
     @FXML
     private GridPane mainContainer;
+    @FXML
+    private MenuItem startOfDayMenu;
 
     private ItineraryDayViewModel itineraryViewModel;
     private TimeSlotViewModel timeSlotViewModel;
 
-    public void initData(TimeSlotViewModel viewModel, ItineraryDayViewModel itineraryViewModel) {
+    public void initData(TimeSlotViewModel viewModel, ItineraryDayViewModel itineraryViewModel, boolean isFirst) {
         I_Activity data = viewModel.dataProperty().get();
 
         if (data instanceof Tour) {
             mainContainer.setPrefHeight(230);
-            tourLanguage.setText(((Tour) data).getLanguage());
+            ((Label) tourLanguage.getChildren().getFirst()).setText(((Tour) data).getLanguage());
 
             for (I_Activity activity : ((Tour) data).getAttractionList()) {
                 Label l = new Label(activity.getName());
@@ -62,6 +68,11 @@ public class TimeSlotCardController {
         } else if (data instanceof Places) {
             tourData.setVisible(false);
             tourLanguage.setVisible(false);
+        }
+
+        if (!isFirst) {
+            startOfDayMenu.setVisible(false);
+            startOfDayMenu.setDisable(true);
         }
 
         this.itineraryViewModel = itineraryViewModel;
@@ -142,6 +153,49 @@ public class TimeSlotCardController {
 
             // Show the modal
             modalStage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    private void alterStart() {
+        try {
+            // Load the FXML for the modal
+            FXMLLoader loader = new FXMLLoader(GUIStarter.class.getResource("components/selectors/start_selector.fxml"));
+            Parent root = loader.load();
+            StartTimeSelectorController controller = loader.getController();
+
+            // Create a new stage for the modal
+            Stage modalStage = new Stage();
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.setTitle("Select Start of Day");
+
+            Scene scene = new Scene(root);
+            String stylesheet = Objects.requireNonNull(GUIStarter.class.getResource("styling/styles.css")).toExternalForm();
+            scene.getStylesheets().add(stylesheet);
+            modalStage.setScene(scene);
+
+            // Pass the stage reference to the modal controller
+            controller.setStage(modalStage);
+            // Show the modal
+            modalStage.showAndWait();
+
+            LocalTime selectedStart = controller.getSelectedStart();
+            if (selectedStart != null) {
+                try {
+                    LocalDateTime newLDT = this.itineraryViewModel.startOfDayProperty().get().withHour(selectedStart.getHour())
+                            .withMinute(selectedStart.getMinute())
+                            .withSecond(0)
+                            .withNano(0);
+                    this.itineraryViewModel.setStartOfDayProperty(newLDT);
+                } catch (IllegalArgumentException e) {
+                    CustomAlert alert = CustomAlert.createWarningAlert("This start is too late for al the activities in the day");
+                    alert.setTitle("Warning");
+                    alert.setHeaderText(null); // Remove header text
+                    alert.showAndWait();
+                }
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

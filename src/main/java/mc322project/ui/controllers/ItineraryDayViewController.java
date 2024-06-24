@@ -26,6 +26,7 @@ import mc322project.viewmodels.TimeSlotViewModel;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Objects;
 
 public class ItineraryDayViewController {
@@ -72,7 +73,7 @@ public class ItineraryDayViewController {
                     cardsContainer.getChildren().clear();
                     populate();
                 }
-                if (c.wasRemoved()){
+                if (c.wasRemoved()) {
                     cardsContainer.getChildren().clear();
                     populate();
                 }
@@ -81,17 +82,24 @@ public class ItineraryDayViewController {
     }
 
     private void populate() {
-        for (TimeSlot ts : viewModel.getActivities()) {
+        int i = 0;
+        List<TimeSlot> activities = viewModel.getActivities();
+        for (TimeSlot ts : activities) {
+            // Initialize TimeSlotCard and its controller
             TimeSlotCard timeSlotCard = new TimeSlotCard();
             TimeSlotCardController controller = timeSlotCard.getController();
-            DisplacementCard displacementCard;
-            Transportation transportation = ts.getWayToNext();
-            controller.initData(new TimeSlotViewModel(ts), this.viewModel);
+            controller.initData(new TimeSlotViewModel(ts), this.viewModel, i == 0);
+
+            // Add TimeSlotCard to container
             cardsContainer.getChildren().add(timeSlotCard);
+
+            // If there is a way to the next transportation, add DisplacementCard
+            Transportation transportation = ts.getWayToNext();
             if (transportation != null) {
-                displacementCard = new DisplacementCard(transportation);
+                DisplacementCard displacementCard = new DisplacementCard(transportation);
                 cardsContainer.getChildren().add(displacementCard);
             }
+            i++;
         }
     }
 

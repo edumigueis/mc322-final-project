@@ -40,6 +40,12 @@ public class ItineraryDayViewModel {
         return startOfDayProperty;
     }
 
+    public void setStartOfDayProperty(LocalDateTime newDateTime) {
+        this.itineraryDay.setStartOfDay(newDateTime);
+        startOfDayProperty.set(newDateTime);
+        refreshActivities();
+    }
+
     public ObjectProperty<LocalDateTime> endOfDayProperty() {
         return endOfDayProperty;
     }
