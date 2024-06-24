@@ -31,7 +31,8 @@
                     <MenuItem styleClass="yellow-bullet-item" onAction="#removeSelf" text="Remove"/>
                     <MenuItem styleClass="yellow-bullet-item" onAction="#alterDuration" text="Alter Duration"/>
                     <MenuItem styleClass="yellow-bullet-item" onAction="#alterOrder" text="Alter Order"/>
-                    <MenuItem fx:id="startOfDayMenu" styleClass="yellow-bullet-item" onAction="#alterStart" text="Alter Start of Day"/>
+                    <MenuItem fx:id="startOfDayMenu" styleClass="yellow-bullet-item" onAction="#alterStart"
+                              text="Alter Start of Day"/>
                 </items>
             </MenuButton>
             <HBox fx:id="tourLanguage" styleClass="tour-language-wrapper" alignment="CENTER" AnchorPane.bottomAnchor="5"

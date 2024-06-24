@@ -13,24 +13,24 @@ public class StartTimeSelectorController implements Initializable {
     private LocalTime selectedStart;
 
     @FXML
-    private ComboBox<Integer> hourComboBox;
+    private ComboBox<String> hourComboBox;
     @FXML
-    private ComboBox<Integer> minuteComboBox;
+    private ComboBox<String> minuteComboBox;
 
     private Stage stage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (int i = 0; i < 18; i++) {
-            hourComboBox.getItems().add(i);
+        for (int i = 0; i < 19; i++) {
+            hourComboBox.getItems().add(String.format("%02d", i));
         }
-        for (int i = 0; i < 59; i++) {
-            minuteComboBox.getItems().add(i);
+        for (int i = 0; i < 60; i += 5) {
+            minuteComboBox.getItems().add(String.format("%02d", i));
         }
 
         // Set default values
-        hourComboBox.setValue(0);
-        minuteComboBox.setValue(0);
+        hourComboBox.setValue("00");
+        minuteComboBox.setValue("00");
     }
 
     public void setStage(Stage stage) {
@@ -39,8 +39,8 @@ public class StartTimeSelectorController implements Initializable {
 
     @FXML
     private void selectTime() {
-        int selectedHour = hourComboBox.getValue();
-        int selectedMinute = minuteComboBox.getValue();
+        int selectedHour = Integer.parseInt(hourComboBox.getValue());
+        int selectedMinute = Integer.parseInt(minuteComboBox.getValue());
         this.selectedStart = LocalTime.of(selectedHour, selectedMinute);
         if (selectedStart != null) {
             // Close the modal

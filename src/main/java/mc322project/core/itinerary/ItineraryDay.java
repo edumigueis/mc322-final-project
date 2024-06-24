@@ -64,7 +64,7 @@ public class ItineraryDay {
         }
 
         TimeSlot first = this.activities.getFirst();
-        Duration dur =  first.getDuration();
+        Duration dur = first.getDuration();
         first.setEnd(LocalTime.of(23, 59, 59));
         first.setStart(newStart.toLocalTime());
         first.setEndFromDuration(dur);
