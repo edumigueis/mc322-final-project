@@ -190,7 +190,7 @@ public class TimeSlotCardController {
                             .withNano(0);
                     this.itineraryViewModel.setStartOfDayProperty(newLDT);
                 } catch (IllegalArgumentException e) {
-                    CustomAlert alert = CustomAlert.createWarningAlert("This start is too late for al the activities in the day");
+                    CustomAlert alert = CustomAlert.createWarningAlert("This start is too late for all the activities in the day");
                     alert.setTitle("Warning");
                     alert.setHeaderText(null); // Remove header text
                     alert.showAndWait();

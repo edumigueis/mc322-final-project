@@ -53,18 +53,24 @@ public class ItineraryDay {
         return startOfDay;
     }
 
-    public void setStartOfDay(LocalDateTime startOfDay) {
-        validateDates(startOfDay, this.endOfDay);
+    public void setStartOfDay(LocalDateTime newStart) {
+        validateDates(newStart, this.endOfDay);
         TimeSlot lastActivity = this.activities.getLast();
-        LocalTime newStartTime = startOfDay.toLocalTime();
         Duration timeFromStartToLastActivityEnd = Duration.between(startOfDay.toLocalTime(), lastActivity.getEnd());
 
         // Check if the new start time plus the duration exceeds 24 hours
-        if (timeFromStartToLastActivityEnd.toSeconds() + newStartTime.toSecondOfDay() > Duration.ofHours(24).toSeconds()) {
+        if (timeFromStartToLastActivityEnd.toSeconds() + newStart.toLocalTime().toSecondOfDay() > Duration.ofHours(24).toSeconds()) {
             throw new IllegalArgumentException("The new start time causes the last activity to exceed 24 hours and go into the next day.");
         }
 
-        this.startOfDay = startOfDay;
+        TimeSlot first = this.activities.getFirst();
+        Duration dur =  first.getDuration();
+        first.setEnd(LocalTime.of(23, 59, 59));
+        first.setStart(newStart.toLocalTime());
+        first.setEndFromDuration(dur);
+        updateAllTimeslots(1);
+
+        this.startOfDay = newStart;
     }
 
     public LocalDateTime getEndOfDay() {
@@ -174,14 +180,7 @@ public class ItineraryDay {
 
         base.setEndFromDuration(newDuration);
         if (n > 1) {
-            for (int i = posActivity + 1; i < n; i++) {
-                TimeSlot current = activities.get(i);
-                Duration dur = current.getDuration();
-                current.setEnd(LocalTime.of(23, 59, 59));
-                TimeSlot prev = activities.get(i - 1);
-                current.setStart(prev.getEnd().plus(prev.getWayToNext().getEstimatedDuration()));
-                current.setEndFromDuration(dur);
-            }
+            updateAllTimeslots(posActivity + 1);
         }
     }
 
@@ -223,7 +222,7 @@ public class ItineraryDay {
         shiftActivities(newPosition, curPosition);
         this.activities.set(newPosition, timeslot);
         updateTimeslotStartAndEnd(timeslot, newStart);
-        updateAllTimeslots();
+        updateAllTimeslots(1);
         handleLastTimeslot(curPosition);
     }
 
@@ -236,7 +235,7 @@ public class ItineraryDay {
         timeslot.setWayToNext(transportation2);
         shiftActivities(newPosition, curPosition);
         this.activities.set(newPosition, timeslot);
-        updateAllTimeslots();
+        updateAllTimeslots(1);
         handleLastTimeslot(curPosition);
     }
 
@@ -257,7 +256,7 @@ public class ItineraryDay {
         shiftActivitiesBackwards(curPosition, newPosition);
         this.activities.set(newPosition, timeslot);
         handleFirstTimeslot(curPosition, timeslot);
-        updateAllTimeslots();
+        updateAllTimeslots(1);
     }
 
     private void swapTimeslotToEnd(TimeSlot timeslot, int curPosition, int newPosition) {
@@ -270,7 +269,7 @@ public class ItineraryDay {
         shiftActivitiesBackwards(curPosition, newPosition);
         this.activities.set(newPosition, timeslot);
         handleFirstTimeslot(curPosition, timeslot);
-        updateAllTimeslots();
+        updateAllTimeslots(1);
     }
 
     private void shiftActivities(int start, int end) {
@@ -297,15 +296,15 @@ public class ItineraryDay {
         timeslot.setEnd(newStart.plus(duration));
     }
 
-    private void updateAllTimeslots() {
+    private void updateAllTimeslots(int from) {
         int n = this.activities.size();
-        for (int i = 1; i < n; i++) {
+        for (int i = from; i < n; i++) {
             TimeSlot current = this.activities.get(i);
             TimeSlot prev = this.activities.get(i - 1);
             Duration duration = current.getDuration();
             current.setEnd(LocalTime.of(23, 59, 59));
             current.setStart(prev.getEnd().plus(prev.getWayToNext().getEstimatedDuration()));
-            current.setEnd(current.getStart().plus(duration));
+            current.setEndFromDuration(duration);
         }
     }
 
